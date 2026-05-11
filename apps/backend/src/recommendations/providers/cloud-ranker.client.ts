@@ -4,7 +4,7 @@ import type { CloudRecommendation } from "@cloud-recommender/shared";
 import type { EnvConfig } from "../../config/env.schema.js";
 import type { AiStudioIntent } from "../schemas/recommendation.schema.js";
 
-type RankerMetricBreakdown = {
+export type RankerMetricBreakdown = {
   semantic_similarity: number;
   jaccard_index: number;
   resource_fit?: number;
@@ -12,7 +12,7 @@ type RankerMetricBreakdown = {
   economy_score: number;
 };
 
-type RankerService = {
+export type RankerService = {
   service_id: string;
   name: string;
   description: string;
@@ -28,13 +28,13 @@ type RankerService = {
   metrics_breakdown: RankerMetricBreakdown;
 };
 
-type RankerResponse = {
+export type RankerResponse = {
   user_context: Record<string, unknown>;
   top_recommendations: RankerService[];
 };
 
 function providerIcon(providerName: string): string {
-  const normalized = providerName.toLowerCase().replace(/[\s_-]+/g, "");
+  const normalized = providerName.toLowerCase().replace(/[\s._-]+/g, "");
 
   if (normalized.includes("selectel")) {
     return "/selectel.png";
@@ -47,6 +47,12 @@ function providerIcon(providerName: string): string {
   }
   if (normalized.includes("edgecenter")) {
     return "/edgecenter.png";
+  }
+  if (normalized.includes("yandexcloud")) {
+    return "/yandexcloud.png";
+  }
+  if (normalized.includes("cloudru")) {
+    return "/cloudru.png";
   }
 
   return "/cloud-service.svg";
@@ -62,7 +68,7 @@ export class CloudRankerClient {
     const rankerUrl = this.config.get("RANKER_API_URL", { infer: true });
     const payload = {
       user_intent: intent,
-      top_n: 7,
+      top_n: 10,
     };
 
     if (this.config.get("DEBUG_RANKER_INTENT", { infer: true })) {
@@ -94,14 +100,14 @@ export class CloudRankerClient {
     return {
       raw,
       recommendations: raw.top_recommendations.map((service) =>
-        this.toCloudRecommendation(service, intent.reasoning_summary),
+        this.toCloudRecommendation(service, intent),
       ),
     };
   }
 
   private toCloudRecommendation(
     service: RankerService,
-    reasoningSummary: string,
+    intent: AiStudioIntent,
   ): CloudRecommendation {
     const services = [
       ...(service.tech_stack.length > 0 ? service.tech_stack : []),
@@ -118,13 +124,7 @@ export class CloudRankerClient {
       finalScore: Math.max(0, Math.min(100, service.final_score_100)),
       monthlyPriceRub: Math.max(0, service.price_rub),
       services: uniqueServices.length > 0 ? uniqueServices : [service.provider_name],
-      reasons: [
-        reasoningSummary,
-        `Ресурсное совпадение: ${service.metrics_breakdown.resource_fit ?? 0}; semantic: ${service.metrics_breakdown.semantic_similarity}; Jaccard: ${service.metrics_breakdown.jaccard_index}.`,
-        ...(service.matched_requirements?.length
-          ? [`Совпавшие требования: ${service.matched_requirements.slice(0, 4).join(", ")}.`]
-          : []),
-      ],
+      reasons: this.reasonsForService(service, intent),
       risks: [
         service.source_url
           ? `Проверьте тариф и условия провайдера: ${service.source_url}`
@@ -133,6 +133,46 @@ export class CloudRankerClient {
       estimatedCostLevel: this.toCostLevel(service.price_rub),
       icon: providerIcon(service.provider_name),
     };
+  }
+
+  private reasonsForService(service: RankerService, intent: AiStudioIntent): string[] {
+    const reasons = [
+      this.categoryReason(service, intent),
+      this.requirementsReason(service),
+      this.complianceReason(service, intent),
+    ].filter((reason): reason is string => Boolean(reason));
+
+    return reasons.length > 0
+      ? reasons
+      : ["Сервис выбран как наиболее близкий по инфраструктурному смыслу запроса."];
+  }
+
+  private categoryReason(service: RankerService, intent: AiStudioIntent): string {
+    if (intent.primary_service_type === "virtual_server") {
+      return "Это именно виртуальный сервер, поэтому подбор не смешивает VPS с базами данных или хранилищами.";
+    }
+    if (service.category) {
+      return `Категория услуги соответствует задаче: ${service.category}.`;
+    }
+    return "Услуга соответствует основной инфраструктурной задаче запроса.";
+  }
+
+  private requirementsReason(service: RankerService): string | null {
+    if (!service.matched_requirements?.length) {
+      return null;
+    }
+
+    return `Учтены строгие требования: ${service.matched_requirements.slice(0, 4).join(", ")}.`;
+  }
+
+  private complianceReason(service: RankerService, intent: AiStudioIntent): string | null {
+    if (!intent.requires_152fz) {
+      return null;
+    }
+
+    return service.compliance_tags.some((tag) => tag.toLowerCase().includes("152"))
+      ? "Есть признак соответствия 152-ФЗ для задач с российскими персональными данными."
+      : null;
   }
 
   private toCostLevel(priceRub: number): CloudRecommendation["estimatedCostLevel"] {

@@ -1,0 +1,1304 @@
+{
+  "provider": {
+    "provider_id": "cloudru",
+    "name": "Cloud.ru",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "cloudru-vps-vds",
+      "name": "Аренда VPS/VDS — Небольшая нагрузка (1 vCPU, 1 GB RAM, 30 GB NVMe)",
+      "description": "Виртуальный сервер для хостинга сайтов и веб-приложений. Конфигурация «Небольшая нагрузка»: гарантированная доля vCPU 10%. Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 641.23,
+        "price_per_month_rub": 641.23
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 1,
+        "disk_type": "NVMe",
+        "disk_gb": 30,
+        "cpu_guarantee_percent": 10,
+        "tier": "small",
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds"
+    },
+    {
+      "service_id": "cloudru-vps-vds-standard",
+      "name": "Аренда VPS/VDS — Стандартная нагрузка (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Виртуальный сервер для веб-приложений среднего уровня. Гарантированная доля vCPU 30%. Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_type": "NVMe",
+        "disk_gb": 30,
+        "cpu_guarantee_percent": 30,
+        "tier": "standard",
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds"
+    },
+    {
+      "service_id": "cloudru-vps-vds-free-tier",
+      "name": "Аренда VPS/VDS — Free tier (2 vCPU, 4 GB RAM, 30 GB NVMe)",
+      "description": "Бесплатный тариф для тестирования простых приложений и сайтов. Гарантированная доля vCPU до 10%. Дополнительно начисляются 4 000 бонусных рублей.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 0,
+        "price_per_month_rub": 0
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_type": "NVMe",
+        "disk_gb": 30,
+        "cpu_guarantee_percent": 10,
+        "tier": "free",
+        "bonus_rubles": 4000,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds"
+    },
+    {
+      "service_id": "cloudru-virtualnyy-server-standard",
+      "name": "Аренда виртуальной машины — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Гибкая виртуальная машина с произвольной ОС для типовых IT-задач, конфигурация Стандартная (30% гарантированной доли vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_type": "NVMe",
+        "disk_gb": 30,
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/virtualnyy-server"
+    },
+    {
+      "service_id": "cloudru-virtualnyy-server-small",
+      "name": "Аренда виртуальной машины — Небольшая (1 vCPU, 1 GB RAM, 30 GB NVMe)",
+      "description": "Минимальная конфигурация виртуальной машины (10% гарантированной доли vCPU) для лёгких задач и тестовых окружений. Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 641.23,
+        "price_per_month_rub": 641.23
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 1,
+        "disk_type": "NVMe",
+        "disk_gb": 30,
+        "cpu_guarantee_percent": 10,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/virtualnyy-server"
+    },
+    {
+      "service_id": "cloudru-oblachnyj-server-windows-standard",
+      "name": "VPS/VDS-сервер на Windows — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Виртуальный сервер с операционной системой Windows. Конфигурация Стандартная (30% vCPU). Цена с НДС, без учёта стоимости лицензии Windows.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["Windows Server", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "os": "Windows",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator",
+        "note": "Лицензия Windows тарифицируется отдельно"
+      },
+      "source_url": "https://cloud.ru/services/oblachnyj-server-windows"
+    },
+    {
+      "service_id": "cloudru-oblachnyj-server-business",
+      "name": "Облачный сервер для бизнеса — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Облачный сервер для бизнес-задач с гибким масштабированием. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/oblachnyj-server-dlya-biznesa"
+    },
+    {
+      "service_id": "cloudru-arenda-servera-v-oblake",
+      "name": "Облачный сервер в аренду — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Облачный сервер для pet-проектов и бизнеса любого масштаба. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/arenda-servera-v-oblake"
+    },
+    {
+      "service_id": "cloudru-mysql-server-standard",
+      "name": "Аренда облачной БД MySQL — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Управляемая облачная СУБД MySQL. Базовая конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["MySQL", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MySQL",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/server-dlya-mysql"
+    },
+    {
+      "service_id": "cloudru-vps-linux-standard",
+      "name": "VPS на Linux — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS/VDS-сервер с дистрибутивом Linux для сайтов, приложений и pet-проектов. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["Linux", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "os": "Linux",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-linux"
+    },
+    {
+      "service_id": "cloudru-vps-ubuntu-standard",
+      "name": "Аренда сервера с Ubuntu — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS/VDS на Ubuntu (18.04/20.04/22.04 LTS). Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["Ubuntu", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "os": "Ubuntu",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-ubuntu"
+    },
+    {
+      "service_id": "cloudru-vps-deshevo-small",
+      "name": "Недорогой VPS/VDS — Небольшая (1 vCPU, 1 GB RAM, 30 GB NVMe)",
+      "description": "Бюджетный VPS/VDS-сервер. Конфигурация Небольшая (10% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 641.23,
+        "price_per_month_rub": 641.23
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 1,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 10,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-deshevo"
+    },
+    {
+      "service_id": "cloudru-khosting-web-apps-small",
+      "name": "Хостинг для мобильных и веб-приложений — Небольшая (1 vCPU, 1 GB RAM, 30 GB NVMe)",
+      "description": "Облачная инфраструктура для запуска и масштабирования мобильных и веб-приложений. Конфигурация Небольшая (10% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 641.23,
+        "price_per_month_rub": 641.23
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 1,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 10,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/khosting-dlya-mobilnykh-i-veb-prilozheniy"
+    },
+    {
+      "service_id": "cloudru-khosting-web-apps-standard",
+      "name": "Хостинг для мобильных и веб-приложений — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Хостинг с типовой нагрузкой (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/khosting-dlya-mobilnykh-i-veb-prilozheniy"
+    },
+    {
+      "service_id": "cloudru-postgresql-server-standard",
+      "name": "Хостинг онлайн БД PostgreSQL — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Облачная СУБД PostgreSQL для хранения и управления данными. Базовая конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["PostgreSQL", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/postgresql-server"
+    },
+    {
+      "service_id": "cloudru-virtualnyj-hosting-sajta",
+      "name": "Аренда облачного хостинга для сайтов — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Хостинг для сайтов на базе популярных CMS (WordPress, Joomla и др.). Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["WordPress", "Joomla", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/virtualnyj-hosting-sajta"
+    },
+    {
+      "service_id": "cloudru-server-na-chas",
+      "name": "VPS с почасовой оплатой — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Виртуальный сервер с почасовой тарификацией. Конфигурация Стандартная (30% vCPU). Цена с НДС эквивалентна 990,04 ₽ за 720 часов.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "billing_mode": "pay-as-you-go",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/server-na-chas"
+    },
+    {
+      "service_id": "cloudru-vps-vds-gpu-h100-pci-5gpu",
+      "name": "VPS/VDS-сервер с видеокартой — 5× NVIDIA H100 PCI",
+      "description": "Виртуальный сервер с GPU для AI, рендеринга и сложных вычислений. Готовая конфигурация Evolution Compute GPU. Цена ≈ 720 × 2 250 ₽/ч (без НДС).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 162000.0,
+        "price_per_month_rub": 162000.0
+      },
+      "tech_stack": ["NVIDIA H100"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA H100 PCI",
+        "gpu_count": 5,
+        "price_per_hour_rub": 2250.0,
+        "vat_included": false,
+        "calculation": "2250 * 720 = 162000",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds-s-videokartoy"
+    },
+    {
+      "service_id": "cloudru-vps-vds-gpu-a100-pci-5gpu",
+      "name": "VPS/VDS-сервер с видеокартой — 5× NVIDIA A100 PCI",
+      "description": "Готовая конфигурация Evolution Compute GPU с 5× A100 PCI. Цена ≈ 720 × 1 300 ₽/ч (без НДС).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 93600.0,
+        "price_per_month_rub": 93600.0
+      },
+      "tech_stack": ["NVIDIA A100"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA A100 PCI",
+        "gpu_count": 5,
+        "price_per_hour_rub": 1300.0,
+        "vat_included": false,
+        "calculation": "1300 * 720 = 93600",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds-s-videokartoy"
+    },
+    {
+      "service_id": "cloudru-vps-vds-gpu-v100-4gpu",
+      "name": "VPS/VDS-сервер с видеокартой — 4× NVIDIA V100",
+      "description": "Готовая конфигурация Evolution Compute GPU с 4× V100. Цена ≈ 720 × 810 ₽/ч (без НДС).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 58320.0,
+        "price_per_month_rub": 58320.0
+      },
+      "tech_stack": ["NVIDIA V100"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA V100",
+        "gpu_count": 4,
+        "price_per_hour_rub": 810.0,
+        "vat_included": false,
+        "calculation": "810 * 720 = 58320",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/vps-vds-s-videokartoy"
+    },
+    {
+      "service_id": "cloudru-server-1s",
+      "name": "Аренда 1С сервера — Базовый тариф",
+      "description": "Выделенный облачный сервер для работы с 1С. Стартовая цена «от 1 700 ₽/мес».",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 1700.0,
+        "price_per_month_rub": 1700.0
+      },
+      "tech_stack": ["1С:Предприятие"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "from_price",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/server-1s"
+    },
+    {
+      "service_id": "cloudru-oblako-152fz",
+      "name": "Облако 152-ФЗ — защищённая инфраструктура",
+      "description": "Облачная инфраструктура для хранения и обработки персональных данных согласно ФЗ-152. Стоимость рассчитывается под проект.",
+      "category": "Compliance Cloud",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/oblako-152fz"
+    },
+    {
+      "service_id": "cloudru-kvm-server-standard",
+      "name": "Виртуальные серверы с KVM — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS/VDS с гарантированными ресурсами на технологии KVM. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["KVM", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "virtualization": "KVM",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/kvm-server"
+    },
+    {
+      "service_id": "cloudru-vps-debian-standard",
+      "name": "VPS/VDS на Linux Debian — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS/VDS с ОС Debian. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["Debian", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "os": "Debian",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-debian"
+    },
+    {
+      "service_id": "cloudru-mongodb-hosting-standard",
+      "name": "Хостинг MongoDB — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Управляемый хостинг MongoDB в облаке. Базовая конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["MongoDB", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MongoDB",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/mongodb-hosting"
+    },
+    {
+      "service_id": "cloudru-mongo-db-server",
+      "name": "Аренда сервера MongoDB — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Готовая инфраструктура с MongoDB и быстрым развертыванием. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["MongoDB", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MongoDB",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/mongo-db-server"
+    },
+    {
+      "service_id": "cloudru-publichnoe-oblako",
+      "name": "Аренда публичного облака — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Доступ к мультиарендной инфраструктуре Cloud.ru. Базовая конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/publichnoe-oblako"
+    },
+    {
+      "service_id": "cloudru-private-cloud",
+      "name": "Частное облако — выделенный виртуальный ЦОД",
+      "description": "Готовый виртуальный ЦОД с монопольным доступом к оборудованию. Стоимость рассчитывается под конфигурацию.",
+      "category": "Private Cloud",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/private-cloud"
+    },
+    {
+      "service_id": "cloudru-vps-antiddos-standard",
+      "name": "VPS/VDS с защитой от DDoS — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Виртуальный сервер с подключённой защитой от DDoS-атак. Конфигурация Стандартная (30% vCPU). Цена с НДС, без стоимости пакета защиты от DDoS.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "ddos_protected": true,
+        "vat_included": true,
+        "price_source": "provider_calculator",
+        "note": "Тариф пакета защиты от DDoS — отдельно, см. услугу anti-ddos-zashita"
+      },
+      "source_url": "https://cloud.ru/services/vps-antiddos"
+    },
+    {
+      "service_id": "cloudru-ssd-nvme-server-standard",
+      "name": "VPS/VDS с NVMe — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS/VDS с NVMe-диском. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/ssd-nvme-server"
+    },
+    {
+      "service_id": "cloudru-virtualniy-server-v-arendu",
+      "name": "Аренда виртуального сервера — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe) + Public IP от 147 ₽",
+      "description": "Готовый виртуальный сервер с ОС на выбор, SSD/NVMe, S3-хранилищем. Конфигурация Стандартная (30% vCPU); белый IP от 147 ₽/мес.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe", "S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "public_ip_price_rub": 147,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/virtualniy-server-v-arendu"
+    },
+    {
+      "service_id": "cloudru-iaas",
+      "name": "Облачная инфраструктура IaaS",
+      "description": "Готовая IaaS-инфраструктура с мгновенным масштабированием. Стоимость рассчитывается под потребности проекта (vCPU, RAM, диски, сеть).",
+      "category": "IaaS",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/iaas"
+    },
+    {
+      "service_id": "cloudru-anti-ddos-zashita",
+      "name": "Защита от DDoS-атак (L3/L4/L7)",
+      "description": "Многоуровневая защита от DDoS-атак с автоматическим обнаружением угроз. Стоимость рассчитывается под объём защищаемого трафика.",
+      "category": "DDoS Protection",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/anti-ddos-zashita"
+    },
+    {
+      "service_id": "cloudru-arenda-igrovogo-servera",
+      "name": "Аренда выделенного сервера для игр",
+      "description": "Физический сервер для GameDev-проектов и игровых хостов с низкой задержкой. Стоимость рассчитывается под выбранную конфигурацию.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "use_case": "gaming",
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/arenda-igrovogo-servera"
+    },
+    {
+      "service_id": "cloudru-vps-centos-standard",
+      "name": "VPS на CentOS 6/7 — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "VPS на CentOS 6/7. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["CentOS", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "os": "CentOS",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/vps-centos"
+    },
+    {
+      "service_id": "cloudru-2-cpu-server",
+      "name": "Облачный сервер с 2 CPU — Free tier (2 vCPU, 4 GB RAM, 30 GB NVMe)",
+      "description": "Облачный сервер с 2 vCPU. Бесплатный тариф для тестирования; гарантированная доля CPU до 10%.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 0,
+        "price_per_month_rub": 0
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 10,
+        "tier": "free",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/services/2-cpu-server"
+    },
+    {
+      "service_id": "cloudru-1-cpu-server-small",
+      "name": "Облачный сервер с 1 CPU — Небольшая (1 vCPU, 1 GB RAM, 30 GB NVMe)",
+      "description": "Бюджетный облачный сервер с 1 vCPU. Конфигурация Небольшая (10% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 641.23,
+        "price_per_month_rub": 641.23
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 1,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 10,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/1-cpu-server"
+    },
+    {
+      "service_id": "cloudru-1-cpu-server-standard",
+      "name": "Облачный сервер с 1 CPU — Стандартная (1 vCPU, 2 GB RAM, 30 GB NVMe)",
+      "description": "Облачный сервер с 1 vCPU и 2 ГБ RAM. Конфигурация Стандартная (30% vCPU). Цена с НДС.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 990.04,
+        "price_per_month_rub": 990.04
+      },
+      "tech_stack": ["NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 1,
+        "ram_gb": 2,
+        "disk_gb": 30,
+        "disk_type": "NVMe",
+        "cpu_guarantee_percent": 30,
+        "vat_included": true,
+        "price_source": "provider_calculator"
+      },
+      "source_url": "https://cloud.ru/services/1-cpu-server"
+    },
+    {
+      "service_id": "cloudru-evolution-mks-worker-2cpu-4ram",
+      "name": "Evolution Managed Kubernetes — Worker 2 vCPU, 4 GB RAM",
+      "description": "Готовая worker-нода Evolution Managed Kubernetes начального уровня. Месячная цена ≈ 720 × 2,44 ₽/ч (без НДС).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 1756.8,
+        "price_per_month_rub": 1756.8
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "k8s_worker",
+        "cpu": 2,
+        "ram_gb": 4,
+        "price_per_hour_rub": 2.44,
+        "calculation": "2.44 * 720 = 1756.8",
+        "vat_included": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-kubernetes"
+    },
+    {
+      "service_id": "cloudru-evolution-mks-worker-4cpu-16ram",
+      "name": "Evolution Managed Kubernetes — Worker 4 vCPU, 16 GB RAM",
+      "description": "Worker-нода Evolution Managed Kubernetes стандартного класса для backend-сервисов. Месячная цена ≈ 720 × 6,54 ₽/ч (без НДС).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 4708.8,
+        "price_per_month_rub": 4708.8
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "k8s_worker",
+        "cpu": 4,
+        "ram_gb": 16,
+        "price_per_hour_rub": 6.54,
+        "calculation": "6.54 * 720 = 4708.8",
+        "vat_included": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-kubernetes"
+    },
+    {
+      "service_id": "cloudru-evolution-mks-worker-16cpu-32ram",
+      "name": "Evolution Managed Kubernetes — Worker 16 vCPU, 32 GB RAM",
+      "description": "Worker-нода Evolution Managed Kubernetes Production-класса. Месячная цена ≈ 720 × 19,48 ₽/ч (без НДС).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 14025.6,
+        "price_per_month_rub": 14025.6
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "k8s_worker",
+        "cpu": 16,
+        "ram_gb": 32,
+        "price_per_hour_rub": 19.48,
+        "calculation": "19.48 * 720 = 14025.6",
+        "vat_included": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-kubernetes"
+    },
+    {
+      "service_id": "cloudru-evolution-mks-worker-32cpu-256ram",
+      "name": "Evolution Managed Kubernetes — Worker 32 vCPU, 256 GB RAM",
+      "description": "Крупная worker-нода Evolution Managed Kubernetes для memory-intensive нагрузок. Месячная цена ≈ 720 × 78,96 ₽/ч (без НДС).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 56851.2,
+        "price_per_month_rub": 56851.2
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "k8s_worker",
+        "cpu": 32,
+        "ram_gb": 256,
+        "price_per_hour_rub": 78.96,
+        "calculation": "78.96 * 720 = 56851.2",
+        "vat_included": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-kubernetes"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-postgresql",
+      "name": "Evolution Managed PostgreSQL",
+      "description": "Управляемая БД PostgreSQL. Тарифицируется pay-as-you-go по vCPU, RAM и дисковому пространству; готовых пакетных цен в публичных тарифах не приведено.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["PostgreSQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-postgresql"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-mongodb",
+      "name": "Evolution Managed MongoDB",
+      "description": "Управляемая БД MongoDB. Тарифицируется pay-as-you-go по vCPU, RAM и дисковому пространству.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["MongoDB"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MongoDB",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-mongodb"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-redis",
+      "name": "Evolution Managed Redis",
+      "description": "Управляемая in-memory СУБД Redis. Тарифицируется pay-as-you-go.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Redis"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "Redis",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-redis"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-kafka",
+      "name": "Evolution Managed Kafka",
+      "description": "Управляемый Apache Kafka для потоковой обработки сообщений. Тарифицируется pay-as-you-go.",
+      "category": "Cloud Streaming",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Apache Kafka"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "Apache Kafka",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-kafka"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-clickhouse",
+      "name": "Evolution Managed ClickHouse",
+      "description": "Управляемый ClickHouse для аналитических нагрузок. Тарифицируется pay-as-you-go.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["ClickHouse"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "ClickHouse",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-clickhouse"
+    },
+    {
+      "service_id": "cloudru-evolution-managed-mysql",
+      "name": "Evolution Managed MySQL",
+      "description": "Управляемая БД MySQL. Тарифицируется pay-as-you-go.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["MySQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MySQL",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-managed-mysql"
+    },
+    {
+      "service_id": "cloudru-evolution-artifact-registry",
+      "name": "Evolution Artifact Registry",
+      "description": "Реестр контейнерных образов и артефактов. Тарификация по объёму хранения.",
+      "category": "DevOps",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Container Registry"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-artifact-registry"
+    },
+    {
+      "service_id": "cloudru-evolution-object-storage",
+      "name": "Evolution Object Storage — однозональное S3",
+      "description": "Объектное S3-хранилище. Цена за 1 ГБ хранения в месяц (без НДС). 15 ГБ бесплатно в составе free tier.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.93,
+        "price_per_month_rub": 0.93
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Single-zone Standard",
+        "unit": "ГБ/месяц",
+        "free_tier_gb": 15,
+        "vat_included": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-object-storage"
+    },
+    {
+      "service_id": "cloudru-evolution-block-storage",
+      "name": "Evolution Block Storage — облачные диски",
+      "description": "Блочные диски (SSD/NVMe) для виртуальных машин Evolution. Тарификация по объёму хранения; точные ставки см. в Evolution Compute price-list.",
+      "category": "Block Storage",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["SSD", "NVMe"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-block-storage"
+    },
+    {
+      "service_id": "cloudru-evolution-file-storage",
+      "name": "Evolution File Storage — файловое хранилище",
+      "description": "Масштабируемое файловое хранилище для нескольких ВМ. Тарификация по объёму хранения.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-file-storage"
+    },
+    {
+      "service_id": "cloudru-evolution-load-balancer",
+      "name": "Evolution Load Balancer",
+      "description": "Управляемый балансировщик нагрузки. Pay-as-you-go тарификация.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-load-balancer"
+    },
+    {
+      "service_id": "cloudru-evolution-dns",
+      "name": "Evolution DNS",
+      "description": "Управляемый DNS-сервис (зоны и записи). Тарификация по числу зон и запросов.",
+      "category": "DNS",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["DNS"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-dns"
+    },
+    {
+      "service_id": "cloudru-evolution-cdn",
+      "name": "Evolution Content Delivery Network",
+      "description": "Сервис доставки контента Evolution CDN. Тарификация по объёму исходящего трафика.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-cdn"
+    },
+    {
+      "service_id": "cloudru-evolution-monitoring",
+      "name": "Evolution Monitoring",
+      "description": "Мониторинг облачной инфраструктуры (метрики, алерты). Тарификация pay-as-you-go.",
+      "category": "Monitoring",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-monitoring"
+    },
+    {
+      "service_id": "cloudru-evolution-logging",
+      "name": "Evolution Logging",
+      "description": "Управляемый сервис сбора и хранения логов. Тарификация по объёму логов.",
+      "category": "Logging",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/evolution-logging"
+    },
+    {
+      "service_id": "cloudru-sd-wan",
+      "name": "Cloud SD-WAN",
+      "description": "Управляемая SD-WAN сеть для объединения филиальных площадок и облака. Стоимость рассчитывается под проект.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["SD-WAN"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/sd-wan"
+    },
+    {
+      "service_id": "cloudru-vmware",
+      "name": "Cloud VMware — публичное и приватное облако на VMware",
+      "description": "Виртуальные ЦОД на платформе VMware от Cloud.ru. Стоимость рассчитывается под конфигурацию (vCPU/RAM/диски/Edge-роутеры).",
+      "category": "VMware Cloud",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["VMware"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/cloud-vmware"
+    },
+    {
+      "service_id": "cloudru-cloud-backup",
+      "name": "Cloud Backup — резервное копирование",
+      "description": "Сервис резервного копирования ВМ и физических серверов в облако. Тарификация по числу защищаемых устройств и объёму резервных копий.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "pay_as_you_go",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/cloud-backup"
+    },
+    {
+      "service_id": "cloudru-cloud-disaster-recovery",
+      "name": "Cloud Disaster Recovery (DRaaS)",
+      "description": "Аварийное восстановление инфраструктуры в облако Cloud.ru. Стоимость рассчитывается под проект.",
+      "category": "Disaster Recovery",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/cloud-disaster-recovery"
+    },
+    {
+      "service_id": "cloudru-cloud-bare-metal",
+      "name": "Cloud Bare Metal — физический сервер",
+      "description": "Аренда физического сервера. Тарифицируется индивидуально под конфигурацию.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://cloud.ru/products/cloud-bare-metal"
+    }
+  ]
+}

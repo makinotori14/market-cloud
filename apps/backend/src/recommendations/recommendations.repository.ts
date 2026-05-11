@@ -30,6 +30,7 @@ type RecommendationRow = {
   risks: string[];
   estimated_cost_level: "low" | "medium" | "high";
   icon: string;
+  raw_payload: unknown;
 };
 
 @Injectable()
@@ -76,7 +77,7 @@ export class RecommendationsRepository {
       await client.query("BEGIN");
       await client.query("DELETE FROM cloud_recommendations WHERE request_id = $1", [requestId]);
 
-      for (const recommendation of recommendations) {
+      for (const [index, recommendation] of recommendations.entries()) {
         await client.query(
           `INSERT INTO cloud_recommendations (
             request_id,
@@ -105,7 +106,11 @@ export class RecommendationsRepository {
             recommendation.risks,
             recommendation.estimatedCostLevel,
             recommendation.icon,
-            rawPayload,
+            {
+              response: rawPayload,
+              explanation: recommendation.explanation,
+              rankPosition: index,
+            },
           ],
         );
       }
@@ -181,7 +186,7 @@ export class RecommendationsRepository {
       `SELECT *
        FROM cloud_recommendations
        WHERE request_id = $1
-       ORDER BY final_score DESC`,
+       ORDER BY COALESCE((raw_payload->>'rankPosition')::int, 2147483647), final_score DESC`,
       [requestId],
     );
 
@@ -197,7 +202,21 @@ export class RecommendationsRepository {
       risks: row.risks,
       estimatedCostLevel: row.estimated_cost_level,
       icon: row.icon,
+      explanation: this.extractExplanation(row.raw_payload),
     }));
+  }
+
+  private extractExplanation(rawPayload: unknown): CloudRecommendation["explanation"] {
+    if (!rawPayload || typeof rawPayload !== "object") {
+      return undefined;
+    }
+
+    const explanation = (rawPayload as { explanation?: unknown }).explanation;
+    if (!explanation || typeof explanation !== "object") {
+      return undefined;
+    }
+
+    return explanation as CloudRecommendation["explanation"];
   }
 
   private toRequest(

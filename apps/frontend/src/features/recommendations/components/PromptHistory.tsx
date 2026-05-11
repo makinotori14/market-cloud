@@ -33,7 +33,7 @@ export function PromptHistory({
   const canClear = items.length > 0 && !isClearing;
 
   return (
-    <aside className="flex min-h-0 flex-col bg-[#07111f] p-7 text-white lg:h-[calc(100vh-56px)]">
+    <aside className="flex max-h-[48vh] min-h-0 flex-col overflow-hidden bg-[#07111f] p-5 text-white sm:max-h-[42vh] md:p-7 lg:h-[calc(100vh-56px)] lg:max-h-none">
       <div className="flex items-center gap-4">
         <div className="grid h-11 w-11 place-items-center rounded-ui border border-white/[0.12] bg-white shadow-[0_14px_28px_rgba(0,119,255,0.24)]">
           <Image

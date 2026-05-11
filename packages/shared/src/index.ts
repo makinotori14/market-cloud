@@ -7,6 +7,14 @@ export const recommendationStatusSchema = z.enum([
   "failed",
 ]);
 
+export const recommendationExplanationSchema = z.object({
+  shortExplanation: z.string().min(1),
+  detailedExplanation: z.string().min(1),
+  keyMatches: z.array(z.string().min(1)).default([]),
+  riskMitigation: z.string().min(1).nullable().default(null),
+  budgetAnalysis: z.string().min(1),
+});
+
 export const cloudRecommendationSchema = z.object({
   id: z.string(),
   provider: z.string().min(1),
@@ -19,6 +27,7 @@ export const cloudRecommendationSchema = z.object({
   risks: z.array(z.string().min(1)).default([]),
   estimatedCostLevel: z.enum(["low", "medium", "high"]),
   icon: z.string().default("/cloud-service.svg"),
+  explanation: recommendationExplanationSchema.optional(),
 });
 
 export const recommendationRequestSchema = z.object({
@@ -53,6 +62,7 @@ export const recommendationQueueStatsSchema = z.object({
 });
 
 export type RecommendationStatus = z.infer<typeof recommendationStatusSchema>;
+export type RecommendationExplanation = z.infer<typeof recommendationExplanationSchema>;
 export type CloudRecommendation = z.infer<typeof cloudRecommendationSchema>;
 export type RecommendationRequest = z.infer<typeof recommendationRequestSchema>;
 export type CreateRecommendationInput = z.infer<typeof createRecommendationSchema>;

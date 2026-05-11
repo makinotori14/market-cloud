@@ -34,9 +34,11 @@ export class RecommendationProcessor extends WorkerHost {
           ? await this.liveRecommendationEngine.getRecommendations(prompt)
           : await this.yandexCloud.getRecommendations(prompt);
       const parsed = yandexCloudStubResponseSchema.parse(response);
-      const sorted = sortByFinalScore(parsed.recommendations);
+      const recommendations = response.model.includes("sentence-bert-ranker")
+        ? parsed.recommendations
+        : sortByFinalScore(parsed.recommendations);
 
-      await this.repository.saveCompleted(requestId, sorted, parsed);
+      await this.repository.saveCompleted(requestId, recommendations, parsed);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unknown recommendation error";
       await this.repository.markFailed(requestId, message);

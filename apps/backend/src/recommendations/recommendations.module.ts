@@ -8,6 +8,7 @@ import { RecommendationProcessor } from "./workers/recommendation.processor.js";
 import { CloudRankerClient } from "./providers/cloud-ranker.client.js";
 import { LiveRecommendationEngine } from "./providers/live-recommendation.engine.js";
 import { YandexAiStudioClient } from "./providers/yandex-ai-studio.client.js";
+import { YandexExplanationAgentClient } from "./providers/yandex-explanation-agent.client.js";
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { YandexAiStudioClient } from "./providers/yandex-ai-studio.client.js";
     RecommendationsService,
     RecommendationProcessor,
     YandexAiStudioClient,
+    YandexExplanationAgentClient,
     CloudRankerClient,
     LiveRecommendationEngine,
   ],

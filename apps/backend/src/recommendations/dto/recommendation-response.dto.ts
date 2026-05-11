@@ -1,5 +1,22 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 
+export class RecommendationExplanationDto {
+  @ApiProperty()
+  shortExplanation!: string;
+
+  @ApiProperty()
+  detailedExplanation!: string;
+
+  @ApiProperty({ type: [String] })
+  keyMatches!: string[];
+
+  @ApiPropertyOptional({ nullable: true })
+  riskMitigation!: string | null;
+
+  @ApiProperty()
+  budgetAnalysis!: string;
+}
+
 export class CloudRecommendationDto {
   @ApiProperty()
   id!: string;
@@ -33,6 +50,9 @@ export class CloudRecommendationDto {
 
   @ApiProperty()
   icon!: string;
+
+  @ApiPropertyOptional({ type: RecommendationExplanationDto })
+  explanation?: RecommendationExplanationDto;
 }
 
 export class RecommendationRequestDto {

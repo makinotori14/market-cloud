@@ -20,6 +20,9 @@ const envSchema = z.object({
   YANDEX_AI_STUDIO_BASE_URL: z.string().url().default("https://ai.api.cloud.yandex.net/v1"),
   YANDEX_AI_STUDIO_PROJECT_ID: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
   YANDEX_AI_STUDIO_PROMPT_ID: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
+  YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID: z
+    .preprocess(emptyStringToUndefined, z.string().min(1).optional())
+    .default("fvt1jccdtho0afu161fd"),
   RANKER_API_URL: z.string().url().default("http://ranker:8000"),
   DEBUG_RANKER_INTENT: z.preprocess(stringToBoolean, z.boolean()).default(false),
 });

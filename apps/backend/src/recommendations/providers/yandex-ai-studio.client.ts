@@ -3,64 +3,10 @@ import { ConfigService } from "@nestjs/config";
 import type { EnvConfig } from "../../config/env.schema.js";
 import {
   aiStudioIntentSchema,
+  extractionAgentOutputSchema,
   type AiStudioIntent,
+  type ExtractionAgentOutput,
 } from "../schemas/recommendation.schema.js";
-
-const systemPrompt = `Ты — Senior Cloud Solutions Architect и бизнес-аналитик в Т1 Облако. Твоя задача — проанализировать свободный текстовый запрос клиента, понять его бизнес-логику (даже если она описана простыми словами) и перевести её в структурированный JSON.
-
-Этот JSON будет использоваться детерминированным Python-движком для жесткой фильтрации, символьного матчинга (Jaccard Index) и векторного поиска (Sentence-BERT).
-
-ПРАВИЛА АНАЛИЗА И "ТЕЛЕПАТИИ" (Эвристики):
-1. Определи primary_service_type — основной тип услуги, которую ищет клиент. Используй канонические значения: "virtual_server", "managed_kubernetes", "managed_database", "object_storage", "cloud_backup", "load_balancer", "cdn", "waf", "message_queue", "api_gateway", "bare_metal", "gpu_server".
-2. Если пользователь пишет "VPS", "VDS", "ВПС", "ВДС", "облачный сервер", "виртуальная машина", "ВМ", "сервер для backend", "backend-сервер" -> primary_service_type: "virtual_server".
-3. Если пользователь указывает CPU/RAM/disk, ОБЯЗАТЕЛЬНО извлеки числа в resource_requirements: cpu_min, ram_gb_min, disk_gb_min. Не теряй эти ограничения и не оставляй их только в semantic_query.
-4. Для SSD-диска ставь resource_requirements.disk_type: "ssd". Если пользователь просит быстрый диск, IOPS, production под нагрузкой или стабильность важнее цены -> high_iops_preferred: true.
-5. Защита и 152-ФЗ: Если упомянуты "пользователи", "паспорта", "медицина", "оплата", "РФ", "Россия", "госсектор", "152-ФЗ", "персональные данные", "безопасно" -> requires_152fz: true. Если упомянута Россия/РФ, ставь country: "RU".
-6. WAF добавляй только если есть публичное web-приложение, личный кабинет, формы, платежи, HTTP/API под атаками или явное требование защиты web-трафика. Не добавляй WAF только из-за 152-ФЗ.
-7. Managed Database добавляй только если явно упомянуты база данных, PostgreSQL, MySQL, ClickHouse, MongoDB, Redis как хранилище данных. Не добавляй Managed Database для обычного backend-сервера без упоминания БД.
-8. "Резервные копии", "бэкап", "backup", "восстановление" -> workload.backup_required: true и inferred_needs добавь "cloud_backup".
-9. "Стабильная сеть", "production", "надежность", "нагрузка" -> workload.stage: "production", workload.stable_network_required: true. Load Balancer добавляй в optional_needs, если не сказано явно про балансировку, горизонтальное масштабирование или несколько инстансов.
-10. "Пет-проект, MVP, стартап" -> budget_priority: "min_price" или "balanced", inferred_needs: "managed", "serverless". "production", "enterprise", "стабильность важнее цены" -> budget_priority: "performance_over_min_price".
-11. Используй канонические теги в explicit_needs, inferred_needs и optional_needs: "virtual_server", "backend", "production", "ssd", "high_iops_ssd", "cloud_backup", "load_balancer", "managed_database", "object_storage", "kubernetes", "waf", "cdn", "152-fz", "ru".
-12. Фильтр провайдеров: используй enabled_providers только если пользователь явно просит видеть или не видеть конкретных провайдеров. Канонические id: "vkcloud" (VK Cloud), "selectel" (Selectel), "t1cloud" (T1 Cloud / Т1 Облако), "edgecenter" (EdgeCenter). Если ограничений по провайдерам нет, enabled_providers: null. Если пользователь пишет "только Selectel и VK Cloud" — enabled_providers: ["selectel", "vkcloud"]. Если пишет "без Selectel" или "не показывай T1" — enabled_providers должны содержать всех провайдеров, кроме исключенных.
-
-ПРАВИЛА ГЕНЕРАЦИИ SEMANTIC QUERY:
-Ты должен написать 2-3 связных предложения (на русском языке), которые профессионально описывают архитектуру проекта.
-Включи в этот текст как явно упомянутые технологии, так и выявленные тобой скрытые потребности. Точные числовые требования к машине (CPU/RAM/диск) обязательно держи в resource_requirements; semantic_query не должен быть единственным местом, где эти числа присутствуют. НЕ используй JSON-форматирование или списки в этом поле, только связный текст.
-
-ФОРМАТ ОТВЕТА:
-Исключительно валидный JSON. Без маркдауна, без вводных слов.
-
-СХЕМА JSON:
-{
-  "task_type": "string",
-  "primary_service_type": "string" | null,
-  "requires_152fz": boolean,
-  "budget_max_rub": number | null,
-  "budget_priority": "min_price" | "balanced" | "performance_over_min_price" | null,
-  "region": "string" | null,
-  "country": "string" | null,
-  "enabled_providers": ["vkcloud" | "selectel" | "t1cloud" | "edgecenter"] | null,
-  "resource_requirements": {
-    "cpu_min": number | null,
-    "ram_gb_min": number | null,
-    "disk_gb_min": number | null,
-    "disk_type": "string" | null,
-    "high_iops_preferred": boolean
-  },
-  "workload": {
-    "stage": "string" | null,
-    "availability": "string" | null,
-    "backup_required": boolean,
-    "stable_network_required": boolean
-  },
-  "explicit_needs": ["string"],
-  "extracted_tech_stack": ["string"],
-  "inferred_needs": ["string"],
-  "optional_needs": ["string"],
-  "semantic_query": "string",
-  "reasoning_summary": "string"
-}`;
 
 type ResponsesApiPayload = {
   output_text?: string;
@@ -72,7 +18,7 @@ type ResponsesApiPayload = {
   }>;
 };
 
-const allProviderIds = ["vkcloud", "selectel", "t1cloud", "edgecenter"] as const;
+const allProviderIds = ["vkcloud", "selectel", "t1cloud", "edgecenter", "yandexcloud", "cloudru"] as const;
 type ProviderId = (typeof allProviderIds)[number];
 
 const providerAliases: Record<ProviderId, RegExp[]> = {
@@ -80,6 +26,8 @@ const providerAliases: Record<ProviderId, RegExp[]> = {
   selectel: [/\bselectel\b/i, /селектел/i],
   t1cloud: [/\bt1\s*cloud\b/i, /\bt1cloud\b/i, /\bt1\b/i, /т1\s*облак\w*/i, /т1\s*cloud/i],
   edgecenter: [/\bedge\s*center\b/i, /\bedgecenter\b/i, /эдж\s*центр/i, /эджцентр/i],
+  yandexcloud: [/\byandex\s*cloud\b/i, /\byandexcloud\b/i, /яндекс\s*облак\w*/i, /яндекс\s*cloud/i],
+  cloudru: [/\bcloud\.?\s*ru\b/i, /\bcloudru\b/i, /клауд\.?\s*ру/i, /облако\.?\s*ру/i, /сбер\s*cloud/i, /сбер\s*клауд/i],
 };
 
 type ProviderMention = {
@@ -131,7 +79,9 @@ const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
 export class YandexAiStudioClient {
   constructor(private readonly config: ConfigService<EnvConfig, true>) {}
 
-  async extractIntent(input: string): Promise<{ intent: AiStudioIntent; raw: unknown }> {
+  async extractIntent(
+    input: string,
+  ): Promise<{ intent: AiStudioIntent; extraction: ExtractionAgentOutput; raw: unknown }> {
     const apiKey = this.config.get("YANDEX_AI_STUDIO_API_KEY", { infer: true });
     const promptId = this.config.get("YANDEX_AI_STUDIO_PROMPT_ID", { infer: true });
     const projectId = this.config.get("YANDEX_AI_STUDIO_PROJECT_ID", { infer: true });
@@ -164,7 +114,6 @@ export class YandexAiStudioClient {
         prompt: {
           id: resolvedPromptId,
         },
-        instructions: systemPrompt,
         input,
       }),
     });
@@ -179,13 +128,149 @@ export class YandexAiStudioClient {
 
     const outputText = this.extractOutputText(raw);
     const parsedJson = JSON.parse(this.stripJsonFence(outputText)) as unknown;
-    const parsedIntent = aiStudioIntentSchema.parse(parsedJson);
+    const extraction = extractionAgentOutputSchema.parse(parsedJson);
+    const parsedIntent = aiStudioIntentSchema.parse(this.toAiStudioIntent(extraction));
     const intent = this.enrichEnabledProviders(
       input,
       this.enrichResourceRequirements(input, this.enrichPrimaryServiceType(input, parsedIntent)),
     );
 
-    return { intent, raw };
+    return { intent, extraction, raw: { ...raw, extraction } };
+  }
+
+  private toAiStudioIntent(extraction: ExtractionAgentOutput): AiStudioIntent {
+    const requires152Fz = extraction.compliance_tags.some((tag) => this.normalizeToken(tag) === "152fz");
+    const country = extraction.regional_requirements.some((region) => this.isRussiaRegion(region)) || requires152Fz
+      ? "RU"
+      : null;
+
+    return {
+      task_type: extraction.task_category || "web-hosting",
+      primary_service_type: this.primaryServiceTypeFromCategories(extraction.service_categories),
+      requires_152fz: requires152Fz,
+      budget_max_rub: extraction.budget_max_rub,
+      budget_priority: this.budgetPriorityFromConstraints(extraction.budget_constraints),
+      region: extraction.regional_requirements[0] ?? null,
+      country,
+      enabled_providers: this.enabledProvidersFromExcluded(extraction.excluded_providers),
+      resource_requirements: {
+        cpu_min: null,
+        ram_gb_min: null,
+        disk_gb_min: null,
+        disk_type: null,
+        high_iops_preferred: extraction.expanded_tags.some((tag) => /high[-\s]?iops|nvme/.test(tag)),
+      },
+      workload: {
+        stage: extraction.availability_requirements.length > 0 ? "production" : null,
+        availability: extraction.availability_requirements.includes("high-availability")
+          ? "high-availability"
+          : null,
+        backup_required: extraction.availability_requirements.includes("backup-required"),
+        stable_network_required: extraction.availability_requirements.includes("high-availability"),
+      },
+      explicit_needs: this.unique([
+        ...extraction.service_categories.map((category) => this.primaryServiceTypeFromCategories([category]) ?? category),
+        ...extraction.compliance_tags.map((tag) => tag.toLowerCase()),
+      ]),
+      extracted_tech_stack: extraction.tech_stack,
+      inferred_needs: this.unique([
+        ...extraction.predicted_needs,
+        ...extraction.availability_requirements,
+        ...extraction.business_context,
+      ]),
+      optional_needs: this.unique([
+        ...extraction.expanded_tags,
+        ...extraction.embedding_chunks,
+        ...(extraction.implicit_use_case ? [extraction.implicit_use_case] : []),
+      ]),
+      excluded_service_categories: extraction.excluded_service_categories,
+      semantic_query: this.semanticQueryFromExtraction(extraction),
+      reasoning_summary: extraction.task_summary || extraction.semantic_query || extraction.task_category,
+    };
+  }
+
+  private primaryServiceTypeFromCategories(categories: readonly string[]): string | null {
+    const text = categories.map((category) => this.normalizeToken(category)).join(" ");
+
+    if (!text) {
+      return null;
+    }
+    if (/cloudcompute|compute|vps|vds|virtualserver/.test(text)) {
+      return "virtual_server";
+    }
+    if (/managedserviceforpostgresql|managedserviceformysql|database|postgres|mysql|clickhouse|redis/.test(text)) {
+      return "managed_database";
+    }
+    if (/objectstorage|s3|bucket/.test(text)) {
+      return "object_storage";
+    }
+    if (/kubernetes|containers/.test(text)) {
+      return "managed_kubernetes";
+    }
+    if (/backup/.test(text)) {
+      return "cloud_backup";
+    }
+    if (/cdn/.test(text)) {
+      return "cdn";
+    }
+    if (/waf/.test(text)) {
+      return "waf";
+    }
+    if (/loadbalancer/.test(text)) {
+      return "load_balancer";
+    }
+
+    return null;
+  }
+
+  private budgetPriorityFromConstraints(constraints: readonly string[]): AiStudioIntent["budget_priority"] {
+    const normalized = constraints.map((constraint) => this.normalizeToken(constraint));
+
+    if (normalized.some((constraint) => constraint === "enterprisebudget")) {
+      return "performance_over_min_price";
+    }
+    if (normalized.some((constraint) => constraint === "lowbudget" || constraint === "costoptimized")) {
+      return "min_price";
+    }
+    if (normalized.some((constraint) => constraint === "mediumbudget")) {
+      return "balanced";
+    }
+
+    return null;
+  }
+
+  private enabledProvidersFromExcluded(excludedProviders: readonly string[]): ProviderId[] | null {
+    const excluded = new Set(this.normalizeProviderIds(excludedProviders));
+    if (excluded.size === 0) {
+      return null;
+    }
+
+    return allProviderIds.filter((provider) => !excluded.has(provider));
+  }
+
+  private semanticQueryFromExtraction(extraction: ExtractionAgentOutput): string {
+    const semanticParts = [
+      extraction.semantic_query,
+      ...extraction.embedding_chunks,
+      ...extraction.expanded_tags,
+    ]
+      .map((value) => value.trim())
+      .filter(Boolean);
+
+    return this.unique(semanticParts).join(" ").slice(0, 500) || extraction.task_summary || extraction.task_category;
+  }
+
+  private isRussiaRegion(value: string): boolean {
+    const normalized = this.normalizeToken(value);
+    return /росси|москва|рф|ru|russia/.test(normalized);
+  }
+
+  private normalizeToken(value: string): string {
+    return value.toLowerCase().replace(/ё/g, "е").replace(/[^a-zа-я0-9]+/g, "");
+  }
+
+  private unique<T>(values: readonly T[]): T[] {
+    return [...new Set(values)];
   }
 
   private enrichPrimaryServiceType(input: string, intent: AiStudioIntent): AiStudioIntent {
@@ -204,7 +289,7 @@ export class YandexAiStudioClient {
     const extracted = this.extractEnabledProviders(input);
 
     if (extracted === undefined) {
-      return { ...intent, enabled_providers: null };
+      return { ...intent, enabled_providers: intent.enabled_providers ?? null };
     }
 
     return {
@@ -399,12 +484,14 @@ export class YandexAiStudioClient {
 
   private normalizeProviderIds(values: readonly string[]): ProviderId[] {
     const normalized = values
-      .map((value) => value.toLowerCase().replace(/[\s_-]+/g, ""))
+      .map((value) => value.toLowerCase().replace(/[\s._-]+/g, ""))
       .flatMap((value) => {
         if (value === "vkcloud" || value === "vk") return ["vkcloud" as ProviderId];
         if (value === "selectel") return ["selectel" as ProviderId];
         if (value === "t1cloud" || value === "t1" || value === "т1облако") return ["t1cloud" as ProviderId];
         if (value === "edgecenter") return ["edgecenter" as ProviderId];
+        if (value === "yandexcloud" || value === "yandex" || value === "яндексоблако") return ["yandexcloud" as ProviderId];
+        if (value === "cloudru" || value === "клаудру" || value === "облакору" || value === "сберcloud" || value === "сберклауд") return ["cloudru" as ProviderId];
         return [];
       });
 

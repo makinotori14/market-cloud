@@ -1,21 +1,25 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { Textarea } from "@/shared/ui/textarea";
 
 type PromptFormProps = {
   isSubmitting: boolean;
+  prompt: string;
   queueCount: number;
+  onPromptChange: (prompt: string) => void;
   onSubmit: (prompt: string) => void;
 };
 
-export function PromptForm({ isSubmitting, queueCount, onSubmit }: PromptFormProps) {
-  const [prompt, setPrompt] = useState(
-    "Нужна облачная архитектура для SaaS-платформы с Kubernetes, PostgreSQL, очередями, CDN и observability.",
-  );
-
+export function PromptForm({
+  isSubmitting,
+  prompt,
+  queueCount,
+  onPromptChange,
+  onSubmit,
+}: PromptFormProps) {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     onSubmit(prompt);
@@ -29,7 +33,7 @@ export function PromptForm({ isSubmitting, queueCount, onSubmit }: PromptFormPro
       <Textarea
         id="prompt"
         value={prompt}
-        onChange={(event) => setPrompt(event.target.value)}
+        onChange={(event) => onPromptChange(event.target.value)}
         placeholder="Опишите задачу, ограничения, нагрузку, требования к данным и инфраструктуре..."
       />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

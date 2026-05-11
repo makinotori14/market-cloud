@@ -48,13 +48,14 @@ class UserIntent(BaseModel):
     extracted_tech_stack: list[str] = Field(default_factory=list)
     inferred_needs: list[str] = Field(default_factory=list)
     optional_needs: list[str] = Field(default_factory=list)
+    excluded_service_categories: list[str] = Field(default_factory=list)
     semantic_query: str = Field("", description="Текст для векторизации Sentence-BERT")
     reasoning_summary: str = Field("", description="Краткое объяснение скрытых потребностей")
 
 
 class RankRequest(BaseModel):
     user_intent: UserIntent
-    top_n: int = Field(7, ge=1, le=20)
+    top_n: int = Field(10, ge=1, le=20)
 
 
 class MetricBreakdown(BaseModel):
@@ -126,6 +127,8 @@ PROVIDER_ALIASES: dict[str, list[str]] = {
     "selectel": ["selectel", "селектел"],
     "t1cloud": ["t1cloud", "t1 cloud", "t1", "т1 облако", "т1"],
     "edgecenter": ["edgecenter", "edge center", "эдж центр"],
+    "yandexcloud": ["yandexcloud", "yandex cloud", "yandex", "яндекс облако", "яндекс"],
+    "cloudru": ["cloudru", "cloud.ru", "cloud ru", "клауд ру", "облако ру"],
 }
 
 
@@ -240,7 +243,7 @@ def canonical_provider_id(value: Any) -> Optional[str]:
     if not text:
         return None
 
-    compact = text.replace(" ", "")
+    compact = text.replace(" ", "").replace(".", "")
     for canonical, aliases in PROVIDER_ALIASES.items():
         if compact == canonical or any(normalize_token(alias) in text for alias in aliases):
             return canonical
@@ -276,6 +279,22 @@ def service_matches_primary_type(intent: UserIntent, service: IndexedService) ->
         return True
 
     return service_type(service) == expected_type
+
+
+def service_is_excluded(intent: UserIntent, service: IndexedService) -> bool:
+    excluded = {
+        canonical_service_type(category)
+        for category in intent.excluded_service_categories
+        if canonical_service_type(category)
+    }
+    if not excluded:
+        return False
+
+    service_values = {
+        canonical_service_type(service.category),
+        canonical_service_type(service.attributes.get("resource_type")),
+    }
+    return bool(excluded.intersection(value for value in service_values if value))
 
 
 def service_search_text(service: dict[str, Any], provider_name: str) -> str:
@@ -715,6 +734,31 @@ def region_matches(requested_region: Optional[str], service_regions: list[str]) 
     return False
 
 
+def top_with_distinct_providers(
+    scored_services: list[RecommendedService],
+    top_n: int,
+) -> list[RecommendedService]:
+    best_by_provider: dict[str, RecommendedService] = {}
+    for service in scored_services:
+        provider_id = canonical_provider_id(service.provider_name) or normalize_token(service.provider_name)
+        if provider_id not in best_by_provider:
+            best_by_provider[provider_id] = service
+
+    provider_leaders = sorted(
+        best_by_provider.values(),
+        key=lambda service: service.final_score_100,
+        reverse=True,
+    )[:3]
+    selected_ids = {service.service_id for service in provider_leaders}
+    remaining = [
+        service
+        for service in scored_services
+        if service.service_id not in selected_ids
+    ]
+
+    return [*provider_leaders, *remaining][:top_n]
+
+
 @app.get("/health")
 def health() -> dict[str, Any]:
     return {
@@ -770,6 +814,8 @@ async def rank_services(request: RankRequest) -> RankResponse:
     eligible_services: list[tuple[int, IndexedService, float]] = []
     for index, service in enumerate(indexed_services):
         if not provider_is_enabled(service, enabled_providers):
+            continue
+        if service_is_excluded(intent, service):
             continue
         if not service_matches_primary_type(intent, service):
             continue
@@ -845,7 +891,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
         )
 
     scored_services.sort(key=lambda x: x.final_score_100, reverse=True)
-    top = scored_services[: request.top_n]
+    top = top_with_distinct_providers(scored_services, request.top_n)
 
     return RankResponse(
         user_context={
@@ -863,6 +909,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
             "extracted_tech_stack": intent.extracted_tech_stack,
             "inferred_needs": intent.inferred_needs,
             "optional_needs": intent.optional_needs,
+            "excluded_service_categories": intent.excluded_service_categories,
             "semantic_query": intent.semantic_query,
             "reasoning_summary": intent.reasoning_summary,
             "requested_capabilities": capabilities,

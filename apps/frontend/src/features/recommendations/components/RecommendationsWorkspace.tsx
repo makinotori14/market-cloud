@@ -21,6 +21,8 @@ import {
 
 const themeStorageKey = "cloud-recommender:theme";
 const viewStorageKey = "cloud-recommender:results-view";
+const defaultPrompt =
+  "Нужна облачная архитектура для SaaS-платформы с Kubernetes, PostgreSQL, очередями, CDN и observability.";
 
 function getStoredTheme(): ThemeMode {
   const saved = window.localStorage.getItem(themeStorageKey);
@@ -35,6 +37,7 @@ function getStoredViewMode(): ResultsViewMode {
 export function RecommendationsWorkspace() {
   const queryClient = useQueryClient();
   const [activeId, setActiveId] = useState<string>();
+  const [prompt, setPrompt] = useState(defaultPrompt);
   const [theme, setTheme] = useState<ThemeMode>("system");
   const [viewMode, setViewMode] = useState<ResultsViewMode>("grid");
   const [arePreferencesReady, setArePreferencesReady] = useState(false);
@@ -106,9 +109,29 @@ export function RecommendationsWorkspace() {
 
   const clearHistoryMutation = useMutation({
     mutationFn: clearRecommendationHistory,
-    onSuccess: () => {
+    onMutate: async () => {
+      await queryClient.cancelQueries({ queryKey: ["recommendations", "history"] });
+
+      const previousHistory = queryClient.getQueryData(["recommendations", "history"]);
+      const previousActiveId = activeId;
+
       setActiveId(undefined);
-      queryClient.removeQueries({ queryKey: ["recommendations"], exact: false });
+      queryClient.setQueryData(["recommendations", "history"], []);
+
+      if (previousActiveId) {
+        queryClient.removeQueries({ queryKey: ["recommendations", previousActiveId], exact: true });
+      }
+
+      return { previousActiveId, previousHistory };
+    },
+    onError: (_error, _variables, context) => {
+      queryClient.setQueryData(["recommendations", "history"], context?.previousHistory);
+      setActiveId(context?.previousActiveId);
+    },
+    onSuccess: () => {
+      queryClient.setQueryData(["recommendations", "history"], []);
+    },
+    onSettled: () => {
       void queryClient.invalidateQueries({ queryKey: ["recommendations", "history"] });
       void queryClient.invalidateQueries({ queryKey: ["recommendations", "stats"] });
     },
@@ -126,21 +149,36 @@ export function RecommendationsWorkspace() {
       ? Math.max(statsQuery.data?.queued ?? 0, 1)
       : (statsQuery.data?.queued ?? 0);
 
+  function selectHistoryItem(id: string) {
+    setActiveId(id);
+
+    const historyItem = historyQuery.data?.find((item) => item.id === id);
+    if (historyItem) {
+      setPrompt(historyItem.prompt);
+      return;
+    }
+
+    const cachedRequest = queryClient.getQueryData(["recommendations", id]);
+    if (cachedRequest && typeof cachedRequest === "object" && "prompt" in cachedRequest) {
+      setPrompt(String(cachedRequest.prompt));
+    }
+  }
+
   return (
-    <main className="mx-auto min-h-screen w-full max-w-[1440px] p-4 md:p-7">
-      <section className="grid min-h-[calc(100vh-32px)] overflow-hidden rounded-ui border border-border bg-white/72 shadow-panel backdrop-blur-xl md:min-h-[calc(100vh-56px)] lg:h-[calc(100vh-56px)] lg:grid-cols-[360px_minmax(0,1fr)] dark:border-white/10 dark:bg-white/[0.05]">
+    <main className="mx-auto min-h-screen w-full max-w-[1440px] p-2 sm:p-4 md:p-7">
+      <section className="grid min-h-[calc(100vh-16px)] overflow-hidden rounded-ui border border-border bg-white/72 shadow-panel backdrop-blur-xl sm:min-h-[calc(100vh-32px)] md:min-h-[calc(100vh-56px)] lg:h-[calc(100vh-56px)] lg:grid-cols-[360px_minmax(0,1fr)] dark:border-white/10 dark:bg-white/[0.05]">
         <PromptHistory
           activeId={activeId}
           isClearing={clearHistoryMutation.isPending}
           isLoading={historyQuery.isLoading}
           items={historyQuery.data ?? []}
           onClear={() => clearHistoryMutation.mutate()}
-          onSelect={setActiveId}
+          onSelect={selectHistoryItem}
         />
 
-        <section className="min-h-0 overflow-y-auto p-5 md:p-8">
+        <section className="min-h-0 overflow-y-auto p-4 sm:p-5 md:p-8">
           <div className="grid content-start gap-5">
-            <section className="grid gap-5 rounded-ui border border-border bg-white p-6 dark:border-white/10 dark:bg-[#0c1726]">
+            <section className="grid gap-5 rounded-ui border border-border bg-white p-4 sm:p-6 dark:border-white/10 dark:bg-[#0c1726]">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
                   <p className="mb-2 text-xs font-extrabold uppercase text-accent">Запрос к агенту</p>
@@ -157,7 +195,9 @@ export function RecommendationsWorkspace() {
               </div>
               <PromptForm
                 isSubmitting={createMutation.isPending}
+                prompt={prompt}
                 queueCount={displayedQueueCount}
+                onPromptChange={setPrompt}
                 onSubmit={(prompt) => createMutation.mutate({ prompt })}
               />
               {createMutation.isError ? (

@@ -1,0 +1,919 @@
+{
+  "provider": {
+    "provider_id": "yandexcloud",
+    "name": "Yandex Cloud",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "yandexcloud-cloud-server-small-ice-2cpu-4ram-50ssd",
+      "name": "Cloud Server Small — 2 vCPU Intel Ice Lake, 4 GB RAM, 50 GB SSD",
+      "description": "Облачный сервер начального уровня для тестовых окружений, небольших API и сайтов. Расчет: 2 × vCPU Intel Ice Lake (100%) + 4 ГБ RAM + 50 ГБ сетевого SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 3520.8,
+        "price_per_month_rub": 3520.8
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 50,
+        "calculation": "2 * 892.8 + 4 * 237.6 + 50 * 15.696 = 3520.8",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-standard-ice-4cpu-16ram-200ssd",
+      "name": "Cloud Server Standard — 4 vCPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "Облачный сервер для backend-сервисов, веб-приложений и staging/prod окружений. Расчет: 4 × vCPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ сетевого SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 10518.0,
+        "price_per_month_rub": 10518.0
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 200,
+        "calculation": "4 * 892.8 + 16 * 237.6 + 200 * 15.696 = 10518.00",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-production-ice-8cpu-32ram-500ssd",
+      "name": "Cloud Server Production — 8 vCPU Intel Ice Lake, 32 GB RAM, 500 GB SSD",
+      "description": "Производственный сервер для нагруженного backend и корпоративных приложений. Расчет: 8 × vCPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ сетевого SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 22593.6,
+        "price_per_month_rub": 22593.6
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 892.8 + 32 * 237.6 + 500 * 15.696 = 22593.6",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-highperf-amdzen4co-8cpu-32ram-500localssd",
+      "name": "Cloud Server High Performance — 8 vCPU AMD Zen 4 (Compute Optimized), 32 GB RAM, 500 GB локальный SSD",
+      "description": "Высокопроизводительный сервер на AMD Zen 4 (Compute Optimized) для latency-sensitive backend, индексов, очередей. Расчет: 8 × vCPU AMD Zen 4 CO + 32 ГБ RAM + 500 ГБ локального SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 32500.49,
+        "price_per_month_rub": 32500.49
+      },
+      "tech_stack": ["AMD Zen 4", "Local SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "AMD Zen 4 (Compute Optimized)",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "Локальный SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 1843.2 + 32 * 338.184 + 500 * 14.256 = 32500.49",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-large-ice-16cpu-64ram-1000ssd",
+      "name": "Cloud Server Large — 16 vCPU Intel Ice Lake, 64 GB RAM, 1000 GB SSD",
+      "description": "Крупный сервер для высоконагруженных и аналитических задач. Расчет: 16 × vCPU Intel Ice Lake + 64 ГБ RAM + 1000 ГБ сетевого SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 45187.2,
+        "price_per_month_rub": 45187.2
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 1000,
+        "calculation": "16 * 892.8 + 64 * 237.6 + 1000 * 15.696 = 45187.2",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-interruptible-ice-4cpu-16ram-100ssd",
+      "name": "Cloud Server Прерываемый — 4 vCPU Intel Ice Lake, 16 GB RAM, 100 GB SSD",
+      "description": "Прерываемая ВМ для batch-обработки и dev-окружений. Расчет: 4 × прерываемый vCPU Intel Ice Lake + 16 ГБ прерываемой RAM + 100 ГБ сетевого SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 3503.4,
+        "price_per_month_rub": 3503.4
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "interruptible_vm",
+        "cpu_model": "Intel Ice Lake (preemptible)",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 100,
+        "calculation": "4 * 244.8 + 16 * 59.76 + 100 * 15.696 = 3503.4",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-gpu-a100-package",
+      "name": "Cloud GPU — 1× NVIDIA A100, 16 vCPU AMD EPYC, 128 GB RAM",
+      "description": "GPU-инстанс на NVIDIA A100 для ML/LLM-задач. Расчет: 1 × GPU A100 + 16 × vCPU AMD EPYC + 128 ГБ RAM AMD EPYC.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 313486.46,
+        "price_per_month_rub": 313486.46
+      },
+      "tech_stack": ["NVIDIA A100", "AMD EPYC"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA A100",
+        "vram_gb": 80,
+        "cpu_model": "AMD EPYC",
+        "cpu": 16,
+        "ram_gb": 128,
+        "calculation": "293846.4 + 16 * 711.504 + 128 * приблизительно RAM EPYC (взято 64.06 ₽/ГБ) ≈ 313486.46",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-gpu-cluster-standard",
+      "name": "Высокоскоростной кластер GPU — ВМ",
+      "description": "Готовый пакет: высокоскоростной кластер GPU (1 ВМ × месяц).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 50277.6,
+        "price_per_month_rub": 50277.6
+      },
+      "tech_stack": ["NVIDIA GPU"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_cluster_vm",
+        "unit": "ВМ × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-gpu-cluster-platform-v4",
+      "name": "Высокоскоростной кластер GPU — платформа GPU PLATFORM V4",
+      "description": "Готовый пакет: высокоскоростной кластер GPU на платформе V4 (1 ВМ × месяц).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 242265.6,
+        "price_per_month_rub": 242265.6
+      },
+      "tech_stack": ["NVIDIA GPU", "GPU Platform V4"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_cluster_vm",
+        "unit": "ВМ × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-object-storage-standard",
+      "name": "Object Storage — Стандартное хранилище",
+      "description": "Объектное хранилище класса Standard (Hot). Цена за 1 ГБ в месяц (свыше 720 единиц тарификации; до 720 — бесплатно).",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 2.376,
+        "price_per_month_rub": 2.376
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Standard/Hot",
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-object-storage-cold",
+      "name": "Object Storage — Холодное хранилище",
+      "description": "Объектное хранилище класса Cold. Цена за 1 ГБ в месяц.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 1.2672,
+        "price_per_month_rub": 1.2672
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Cold",
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-object-storage-ice",
+      "name": "Object Storage — Ледяное хранилище",
+      "description": "Объектное хранилище класса Ice (архивное) для долгосрочного хранения. Цена за 1 ГБ в месяц.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.6336,
+        "price_per_month_rub": 0.6336
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Ice/Archive",
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-mks-zonal-master",
+      "name": "Managed Service for Kubernetes — Зональный мастер",
+      "description": "Управляемый Kubernetes-кластер с зональной (без HA) мастер-нодой.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 6956.93,
+        "price_per_month_rub": 6956.93
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 1,
+        "high_availability": false,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-mks-regional-master",
+      "name": "Managed Service for Kubernetes — Региональный мастер (HA)",
+      "description": "Управляемый Kubernetes-кластер с региональной отказоустойчивой мастер-нодой.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 17582.05,
+        "price_per_month_rub": 17582.05
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "high_availability": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-mks-cluster-basic-1master-2worker",
+      "name": "Managed Kubernetes Basic Cluster — 1 зональный мастер + 2 worker (2 vCPU, 8 GB RAM, 100 GB SSD)",
+      "description": "Базовый кластер: зональный мастер + 2 worker-ноды (2 × vCPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ сетевого SSD).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 20094.53,
+        "price_per_month_rub": 20094.53
+      },
+      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 1,
+        "worker_nodes": 2,
+        "cpu_per_node": 2,
+        "ram_gb_per_node": 8,
+        "disk_gb_per_node": 100,
+        "calculation": "6956.93 + 2 * (2 * 892.8 + 8 * 237.6 + 100 * 15.696) = 20094.53",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-mks-cluster-production-3master-ha-3worker",
+      "name": "Managed Kubernetes Production Cluster — региональный мастер HA + 3 worker (8 vCPU, 32 GB RAM, 200 GB SSD)",
+      "description": "Production-кластер: региональный мастер HA + 3 worker-ноды (8 × vCPU Intel Ice Lake + 32 ГБ RAM + 200 ГБ сетевого SSD на узел).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 63029.41,
+        "price_per_month_rub": 63029.41
+      },
+      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 3,
+        "worker_nodes": 3,
+        "cpu_per_node": 8,
+        "ram_gb_per_node": 32,
+        "disk_gb_per_node": 200,
+        "high_availability": true,
+        "calculation": "17582.05 + 3 * (8 * 892.8 + 32 * 237.6 + 200 * 15.696) = 63029.41",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-postgresql-small",
+      "name": "Managed PostgreSQL Small — 2 vCPU AMD Zen 4, 8 GB RAM, 100 GB SSD",
+      "description": "Управляемая PostgreSQL начального уровня. Расчет: 2 × vCPU AMD Zen 4 + 8 ГБ RAM + 100 ГБ сетевого SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 7197.12,
+        "price_per_month_rub": 7197.12
+      },
+      "tech_stack": ["PostgreSQL", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_gb": 100,
+        "calculation": "2 * 1353.024 + 8 * 365.184 + 100 * 15.696 = 7197.12",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-postgresql-standard",
+      "name": "Managed PostgreSQL Standard — 4 vCPU AMD Zen 4, 16 GB RAM, 200 GB SSD",
+      "description": "Управляемая PostgreSQL для типовых продакшен-задач. Расчет: 4 × vCPU AMD Zen 4 + 16 ГБ RAM + 200 ГБ сетевого SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 14394.24,
+        "price_per_month_rub": 14394.24
+      },
+      "tech_stack": ["PostgreSQL", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 1353.024 + 16 * 365.184 + 200 * 15.696 = 14394.24",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-postgresql-production-highfreq",
+      "name": "Managed PostgreSQL Production HighFreq — 8 vCPU AMD Zen 4 HighFreq, 32 GB RAM, 500 GB SSD",
+      "description": "Высокопроизводительная PostgreSQL на HighFreq-CPU. Расчет: 8 × vCPU AMD Zen 4 HighFreq + 32 ГБ RAM + 500 ГБ сетевого SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 45310.08,
+        "price_per_month_rub": 45310.08
+      },
+      "tech_stack": ["PostgreSQL", "AMD Zen 4 HighFreq", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "tariff_class": "HighFreq",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "calculation": "8 * 2628 + 32 * 514.44 + 500 * 15.696 = 45310.08",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-mysql-standard",
+      "name": "Managed MySQL Standard — 4 vCPU AMD Zen 4, 16 GB RAM, 200 GB SSD",
+      "description": "Управляемая MySQL стандартной конфигурации. Расчет: 4 × vCPU AMD Zen 4 (стандартные хосты) + 16 ГБ RAM + 200 ГБ сетевого SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 14803.20,
+        "price_per_month_rub": 14803.20
+      },
+      "tech_stack": ["MySQL", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "MySQL",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 1389.6 + 16 * 381.6 + 200 * 15.696 = 14803.20",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-clickhouse-standard",
+      "name": "Managed ClickHouse Standard — 8 vCPU AMD Zen 4, 32 GB RAM, 500 GB SSD",
+      "description": "Управляемый ClickHouse для аналитических нагрузок. Расчет: 8 × vCPU AMD Zen 4 + 32 ГБ RAM + 500 ГБ сетевого SSD.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": 31662.0,
+        "price_per_month_rub": 31662.0
+      },
+      "tech_stack": ["ClickHouse", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "ClickHouse",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "calculation": "8 * 1425.6 + 32 * 388.8 + 500 * 15.696 = 31662.00",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-clickhouse-production",
+      "name": "Managed ClickHouse Production — 16 vCPU AMD Zen 4, 64 GB RAM, 1000 GB SSD",
+      "description": "Управляемый ClickHouse для крупной аналитики. Расчет: 16 × vCPU AMD Zen 4 + 64 ГБ RAM + 1000 ГБ сетевого SSD.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": 63324.0,
+        "price_per_month_rub": 63324.0
+      },
+      "tech_stack": ["ClickHouse", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "ClickHouse",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_gb": 1000,
+        "calculation": "16 * 1425.6 + 64 * 388.8 + 1000 * 15.696 = 63324.00",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-kafka-standard",
+      "name": "Managed Apache Kafka Standard — 4 vCPU AMD Zen 4, 16 GB RAM, 200 GB SSD",
+      "description": "Управляемый Apache Kafka для потоковой обработки сообщений. Расчет: 4 × vCPU брокера AMD Zen 4 + 16 ГБ RAM + 200 ГБ сетевого SSD.",
+      "category": "Cloud Streaming",
+      "pricing": {
+        "price_from_rub": 13469.4,
+        "price_per_month_rub": 13469.4
+      },
+      "tech_stack": ["Apache Kafka", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "Apache Kafka",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 1252.8 + 16 * 331.2 + 200 * 15.696 = 13469.40",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-opensearch-standard",
+      "name": "Managed OpenSearch Standard — 4 vCPU AMD Zen 4, 16 GB RAM, 200 GB SSD",
+      "description": "Управляемый OpenSearch для поиска и аналитики логов. Расчет: 4 × vCPU AMD Zen 4 + 16 ГБ RAM + 200 ГБ сетевого SSD.",
+      "category": "Cloud Search",
+      "pricing": {
+        "price_from_rub": 17999.04,
+        "price_per_month_rub": 17999.04
+      },
+      "tech_stack": ["OpenSearch", "AMD Zen 4", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "engine": "OpenSearch",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 1389.6 + 16 * 581.04 + 200 * 15.696 = 17999.04",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-network-load-balancer",
+      "name": "Network Load Balancer — сетевой балансировщик",
+      "description": "Сетевой балансировщик нагрузки (готовый пакет, 1 балансировщик за месяц).",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 662.4,
+        "price_per_month_rub": 662.4
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "price_per_hour_rub": 0.92,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-application-load-balancer-unit",
+      "name": "Application Load Balancer — 1 ресурсная единица",
+      "description": "Application Load Balancer для HTTP/HTTPS-трафика. Цена за 1 ресурсную единицу × месяц.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 1893.6,
+        "price_per_month_rub": 1893.6
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ресурсная единица × месяц",
+        "price_per_hour_rub": 2.63,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-vpc-nat-gateway",
+      "name": "VPC NAT-шлюз",
+      "description": "NAT-шлюз для виртуальной приватной сети. Цена за 1 NAT-шлюз × месяц.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 284.6,
+        "price_per_month_rub": 284.6
+      },
+      "tech_stack": ["VPC"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "NAT-шлюз × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-public-ip",
+      "name": "Публичный IP-адрес (неактивный, статический)",
+      "description": "Неактивный публичный статический IP-адрес сетевого балансировщика.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 245.07,
+        "price_per_month_rub": 245.07
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "IP × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cdn-egress-traffic",
+      "name": "Cloud CDN — исходящий трафик",
+      "description": "Cloud CDN. Тариф за 1 ГБ исходящего трафика.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 1.054,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cdn-dedicated-ip-all",
+      "name": "Cloud CDN — выделенная IP-адресация для всех ресурсов",
+      "description": "Выделенная IP-адресация для всех CDN-ресурсов платёжного аккаунта.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 40000.0,
+        "price_per_month_rub": 40000.0
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-backup-vm",
+      "name": "Cloud Backup — подключённая ВМ",
+      "description": "Резервное копирование одной виртуальной машины через Cloud Backup.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 280.8,
+        "price_per_month_rub": 280.8
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ВМ × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-backup-baremetal",
+      "name": "Cloud Backup — подключённый сервер BareMetal",
+      "description": "Резервное копирование одного выделенного (bare metal) сервера.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1411.2,
+        "price_per_month_rub": 1411.2
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "сервер × месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-backup-storage",
+      "name": "Cloud Backup — хранение резервных копий",
+      "description": "Хранение резервных копий (ВМ или BareMetal). Цена за 1 ГБ в месяц.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 4.97,
+        "price_per_month_rub": 4.97
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-desktop-standard-2cpu-8ram-100ssd",
+      "name": "Cloud Desktop Standard — 2 vCPU, 8 GB RAM, 100 GB SSD",
+      "description": "Виртуальный рабочий стол (VDI). Расчет: 2 × vCPU (100%) + 8 ГБ RAM + 100 ГБ быстрого SSD.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 6115.50,
+        "price_per_month_rub": 6115.50
+      },
+      "tech_stack": ["SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_gb": 100,
+        "disk_type": "SSD",
+        "calculation": "2 * 1000.8 + 8 * 314.712 + 100 * 16.056 = 6115.50",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-container-registry-storage",
+      "name": "Container Registry — хранилище образов",
+      "description": "Хранение Docker-образов в Container Registry. Цена за 1 ГБ в месяц.",
+      "category": "DevOps",
+      "pricing": {
+        "price_from_rub": 3.294,
+        "price_per_month_rub": 3.294
+      },
+      "tech_stack": ["Container Registry"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-speechkit-recognition",
+      "name": "SpeechKit — распознавание речи (синхронное)",
+      "description": "Синхронное распознавание речи. Цена за 15 секунд аудио.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 0.1626,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["SpeechKit"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "15 секунд",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-speechkit-recognition-async",
+      "name": "SpeechKit — асинхронное распознавание аудиофайлов",
+      "description": "Асинхронное распознавание аудио. Цена за 1 секунду.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 0.0101,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["SpeechKit"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "секунда",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-speechkit-tts-standard",
+      "name": "SpeechKit — синтез речи (стандартные голоса, API v1)",
+      "description": "Синтез речи стандартными голосами. Цена за 1 млн символов.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 1342.0,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["SpeechKit"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 млн символов",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-ai-studio-alice-llm-input-sync",
+      "name": "AI Studio — Alice AI LLM, входящие токены (синхронный режим)",
+      "description": "LLM Alice AI. Тариф за 1 тыс. входящих токенов в синхронном режиме.",
+      "category": "Cloud AI",
+      "pricing": {
+        "price_from_rub": 0.5,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Yandex AI Studio", "Alice AI LLM"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 тыс. токенов",
+        "mode": "sync_input",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-ai-studio-alice-llm-output-sync",
+      "name": "AI Studio — Alice AI LLM, исходящие токены (синхронный режим)",
+      "description": "LLM Alice AI. Тариф за 1 тыс. исходящих токенов в синхронном режиме.",
+      "category": "Cloud AI",
+      "pricing": {
+        "price_from_rub": 1.2,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Yandex AI Studio", "Alice AI LLM"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 тыс. токенов",
+        "mode": "sync_output",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-ai-studio-image-generation",
+      "name": "AI Studio — генерация изображений (модели Yandex)",
+      "description": "Генерация изображений моделями Yandex. Цена за 1 запрос.",
+      "category": "Cloud AI",
+      "pricing": {
+        "price_from_rub": 2.23,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Yandex AI Studio"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "запрос",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-functions-execution",
+      "name": "Cloud Functions — время выполнения функции",
+      "description": "Бессерверные функции. Тариф за ГБ × час выполнения (свыше 10 единиц тарификации в месяц).",
+      "category": "Serverless",
+      "pricing": {
+        "price_from_rub": 6.48,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Cloud Functions"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ × час",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-functions-invocations",
+      "name": "Cloud Functions — вызовы функции",
+      "description": "Бессерверные функции. Цена за 1 млн вызовов.",
+      "category": "Serverless",
+      "pricing": {
+        "price_from_rub": 18.97,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["Cloud Functions"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 млн вызовов",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-smart-web-security-waf-10m",
+      "name": "Smart Web Security — WAF (от 10 до 100 ед.)",
+      "description": "Запросы, обработанные правилами WAF. Цена за 1 млн запросов на объёме 10–100 единиц тарификации в месяц.",
+      "category": "Web Security",
+      "pricing": {
+        "price_from_rub": 219.6,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["WAF"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 млн запросов",
+        "pricing_model": "tiered",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-api-gateway-requests",
+      "name": "API Gateway — запросы",
+      "description": "Запросы к API-шлюзам, от 0.1 единиц тарификации в месяц. Цена за 1 млн запросов.",
+      "category": "API Gateway",
+      "pricing": {
+        "price_from_rub": 142.3,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["API Gateway"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "1 млн запросов",
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-key-management-service",
+      "name": "Key Management Service (KMS) — управление ключами",
+      "description": "Сервис управления криптографическими ключами Yandex Cloud (тариф по запросам/ключам — модель оплаты per_unit).",
+      "category": "Security",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["KMS"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "note": "Подробности по тарификации операций см. в исходном прайс-листе"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-dns-zone",
+      "name": "Cloud DNS — зона/запросы",
+      "description": "Управляемая DNS-зона Yandex Cloud (тарифицируется по числу зон и DNS-запросов).",
+      "category": "DNS",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["DNS"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "pricing_model": "per_unit",
+        "price_source": "tariff_grid_package",
+        "note": "Тарификация по DNS-запросам и количеству зон, см. исходный прайс-лист"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    }
+  ]
+}
