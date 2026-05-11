@@ -4,7 +4,7 @@ import "./globals.css";
 import { AppProviders } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Пирамида",
+  title: "Пирамида | Подбор облачных решений",
   description: "Prompt-based cloud solution recommendations with score ranking.",
   icons: {
     icon: "/logo.png",
