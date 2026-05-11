@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Solution Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Подбор облачных решений">
+        <aside class="history-panel" aria-label="История предыдущих промптов">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">C</span>
+            <div>
+              <p class="eyebrow">Cloud AI Console</p>
+              <h1>Подбор облачных решений</h1>
+            </div>
+          </div>
+
+          <div class="history-head">
+            <h2>История</h2>
+            <span>6 запросов</span>
+          </div>
+
+          <ul class="history-list">
+            <li>
+              <button type="button">
+                <span>Инфраструктура для финтех MVP с высокой доступностью</span>
+                <small>Сегодня, 10:24</small>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>Миграция монолита в Kubernetes и managed databases</span>
+                <small>Вчера, 18:10</small>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>Хранилище данных для аналитики и BI dashboard</span>
+                <small>Вчера, 13:42</small>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>DevOps стек для CI/CD и observability</span>
+                <small>03 мая, 09:35</small>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>Serverless backend для мобильного приложения</span>
+                <small>29 апреля, 16:51</small>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>Защищенная облачная среда для персональных данных</span>
+                <small>26 апреля, 11:08</small>
+              </button>
+            </li>
+          </ul>
+        </aside>
+
+        <section class="content-panel">
+          <div class="prompt-card">
+            <div>
+              <p class="eyebrow">AI request</p>
+              <h2>Опишите задачу для облака</h2>
+            </div>
+
+            <form class="prompt-form" id="promptForm">
+              <label class="sr-only" for="promptInput">Промпт</label>
+              <textarea
+                id="promptInput"
+                name="prompt"
+                rows="5"
+                placeholder="Например: Нужна облачная архитектура для e-commerce с автоскейлингом, CDN и мониторингом..."
+              ></textarea>
+              <div class="form-actions">
+                <div class="status-pill">
+                  <span aria-hidden="true"></span>
+                  Готов к анализу
+                </div>
+                <button class="submit-button" type="submit">Найти решения</button>
+              </div>
+            </form>
+          </div>
+
+          <section class="result-empty" id="emptyState" aria-live="polite">
+            <div class="empty-visual">
+              <img src="cloud-service.svg" alt="" />
+            </div>
+            <div>
+              <p class="eyebrow">Solution output</p>
+              <h2>Результаты появятся после отправки промпта</h2>
+              <p>
+                Макет использует фиксированный набор облачных сервисов без базы
+                данных и внешних запросов.
+              </p>
+            </div>
+          </section>
+
+          <section class="results-panel is-hidden" id="resultsPanel" aria-live="polite">
+            <div class="results-head">
+              <div>
+                <p class="eyebrow">Recommended stack</p>
+                <h2>7 облачных решений</h2>
+              </div>
+              <span class="results-count">Fixed demo output</span>
+            </div>
+
+            <div class="solutions-grid" id="solutionsGrid"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <template id="solutionTemplate">
+      <article class="solution-card">
+        <div class="solution-media">
+          <img src="cloud-service.svg" alt="" />
+        </div>
+        <div class="solution-body">
+          <div class="solution-title-row">
+            <h3></h3>
+            <span></span>
+          </div>
+          <p></p>
+          <ul></ul>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

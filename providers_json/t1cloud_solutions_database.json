@@ -1,0 +1,1487 @@
+{
+  "provider": {
+    "provider_id": "t1cloud",
+    "name": "T1 Cloud",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "t1cloud-cloud-server-small-b5-2cpu-8ram-100basic",
+      "name": "Cloud Server Small — 2 vCPU b5 Intel Ice Lake, 8 GB RAM, 100 GB SSD Basic",
+      "description": "Виртуальный сервер начального уровня для небольших сайтов, API, тестовых окружений. Расчет: 2 × vCPU b5 + 8 ГБ RAM + 100 ГБ Дисковое пространство Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 2775.38,
+        "price_per_month_rub": 2775.38
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "SSD Basic",
+        "disk_gb": 100,
+        "calculation": "2 * 346.95 + 8 * 178.31 + 100 * 6.55 = 2775.38",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-standard-b5-4cpu-16ram-200basic",
+      "name": "Cloud Server Standard — 4 vCPU b5 Intel Ice Lake, 16 GB RAM, 200 GB SSD Basic",
+      "description": "Виртуальный сервер для backend-сервисов, веб-приложений, staging/prod окружений. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 5550.76,
+        "price_per_month_rub": 5550.76
+      },
+      "tech_stack": ["Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD Basic",
+        "disk_gb": 200,
+        "calculation": "4 * 346.95 + 16 * 178.31 + 200 * 6.55 = 5550.76",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-production-a5-8cpu-32ram-500high",
+      "name": "Cloud Server Production — 8 vCPU a5 Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Производственный сервер для нагруженного backend, корпоративных приложений. Расчет: 8 × vCPU a5 + 32 ГБ RAM + 500 ГБ High.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 20734.36,
+        "price_per_month_rub": 20734.36
+      },
+      "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (a5 Advanced)",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "SSD High",
+        "disk_gb": 500,
+        "calculation": "8 * 736.68 + 32 * 178.31 + 500 * 18.27 = 20734.36",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-highperf-b4-16cpu-64ram-500high",
+      "name": "Cloud Server High Performance — 16 vCPU b4 AMD EPYC, 64 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Высокопроизводительный сервер на AMD EPYC 9004 для latency-sensitive backend и интенсивного I/O. Расчет: 16 × vCPU b4 + 64 ГБ RAM + 500 ГБ High.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 26885.36,
+        "price_per_month_rub": 26885.36
+      },
+      "tech_stack": ["AMD EPYC 9004", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "AMD EPYC 9004 series 4.05 GHz (b4)",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "SSD High",
+        "disk_gb": 500,
+        "calculation": "16 * 400.63 + 64 * 178.31 + 500 * 18.27 = 26885.36",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-large-b5-32cpu-128ram-1000high",
+      "name": "Cloud Server Large — 32 vCPU b5 Intel Ice Lake, 128 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Крупный сервер для высоконагруженных и аналитических задач. Расчет: 32 × vCPU b5 + 128 ГБ RAM + 1000 ГБ High.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 52092.08,
+        "price_per_month_rub": 52092.08
+      },
+      "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 32,
+        "ram_gb": 128,
+        "disk_type": "SSD High",
+        "disk_gb": 1000,
+        "calculation": "32 * 346.95 + 128 * 178.31 + 1000 * 18.27 = 52092.08",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-gpu-h100-pcie-package",
+      "name": "Cloud GPU — 1× NVIDIA H100 80Gb PCIe, 16 vCPU AMD EPYC, 128 GB RAM",
+      "description": "GPU-инстанс на базе NVIDIA Hopper H100 80Gb PCIe для ML-обучения и инференса. Расчет: 1 × GPU g1 + 16 × vCPU g1 + 128 ГБ RAM g1.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 284589.60,
+        "price_per_month_rub": 284589.60
+      },
+      "tech_stack": ["NVIDIA Hopper H100", "AMD EPYC 9004"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA Hopper H100 80Gb PCIe",
+        "vram_gb": 80,
+        "cpu_model": "AMD EPYC 9004 series 3.85 GHz",
+        "cpu": 16,
+        "ram_gb": 128,
+        "calculation": "247459.84 + 16 * 894.13 + 128 * 178.31 = 284589.60",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-gpu-a100-pcie-package",
+      "name": "Cloud GPU — 1× NVIDIA A100 40Gb PCIe, 16 vCPU Intel Cascade Lake, 128 GB RAM",
+      "description": "GPU-инстанс на базе NVIDIA Ampere A100 40Gb PCIe. Расчет: 1 × GPU g2 + 16 × vCPU g2 + 128 ГБ RAM g2.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 165457.41,
+        "price_per_month_rub": 165457.41
+      },
+      "tech_stack": ["NVIDIA Ampere A100", "Intel Cascade Lake"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA Ampere A100 40Gb PCIe",
+        "vram_gb": 40,
+        "cpu_model": "Intel Cascade Lake 3.1 GHz",
+        "cpu": 16,
+        "ram_gb": 128,
+        "calculation": "133333.33 + 16 * 600.00 + 128 * 178.31 = 165457.41",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-gpu-l40s-pcie-package",
+      "name": "Cloud GPU — 1× NVIDIA L40s 48Gb PCIe, 16 vCPU AMD EPYC, 128 GB RAM",
+      "description": "GPU-инстанс на базе NVIDIA Ada Lovelace L40s 48Gb PCIe. Расчет: 1 × GPU g6 + 16 × vCPU g6 + 128 ГБ RAM g6.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 127019.06,
+        "price_per_month_rub": 127019.06
+      },
+      "tech_stack": ["NVIDIA Ada Lovelace L40s", "AMD EPYC 9004"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA Ada Lovelace L40s 48Gb PCIe",
+        "vram_gb": 48,
+        "cpu_model": "AMD EPYC 9004 series 3.85 GHz",
+        "cpu": 16,
+        "ram_gb": 128,
+        "calculation": "89889.9 + 16 * 894.13 + 128 * 178.31 = 127019.06",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-gpu-h200-sxm-package",
+      "name": "Cloud GPU — 1× NVIDIA H200 SXM 141Gb InfiniBand, 16 vCPU Intel Sapphire Rapids, 128 GB RAM",
+      "description": "Топовый GPU-инстанс H200 SXM с InfiniBand для крупного ML/LLM-обучения. Расчет: 1 × GPU g7 + 16 × vCPU g7 + 128 ГБ RAM g7.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 387652.48,
+        "price_per_month_rub": 387652.48
+      },
+      "tech_stack": ["NVIDIA Hopper H200", "InfiniBand", "Intel Sapphire Rapids"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA Hopper H200 SXM 141Gb InfiniBand",
+        "vram_gb": 141,
+        "cpu_model": "Intel Sapphire Rapids 2.8 GHz",
+        "cpu": 16,
+        "ram_gb": 128,
+        "calculation": "350000 + 16 * 926.8 + 128 * 178.31 = 387652.48",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cloud-director-gpu-h100-package",
+      "name": "Cloud Director GPU — 1× NVIDIA H100 PCIe, 8 vCPU, 152 GB RAM",
+      "description": "Готовый пакет GPUaaS на платформе Cloud Director: 1 GPU H100 PCIe, 8 vCPU, 152 ГБ RAM.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 300677.15,
+        "price_per_month_rub": 300677.15
+      },
+      "tech_stack": ["NVIDIA H100", "VMware Cloud Director"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "platform": "Cloud Director",
+        "gpu_model": "NVIDIA H100 PCIe",
+        "cpu": 8,
+        "ram_gb": 152,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-haas-h1",
+      "name": "Выделенный сервер H1 — 2× Intel Xeon Gold 6342 24C 2.8GHz, 1024 GB DDR4, 2× 800GB SAS SSD",
+      "description": "Готовый bare-metal сервер H1 с двумя Intel Xeon Gold 6342, 1 ТБ RAM и SAS SSD.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 128333.33,
+        "price_per_month_rub": 128333.33
+      },
+      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SAS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
+        "ram_gb": 1024,
+        "disk_type": "SAS SSD",
+        "disk_gb": 1600,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-haas-h2",
+      "name": "Выделенный сервер H2 — 2× Intel Xeon Gold 6342 24C 2.8GHz, 1024 GB DDR4, 2× 480GB SATA SSD",
+      "description": "Готовый bare-metal сервер H2.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 125000.00,
+        "price_per_month_rub": 125000.00
+      },
+      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
+        "ram_gb": 1024,
+        "disk_type": "SATA SSD",
+        "disk_gb": 960,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-haas-h3",
+      "name": "Выделенный сервер H3 — 2× Intel Xeon Gold 6342 24C 2.8GHz, 2048 GB DDR4, 2× 480GB SATA SSD",
+      "description": "Готовый bare-metal сервер H3 с 2 ТБ оперативной памяти.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 160711.00,
+        "price_per_month_rub": 160711.00
+      },
+      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
+        "ram_gb": 2048,
+        "disk_type": "SATA SSD",
+        "disk_gb": 960,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-object-storage-s3",
+      "name": "Объектное хранилище S3 — хранение данных",
+      "description": "Объектное хранилище S3 (однозональное). Цена указана за 1 ГБ хранения за минуту; для месяца ~30 суток (43200 минут) ориентировочно 1.65 руб/ГБ/мес.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.00003819,
+        "price_per_month_rub": 1.65
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": [],
+      "attributes": {
+        "storage_class": "Hot S3",
+        "unit": "ГБ*мин",
+        "price_per_unit_rub": 0.00003819,
+        "calculation": "0.00003819 * 43200 = 1.65 руб/ГБ/мес",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-object-storage-s3-multizone",
+      "name": "Объектное хранилище S3 (мультизональное) — хранение данных",
+      "description": "Мультизональное S3-хранилище. Цена за 1 ГБ хранения за минуту; ориентировочно 2.98 руб/ГБ/мес.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.00006906,
+        "price_per_month_rub": 2.98
+      },
+      "tech_stack": ["S3", "Multi-zone"],
+      "compliance_tags": [],
+      "attributes": {
+        "storage_class": "Multi-zone S3",
+        "unit": "ГБ*мин",
+        "price_per_unit_rub": 0.00006906,
+        "high_availability": true,
+        "calculation": "0.00006906 * 43200 = 2.98 руб/ГБ/мес",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-veeam-backup-vm",
+      "name": "Veeam — резервное копирование виртуальной машины",
+      "description": "Резервное копирование одной ВМ на платформе T1 Cloud через Veeam.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1582.44,
+        "price_per_month_rub": 1582.44
+      },
+      "tech_stack": ["Veeam"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ВМ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-veeam-repository",
+      "name": "Veeam — пространство для хранения резервных копий в репозитории T1 Cloud",
+      "description": "Хранение резервных копий Veeam. Цена за 1 ГБ в месяц.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 3.00,
+        "price_per_month_rub": 3.00
+      },
+      "tech_stack": ["Veeam"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cyberbackup-server",
+      "name": "Кибер Бэкап Облачный для сервера",
+      "description": "Резервное копирование физического или виртуального сервера через сервис Кибер Бэкап (за устройство).",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1823.5,
+        "price_per_month_rub": 1823.5
+      },
+      "tech_stack": ["Кибер Бэкап"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "устройство",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cyberbackup-vm",
+      "name": "Кибер Бэкап Облачный — ВМ",
+      "description": "Резервное копирование виртуальной машины через сервис Кибер Бэкап (за устройство).",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1058.83,
+        "price_per_month_rub": 1058.83
+      },
+      "tech_stack": ["Кибер Бэкап"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "устройство",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cyberbackup-postgresql",
+      "name": "Кибер Бэкап Облачный — СУБД на базе PostgreSQL",
+      "description": "Резервное копирование экземпляра PostgreSQL через Кибер Бэкап.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1823.5,
+        "price_per_month_rub": 1823.5
+      },
+      "tech_stack": ["Кибер Бэкап", "PostgreSQL"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "экземпляр",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cdn-traffic-ru",
+      "name": "CDN трафик (РФ/СНГ)",
+      "description": "Трафик CDN на территории России. Цена за 1 ГБ в месяц.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 1.00,
+        "price_per_month_rub": 1.00
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ГБ",
+        "region": "Россия/СНГ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cdn-traffic-europe",
+      "name": "CDN трафик (Европа)",
+      "description": "CDN-трафик в Европе. Цена за 1 ГБ.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 1.42,
+        "price_per_month_rub": 1.42
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ГБ",
+        "region": "Европа",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cdn-traffic-americas-asia",
+      "name": "CDN трафик (Северная/Латинская Америка, Азия)",
+      "description": "CDN-трафик для регионов Америки и Азии. Цена за 1 ГБ.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 2.58,
+        "price_per_month_rub": 2.58
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ГБ",
+        "region": "Америка/Азия",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-cdn-shielding",
+      "name": "CDN — Экранирование (шилдинг)",
+      "description": "Опция шилдинга для CDN.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 2916.67,
+        "price_per_month_rub": 2916.67
+      },
+      "tech_stack": ["CDN"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "шт/мес",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-public-ipv4",
+      "name": "Публичный IP-адрес IPv4",
+      "description": "Публичный IPv4-адрес. Стоимость за 30 суток.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 175.13,
+        "price_per_month_rub": 175.13
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "IP",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-internet-bandwidth",
+      "name": "Резервированный доступ в Интернет",
+      "description": "Гарантированная полоса доступа в Интернет. Цена за 1 Мбит/с в месяц.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 16.67,
+        "price_per_month_rub": 16.67
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "Мбит/с",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-network-load-balancer",
+      "name": "Network Load Balancer — отказоустойчивый балансировщик",
+      "description": "Сетевой отказоустойчивый балансировщик нагрузки.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 3705.02,
+        "price_per_month_rub": 3705.02
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "high_availability": true,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-clouddns",
+      "name": "CloudDNS — внешняя зона DNS",
+      "description": "Управляемая внешняя зона DNS.",
+      "category": "DNS",
+      "pricing": {
+        "price_from_rub": 180.00,
+        "price_per_month_rub": 180.00
+      },
+      "tech_stack": ["DNS"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "зона",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-tiny-1master",
+      "name": "Managed Kubernetes Tiny — 1 мастер-нода, однозональный кластер",
+      "description": "Готовый управляемый Kubernetes-кластер конфигурации Tiny с одной мастер-нодой.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 2070.00,
+        "price_per_month_rub": 2070.00
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 1,
+        "high_availability": false,
+        "config": "Tiny",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-small-3master-ha",
+      "name": "Managed Kubernetes Small — 3 мастер-ноды, отказоустойчивый кластер",
+      "description": "Управляемый Kubernetes-кластер конфигурации Small с тремя мастер-нодами для отказоустойчивости.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 12420.00,
+        "price_per_month_rub": 12420.00
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 3,
+        "high_availability": true,
+        "config": "Small",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-medium-3master-ha",
+      "name": "Managed Kubernetes Medium — 3 мастер-ноды, отказоустойчивый кластер",
+      "description": "Управляемый Kubernetes-кластер конфигурации Medium с тремя мастер-нодами.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 24840.00,
+        "price_per_month_rub": 24840.00
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 3,
+        "high_availability": true,
+        "config": "Medium",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-large-3master-ha",
+      "name": "Managed Kubernetes Large — 3 мастер-ноды, отказоустойчивый кластер",
+      "description": "Управляемый Kubernetes-кластер конфигурации Large с тремя мастер-нодами.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 49680.00,
+        "price_per_month_rub": 49680.00
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 3,
+        "high_availability": true,
+        "config": "Large",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-cluster-basic-3worker",
+      "name": "Managed Kubernetes Basic Cluster — Master Tiny + 3 worker (2 vCPU, 8 GB RAM, 100 GB SSD)",
+      "description": "Готовый кластер: 1 мастер-нода Tiny + 3 worker по 2 × b5 + 8 ГБ RAM + 100 ГБ Basic. Расчет: 2070 + 3 × (2 × 346.95 + 8 × 178.31 + 100 × 6.55).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 10396.14,
+        "price_per_month_rub": 10396.14
+      },
+      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 1,
+        "worker_nodes": 3,
+        "cpu_per_node": 2,
+        "ram_gb_per_node": 8,
+        "disk_gb_per_node": 100,
+        "calculation": "2070 + 3 * (2 * 346.95 + 8 * 178.31 + 100 * 6.55) = 10396.14",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mks-cluster-production-3master-3worker",
+      "name": "Managed Kubernetes Production Cluster — 3 master HA + 3 worker (8 vCPU, 32 GB RAM, 200 GB High SSD)",
+      "description": "Production-кластер: 3 мастер-ноды (HA) Small + 3 worker по 8 × b5 + 32 ГБ RAM + 200 ГБ High. Расчет: 12420 + 3 × (8 × 346.95 + 32 × 178.31 + 200 × 18.27).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 41115.36,
+        "price_per_month_rub": 41115.36
+      },
+      "tech_stack": ["Kubernetes", "Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "master_nodes": 3,
+        "worker_nodes": 3,
+        "cpu_per_node": 8,
+        "ram_gb_per_node": 32,
+        "disk_gb_per_node": 200,
+        "high_availability": true,
+        "calculation": "12420 + 3 * (8 * 346.95 + 32 * 178.31 + 200 * 18.27) = 41115.36",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-postgresql-small",
+      "name": "Managed PostgreSQL Small — 2 vCPU b5, 8 GB RAM, 100 GB Basic SSD",
+      "description": "Управляемая PostgreSQL для небольших нагрузок. Расчет: 2 × vCPU b5 + 8 ГБ RAM + 100 ГБ Basic.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 3812.04,
+        "price_per_month_rub": 3812.04
+      },
+      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_gb": 100,
+        "calculation": "2 * 405.93 + 8 * 292.43 + 100 * 6.55 = 3812.04",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-postgresql-standard",
+      "name": "Managed PostgreSQL Standard — 4 vCPU b5, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемая PostgreSQL для типовой продакшен-нагрузки. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 7610.60,
+        "price_per_month_rub": 7610.60
+      },
+      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 405.93 + 16 * 292.43 + 200 * 6.55 = 7610.60",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-postgresql-production",
+      "name": "Managed PostgreSQL Production — 8 vCPU a5, 32 GB RAM, 500 GB High SSD",
+      "description": "Управляемая PostgreSQL для нагруженных задач на быстром диске. Расчет: 8 × vCPU a5 + 32 ГБ RAM + 500 ГБ High.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 26252.08,
+        "price_per_month_rub": 26252.08
+      },
+      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "calculation": "8 * 979.79 + 32 * 292.43 + 500 * 18.27 = 26252.08",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-postgresql-ha",
+      "name": "Managed PostgreSQL HA — 8 vCPU a5, 32 GB RAM, 500 GB High SSD + Network Load Balancer",
+      "description": "Отказоустойчивая PostgreSQL с балансировщиком нагрузки. Расчет: 8 × vCPU a5 + 32 ГБ RAM + 500 ГБ High + Network Load Balancer.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 29957.10,
+        "price_per_month_rub": 29957.10
+      },
+      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "PostgreSQL",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "load_balancer": true,
+        "high_availability": true,
+        "calculation": "8 * 979.79 + 32 * 292.43 + 500 * 18.27 + 3705.02 = 29957.10",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mysql-standard",
+      "name": "Managed MySQL Standard — 4 vCPU b5, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемая MySQL стандартной конфигурации. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 7165.04,
+        "price_per_month_rub": 7165.04
+      },
+      "tech_stack": ["MySQL", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "MySQL",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 447.57 + 16 * 292.43 + 200 * 6.55 = 7165.04",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-clickhouse-standard",
+      "name": "Managed ClickHouse Standard — 8 vCPU b5, 32 GB RAM, 500 GB High SSD",
+      "description": "Управляемый ClickHouse для аналитических нагрузок. Расчет: 8 × vCPU b5 + 32 ГБ RAM + 500 ГБ High.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": 21748.20,
+        "price_per_month_rub": 21748.20
+      },
+      "tech_stack": ["ClickHouse", "Intel Ice Lake", "High-IOPS SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "ClickHouse",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "calculation": "8 * 405.93 + 32 * 292.43 + 500 * 18.27 = 21748.20",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-inmemorydb-standard",
+      "name": "Managed InmemoryDB Standard — 4 vCPU b5, 16 GB RAM, 100 GB Basic SSD",
+      "description": "Управляемая in-memory СУБД (Redis-совместимая). Расчет: 4 × vCPU b5 + 16 ГБ RAM + 100 ГБ Basic.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 7651.65,
+        "price_per_month_rub": 7651.65
+      },
+      "tech_stack": ["InmemoryDB", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "InmemoryDB",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 100,
+        "calculation": "4 * 537.78 + 16 * 303.13 + 100 * 6.55 = 7651.65",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-documentdb-standard",
+      "name": "Managed DocumentDB Standard — 4 vCPU b5, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемая документная СУБД. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 11206.16,
+        "price_per_month_rub": 11206.16
+      },
+      "tech_stack": ["DocumentDB", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "DocumentDB",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 447.57 + 16 * 540.28 + 200 * 6.55 = 11206.16",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-opensearch-standard",
+      "name": "Managed OpenSearch Standard — 4 vCPU b5, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемый OpenSearch для поиска и аналитики. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Search",
+      "pricing": {
+        "price_from_rub": 6614.80,
+        "price_per_month_rub": 6614.80
+      },
+      "tech_stack": ["OpenSearch", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "OpenSearch",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 447.57 + 16 * 213.97 + 200 * 6.55 = 6614.80",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-kafka-standard",
+      "name": "Managed Kafka Standard — 4 vCPU b5, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемый Kafka для потоковой обработки сообщений. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "Cloud Streaming",
+      "pricing": {
+        "price_from_rub": 7239.16,
+        "price_per_month_rub": 7239.16
+      },
+      "tech_stack": ["Apache Kafka", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "Kafka",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 405.93 + 16 * 269.24 + 200 * 6.55 = 7239.16",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-rabbitmq-standard",
+      "name": "Managed RabbitMQ Standard — 4 vCPU b5, 16 GB RAM, 100 GB Basic SSD",
+      "description": "Управляемая очередь сообщений RabbitMQ. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 100 ГБ Basic.",
+      "category": "Cloud Streaming",
+      "pricing": {
+        "price_from_rub": 6587.51,
+        "price_per_month_rub": 6587.51
+      },
+      "tech_stack": ["RabbitMQ", "Intel Ice Lake", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "RabbitMQ",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 100,
+        "calculation": "4 * 405.93 + 16 * 269.24 + 100 * 6.55 = 6587.51",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-gitlab-standard",
+      "name": "Managed GitLab Standard — 4 vCPU, 16 GB RAM, 200 GB Basic SSD",
+      "description": "Управляемый GitLab для CI/CD и хранения кода. Расчет: 4 × vCPU + 16 ГБ RAM + 200 ГБ Basic.",
+      "category": "DevOps",
+      "pricing": {
+        "price_from_rub": 7790.88,
+        "price_per_month_rub": 7790.88
+      },
+      "tech_stack": ["GitLab", "SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "engine": "GitLab",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "calculation": "4 * 450.00 + 16 * 292.43 + 200 * 6.55 = 7790.88",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-repository-for-containers",
+      "name": "Repository for Containers — хранение образов",
+      "description": "Хранилище контейнерных образов. Цена за 1 ГБ в месяц.",
+      "category": "DevOps",
+      "pricing": {
+        "price_from_rub": 2.03,
+        "price_per_month_rub": 2.03
+      },
+      "tech_stack": ["Container Registry"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mlhub-standard",
+      "name": "ML Hub Standard — 8 vCPU, 32 GB RAM, 200 GB SSD",
+      "description": "ML Hub: ядро для запуска ноутбуков и пайплайнов. Расчет: 8 × vCPU ядра + 32 ГБ RAM + 200 ГБ дискового пространства.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 19227.40,
+        "price_per_month_rub": 19227.40
+      },
+      "tech_stack": ["ML Hub"],
+      "compliance_tags": [],
+      "attributes": {
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 200,
+        "calculation": "8 * 760.00 + 32 * 369.60 + 200 * 12.00 = 19227.20 (рассчитано из тарифов ML Hub)",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-mlhub-h100-gpu",
+      "name": "ML Hub GPU — 1× H100 1g.10gb, 8 vCPU, 32 GB RAM, 200 GB SSD",
+      "description": "ML Hub с GPU-ускорителем H100 (нарезка 1g.10gb) для тренировки моделей. Расчет: 1 × GPU 1g.10gb + 8 × vCPU + 32 ГБ RAM + 200 ГБ диска.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 58113.95,
+        "price_per_month_rub": 58113.95
+      },
+      "tech_stack": ["ML Hub", "NVIDIA H100"],
+      "compliance_tags": [],
+      "attributes": {
+        "gpu_model": "NVIDIA H100 1g.10gb (MIG)",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 200,
+        "calculation": "38886.55 + 8 * 760.00 + 32 * 369.60 + 200 * 12.00 = 58113.75",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-glarus-bi-5users",
+      "name": "Платформа бизнес-аналитики T1 Cloud (Glarus BI) — 5 пользователей",
+      "description": "BI-платформа Glarus BI на 5 пользователей.",
+      "category": "Business Intelligence",
+      "pricing": {
+        "price_from_rub": 2354.17,
+        "price_per_month_rub": 2354.17
+      },
+      "tech_stack": ["Glarus BI"],
+      "compliance_tags": [],
+      "attributes": {
+        "users": 5,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-glarus-bi-20users",
+      "name": "Платформа бизнес-аналитики T1 Cloud (Glarus BI) — 20 пользователей",
+      "description": "BI-платформа Glarus BI на 20 пользователей.",
+      "category": "Business Intelligence",
+      "pricing": {
+        "price_from_rub": 9416.67,
+        "price_per_month_rub": 9416.67
+      },
+      "tech_stack": ["Glarus BI"],
+      "compliance_tags": [],
+      "attributes": {
+        "users": 20,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-glarus-bi-50users",
+      "name": "Платформа бизнес-аналитики T1 Cloud (Glarus BI) — 50 пользователей",
+      "description": "BI-платформа Glarus BI на 50 пользователей.",
+      "category": "Business Intelligence",
+      "pricing": {
+        "price_from_rub": 23541.67,
+        "price_per_month_rub": 23541.67
+      },
+      "tech_stack": ["Glarus BI"],
+      "compliance_tags": [],
+      "attributes": {
+        "users": 50,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-scibox-vgpu-h100",
+      "name": "ML-Платформа SCIBOX — vGPU H100",
+      "description": "vGPU H100 в составе ML-платформы SCIBOX. Стоимость указана за 1 vGPU в месяц.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 390880.29,
+        "price_per_month_rub": 390880.29
+      },
+      "tech_stack": ["SCIBOX", "NVIDIA H100"],
+      "compliance_tags": [],
+      "attributes": {
+        "gpu_model": "vGPU H100",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-t1-disk-business",
+      "name": "T1 Диск — Тариф Бизнес",
+      "description": "Облачное файловое хранилище. 100 руб./пользователь + 200 руб./100 ГБ хранилища в месяц.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": 100.00,
+        "price_per_month_rub": 100.00
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "price_per_user_rub": 100.00,
+        "price_per_100gb_rub": 200.00,
+        "tariff": "Бизнес",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-t1-disk-corporate",
+      "name": "T1 Диск — Тариф Корпоративный",
+      "description": "Облачное файловое хранилище. 100 руб./пользователь + 166.67 руб./100 ГБ хранилища в месяц.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": 100.00,
+        "price_per_month_rub": 100.00
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "price_per_user_rub": 100.00,
+        "price_per_100gb_rub": 166.67,
+        "tariff": "Корпоративный",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-astra-linux-orel",
+      "name": "Лицензия Astra Linux Орел (за виртуальную машину)",
+      "description": "Лицензия операционной системы Astra Linux Орел. Цена за 1 ВМ в месяц.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1440.00,
+        "price_per_month_rub": 1440.00
+      },
+      "tech_stack": ["Astra Linux"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "Орел",
+        "unit": "ВМ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-astra-linux-voronezh",
+      "name": "Лицензия Astra Linux Воронеж (за виртуальную машину)",
+      "description": "Лицензия операционной системы Astra Linux Воронеж. Цена за 1 ВМ в месяц.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1830.00,
+        "price_per_month_rub": 1830.00
+      },
+      "tech_stack": ["Astra Linux"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "Воронеж",
+        "unit": "ВМ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-alt-server-10",
+      "name": "Лицензия Альт Сервер 10 (за виртуальную машину)",
+      "description": "Лицензия ОС Альт Сервер 10.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 440.00,
+        "price_per_month_rub": 440.00
+      },
+      "tech_stack": ["Альт Сервер"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ВМ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-alt-workstation-10",
+      "name": "Лицензия Альт Рабочая станция 10",
+      "description": "Лицензия ОС Альт Рабочая станция 10.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 175.00,
+        "price_per_month_rub": 175.00
+      },
+      "tech_stack": ["Альт"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "ВМ",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-alt-sp-server-10",
+      "name": "Лицензия Альт СП Сервер 10",
+      "description": "Сертифицированная лицензия ОС Альт СП Сервер 10 (без права использования виртуализации).",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1533.00,
+        "price_per_month_rub": 1533.00
+      },
+      "tech_stack": ["Альт СП"],
+      "compliance_tags": ["FSTEC"],
+      "attributes": {
+        "unit": "ВМ",
+        "certified": true,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-redos-server-standard",
+      "name": "Лицензия РЕД ОС Сервер — Стандартная редакция",
+      "description": "Простая (неисключительная) лицензия на использование ОС РЕД ОС Сервер. Стандартная редакция.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1000.00,
+        "price_per_month_rub": 1000.00
+      },
+      "tech_stack": ["РЕД ОС"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "Сервер. Стандартная",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-license-redos-server-certified",
+      "name": "Лицензия РЕД ОС Сервер — Сертифицированная редакция",
+      "description": "Простая (неисключительная) лицензия на использование ОС РЕД ОС Сервер. Сертифицированная редакция (ФСТЭК).",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 3083.00,
+        "price_per_month_rub": 3083.00
+      },
+      "tech_stack": ["РЕД ОС"],
+      "compliance_tags": ["FSTEC"],
+      "attributes": {
+        "edition": "Сервер. Сертифицированная",
+        "certified": true,
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-office-standard",
+      "name": "Microsoft Office Standard ALng LSA SAL (на пользователя)",
+      "description": "Лицензия Microsoft Office Standard. Цена за 1 пользователя в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 2004.53,
+        "price_per_month_rub": 2004.53
+      },
+      "tech_stack": ["Microsoft Office"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-office-pro-plus",
+      "name": "Microsoft Office Professional Plus ALng LSA SAL (на пользователя)",
+      "description": "Лицензия Microsoft Office Professional Plus. Цена за 1 пользователя в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 2737.03,
+        "price_per_month_rub": 2737.03
+      },
+      "tech_stack": ["Microsoft Office"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-sql-standard-sal",
+      "name": "Microsoft SQL Server Standard ALng LSA SAL (на пользователя)",
+      "description": "Лицензия SQL Server Standard в модели SAL. Цена за 1 пользователя в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 2523.57,
+        "price_per_month_rub": 2523.57
+      },
+      "tech_stack": ["Microsoft SQL Server"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-sql-standard-core",
+      "name": "Microsoft SQL Server Standard Core ALng LSA 2L (за 2 ядра)",
+      "description": "Лицензия SQL Server Standard Core. Цена за 2 ядра в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 23351.02,
+        "price_per_month_rub": 23351.02
+      },
+      "tech_stack": ["Microsoft SQL Server"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "2 ядра",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-win-server-standard-core",
+      "name": "Microsoft Windows Server Standard Core ALng LSA 2L (за 2 ядра)",
+      "description": "Лицензия Windows Server Standard Core. Цена за 2 ядра в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 716.43,
+        "price_per_month_rub": 716.43
+      },
+      "tech_stack": ["Windows Server"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "2 ядра",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-win-server-dc-core",
+      "name": "Microsoft Windows Server Datacenter Core ALng LSA 2L (за 2 ядра)",
+      "description": "Лицензия Windows Server Datacenter Core. Цена за 2 ядра в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 4963.8,
+        "price_per_month_rub": 4963.8
+      },
+      "tech_stack": ["Windows Server"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "2 ядра",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-rds-sal",
+      "name": "Microsoft Windows Remote Desktop Services SAL (на пользователя)",
+      "description": "Лицензия Windows RDS SAL для удаленного рабочего стола. Цена за 1 пользователя в месяц.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 1033.7,
+        "price_per_month_rub": 1033.7
+      },
+      "tech_stack": ["Windows RDS"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-exchange-standard-sal",
+      "name": "Microsoft Exchange Standard SAL ALng LSA SAL (на пользователя)",
+      "description": "Лицензия Exchange Standard SAL.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 309.97,
+        "price_per_month_rub": 309.97
+      },
+      "tech_stack": ["Microsoft Exchange"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-ms-visual-studio-pro",
+      "name": "Microsoft Visual Studio Pro ALng LSA SAL (на пользователя)",
+      "description": "Лицензия Visual Studio Pro SAL.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 6191.95,
+        "price_per_month_rub": 6191.95
+      },
+      "tech_stack": ["Microsoft Visual Studio"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "пользователь",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-direct-connect-1g",
+      "name": "Direct Connect — 1 Гбит/с",
+      "description": "Прямое подключение Direct Connect, ширина полосы 1 Гбит/с.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 8928.43,
+        "price_per_month_rub": 8928.43
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "bandwidth": "1 Гбит/с",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    },
+    {
+      "service_id": "t1cloud-direct-connect-10g",
+      "name": "Direct Connect — 10 Гбит/с",
+      "description": "Прямое подключение Direct Connect, ширина полосы 10 Гбит/с.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 64023.40,
+        "price_per_month_rub": 64023.40
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "bandwidth": "10 Гбит/с",
+        "price_source": "tariff_grid_package",
+        "vat_included": false
+      },
+      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cloud_recommender
+      POSTGRES_USER: cloud_app
+      POSTGRES_PASSWORD: cloud_app_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cloud_app -d cloud_recommender"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  ranker:
+    image: python:3.12-slim
+    working_dir: /workspace
+    command: sh -c "python -m venv /opt/ranker-venv && . /opt/ranker-venv/bin/activate && pip install -r requirements-ranker.txt && python ranking_script.py"
+    environment:
+      PROVIDERS_JSON_DIR: /workspace/providers_json
+      RANKER_HOST: 0.0.0.0
+      RANKER_PORT: 8000
+      SENTENCE_TRANSFORMERS_HOME: /workspace/.cache/sentence-transformers
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/workspace
+      - ranker-cache:/workspace/.cache
+      - ranker-venv:/opt/ranker-venv
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          ". /opt/ranker-venv/bin/activate && python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=2)\"",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  deps:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: sh -c "npm install && npm run build --workspace packages/shared"
+    volumes:
+      - ..:/workspace
+      - root-node-modules:/workspace/node_modules
+
+  backend:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: npm run dev --workspace apps/backend
+    env_file:
+      - ../.env
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgres://cloud_app:cloud_app_password@postgres:5432/cloud_recommender
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      RANKER_API_URL: http://ranker:8000
+    ports:
+      - "3001:3001"
+    volumes:
+      - ..:/workspace
+      - root-node-modules:/workspace/node_modules
+    depends_on:
+      deps:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ranker:
+        condition: service_healthy
+
+  frontend:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: npm run dev --workspace apps/frontend
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: http://localhost:3001
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace
+      - root-node-modules:/workspace/node_modules
+    depends_on:
+      deps:
+        condition: service_completed_successfully
+      backend:
+        condition: service_started
+
+volumes:
+  postgres-data:
+  root-node-modules:
+  ranker-cache:
+  ranker-venv:

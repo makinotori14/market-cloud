@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-DemiBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VTB Group UI";
+  src: url("/fonts/VTBGroupUI-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: #07111f;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(0, 167, 232, 0.16), transparent 28rem),
+    linear-gradient(135deg, #f7fcff 0%, #eaf7ff 52%, #ffffff 100%);
+  font-family: "VTB Group UI", sans-serif;
+}
+
+.dark body {
+  color: #f6fbff;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(0, 167, 232, 0.16), transparent 28rem),
+    linear-gradient(135deg, #060b14 0%, #07111f 56%, #0b1f33 100%);
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}

@@ -1,0 +1,3322 @@
+{
+  "provider": {
+    "provider_id": "vkcloud",
+    "name": "VK Cloud",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "vkcloud-cloud-servers-small-ice-2cpu-8ram-100ssd",
+      "name": "Cloud Server Small — 2 CPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Типовая конфигурация виртуального сервера для небольшого сайта, API или тестового окружения. Расчет: 2 × CPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 4330,
+        "price_per_month_rub": 4330
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "SSD",
+        "disk_gb": 100,
+        "calculation": "2 * 765 + 8 * 200 + 100 * 12",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-servers-standard-ice-4cpu-16ram-200ssd",
+      "name": "Cloud Server Standard — 4 CPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "Типовая конфигурация виртуального сервера для backend-сервиса или веб-приложения. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 8660,
+        "price_per_month_rub": 8660
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "calculation": "4 * 765 + 16 * 200 + 200 * 12",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-servers-production-ice-8cpu-32ram-500highiops",
+      "name": "Cloud Server Production — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Типовая конфигурация виртуального сервера для нагруженного backend или корпоративного приложения. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 19520,
+        "price_per_month_rub": 19520
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 765 + 32 * 200 + 500 * 14",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-servers-high-performance-highfreq-16cpu-64ram-500nvme",
+      "name": "Cloud Server High Performance — 16 CPU High-frequency, 64 GB RAM, 500 GB Low Latency NVME",
+      "description": "Типовая конфигурация виртуального сервера для latency-sensitive backend и интенсивного I/O. Расчет: 16 × CPU High-frequency + 64 ГБ RAM + 500 ГБ Low Latency NVME.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 36616,
+        "price_per_month_rub": 36616
+      },
+      "tech_stack": [
+        "High-frequency",
+        "Low Latency NVME"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "High-frequency",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "Low Latency NVME",
+        "disk_gb": 500,
+        "calculation": "16 * 1176 + 64 * 200 + 500 * 10",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-servers-large-ice-32cpu-128ram-1000nvme",
+      "name": "Cloud Server Large — 32 CPU Intel Ice Lake, 128 GB RAM, 1000 GB Low Latency NVME",
+      "description": "Типовая конфигурация виртуального сервера для крупного сервиса или аналитической нагрузки. Расчет: 32 × CPU Intel Ice Lake + 128 ГБ RAM + 1000 ГБ Low Latency NVME.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 60080,
+        "price_per_month_rub": 60080
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "Low Latency NVME"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 32,
+        "ram_gb": 128,
+        "disk_type": "Low Latency NVME",
+        "disk_gb": 1000,
+        "calculation": "32 * 765 + 128 * 200 + 1000 * 10",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-16-72-l4-1",
+      "name": "GPU2-16-72-L4-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 16 CPU, 72 GB RAM, 24 GB VRAM, GPU L4.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 1.5,
+        "price_per_month_rub": 64600
+      },
+      "tech_stack": [
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 16,
+        "ram_gb": 72,
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "unit": "minute",
+        "price_per_minute_rub": 1.5,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-12-112-a30-1",
+      "name": "GPU2-12-112-A30-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 12 CPU, 112 GB RAM, 24 GB VRAM, GPU A30.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 2.26,
+        "price_per_month_rub": 97730
+      },
+      "tech_stack": [
+        "A30"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 12,
+        "ram_gb": 112,
+        "gpu_model": "A30",
+        "vram_gb": 24,
+        "unit": "minute",
+        "price_per_minute_rub": 2.26,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu3-16-112-l40s-1",
+      "name": "GPU3-16-112-L40S-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 16 CPU, 112 GB RAM, 48 GB VRAM, GPU L40S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 3.63,
+        "price_per_month_rub": 156834
+      },
+      "tech_stack": [
+        "L40S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 16,
+        "ram_gb": 112,
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "unit": "minute",
+        "price_per_minute_rub": 3.63,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1-16-48-v100-1",
+      "name": "GPU1-16-48-V100-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 16 CPU, 48 GB RAM, 16 GB VRAM, GPU V100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 3.98,
+        "price_per_month_rub": 86000
+      },
+      "tech_stack": [
+        "V100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 16,
+        "ram_gb": 48,
+        "gpu_model": "V100",
+        "vram_gb": 16,
+        "unit": "minute",
+        "price_per_minute_rub": 3.98,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-24-72-v100s-1",
+      "name": "GPU2-24-72-V100S-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 24 CPU, 72 GB RAM, 32 GB VRAM, GPU V100S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 4.44,
+        "price_per_month_rub": 96000
+      },
+      "tech_stack": [
+        "V100S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 24,
+        "ram_gb": 72,
+        "gpu_model": "V100S",
+        "vram_gb": 32,
+        "unit": "minute",
+        "price_per_minute_rub": 4.44,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1a-32-96-a100-1",
+      "name": "GPU1A-32-96-A100-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 96 GB RAM, 40 GB VRAM, GPU A100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 5.19,
+        "price_per_month_rub": 224000
+      },
+      "tech_stack": [
+        "A100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 32,
+        "ram_gb": 96,
+        "gpu_model": "A100",
+        "vram_gb": 40,
+        "unit": "minute",
+        "price_per_minute_rub": 5.19,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu3-32-192-a100x80-1",
+      "name": "GPU3-32-192-A100x80-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 192 GB RAM, 80 GB VRAM, GPU A100x80.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 5.5,
+        "price_per_month_rub": 237700
+      },
+      "tech_stack": [
+        "A100x80"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 32,
+        "ram_gb": 192,
+        "gpu_model": "A100x80",
+        "vram_gb": 80,
+        "unit": "minute",
+        "price_per_minute_rub": 5.5,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu-44-256-h200-1",
+      "name": "GPU-44-256-H200-1",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 44 CPU, 256 GB RAM, 141 GB VRAM, GPU H200.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 18.05,
+        "price_per_month_rub": 780000
+      },
+      "tech_stack": [
+        "H200"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 44,
+        "ram_gb": 256,
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "unit": "minute",
+        "price_per_minute_rub": 18.05,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu-240-2048-h200-8",
+      "name": "GPU-240-2048-H200-8",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 240 CPU, 2048 GB RAM, 1128 GB VRAM, GPU H200.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 144.44,
+        "price_per_month_rub": 6240000
+      },
+      "tech_stack": [
+        "H200"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 240,
+        "ram_gb": 2048,
+        "gpu_model": "H200",
+        "vram_gb": 1128,
+        "unit": "minute",
+        "price_per_minute_rub": 144.44,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-64-384-a100x80-2",
+      "name": "GPU2-64-384-A100x80-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 384 GB RAM, 160 GB VRAM, GPU A100x80.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 11,
+        "price_per_month_rub": 475400
+      },
+      "tech_stack": [
+        "A100x80"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 64,
+        "ram_gb": 384,
+        "gpu_model": "A100x80",
+        "vram_gb": 160,
+        "unit": "minute",
+        "price_per_minute_rub": 11,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu3-112-768-a100x80-4",
+      "name": "GPU3-112-768-A100x80-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 112 CPU, 768 GB RAM, 320 GB VRAM, GPU A100x80.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 22.01,
+        "price_per_month_rub": 950800
+      },
+      "tech_stack": [
+        "A100x80"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 112,
+        "ram_gb": 768,
+        "gpu_model": "A100x80",
+        "vram_gb": 320,
+        "unit": "minute",
+        "price_per_minute_rub": 22.01,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu3-32-224-l40s-2",
+      "name": "GPU3-32-224-L40S-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 224 GB RAM, 96 GB VRAM, GPU L40S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 7.26,
+        "price_per_month_rub": 313668
+      },
+      "tech_stack": [
+        "L40S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 32,
+        "ram_gb": 224,
+        "gpu_model": "L40S",
+        "vram_gb": 96,
+        "unit": "minute",
+        "price_per_minute_rub": 7.26,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu3-64-448-l40s-4",
+      "name": "GPU3-64-448-L40S-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 448 GB RAM, 192 GB VRAM, GPU L40S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 14.52,
+        "price_per_month_rub": 627336
+      },
+      "tech_stack": [
+        "L40S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 64,
+        "ram_gb": 448,
+        "gpu_model": "L40S",
+        "vram_gb": 192,
+        "unit": "minute",
+        "price_per_minute_rub": 14.52,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-24-224-a30-2",
+      "name": "GPU2-24-224-A30-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 24 CPU, 224 GB RAM, 48 GB VRAM, GPU A30.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 4.52,
+        "price_per_month_rub": 195460
+      },
+      "tech_stack": [
+        "A30"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 24,
+        "ram_gb": 224,
+        "gpu_model": "A30",
+        "vram_gb": 48,
+        "unit": "minute",
+        "price_per_minute_rub": 4.52,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-48-448-a30-4",
+      "name": "GPU2-48-448-A30-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 48 CPU, 448 GB RAM, 96 GB VRAM, GPU A30.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 9.05,
+        "price_per_month_rub": 390920
+      },
+      "tech_stack": [
+        "A30"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 48,
+        "ram_gb": 448,
+        "gpu_model": "A30",
+        "vram_gb": 96,
+        "unit": "minute",
+        "price_per_minute_rub": 9.05,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1-32-96-v100-2",
+      "name": "GPU1-32-96-V100-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 96 GB RAM, 32 GB VRAM, GPU V100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 7.96,
+        "price_per_month_rub": 172000
+      },
+      "tech_stack": [
+        "V100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 32,
+        "ram_gb": 96,
+        "gpu_model": "V100",
+        "vram_gb": 32,
+        "unit": "minute",
+        "price_per_minute_rub": 7.96,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1-64-192-v100-4",
+      "name": "GPU1-64-192-V100-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 192 GB RAM, 64 GB VRAM, GPU V100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 15.93,
+        "price_per_month_rub": 344000
+      },
+      "tech_stack": [
+        "V100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 64,
+        "ram_gb": 192,
+        "gpu_model": "V100",
+        "vram_gb": 64,
+        "unit": "minute",
+        "price_per_minute_rub": 15.93,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-48-144-v100s-2",
+      "name": "GPU2-48-144-V100S-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 48 CPU, 144 GB RAM, 64 GB VRAM, GPU V100S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 8.89,
+        "price_per_month_rub": 192000
+      },
+      "tech_stack": [
+        "V100S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 48,
+        "ram_gb": 144,
+        "gpu_model": "V100S",
+        "vram_gb": 64,
+        "unit": "minute",
+        "price_per_minute_rub": 8.89,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-96-288-v100s-4",
+      "name": "GPU2-96-288-V100S-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 96 CPU, 288 GB RAM, 128 GB VRAM, GPU V100S.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 17.78,
+        "price_per_month_rub": 384000
+      },
+      "tech_stack": [
+        "V100S"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 96,
+        "ram_gb": 288,
+        "gpu_model": "V100S",
+        "vram_gb": 128,
+        "unit": "minute",
+        "price_per_minute_rub": 17.78,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-32-144-l4-2",
+      "name": "GPU2-32-144-L4-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 144 GB RAM, 48 GB VRAM, GPU L4.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 2.99,
+        "price_per_month_rub": 129200
+      },
+      "tech_stack": [
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 32,
+        "ram_gb": 144,
+        "gpu_model": "L4",
+        "vram_gb": 48,
+        "unit": "minute",
+        "price_per_minute_rub": 2.99,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu2-64-288-l4-4",
+      "name": "GPU2-64-288-L4-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 288 GB RAM, 96 GB VRAM, GPU L4.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 5.98,
+        "price_per_month_rub": 258400
+      },
+      "tech_stack": [
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 64,
+        "ram_gb": 288,
+        "gpu_model": "L4",
+        "vram_gb": 96,
+        "unit": "minute",
+        "price_per_minute_rub": 5.98,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1a-64-192-a100-2",
+      "name": "GPU1A-64-192-A100-2",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 192 GB RAM, 80 GB VRAM, GPU A100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 10.39,
+        "price_per_month_rub": 448800
+      },
+      "tech_stack": [
+        "A100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 64,
+        "ram_gb": 192,
+        "gpu_model": "A100",
+        "vram_gb": 80,
+        "unit": "minute",
+        "price_per_minute_rub": 10.39,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-gpu-gpu1a-128-384-a100-4",
+      "name": "GPU1A-128-384-A100-4",
+      "description": "Готовый GPU-инстанс из тарифной сетки: 128 CPU, 384 GB RAM, 160 GB VRAM, GPU A100.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 20.78,
+        "price_per_month_rub": 897600
+      },
+      "tech_stack": [
+        "A100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "gpu_instance",
+        "cpu": 128,
+        "ram_gb": 384,
+        "gpu_model": "A100",
+        "vram_gb": 160,
+        "unit": "minute",
+        "price_per_minute_rub": 20.78,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-2-8-l4-1q",
+      "name": "vGPU-2-8-L4-1Q",
+      "description": "Готовый vGPU-инстанс: 2 CPU, 8 GB RAM, 1 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 0.21,
+        "price_per_month_rub": 9129
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 2,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 1,
+        "unit": "minute",
+        "price_per_minute_rub": 0.21,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-2-8-l4-2q",
+      "name": "vGPU-2-8-L4-2Q",
+      "description": "Готовый vGPU-инстанс: 2 CPU, 8 GB RAM, 2 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 0.25,
+        "price_per_month_rub": 10896
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 2,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 2,
+        "unit": "minute",
+        "price_per_minute_rub": 0.25,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-4-8-l4-2q",
+      "name": "vGPU-4-8-L4-2Q",
+      "description": "Готовый vGPU-инстанс: 4 CPU, 8 GB RAM, 2 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 0.31,
+        "price_per_month_rub": 13358
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 4,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 2,
+        "unit": "minute",
+        "price_per_minute_rub": 0.31,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-4-16-l4-4q",
+      "name": "vGPU-4-16-L4-4Q",
+      "description": "Готовый vGPU-инстанс: 4 CPU, 16 GB RAM, 4 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 0.41,
+        "price_per_month_rub": 17559
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 4,
+        "ram_gb": 16,
+        "gpu_model": "L4",
+        "vram_gb": 4,
+        "unit": "minute",
+        "price_per_minute_rub": 0.41,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-8-16-l4-8q",
+      "name": "vGPU-8-16-L4-8Q",
+      "description": "Готовый vGPU-инстанс: 8 CPU, 16 GB RAM, 8 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 0.64,
+        "price_per_month_rub": 27686
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 8,
+        "ram_gb": 16,
+        "gpu_model": "L4",
+        "vram_gb": 8,
+        "unit": "minute",
+        "price_per_minute_rub": 0.64,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-16-32-l4-12q",
+      "name": "vGPU-16-32-L4-12Q",
+      "description": "Готовый vGPU-инстанс: 16 CPU, 32 GB RAM, 12 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 1.02,
+        "price_per_month_rub": 44072
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 16,
+        "ram_gb": 32,
+        "gpu_model": "L4",
+        "vram_gb": 12,
+        "unit": "minute",
+        "price_per_minute_rub": 1.02,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-vgpu-vgpu-32-64-l4-24q",
+      "name": "vGPU-32-64-L4-24Q",
+      "description": "Готовый vGPU-инстанс: 32 CPU, 64 GB RAM, 24 GB VRAM на L4.",
+      "category": "Cloud vGPU",
+      "pricing": {
+        "price_from_rub": 1.94,
+        "price_per_month_rub": 83912
+      },
+      "tech_stack": [
+        "L4",
+        "vGPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vgpu_instance",
+        "cpu": 32,
+        "ram_gb": 64,
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "unit": "minute",
+        "price_per_minute_rub": 1.94,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-alt-server",
+      "name": "Альт Сервер",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 17.4,
+        "price_per_month_rub": 528
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 17.4,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-alt-server-sp",
+      "name": "Альт Сервер СП",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 60,
+        "price_per_month_rub": 1800
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 60,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-astra-linux-se-orel",
+      "name": "Astra Linux SE Орел",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 55.2,
+        "price_per_month_rub": 1656
+      },
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 55.2,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-astra-linux-se-voronezh",
+      "name": "Astra Linux SE Воронеж",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 70.8,
+        "price_per_month_rub": 2124
+      },
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 70.8,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-red-os-standard",
+      "name": "РЕД ОС Стандарт",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 40,
+        "price_per_month_rub": 1200
+      },
+      "tech_stack": [
+        "РЕД ОС"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 40,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-os-red-os-fstec",
+      "name": "РЕД ОС ФСТЭК",
+      "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
+      "category": "Operating Systems",
+      "pricing": {
+        "price_from_rub": 123.32,
+        "price_per_month_rub": 3700
+      },
+      "tech_stack": [
+        "РЕД ОС"
+      ],
+      "compliance_tags": [
+        "152-FZ",
+        "FSTEC"
+      ],
+      "attributes": {
+        "resource_type": "os_license",
+        "unit": "day",
+        "price_per_day_rub": 123.32,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-object-storage-hotbox-1gb",
+      "name": "Cloud Storage Hotbox — 1 GB",
+      "description": "Горячее объектное хранилище S3; цена указана за 1 ГБ хранения за 30 дней.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 2.1,
+        "price_per_month_rub": 2.1
+      },
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "object_storage",
+        "storage_class": "Hotbox",
+        "unit": "GB-month",
+        "price_per_unit_rub": 2.1,
+        "price_per_minute_rub": 0.00005,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-object-storage-hotbox-outbound-traffic-1gb",
+      "name": "Cloud Storage Hotbox — outbound traffic 1 GB",
+      "description": "Исходящий трафик из Hotbox объектного хранилища; цена указана за 1 ГБ трафика.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 1.2,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "traffic",
+        "storage_class": "Hotbox",
+        "unit": "GB",
+        "price_per_unit_rub": 1.2,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-object-storage-icebox-1gb",
+      "name": "Cloud Storage Icebox — 1 GB",
+      "description": "Холодное объектное хранилище S3; цена указана за 1 ГБ хранения за 30 дней.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.998,
+        "price_per_month_rub": 0.998
+      },
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "object_storage",
+        "storage_class": "Icebox",
+        "unit": "GB-month",
+        "price_per_unit_rub": 0.998,
+        "price_per_minute_rub": 0.00002,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-object-storage-icebox-outbound-traffic-1gb",
+      "name": "Cloud Storage Icebox — outbound traffic 1 GB",
+      "description": "Исходящий трафик из Icebox объектного хранилища; цена указана за 1 ГБ трафика.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 1.536,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "traffic",
+        "storage_class": "Icebox",
+        "unit": "GB",
+        "price_per_unit_rub": 1.536,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-containers-basic-cluster-1m-2w-2cpu-8ram-100ssd",
+      "name": "Cloud Containers Basic Cluster — 1 master, 2 worker, 2 CPU, 8 GB RAM, 100 GB SSD на узел",
+      "description": "Типовая конфигурация Kubernetes-кластера нового поколения с сервисным балансировщиком. Расчет: 3 узла × (2 × CPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ SSD) + балансировщик.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 16348,
+        "price_per_month_rub": 16348
+      },
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "kubernetes_cluster",
+        "nodes_total": 3,
+        "master_nodes": 1,
+        "worker_nodes": 2,
+        "cpu_per_node": 2,
+        "ram_gb_per_node": 8,
+        "disk_gb_per_node": 100,
+        "disk_type": "SSD",
+        "load_balancer": true,
+        "calculation": "3 * (2 * 918 + 8 * 240 + 100 * 14.4) + 760",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-containers-standard-cluster-1m-3w-4cpu-16ram-200ssd",
+      "name": "Cloud Containers Standard Cluster — 1 master, 3 worker, 4 CPU, 16 GB RAM, 200 GB SSD на узел",
+      "description": "Типовая конфигурация Kubernetes-кластера нового поколения с сервисным балансировщиком. Расчет: 4 узла × (4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD) + балансировщик.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 42328,
+        "price_per_month_rub": 42328
+      },
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "kubernetes_cluster",
+        "nodes_total": 4,
+        "master_nodes": 1,
+        "worker_nodes": 3,
+        "cpu_per_node": 4,
+        "ram_gb_per_node": 16,
+        "disk_gb_per_node": 200,
+        "disk_type": "SSD",
+        "load_balancer": true,
+        "calculation": "4 * (4 * 918 + 16 * 240 + 200 * 14.4) + 760",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-containers-production-cluster-3m-3w-highiops",
+      "name": "Cloud Containers Production Cluster — 3 master, 3 worker, High-IOPS SSD",
+      "description": "Отказоустойчивая конфигурация Kubernetes: 3 master-узла по 4 CPU/16 GB RAM/200 GB High-IOPS SSD и 3 worker-узла по 8 CPU/32 GB RAM/500 GB High-IOPS SSD. Расчет включает сервисный балансировщик.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 103648,
+        "price_per_month_rub": 103648
+      },
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "kubernetes_cluster",
+        "nodes_total": 6,
+        "master_nodes": 3,
+        "worker_nodes": 3,
+        "cpu_model": "Intel Ice Lake",
+        "load_balancer": true,
+        "high_availability": true,
+        "calculation": "3 * (4 * 918 + 16 * 240 + 200 * 16.8) + 3 * (8 * 918 + 32 * 240 + 500 * 16.8) + 760",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-databases-small-2cpu-8ram-100ssd",
+      "name": "Cloud Databases Small Database — 2 CPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Типовая конфигурация базы данных. Расчет: 2 × CPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 5196,
+        "price_per_month_rub": 5196
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "database",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "SSD",
+        "disk_gb": 100,
+        "nodes_total": 1,
+        "load_balancer": false,
+        "high_availability": false,
+        "calculation": "1 * (2 * 918 + 8 * 240 + 100 * 14.4)",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-databases-standard-4cpu-16ram-200ssd",
+      "name": "Cloud Databases Standard Database — 4 CPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "Типовая конфигурация базы данных. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 10392,
+        "price_per_month_rub": 10392
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "database",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "nodes_total": 1,
+        "load_balancer": false,
+        "high_availability": false,
+        "calculation": "1 * (4 * 918 + 16 * 240 + 200 * 14.4)",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-databases-production-8cpu-32ram-500highiops",
+      "name": "Cloud Databases Production Database — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Типовая конфигурация базы данных. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 23424,
+        "price_per_month_rub": 23424
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "database",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 500,
+        "nodes_total": 1,
+        "load_balancer": false,
+        "high_availability": false,
+        "calculation": "1 * (8 * 918 + 32 * 240 + 500 * 16.8)",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-databases-ha-2node-8cpu-32ram-500ha-ssd",
+      "name": "Cloud Databases HA Database — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS HA SSD per node",
+      "description": "Типовая конфигурация базы данных. Расчет: 2 узла × 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS HA SSD + балансировщик.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 50008,
+        "price_per_month_rub": 50008
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS HA SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "database",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS HA SSD",
+        "disk_gb": 500,
+        "nodes_total": 2,
+        "load_balancer": true,
+        "high_availability": true,
+        "calculation": "2 * (8 * 918 + 32 * 240 + 500 * 19.2) + 760",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-ml-platform-basic-4cpu-16ram-200ssd",
+      "name": "Cloud ML Platform Basic — 4 CPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 10392,
+        "price_per_month_rub": 10392
+      },
+      "tech_stack": [
+        "ML Platform",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "calculation": "4 * 918 + 16 * 240 + 200 * 14.4",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-ml-platform-standard-8cpu-32ram-500highiops",
+      "name": "Cloud ML Platform Standard — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS SSD.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 23424,
+        "price_per_month_rub": 23424
+      },
+      "tech_stack": [
+        "ML Platform",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 918 + 32 * 240 + 500 * 16.8",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-ml-platform-production-16cpu-64ram-1000highiops",
+      "name": "Cloud ML Platform Production — 16 CPU Intel Ice Lake, 64 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 1000 ГБ High-IOPS SSD.",
+      "category": "Cloud ML Platform",
+      "pricing": {
+        "price_from_rub": 46848,
+        "price_per_month_rub": 46848
+      },
+      "tech_stack": [
+        "ML Platform",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 1000,
+        "calculation": "16 * 918 + 64 * 240 + 1000 * 16.8",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-data-platform-basic-4cpu-16ram-500ssd",
+      "name": "Data Platform Basic Analytics — 4 CPU Intel Ice Lake, 16 GB RAM, 500 GB SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 500 ГБ SSD.",
+      "category": "Data Platform",
+      "pricing": {
+        "price_from_rub": 17664.4,
+        "price_per_month_rub": 17664.4
+      },
+      "tech_stack": [
+        "Data Platform",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 500,
+        "calculation": "4 * 1101.6 + 16 * 288 + 500 * 17.3",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-data-platform-standard-8cpu-32ram-1000highiops",
+      "name": "Data Platform Standard Analytics — 8 CPU Intel Ice Lake, 32 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 1000 ГБ High-IOPS SSD.",
+      "category": "Data Platform",
+      "pricing": {
+        "price_from_rub": 38228.8,
+        "price_per_month_rub": 38228.8
+      },
+      "tech_stack": [
+        "Data Platform",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 1000,
+        "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-data-platform-production-16cpu-64ram-2000highiops",
+      "name": "Data Platform Production Analytics — 16 CPU Intel Ice Lake, 64 GB RAM, 2000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 2000 ГБ High-IOPS SSD.",
+      "category": "Data Platform",
+      "pricing": {
+        "price_from_rub": 76457.6,
+        "price_per_month_rub": 76457.6
+      },
+      "tech_stack": [
+        "Data Platform",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 2000,
+        "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-clickhouse-standard-8cpu-32ram-1000highiops",
+      "name": "Cloud ClickHouse Standard Analytics — 8 CPU Intel Ice Lake, 32 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 1000 ГБ High-IOPS SSD.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": 38228.8,
+        "price_per_month_rub": 38228.8
+      },
+      "tech_stack": [
+        "ClickHouse",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 1000,
+        "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-clickhouse-production-16cpu-64ram-2000highiops",
+      "name": "Cloud ClickHouse Production Analytics — 16 CPU Intel Ice Lake, 64 GB RAM, 2000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 2000 ГБ High-IOPS SSD.",
+      "category": "Cloud ClickHouse",
+      "pricing": {
+        "price_from_rub": 76457.6,
+        "price_per_month_rub": 76457.6
+      },
+      "tech_stack": [
+        "ClickHouse",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 2000,
+        "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-spark-standard-8cpu-32ram-1000highiops",
+      "name": "Cloud Spark Standard Analytics — 8 CPU Intel Ice Lake, 32 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 1000 ГБ High-IOPS SSD.",
+      "category": "Cloud Spark",
+      "pricing": {
+        "price_from_rub": 38228.8,
+        "price_per_month_rub": 38228.8
+      },
+      "tech_stack": [
+        "Spark",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 1000,
+        "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-spark-production-16cpu-64ram-2000highiops",
+      "name": "Cloud Spark Production Analytics — 16 CPU Intel Ice Lake, 64 GB RAM, 2000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 2000 ГБ High-IOPS SSD.",
+      "category": "Cloud Spark",
+      "pricing": {
+        "price_from_rub": 76457.6,
+        "price_per_month_rub": 76457.6
+      },
+      "tech_stack": [
+        "Spark",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 2000,
+        "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-trino-standard-8cpu-32ram-1000highiops",
+      "name": "Cloud Trino Standard Analytics — 8 CPU Intel Ice Lake, 32 GB RAM, 1000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 1000 ГБ High-IOPS SSD.",
+      "category": "Cloud Trino",
+      "pricing": {
+        "price_from_rub": 38228.8,
+        "price_per_month_rub": 38228.8
+      },
+      "tech_stack": [
+        "Trino",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 1000,
+        "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-trino-production-16cpu-64ram-2000highiops",
+      "name": "Cloud Trino Production Analytics — 16 CPU Intel Ice Lake, 64 GB RAM, 2000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 2000 ГБ High-IOPS SSD.",
+      "category": "Cloud Trino",
+      "pricing": {
+        "price_from_rub": 76457.6,
+        "price_per_month_rub": 76457.6
+      },
+      "tech_stack": [
+        "Trino",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 2000,
+        "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-iceberg-metastore-standard-4cpu-16ram-500ssd",
+      "name": "Cloud Iceberg Metastore Standard — 4 CPU Intel Ice Lake, 16 GB RAM, 500 GB SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 500 ГБ SSD.",
+      "category": "Cloud Iceberg Metastore",
+      "pricing": {
+        "price_from_rub": 17664.4,
+        "price_per_month_rub": 17664.4
+      },
+      "tech_stack": [
+        "Iceberg Metastore",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 500,
+        "calculation": "4 * 1101.6 + 16 * 288 + 500 * 17.3",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-arenadata-db-enterprise-full-basic-4cpu-16ram-500ssd-1tb",
+      "name": "Arenadata DB Enterprise Full Basic — 4 CPU Intel Ice Lake, 16 GB RAM, 500 GB SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 500 ГБ SSD + лицензия Arenadata DB Enterprise Full 1 ТБ.",
+      "category": "Arenadata DB",
+      "pricing": {
+        "price_from_rub": 44664,
+        "price_per_month_rub": 44664
+      },
+      "tech_stack": [
+        "Arenadata DB",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 500,
+        "calculation": "4 * 918 + 16 * 240 + 500 * 14.4 + 29952",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-arenadata-db-enterprise-full-production-16cpu-64ram-2000highiops-2tb",
+      "name": "Arenadata DB Enterprise Full Production — 16 CPU Intel Ice Lake, 64 GB RAM, 2000 GB High-IOPS SSD",
+      "description": "Типовая конфигурация для аналитической нагрузки. Расчет: 16 × CPU Intel Ice Lake + 64 ГБ RAM + 2000 ГБ High-IOPS SSD + лицензия Arenadata DB Enterprise Full 2 ТБ.",
+      "category": "Arenadata DB",
+      "pricing": {
+        "price_from_rub": 123552,
+        "price_per_month_rub": 123552
+      },
+      "tech_stack": [
+        "Arenadata DB",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "analytics",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 2000,
+        "calculation": "16 * 918 + 64 * 240 + 2000 * 16.8 + 59904",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-voice-tts-1000-chars",
+      "name": "Синтез речи — 1000 символов",
+      "description": "Сервис Voice; цена указана за единицу тарификации: 1000 символов.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 1,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "voice_api",
+        "unit": "1000 symbols",
+        "price_per_unit_rub": 1,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-voice-stt-minute",
+      "name": "Распознавание речи — 1 минута",
+      "description": "Сервис Voice; цена указана за единицу тарификации: 1 минута.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 0.5,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "voice_api",
+        "unit": "minute",
+        "price_per_unit_rub": 0.5,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-voice-streaming-audio-minute",
+      "name": "Потоковое аудио — 1 минута",
+      "description": "Сервис Voice; цена указана за единицу тарификации: 1 минута.",
+      "category": "Voice",
+      "pricing": {
+        "price_from_rub": 0.5,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "voice_api",
+        "unit": "minute",
+        "price_per_unit_rub": 0.5,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-backup-storage-1gb",
+      "name": "Cloud Backup — 1 GB",
+      "description": "Хранение одной резервной копии; цена указана за 1 ГБ за 30 дней.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 4.5,
+        "price_per_month_rub": 4.5
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "backup_storage",
+        "unit": "GB-month",
+        "price_per_unit_rub": 4.5,
+        "price_per_minute_rub": 0.0001,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vdi-server-standard-4cpu-16ram-200ssd",
+      "name": "Cloud Desktop VDI Server Standard — 4 CPU, 16 GB RAM, 200 GB SSD",
+      "description": "Серверная часть VDI на Intel Ice Lake с SSD, сервисным балансировщиком, Astra Linux SE Орел и лицензией VDI Termidesk. Расчет: 4 × CPU + 16 ГБ RAM + 200 ГБ SSD + балансировщик + лицензии.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 13774,
+        "price_per_month_rub": 13774
+      },
+      "tech_stack": [
+        "VDI",
+        "Termidesk",
+        "Astra Linux",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "load_balancer": true,
+        "calculation": "4 * 918 + 16 * 240 + 200 * 14.4 + 760 + 1656 + 966",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-windows-desktop-2cpu-8ram-100ssd",
+      "name": "Cloud Desktop Windows Desktop — 2 CPU, 8 GB RAM, 100 GB SSD",
+      "description": "Типовое виртуальное рабочее место с Windows Server-лицензией и Astra Linux SE для VDI. Расчет: 2 × CPU + 8 ГБ RAM + 100 ГБ SSD + лицензии.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 6788,
+        "price_per_month_rub": 6788
+      },
+      "tech_stack": [
+        "VDI",
+        "Microsoft Windows Server",
+        "Astra Linux",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_desktop",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "SSD",
+        "disk_gb": 100,
+        "calculation": "2 * 918 + 8 * 240 + 100 * 14.4 + 621 + 971",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-2-8-l4-1q",
+      "name": "VDI с vGPU-2-8-L4-1Q",
+      "description": "Готовый пакет VDI с vGPU: 2 CPU, 8 GB RAM, 1 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 0.25,
+        "price_per_month_rub": 10955
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 2,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 1,
+        "unit": "minute",
+        "price_per_minute_rub": 0.25,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-2-8-l4-2q",
+      "name": "VDI с vGPU-2-8-L4-2Q",
+      "description": "Готовый пакет VDI с vGPU: 2 CPU, 8 GB RAM, 2 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 0.3,
+        "price_per_month_rub": 13075
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 2,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 2,
+        "unit": "minute",
+        "price_per_minute_rub": 0.3,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-4-8-l4-2q",
+      "name": "VDI с vGPU-4-8-L4-2Q",
+      "description": "Готовый пакет VDI с vGPU: 4 CPU, 8 GB RAM, 2 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 0.43,
+        "price_per_month_rub": 18367
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 4,
+        "ram_gb": 8,
+        "gpu_model": "L4",
+        "vram_gb": 2,
+        "unit": "minute",
+        "price_per_minute_rub": 0.43,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-4-16-l4-4q",
+      "name": "VDI с vGPU-4-16-L4-4Q",
+      "description": "Готовый пакет VDI с vGPU: 4 CPU, 16 GB RAM, 4 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 0.49,
+        "price_per_month_rub": 21071
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 4,
+        "ram_gb": 16,
+        "gpu_model": "L4",
+        "vram_gb": 4,
+        "unit": "minute",
+        "price_per_minute_rub": 0.49,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-8-16-l4-8q",
+      "name": "VDI с vGPU-8-16-L4-8Q",
+      "description": "Готовый пакет VDI с vGPU: 8 CPU, 16 GB RAM, 8 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 0.77,
+        "price_per_month_rub": 33223
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 8,
+        "ram_gb": 16,
+        "gpu_model": "L4",
+        "vram_gb": 8,
+        "unit": "minute",
+        "price_per_minute_rub": 0.77,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-16-32-l4-12q",
+      "name": "VDI с vGPU-16-32-L4-12Q",
+      "description": "Готовый пакет VDI с vGPU: 16 CPU, 32 GB RAM, 12 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 1.22,
+        "price_per_month_rub": 52887
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 16,
+        "ram_gb": 32,
+        "gpu_model": "L4",
+        "vram_gb": 12,
+        "unit": "minute",
+        "price_per_minute_rub": 1.22,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cloud-desktop-vgpu-32-64-l4-24q",
+      "name": "VDI с vGPU-32-64-L4-24Q",
+      "description": "Готовый пакет VDI с vGPU: 32 CPU, 64 GB RAM, 24 GB VRAM на L4.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 2.31,
+        "price_per_month_rub": 99695
+      },
+      "tech_stack": [
+        "VDI",
+        "vGPU",
+        "L4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "vdi_vgpu_desktop",
+        "cpu": 32,
+        "ram_gb": 64,
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "unit": "minute",
+        "price_per_minute_rub": 2.31,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-professional-services",
+      "name": "Professional Services",
+      "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
+      "category": "Professional Services",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-antiddos",
+      "name": "Защита от DDoS-атак",
+      "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
+      "category": "Anti-DDoS",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-waf",
+      "name": "Web Application Firewall",
+      "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
+      "category": "WAF",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-connectivity-port-rental",
+      "name": "Аренда порта на коммутаторе",
+      "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
+      "category": "Connectivity",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-connectivity-l2-l3-vpn",
+      "name": "L2/L3 VPN",
+      "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
+      "category": "Connectivity",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "price_on_request",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-cdn-traffic-1gb",
+      "name": "CDN — общий трафик 1 GB",
+      "description": "CDN-трафик, цена указана за 1 ГБ общего трафика.",
+      "category": "CDN",
+      "pricing": {
+        "price_from_rub": 0.6,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "traffic",
+        "unit": "GB",
+        "price_per_unit_rub": 0.6,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-accounting-8",
+      "name": "1C:Бухгалтерия 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 45,
+        "price_per_month_rub": 1350
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 45,
+        "calculation": "45 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-accounting-8-corp",
+      "name": "1С:Бухгалтерия 8 КОРП",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 59,
+        "price_per_month_rub": 1770
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 59,
+        "calculation": "59 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-document-flow-8",
+      "name": "1С:Документооборот 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 59,
+        "price_per_month_rub": 1770
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 59,
+        "calculation": "59 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-document-flow-8-corp",
+      "name": "1С:Документооборот 8 КОРП",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 75,
+        "price_per_month_rub": 2250
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 75,
+        "calculation": "75 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-payroll-8",
+      "name": "1С:Зарплата и управление персоналом 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 47,
+        "price_per_month_rub": 1410
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 47,
+        "calculation": "47 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-payroll-8-corp",
+      "name": "1С:Зарплата и Управление Персоналом 8 КОРП",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 111,
+        "price_per_month_rub": 3330
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 111,
+        "calculation": "111 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-complex-automation-8",
+      "name": "1С:Комплексная автоматизация 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 68,
+        "price_per_month_rub": 2040
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 68,
+        "calculation": "68 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-retail-8",
+      "name": "1С:Розница 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 45,
+        "price_per_month_rub": 1350
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 45,
+        "calculation": "45 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-manage-our-company-8",
+      "name": "1С:Управление нашей фирмой 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 46,
+        "price_per_month_rub": 1380
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 46,
+        "calculation": "46 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-trade-management-8",
+      "name": "1С:Управление торговлей 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 47,
+        "price_per_month_rub": 1410
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 47,
+        "calculation": "47 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-appeals-accounting",
+      "name": "1С:Учет обращений",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 45,
+        "price_per_month_rub": 1350
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 45,
+        "calculation": "45 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-contracts-8",
+      "name": "1С:Договоры 8",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 45,
+        "price_per_month_rub": 1350
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 45,
+        "calculation": "45 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-crm-prof",
+      "name": "1С:Предприятие 8. CRM ПРОФ",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 59,
+        "price_per_month_rub": 1770
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 59,
+        "calculation": "59 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-crm-corp",
+      "name": "1С:Предприятие 8. CRM КОРП",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 78,
+        "price_per_month_rub": 2340
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 78,
+        "calculation": "78 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-1c-ready-workplace-1c-trade-and-crm",
+      "name": "1С:Предприятие 8. Управление торговлей и взаимоотношениями с клиентами (CRM)",
+      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 67,
+        "price_per_month_rub": 2010
+      },
+      "tech_stack": [
+        "1C"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "1c_license",
+        "unit": "user_day",
+        "price_per_day_rub": 67,
+        "calculation": "67 * 30",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-exchange-standard-plus",
+      "name": "MS Exchange Server Standard Plus",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 720,
+        "price_per_month_rub": 720
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 720,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-exchange-enterprise-plus",
+      "name": "MS Exchange Server Enterprise Plus",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 973,
+        "price_per_month_rub": 973
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 973,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-exchange-standard",
+      "name": "MS Exchange Server Standard",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 419,
+        "price_per_month_rub": 419
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 419,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-rds",
+      "name": "MS RDS",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 1401,
+        "price_per_month_rub": 1401
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 1401,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-sql-enterprise",
+      "name": "MS SQL Enterprise",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 119252,
+        "price_per_month_rub": 119252
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "per_2_vcpu",
+        "price_per_unit_rub": 119252,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-sql",
+      "name": "MS SQL",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 31674,
+        "price_per_month_rub": 31674
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "per_2_vcpu",
+        "price_per_unit_rub": 31674,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-sql-sal",
+      "name": "MS SQL (SAL)",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 3424,
+        "price_per_month_rub": 3424
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 3424,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-office-standard",
+      "name": "MS Office Standard",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 2719,
+        "price_per_month_rub": 2719
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 2719,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-office-professional",
+      "name": "MS Office Professional",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 3712,
+        "price_per_month_rub": 3712
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 3712,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-sql-web",
+      "name": "MS SQL Web",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 1980,
+        "price_per_month_rub": 1980
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "per_2_vcpu",
+        "price_per_unit_rub": 1980,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-exchange-enterprise",
+      "name": "MS Exchange Server Enterprise",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 675,
+        "price_per_month_rub": 675
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "unit",
+        "price_per_unit_rub": 675,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-microsoft-licenses-ms-windows-server",
+      "name": "MS Windows Server",
+      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
+      "category": "Microsoft Licenses",
+      "pricing": {
+        "price_from_rub": 971,
+        "price_per_month_rub": 971
+      },
+      "tech_stack": [
+        "Microsoft"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "software_license",
+        "unit": "per_2_vcpu",
+        "price_per_unit_rub": 971,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-load-balancer-standard-ha",
+      "name": "Стандартный балансировщик нагрузки — отказоустойчивая конфигурация",
+      "description": "Стандартный отказоустойчивый балансировщик нагрузки, цена указана за 1 штуку.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 0.04398,
+        "price_per_month_rub": 1900
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "load_balancer",
+        "unit": "minute",
+        "price_per_minute_rub": 0.04398,
+        "high_availability": true,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-public-ip-sprut-floating",
+      "name": "Плавающий IPv4-адрес (Sprut)",
+      "description": "Публичный IPv4-адрес, цена указана за 1 адрес.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 0.00394,
+        "price_per_month_rub": 170
+      },
+      "tech_stack": [
+        "IPv4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "public_ip",
+        "unit": "minute",
+        "price_per_minute_rub": 0.00394,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-public-ip-sprut-port",
+      "name": "IPv4-адрес на порту виртуальной машины (Sprut)",
+      "description": "Публичный IPv4-адрес, цена указана за 1 адрес.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 0.00394,
+        "price_per_month_rub": 170
+      },
+      "tech_stack": [
+        "IPv4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "public_ip",
+        "unit": "minute",
+        "price_per_minute_rub": 0.00394,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-public-ip-neutron-floating",
+      "name": "Плавающий IPv4-адрес (Neutron)",
+      "description": "Публичный IPv4-адрес, цена указана за 1 адрес.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 0.00394,
+        "price_per_month_rub": 170
+      },
+      "tech_stack": [
+        "IPv4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "public_ip",
+        "unit": "minute",
+        "price_per_minute_rub": 0.00394,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-public-ip-neutron-port",
+      "name": "IPv4-адрес на порту виртуальной машины (Neutron)",
+      "description": "Публичный IPv4-адрес, цена указана за 1 адрес.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 0.00394,
+        "price_per_month_rub": 170
+      },
+      "tech_stack": [
+        "IPv4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "public_ip",
+        "unit": "minute",
+        "price_per_minute_rub": 0.00394,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-file-storage-hdd-1gb",
+      "name": "Файловое хранилище HDD — 1 GB",
+      "description": "Файловое хранилище HDD; цена указана за 1 ГБ в месяц.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": 6,
+        "price_per_month_rub": 6
+      },
+      "tech_stack": [
+        "HDD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "file_storage",
+        "disk_type": "HDD",
+        "unit": "GB-month",
+        "price_per_unit_rub": 6,
+        "price_per_minute_rub": 0.00014,
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-marketplace-app-products",
+      "name": "Магазин приложений VK Cloud",
+      "description": "Стоимость продуктов Магазина приложений указана на странице продукта в личном кабинете VK Cloud; в PDF фиксирован отдельный прайс без конкретной суммы.",
+      "category": "Marketplace",
+      "pricing": {
+        "price_from_rub": null,
+        "price_per_month_rub": null
+      },
+      "tech_stack": [],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "pricing_model": "provider_catalog",
+        "price_source": "tariff_grid_package",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-marketplace-infrastructure-small-2cpu-8ram-100ssd",
+      "name": "Инфраструктура маркетплейса Small — 2 CPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Типовая конфигурация инфраструктуры маркетплейса для небольшого приложения из маркетплейса. Расчет: 2 × CPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ SSD.",
+      "category": "Marketplace Infrastructure",
+      "pricing": {
+        "price_from_rub": 4330,
+        "price_per_month_rub": 4330
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "marketplace_infrastructure",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "SSD",
+        "disk_gb": 100,
+        "calculation": "2 * 765 + 8 * 200 + 100 * 12",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-marketplace-infrastructure-standard-4cpu-16ram-200ssd",
+      "name": "Инфраструктура маркетплейса Standard — 4 CPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "Типовая конфигурация инфраструктуры маркетплейса для рабочего приложения из маркетплейса. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD.",
+      "category": "Marketplace Infrastructure",
+      "pricing": {
+        "price_from_rub": 8660,
+        "price_per_month_rub": 8660
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "marketplace_infrastructure",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "calculation": "4 * 765 + 16 * 200 + 200 * 12",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    },
+    {
+      "service_id": "vkcloud-marketplace-infrastructure-production-8cpu-32ram-500highiops",
+      "name": "Инфраструктура маркетплейса Production — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Типовая конфигурация инфраструктуры маркетплейса для нагруженного приложения из маркетплейса. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS SSD.",
+      "category": "Marketplace Infrastructure",
+      "pricing": {
+        "price_from_rub": 19520,
+        "price_per_month_rub": 19520
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "marketplace_infrastructure",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "High-IOPS SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 765 + 32 * 200 + 500 * 14",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true
+      },
+      "source_url": "uploaded_file:Price_List_Old_f6f260a1b4.pdf"
+    }
+  ]
+}
