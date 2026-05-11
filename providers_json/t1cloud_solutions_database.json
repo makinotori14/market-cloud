@@ -27,7 +27,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-server-standard-b5-4cpu-16ram-200basic",
@@ -51,7 +51,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-server-production-a5-8cpu-32ram-500high",
@@ -75,7 +75,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-server-highperf-b4-16cpu-64ram-500high",
@@ -99,7 +99,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-server-large-b5-32cpu-128ram-1000high",
@@ -123,7 +123,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-gpu-h100-pcie-package",
@@ -147,7 +147,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-gpu-a100-pcie-package",
@@ -171,7 +171,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-gpu-l40s-pcie-package",
@@ -195,7 +195,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-gpu-h200-sxm-package",
@@ -219,7 +219,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cloud-director-gpu-h100-package",
@@ -241,7 +241,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-haas-h1",
@@ -263,7 +263,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-haas-h2",
@@ -285,7 +285,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-haas-h3",
@@ -307,7 +307,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-object-storage-s3",
@@ -328,7 +328,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-object-storage-s3-multizone",
@@ -350,7 +350,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-veeam-backup-vm",
@@ -368,7 +368,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-veeam-repository",
@@ -386,7 +386,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cyberbackup-server",
@@ -404,7 +404,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cyberbackup-vm",
@@ -422,7 +422,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cyberbackup-postgresql",
@@ -440,7 +440,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cdn-traffic-ru",
@@ -459,7 +459,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cdn-traffic-europe",
@@ -478,7 +478,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cdn-traffic-americas-asia",
@@ -497,7 +497,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-cdn-shielding",
@@ -515,7 +515,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-public-ipv4",
@@ -533,7 +533,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-internet-bandwidth",
@@ -551,7 +551,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-network-load-balancer",
@@ -569,7 +569,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-clouddns",
@@ -587,7 +587,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-tiny-1master",
@@ -607,7 +607,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-small-3master-ha",
@@ -627,7 +627,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-medium-3master-ha",
@@ -647,7 +647,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-large-3master-ha",
@@ -667,7 +667,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-cluster-basic-3worker",
@@ -690,7 +690,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mks-cluster-production-3master-3worker",
@@ -714,7 +714,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-postgresql-small",
@@ -736,7 +736,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-postgresql-standard",
@@ -758,7 +758,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-postgresql-production",
@@ -780,7 +780,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-postgresql-ha",
@@ -804,7 +804,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mysql-standard",
@@ -826,7 +826,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-clickhouse-standard",
@@ -848,7 +848,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-inmemorydb-standard",
@@ -870,7 +870,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-documentdb-standard",
@@ -892,7 +892,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-opensearch-standard",
@@ -914,7 +914,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-kafka-standard",
@@ -936,7 +936,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-rabbitmq-standard",
@@ -958,7 +958,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-gitlab-standard",
@@ -980,7 +980,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-repository-for-containers",
@@ -998,7 +998,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mlhub-standard",
@@ -1019,7 +1019,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-mlhub-h100-gpu",
@@ -1041,7 +1041,7 @@
         "price_source": "calculated_from_tariff_grid",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-glarus-bi-5users",
@@ -1059,7 +1059,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-glarus-bi-20users",
@@ -1077,7 +1077,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-glarus-bi-50users",
@@ -1095,7 +1095,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-scibox-vgpu-h100",
@@ -1113,7 +1113,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-t1-disk-business",
@@ -1133,7 +1133,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-t1-disk-corporate",
@@ -1153,7 +1153,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-astra-linux-orel",
@@ -1172,7 +1172,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-astra-linux-voronezh",
@@ -1191,7 +1191,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-alt-server-10",
@@ -1209,7 +1209,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-alt-workstation-10",
@@ -1227,7 +1227,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-alt-sp-server-10",
@@ -1246,7 +1246,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-redos-server-standard",
@@ -1264,7 +1264,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-license-redos-server-certified",
@@ -1283,7 +1283,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-office-standard",
@@ -1301,7 +1301,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-office-pro-plus",
@@ -1319,7 +1319,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-sql-standard-sal",
@@ -1337,7 +1337,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-sql-standard-core",
@@ -1355,7 +1355,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-win-server-standard-core",
@@ -1373,7 +1373,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-win-server-dc-core",
@@ -1391,7 +1391,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-rds-sal",
@@ -1409,7 +1409,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-exchange-standard-sal",
@@ -1427,7 +1427,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-ms-visual-studio-pro",
@@ -1445,7 +1445,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-direct-connect-1g",
@@ -1463,7 +1463,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     },
     {
       "service_id": "t1cloud-direct-connect-10g",
@@ -1481,7 +1481,7 @@
         "price_source": "tariff_grid_package",
         "vat_included": false
       },
-      "source_url": "uploaded_file:Prilozhenie_1_Tarifnoe_prilozhenie_13_04_2026.pdf"
+      "source_url": "https://t1-cloud.ru/documents/rates"
     }
   ]
 }

@@ -28,7 +28,7 @@
         "calculation": "2 * 883.99 + 4 * 291.88 + 50 * 9.53 = 3413.24",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-server-standard-4cpu-16ram-200ssd",
@@ -51,7 +51,7 @@
         "calculation": "4 * 883.99 + 16 * 291.88 + 200 * 9.53 = 10110.04",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-server-production-8cpu-32ram-500fast",
@@ -74,7 +74,7 @@
         "calculation": "8 * 883.99 + 32 * 291.88 + 500 * 22.00 = 28412.08",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-server-highperf-16cpu-64ram-500fast",
@@ -97,7 +97,7 @@
         "calculation": "16 * 883.99 + 64 * 291.88 + 500 * 22.00 = 41824.16",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-server-large-32cpu-128ram-1000fast",
@@ -120,7 +120,7 @@
         "calculation": "32 * 883.99 + 128 * 291.88 + 1000 * 22.00 = 87420.32",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-server-interruptible-4cpu-16ram-100ssd",
@@ -143,7 +143,7 @@
         "calculation": "4 * 167.09 + 16 * 60.97 + 100 * 9.53 = 2593.21",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-gpu-h200-141gb-package",
@@ -167,7 +167,7 @@
         "calculation": "390000 + 16 * 883.99 + 128 * 291.88 = 441504.48",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-gpu-a100-80gb-package",
@@ -190,7 +190,7 @@
         "calculation": "193797.04 + 16 * 883.99 + 128 * 291.88 = 245301.52",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-gpu-l4-24gb-package",
@@ -213,7 +213,7 @@
         "calculation": "33011 + 8 * 668.35 + 64 * 243.04 = 53901.36",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-gpu-rtx-6000-pro-package",
@@ -236,7 +236,7 @@
         "calculation": "143146 + 16 * 883.99 + 128 * 291.88 = 194650.48",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-gpu-tesla-t4-package",
@@ -259,7 +259,7 @@
         "calculation": "28592.64 + 8 * 883.99 + 32 * 243.04 = 41707.72",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dedicated-server-cl01-ssd",
@@ -281,7 +281,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dedicated-server-cl13-nvme",
@@ -303,7 +303,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dedicated-server-cl25-ssd",
@@ -325,7 +325,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-s3-ice-storage",
@@ -347,7 +347,7 @@
         "put_requests_per_1000_rub": 3.01,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-s3-vault",
@@ -367,7 +367,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-small-2cpu-8ram-100ssd",
@@ -389,7 +389,7 @@
         "calculation": "2 * 931.48 + 8 * 311.00 + 100 * 55.85 = 9935.81",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-standard-4cpu-16ram-200ssd",
@@ -411,7 +411,7 @@
         "calculation": "4 * 931.48 + 16 * 311.00 + 200 * 55.85 = 19871.92",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-production-highfreq-8cpu-32ram-500ssd",
@@ -434,7 +434,7 @@
         "calculation": "8 * 1310 + 32 * 353 + 500 * 55.85 = 49721",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-dedicated-small",
@@ -453,7 +453,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-dedicated-medium",
@@ -472,7 +472,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-dedicated-large",
@@ -491,7 +491,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-dbaas-dedicated-mega",
@@ -510,7 +510,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-mks-base-1master",
@@ -529,7 +529,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-mks-ha-3master",
@@ -548,7 +548,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-mks-cluster-production-3master-3worker",
@@ -573,7 +573,7 @@
         "calculation": "15532.36 + 3 * (8 * 883.99 + 32 * 291.88 + 200 * 9.53) + 2370.81 = 60872.61",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-container-registry",
@@ -591,7 +591,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vmware-server-standard",
@@ -614,7 +614,7 @@
         "calculation": "4 * 800.01 + 16 * 450.01 + 200 * 14.35 = 13270.20",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vmware-edge-router-compact-ha",
@@ -632,7 +632,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vmware-draas",
@@ -650,7 +650,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-network-loadbalancer-basic",
@@ -668,7 +668,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-network-loadbalancer-advanced-ha",
@@ -686,7 +686,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-public-ipv4",
@@ -704,7 +704,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-veeam-cloud-connect-vm",
@@ -722,7 +722,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-veeam-cloud-connect-repository",
@@ -740,7 +740,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cyberbackup-vm",
@@ -758,7 +758,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cyberbackup-physical-server",
@@ -776,7 +776,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cyberbackup-postgresql",
@@ -794,7 +794,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-cloud-backup-disk-1gb",
@@ -812,7 +812,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vdi-2cpu-4ram",
@@ -832,7 +832,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vdi-4cpu-8ram",
@@ -852,7 +852,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-vdi-8cpu-16ram",
@@ -872,7 +872,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-1c-ready-cloud-standard",
@@ -894,7 +894,7 @@
         "calculation": "4 * 677.64 + 8 * 246.41 + 100 * 11.49 = 5830.84",
         "price_source": "calculated_from_tariff_grid"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-1c-license-prof-server",
@@ -912,7 +912,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-1c-license-prof-user",
@@ -931,7 +931,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-1c-license-corp-server",
@@ -949,7 +949,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-license-astra-linux-orel",
@@ -967,7 +967,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-license-astra-linux-voronezh",
@@ -985,7 +985,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-license-redos-standard",
@@ -1003,7 +1003,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-license-redos-certified",
@@ -1022,7 +1022,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-ddos-protection-ddosguard-l3l4-10mbit",
@@ -1040,7 +1040,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-ddos-curator-professional",
@@ -1058,7 +1058,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-firewall-usergate-c150",
@@ -1076,7 +1076,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-gost-vpn-vipnet",
@@ -1093,7 +1093,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-info-security-kaspersky-eps",
@@ -1110,7 +1110,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-direct-connect-1g",
@@ -1128,7 +1128,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-direct-connect-10g",
@@ -1146,7 +1146,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-file-storage-universal",
@@ -1165,7 +1165,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-file-storage-fast",
@@ -1184,7 +1184,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-mobile-farm-month",
@@ -1203,7 +1203,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-domain-ru-registration",
@@ -1221,7 +1221,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     },
     {
       "service_id": "selectel-isp-manager-pro",
@@ -1239,7 +1239,7 @@
         "vat_included": true,
         "price_source": "tariff_grid_package"
       },
-      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+      "source_url": "https://selectel.ru/prices/"
     }
   ]
 }
