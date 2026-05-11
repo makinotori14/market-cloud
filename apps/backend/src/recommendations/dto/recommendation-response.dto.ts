@@ -27,6 +27,9 @@ export class CloudRecommendationDto {
   @ApiProperty()
   title!: string;
 
+  @ApiPropertyOptional({ nullable: true })
+  sourceUrl!: string | null;
+
   @ApiProperty()
   description!: string;
 

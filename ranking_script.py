@@ -131,6 +131,15 @@ PROVIDER_ALIASES: dict[str, list[str]] = {
     "cloudru": ["cloudru", "cloud.ru", "cloud ru", "клауд ру", "облако ру"],
 }
 
+PROVIDER_SOURCE_URLS: dict[str, str] = {
+    "selectel": "https://selectel.ru/prices/",
+    "vkcloud": "https://cloud.vk.com/pricing/",
+    "t1cloud": "https://t1-cloud.ru/documents/rates",
+    "edgecenter": "https://edgecenter.ru/cloud/price",
+    "yandexcloud": "https://yandex.cloud/ru/price-list",
+    "cloudru": "https://cloud.ru/services",
+}
+
 
 SERVICE_TYPE_ALIASES: dict[str, list[str]] = {
     "virtual_server": [
@@ -248,6 +257,18 @@ def canonical_provider_id(value: Any) -> Optional[str]:
         if compact == canonical or any(normalize_token(alias) in text for alias in aliases):
             return canonical
     return compact
+
+
+def public_source_url(provider: dict[str, Any], service: dict[str, Any]) -> Optional[str]:
+    source_url = service.get("source_url")
+    if isinstance(source_url, str) and re.match(r"^https?://", source_url):
+        return source_url
+
+    provider_id = canonical_provider_id(provider.get("provider_id") or provider.get("name"))
+    if provider_id:
+        return PROVIDER_SOURCE_URLS.get(provider_id)
+
+    return None
 
 
 def enabled_provider_ids(intent: UserIntent) -> Optional[set[str]]:
@@ -377,7 +398,7 @@ def load_provider_services() -> list[IndexedService]:
                     regions=infer_service_regions(provider, item),
                     tech_stack=tech_stack,
                     compliance_tags=compliance_tags,
-                    source_url=item.get("source_url"),
+                    source_url=public_source_url(provider, item),
                     attributes=attributes,
                     search_text=service_search_text(item, provider_name),
                 )

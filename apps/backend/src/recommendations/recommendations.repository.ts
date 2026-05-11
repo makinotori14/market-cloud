@@ -110,6 +110,7 @@ export class RecommendationsRepository {
               response: rawPayload,
               explanation: recommendation.explanation,
               rankPosition: index,
+              sourceUrl: recommendation.sourceUrl,
             },
           ],
         );
@@ -194,6 +195,7 @@ export class RecommendationsRepository {
       id: row.id,
       provider: row.provider,
       title: row.title,
+      sourceUrl: this.extractSourceUrl(row.raw_payload, row.provider),
       description: row.description,
       finalScore: Number(row.final_score),
       monthlyPriceRub: row.monthly_price_rub === null ? null : Number(row.monthly_price_rub),
@@ -204,6 +206,44 @@ export class RecommendationsRepository {
       icon: row.icon,
       explanation: this.extractExplanation(row.raw_payload),
     }));
+  }
+
+  private extractSourceUrl(rawPayload: unknown, provider: string): string | null {
+    if (!rawPayload || typeof rawPayload !== "object") {
+      return this.providerSourceUrl(provider);
+    }
+
+    const sourceUrl = (rawPayload as { sourceUrl?: unknown }).sourceUrl;
+    if (typeof sourceUrl === "string" && /^https?:\/\//i.test(sourceUrl)) {
+      return sourceUrl;
+    }
+
+    return this.providerSourceUrl(provider);
+  }
+
+  private providerSourceUrl(provider: string): string | null {
+    const normalized = provider.toLowerCase().replace(/[\s._-]+/g, "");
+
+    if (normalized.includes("selectel")) {
+      return "https://selectel.ru/prices/";
+    }
+    if (normalized.includes("vkcloud") || normalized === "vk") {
+      return "https://cloud.vk.com/pricing/";
+    }
+    if (normalized.includes("t1cloud") || normalized.includes("t1")) {
+      return "https://t1-cloud.ru/documents/rates";
+    }
+    if (normalized.includes("edgecenter")) {
+      return "https://edgecenter.ru/cloud/price";
+    }
+    if (normalized.includes("yandexcloud")) {
+      return "https://yandex.cloud/ru/price-list";
+    }
+    if (normalized.includes("cloudru")) {
+      return "https://cloud.ru/services";
+    }
+
+    return null;
   }
 
   private extractExplanation(rawPayload: unknown): CloudRecommendation["explanation"] {

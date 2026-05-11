@@ -19,6 +19,7 @@ export const cloudRecommendationSchema = z.object({
   id: z.string(),
   provider: z.string().min(1),
   title: z.string().min(1),
+  sourceUrl: z.string().min(1).nullable().optional(),
   description: z.string().min(1),
   finalScore: z.number().min(0).max(100),
   monthlyPriceRub: z.number().nonnegative().nullable().default(null),

@@ -40,6 +40,33 @@ const rankStyles: Record<number, { card: string; badge: string; label: string }>
   },
 };
 
+function ServiceTitle({
+  className,
+  recommendation,
+}: {
+  className: string;
+  recommendation: CloudRecommendation;
+}) {
+  const sourceUrl = recommendation.sourceUrl?.match(/^https?:\/\//i) ? recommendation.sourceUrl : null;
+
+  if (!sourceUrl) {
+    return <h3 className={className}>{recommendation.title}</h3>;
+  }
+
+  return (
+    <h3 className={className}>
+      <a
+        className="underline decoration-accent/45 underline-offset-4 transition hover:text-accent hover:decoration-accent"
+        href={sourceUrl}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {recommendation.title}
+      </a>
+    </h3>
+  );
+}
+
 function providerIcon(provider: string, fallbackIcon: string): string {
   const normalized = provider.toLowerCase().replace(/[\s._-]+/g, "");
 
@@ -115,7 +142,10 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
                   </span>
                 ) : null}
               </div>
-              <h3 className="text-lg font-extrabold leading-tight">{recommendation.title}</h3>
+              <ServiceTitle
+                className="text-lg font-extrabold leading-tight"
+                recommendation={recommendation}
+              />
             </div>
             <Badge className="w-fit gap-1.5">
               <TrendingUp className="h-3.5 w-3.5" aria-hidden="true" />
@@ -164,7 +194,10 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="mb-2 text-xs font-bold uppercase text-accent">{recommendation.provider}</p>
-                <h3 className="text-xl font-extrabold leading-tight sm:text-2xl">{recommendation.title}</h3>
+                <ServiceTitle
+                  className="text-xl font-extrabold leading-tight sm:text-2xl"
+                  recommendation={recommendation}
+                />
               </div>
               <Button
                 aria-label="Закрыть подробности"

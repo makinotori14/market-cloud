@@ -58,6 +58,35 @@ function providerIcon(providerName: string): string {
   return "/cloud-service.svg";
 }
 
+function providerSourceUrl(providerName: string): string | null {
+  const normalized = providerName.toLowerCase().replace(/[\s._-]+/g, "");
+
+  if (normalized.includes("selectel")) {
+    return "https://selectel.ru/prices/";
+  }
+  if (normalized.includes("vkcloud") || normalized === "vk") {
+    return "https://cloud.vk.com/pricing/";
+  }
+  if (normalized.includes("t1cloud") || normalized.includes("t1")) {
+    return "https://t1-cloud.ru/documents/rates";
+  }
+  if (normalized.includes("edgecenter")) {
+    return "https://edgecenter.ru/cloud/price";
+  }
+  if (normalized.includes("yandexcloud")) {
+    return "https://yandex.cloud/ru/price-list";
+  }
+  if (normalized.includes("cloudru")) {
+    return "https://cloud.ru/services";
+  }
+
+  return null;
+}
+
+function publicSourceUrl(sourceUrl: string | null | undefined, providerName: string): string | null {
+  return sourceUrl && /^https?:\/\//i.test(sourceUrl) ? sourceUrl : providerSourceUrl(providerName);
+}
+
 @Injectable()
 export class CloudRankerClient {
   private readonly logger = new Logger(CloudRankerClient.name);
@@ -109,6 +138,7 @@ export class CloudRankerClient {
     service: RankerService,
     intent: AiStudioIntent,
   ): CloudRecommendation {
+    const sourceUrl = publicSourceUrl(service.source_url, service.provider_name);
     const services = [
       ...(service.tech_stack.length > 0 ? service.tech_stack : []),
       ...(service.matched_tags.length > 0 ? service.matched_tags : []),
@@ -120,14 +150,15 @@ export class CloudRankerClient {
       id: service.service_id,
       provider: service.provider_name,
       title: service.name,
+      sourceUrl,
       description: service.description,
       finalScore: Math.max(0, Math.min(100, service.final_score_100)),
       monthlyPriceRub: Math.max(0, service.price_rub),
       services: uniqueServices.length > 0 ? uniqueServices : [service.provider_name],
       reasons: this.reasonsForService(service, intent),
       risks: [
-        service.source_url
-          ? `Проверьте тариф и условия провайдера: ${service.source_url}`
+        sourceUrl
+          ? `Проверьте тариф и условия провайдера: ${sourceUrl}`
           : "Проверьте актуальный тариф и ограничения услуги у провайдера.",
       ],
       estimatedCostLevel: this.toCostLevel(service.price_rub),
