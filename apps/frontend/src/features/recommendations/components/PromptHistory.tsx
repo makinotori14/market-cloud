@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Clock3, Loader2, Trash2 } from "lucide-react";
 import type { RecommendationHistoryItem } from "../types";
 import { Badge } from "@/shared/ui/badge";
@@ -34,8 +35,15 @@ export function PromptHistory({
   return (
     <aside className="flex min-h-0 flex-col bg-[#07111f] p-7 text-white lg:h-[calc(100vh-56px)]">
       <div className="flex items-center gap-4">
-        <div className="grid h-11 w-11 place-items-center rounded-ui bg-gradient-to-br from-accent to-primary font-extrabold shadow-[0_14px_28px_rgba(0,119,255,0.35)]">
-          :)
+        <div className="grid h-11 w-11 place-items-center rounded-ui border border-white/[0.12] bg-white shadow-[0_14px_28px_rgba(0,119,255,0.24)]">
+          <Image
+            src="/logo.png"
+            width={34}
+            height={34}
+            alt=""
+            priority
+            className="h-8 w-8 object-contain"
+          />
         </div>
         <div>
           <p className="mb-1 text-xs font-extrabold uppercase text-accent">FA x MAI Triad</p>

@@ -25,8 +25,8 @@ const rankStyles: Record<number, { card: string; badge: string; label: string }>
     label: "1 место",
   },
   2: {
-    card: "border-[#a7b0bd] bg-[#f8fafc] shadow-[0_18px_42px_rgba(103,116,139,0.16)] dark:border-[#d5dbe4]/65 dark:bg-[#20252d]",
-    badge: "border-[#a7b0bd] bg-[#eef2f7] text-[#334155] dark:border-[#d5dbe4]/60 dark:bg-[#374151] dark:text-[#f8fafc]",
+    card: "border-[#7f8da3] bg-[#f4f7fb] shadow-[0_18px_46px_rgba(71,85,105,0.24),0_0_0_2px_rgba(203,213,225,0.82)] dark:border-[#e2e8f0]/85 dark:bg-[#1f2733] dark:shadow-[0_18px_46px_rgba(148,163,184,0.22),0_0_0_2px_rgba(226,232,240,0.34)]",
+    badge: "border-[#7f8da3] bg-[#dde4ee] text-[#1f2937] dark:border-[#e2e8f0]/80 dark:bg-[#4b5563] dark:text-[#ffffff]",
     label: "2 место",
   },
   3: {
