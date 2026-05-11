@@ -15,7 +15,7 @@
         "price_per_month_rub": 2775.38
       },
       "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -39,7 +39,7 @@
         "price_per_month_rub": 5550.76
       },
       "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -63,7 +63,7 @@
         "price_per_month_rub": 20734.36
       },
       "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (a5 Advanced)",
@@ -87,7 +87,7 @@
         "price_per_month_rub": 26885.36
       },
       "tech_stack": ["AMD EPYC 9004", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "AMD EPYC 9004 series 4.05 GHz (b4)",
@@ -111,7 +111,7 @@
         "price_per_month_rub": 52092.08
       },
       "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -135,7 +135,7 @@
         "price_per_month_rub": 284589.60
       },
       "tech_stack": ["NVIDIA Hopper H100", "AMD EPYC 9004"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Hopper H100 80Gb PCIe",
@@ -159,7 +159,7 @@
         "price_per_month_rub": 165457.41
       },
       "tech_stack": ["NVIDIA Ampere A100", "Intel Cascade Lake"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Ampere A100 40Gb PCIe",
@@ -183,7 +183,7 @@
         "price_per_month_rub": 127019.06
       },
       "tech_stack": ["NVIDIA Ada Lovelace L40s", "AMD EPYC 9004"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Ada Lovelace L40s 48Gb PCIe",
@@ -207,7 +207,7 @@
         "price_per_month_rub": 387652.48
       },
       "tech_stack": ["NVIDIA Hopper H200", "InfiniBand", "Intel Sapphire Rapids"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Hopper H200 SXM 141Gb InfiniBand",
@@ -231,7 +231,7 @@
         "price_per_month_rub": 300677.15
       },
       "tech_stack": ["NVIDIA H100", "VMware Cloud Director"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "gpu_server",
         "platform": "Cloud Director",
@@ -253,7 +253,7 @@
         "price_per_month_rub": 128333.33
       },
       "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SAS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -275,7 +275,7 @@
         "price_per_month_rub": 125000.00
       },
       "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -297,7 +297,7 @@
         "price_per_month_rub": 160711.00
       },
       "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -319,7 +319,7 @@
         "price_per_month_rub": 1.65
       },
       "tech_stack": ["S3"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "storage_class": "Hot S3",
         "unit": "ГБ*мин",
@@ -340,7 +340,7 @@
         "price_per_month_rub": 2.98
       },
       "tech_stack": ["S3", "Multi-zone"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "storage_class": "Multi-zone S3",
         "unit": "ГБ*мин",
@@ -362,7 +362,7 @@
         "price_per_month_rub": 1582.44
       },
       "tech_stack": ["Veeam"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
@@ -380,7 +380,7 @@
         "price_per_month_rub": 3.00
       },
       "tech_stack": ["Veeam"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ГБ/месяц",
         "price_source": "tariff_grid_package",
@@ -398,7 +398,7 @@
         "price_per_month_rub": 1823.5
       },
       "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "устройство",
         "price_source": "tariff_grid_package",
@@ -416,7 +416,7 @@
         "price_per_month_rub": 1058.83
       },
       "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "устройство",
         "price_source": "tariff_grid_package",
@@ -434,7 +434,7 @@
         "price_per_month_rub": 1823.5
       },
       "tech_stack": ["Кибер Бэкап", "PostgreSQL"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "экземпляр",
         "price_source": "tariff_grid_package",
@@ -452,7 +452,7 @@
         "price_per_month_rub": 1.00
       },
       "tech_stack": ["CDN"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ГБ",
         "region": "Россия/СНГ",
@@ -471,7 +471,7 @@
         "price_per_month_rub": 1.42
       },
       "tech_stack": ["CDN"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ГБ",
         "region": "Европа",
@@ -490,7 +490,7 @@
         "price_per_month_rub": 2.58
       },
       "tech_stack": ["CDN"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ГБ",
         "region": "Америка/Азия",
@@ -509,7 +509,7 @@
         "price_per_month_rub": 2916.67
       },
       "tech_stack": ["CDN"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "шт/мес",
         "price_source": "tariff_grid_package",
@@ -527,7 +527,7 @@
         "price_per_month_rub": 175.13
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "IP",
         "price_source": "tariff_grid_package",
@@ -545,7 +545,7 @@
         "price_per_month_rub": 16.67
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "Мбит/с",
         "price_source": "tariff_grid_package",
@@ -563,7 +563,7 @@
         "price_per_month_rub": 3705.02
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "high_availability": true,
         "price_source": "tariff_grid_package",
@@ -581,7 +581,7 @@
         "price_per_month_rub": 180.00
       },
       "tech_stack": ["DNS"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "зона",
         "price_source": "tariff_grid_package",
@@ -599,7 +599,7 @@
         "price_per_month_rub": 2070.00
       },
       "tech_stack": ["Kubernetes"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 1,
         "high_availability": false,
@@ -619,7 +619,7 @@
         "price_per_month_rub": 12420.00
       },
       "tech_stack": ["Kubernetes"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
@@ -639,7 +639,7 @@
         "price_per_month_rub": 24840.00
       },
       "tech_stack": ["Kubernetes"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
@@ -659,7 +659,7 @@
         "price_per_month_rub": 49680.00
       },
       "tech_stack": ["Kubernetes"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
@@ -679,7 +679,7 @@
         "price_per_month_rub": 10396.14
       },
       "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 1,
         "worker_nodes": 3,
@@ -702,7 +702,7 @@
         "price_per_month_rub": 41115.36
       },
       "tech_stack": ["Kubernetes", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "master_nodes": 3,
         "worker_nodes": 3,
@@ -726,7 +726,7 @@
         "price_per_month_rub": 3812.04
       },
       "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 2,
@@ -748,7 +748,7 @@
         "price_per_month_rub": 7610.60
       },
       "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 4,
@@ -770,7 +770,7 @@
         "price_per_month_rub": 26252.08
       },
       "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 8,
@@ -792,7 +792,7 @@
         "price_per_month_rub": 29957.10
       },
       "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 8,
@@ -816,7 +816,7 @@
         "price_per_month_rub": 7165.04
       },
       "tech_stack": ["MySQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "MySQL",
         "cpu": 4,
@@ -838,7 +838,7 @@
         "price_per_month_rub": 21748.20
       },
       "tech_stack": ["ClickHouse", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "ClickHouse",
         "cpu": 8,
@@ -860,7 +860,7 @@
         "price_per_month_rub": 7651.65
       },
       "tech_stack": ["InmemoryDB", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "InmemoryDB",
         "cpu": 4,
@@ -882,7 +882,7 @@
         "price_per_month_rub": 11206.16
       },
       "tech_stack": ["DocumentDB", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "DocumentDB",
         "cpu": 4,
@@ -904,7 +904,7 @@
         "price_per_month_rub": 6614.80
       },
       "tech_stack": ["OpenSearch", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "OpenSearch",
         "cpu": 4,
@@ -926,7 +926,7 @@
         "price_per_month_rub": 7239.16
       },
       "tech_stack": ["Apache Kafka", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "Kafka",
         "cpu": 4,
@@ -948,7 +948,7 @@
         "price_per_month_rub": 6587.51
       },
       "tech_stack": ["RabbitMQ", "Intel Ice Lake", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "RabbitMQ",
         "cpu": 4,
@@ -970,7 +970,7 @@
         "price_per_month_rub": 7790.88
       },
       "tech_stack": ["GitLab", "SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "engine": "GitLab",
         "cpu": 4,
@@ -992,7 +992,7 @@
         "price_per_month_rub": 2.03
       },
       "tech_stack": ["Container Registry"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ГБ/месяц",
         "price_source": "tariff_grid_package",
@@ -1010,7 +1010,7 @@
         "price_per_month_rub": 19227.40
       },
       "tech_stack": ["ML Hub"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "cpu": 8,
         "ram_gb": 32,
@@ -1031,7 +1031,7 @@
         "price_per_month_rub": 58113.95
       },
       "tech_stack": ["ML Hub", "NVIDIA H100"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "gpu_model": "NVIDIA H100 1g.10gb (MIG)",
         "cpu": 8,
@@ -1053,7 +1053,7 @@
         "price_per_month_rub": 2354.17
       },
       "tech_stack": ["Glarus BI"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "users": 5,
         "price_source": "tariff_grid_package",
@@ -1071,7 +1071,7 @@
         "price_per_month_rub": 9416.67
       },
       "tech_stack": ["Glarus BI"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "users": 20,
         "price_source": "tariff_grid_package",
@@ -1089,7 +1089,7 @@
         "price_per_month_rub": 23541.67
       },
       "tech_stack": ["Glarus BI"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "users": 50,
         "price_source": "tariff_grid_package",
@@ -1107,7 +1107,7 @@
         "price_per_month_rub": 390880.29
       },
       "tech_stack": ["SCIBOX", "NVIDIA H100"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "gpu_model": "vGPU H100",
         "price_source": "tariff_grid_package",
@@ -1125,7 +1125,7 @@
         "price_per_month_rub": 100.00
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "price_per_user_rub": 100.00,
         "price_per_100gb_rub": 200.00,
@@ -1145,7 +1145,7 @@
         "price_per_month_rub": 100.00
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "price_per_user_rub": 100.00,
         "price_per_100gb_rub": 166.67,
@@ -1165,7 +1165,7 @@
         "price_per_month_rub": 1440.00
       },
       "tech_stack": ["Astra Linux"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "Орел",
         "unit": "ВМ",
@@ -1184,7 +1184,7 @@
         "price_per_month_rub": 1830.00
       },
       "tech_stack": ["Astra Linux"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "Воронеж",
         "unit": "ВМ",
@@ -1203,7 +1203,7 @@
         "price_per_month_rub": 440.00
       },
       "tech_stack": ["Альт Сервер"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
@@ -1221,7 +1221,7 @@
         "price_per_month_rub": 175.00
       },
       "tech_stack": ["Альт"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
@@ -1239,7 +1239,7 @@
         "price_per_month_rub": 1533.00
       },
       "tech_stack": ["Альт СП"],
-      "compliance_tags": ["FSTEC"],
+      "compliance_tags": ["152-FZ", "FSTEC"],
       "attributes": {
         "unit": "ВМ",
         "certified": true,
@@ -1258,7 +1258,7 @@
         "price_per_month_rub": 1000.00
       },
       "tech_stack": ["РЕД ОС"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "Сервер. Стандартная",
         "price_source": "tariff_grid_package",
@@ -1276,7 +1276,7 @@
         "price_per_month_rub": 3083.00
       },
       "tech_stack": ["РЕД ОС"],
-      "compliance_tags": ["FSTEC"],
+      "compliance_tags": ["152-FZ", "FSTEC"],
       "attributes": {
         "edition": "Сервер. Сертифицированная",
         "certified": true,
@@ -1295,7 +1295,7 @@
         "price_per_month_rub": 2004.53
       },
       "tech_stack": ["Microsoft Office"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1313,7 +1313,7 @@
         "price_per_month_rub": 2737.03
       },
       "tech_stack": ["Microsoft Office"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1331,7 +1331,7 @@
         "price_per_month_rub": 2523.57
       },
       "tech_stack": ["Microsoft SQL Server"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1349,7 +1349,7 @@
         "price_per_month_rub": 23351.02
       },
       "tech_stack": ["Microsoft SQL Server"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
@@ -1367,7 +1367,7 @@
         "price_per_month_rub": 716.43
       },
       "tech_stack": ["Windows Server"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
@@ -1385,7 +1385,7 @@
         "price_per_month_rub": 4963.8
       },
       "tech_stack": ["Windows Server"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
@@ -1403,7 +1403,7 @@
         "price_per_month_rub": 1033.7
       },
       "tech_stack": ["Windows RDS"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1421,7 +1421,7 @@
         "price_per_month_rub": 309.97
       },
       "tech_stack": ["Microsoft Exchange"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1439,7 +1439,7 @@
         "price_per_month_rub": 6191.95
       },
       "tech_stack": ["Microsoft Visual Studio"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
@@ -1457,7 +1457,7 @@
         "price_per_month_rub": 8928.43
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "bandwidth": "1 Гбит/с",
         "price_source": "tariff_grid_package",
@@ -1475,7 +1475,7 @@
         "price_per_month_rub": 64023.40
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "bandwidth": "10 Гбит/с",
         "price_source": "tariff_grid_package",

@@ -271,7 +271,7 @@
         "price_per_month_rub": 1290
       },
       "tech_stack": ["Intel Celeron", "SSD SATA"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Celeron 2 GHz, 2 ядра",
@@ -293,7 +293,7 @@
         "price_per_month_rub": 5290
       },
       "tech_stack": ["Intel Core i3-12100", "NVMe SSD"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Core i3-12100 3.3 GHz",
@@ -315,7 +315,7 @@
         "price_per_month_rub": 5940
       },
       "tech_stack": ["Intel Core i3-14100", "SSD SATA"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Core i3-14100 3.5 GHz",
@@ -906,7 +906,7 @@
         "price_per_month_rub": 4500
       },
       "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "ПРОФ",
         "vat_included": true,
@@ -924,7 +924,7 @@
         "price_per_month_rub": 700
       },
       "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "ПРОФ",
         "unit": "пользователь",
@@ -943,7 +943,7 @@
         "price_per_month_rub": 9000
       },
       "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "КОРП",
         "vat_included": true,
@@ -997,7 +997,7 @@
         "price_per_month_rub": 1265.82
       },
       "tech_stack": ["РЕД ОС"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "Стандартная",
         "vat_included": true,
@@ -1070,7 +1070,7 @@
         "price_per_month_rub": 32000
       },
       "tech_stack": ["UserGate"],
-      "compliance_tags": ["FSTEC"],
+      "compliance_tags": ["152-FZ", "FSTEC"],
       "attributes": {
         "certified": true,
         "vat_included": true,
@@ -1088,7 +1088,7 @@
         "price_per_month_rub": 15000
       },
       "tech_stack": ["ViPNet", "ГОСТ"],
-      "compliance_tags": ["FSB"],
+      "compliance_tags": ["152-FZ", "FSB"],
       "attributes": {
         "vat_included": true,
         "price_source": "tariff_grid_package"
@@ -1105,7 +1105,7 @@
         "price_per_month_rub": 300
       },
       "tech_stack": ["Kaspersky"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "vat_included": true,
         "price_source": "tariff_grid_package"
@@ -1196,7 +1196,7 @@
         "price_per_month_rub": 20000
       },
       "tech_stack": [],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "месяц",
         "price_per_minute_rub": 1,
@@ -1215,7 +1215,7 @@
         "price_per_month_rub": null
       },
       "tech_stack": ["DNS"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "unit": "год",
         "vat_included": true,
@@ -1233,7 +1233,7 @@
         "price_per_month_rub": 600
       },
       "tech_stack": ["ISPmanager"],
-      "compliance_tags": [],
+      "compliance_tags": ["152-FZ"],
       "attributes": {
         "edition": "Pro",
         "vat_included": true,

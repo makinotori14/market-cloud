@@ -1,0 +1,513 @@
+{
+  "provider": {
+    "provider_id": "edgecenter",
+    "name": "EdgeCenter",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "edgecenter-cloud-server-small-1cpu-2ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-1-2 — 1 vCPU, 2 GB RAM",
+      "description": "Облачный виртуальный сервер минимальной конфигурации для тестовых окружений и небольших задач. Идентичная цена для семейств g1/g2/g3.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 1683.36,
+        "price_per_month_rub": 1683.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-1-2",
+        "cpu": 1,
+        "ram_gb": 2,
+        "region": "Москва",
+        "price_per_hour_rub": 2.34,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-small-2cpu-4ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-2-4 — 2 vCPU, 4 GB RAM",
+      "description": "Облачный сервер Small-уровня для небольших API и веб-приложений.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 3356.64,
+        "price_per_month_rub": 3356.64
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-2-4",
+        "cpu": 2,
+        "ram_gb": 4,
+        "region": "Москва",
+        "price_per_hour_rub": 4.66,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-small-plus-2cpu-8ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-2-8 — 2 vCPU, 8 GB RAM",
+      "description": "Облачный сервер начального уровня с расширенной RAM для небольших backend-сервисов.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 4707.36,
+        "price_per_month_rub": 4707.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-2-8",
+        "cpu": 2,
+        "ram_gb": 8,
+        "region": "Москва",
+        "price_per_hour_rub": 6.54,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-standard-4cpu-8ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-4-8 — 4 vCPU, 8 GB RAM",
+      "description": "Облачный сервер Standard-класса с балансом CPU и RAM.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 6723.36,
+        "price_per_month_rub": 6723.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-4-8",
+        "cpu": 4,
+        "ram_gb": 8,
+        "region": "Москва",
+        "price_per_hour_rub": 9.34,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-standard-4cpu-16ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-4-16 — 4 vCPU, 16 GB RAM",
+      "description": "Облачный сервер Standard-класса для backend-сервиса, веб-приложения, staging/prod.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 9404.64,
+        "price_per_month_rub": 9404.64
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-4-16",
+        "cpu": 4,
+        "ram_gb": 16,
+        "region": "Москва",
+        "price_per_hour_rub": 13.06,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-production-8cpu-16ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-8-16 — 8 vCPU, 16 GB RAM",
+      "description": "Облачный сервер Production-класса с упором в CPU.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 13436.64,
+        "price_per_month_rub": 13436.64
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-8-16",
+        "cpu": 8,
+        "ram_gb": 16,
+        "region": "Москва",
+        "price_per_hour_rub": 18.66,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-production-8cpu-32ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-8-32 — 8 vCPU, 32 GB RAM",
+      "description": "Облачный сервер для нагруженного backend и корпоративных приложений.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 18819.36,
+        "price_per_month_rub": 18819.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-8-32",
+        "cpu": 8,
+        "ram_gb": 32,
+        "region": "Москва",
+        "price_per_hour_rub": 26.14,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-highperf-16cpu-32ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-16-32 — 16 vCPU, 32 GB RAM",
+      "description": "Высокопроизводительный сервер с упором в CPU.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 26883.36,
+        "price_per_month_rub": 26883.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-16-32",
+        "cpu": 16,
+        "ram_gb": 32,
+        "region": "Москва",
+        "price_per_hour_rub": 37.34,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-highperf-16cpu-64ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-16-64 — 16 vCPU, 64 GB RAM",
+      "description": "High Performance-сервер для latency-sensitive backend и интенсивного I/O.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 37628.64,
+        "price_per_month_rub": 37628.64
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-16-64",
+        "cpu": 16,
+        "ram_gb": 64,
+        "region": "Москва",
+        "price_per_hour_rub": 52.26,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-large-32cpu-64ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-32-64 — 32 vCPU, 64 GB RAM",
+      "description": "Large-сервер для крупных сервисов.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 53756.64,
+        "price_per_month_rub": 53756.64
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-32-64",
+        "cpu": 32,
+        "ram_gb": 64,
+        "region": "Москва",
+        "price_per_hour_rub": 74.66,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-server-large-32cpu-128ram",
+      "name": "Виртуальный сервер g1/g2/g3-standard-32-128 — 32 vCPU, 128 GB RAM",
+      "description": "Максимальный конфиг Large для высоконагруженных приложений и аналитической нагрузки.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 75267.36,
+        "price_per_month_rub": 75267.36
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "flavor": "g1/g2/g3-standard-32-128",
+        "cpu": 32,
+        "ram_gb": 128,
+        "region": "Москва",
+        "price_per_hour_rub": 104.54,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm1-hf-medium",
+      "name": "Bare metal сервер bm1-hf-medium — Xeon E-2288G, 64 GB RAM, 2× 480 GB SSD",
+      "description": "Выделенный сервер первого поколения на Xeon E-2288G c 64 ГБ RAM и SSD. 2× 1 Гбит/с сетевые интерфейсы.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 32200.0,
+        "price_per_month_rub": 32200.0
+      },
+      "tech_stack": ["Intel Xeon E-2288G", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Xeon E-2288G",
+        "ram_gb": 64,
+        "disk_type": "SSD",
+        "disk_gb": 960,
+        "network": "2× 1 Gbit NIC",
+        "price_per_hour_rub": 44.72,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm1-infrastructure-small",
+      "name": "Bare metal сервер bm1-infrastructure-small — 2× Xeon Silver 4214R, 128 GB RAM, 2× 960 GB SSD",
+      "description": "Выделенный сервер для инфраструктурных задач: 2× Silver 4214R, 128 ГБ RAM, два SSD на 960 ГБ.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 55440.0,
+        "price_per_month_rub": 55440.0
+      },
+      "tech_stack": ["Intel Xeon Silver 4214R", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2× Intel Xeon Silver 4214R",
+        "ram_gb": 128,
+        "disk_type": "SSD",
+        "disk_gb": 1920,
+        "network": "2× 1 Gbit NIC",
+        "price_per_hour_rub": 77.0,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm2-hf-medium",
+      "name": "Bare metal сервер bm2-hf-medium — Xeon E-2388G, 64 GB RAM, 2× 480 GB SSD",
+      "description": "Выделенный сервер второго поколения на Xeon E-2388G.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 38640.02,
+        "price_per_month_rub": 38640.02
+      },
+      "tech_stack": ["Intel Xeon E-2388G", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Xeon E-2388G",
+        "ram_gb": 64,
+        "disk_type": "SSD",
+        "disk_gb": 960,
+        "network": "2× 1 Gbit NIC",
+        "price_per_hour_rub": 53.67,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm2-infrastructure-small",
+      "name": "Bare metal сервер bm2-infrastructure-small — 2× Xeon Silver 4314, 128 GB RAM, 2× 960 GB SSD",
+      "description": "Выделенный сервер второго поколения для инфраструктурных задач.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 66528.0,
+        "price_per_month_rub": 66528.0
+      },
+      "tech_stack": ["Intel Xeon Silver 4314", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2× Intel Xeon Silver 4314",
+        "ram_gb": 128,
+        "disk_type": "SSD",
+        "disk_gb": 1920,
+        "network": "2× 1 Gbit NIC",
+        "price_per_hour_rub": 92.4,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm3-hf-medium",
+      "name": "Bare metal сервер bm3-hf-medium — Xeon E-2488, 64 GB RAM, 2× 480 GB SSD, 2× 10 Gbit NIC",
+      "description": "Выделенный сервер третьего поколения с 10 Гбит/с сетью.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 43862.4,
+        "price_per_month_rub": 43862.4
+      },
+      "tech_stack": ["Intel Xeon E-2488", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Xeon E-2488",
+        "ram_gb": 64,
+        "disk_type": "SSD",
+        "disk_gb": 960,
+        "network": "2× 10 Gbit NIC",
+        "price_per_hour_rub": 60.92,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-baremetal-bm3-infrastructure-small",
+      "name": "Bare metal сервер bm3-infrastructure-small — 2× Xeon Silver 4514Y, 128 GB RAM, 2× 960 GB SSD, 2× 10 Gbit NIC",
+      "description": "Выделенный сервер третьего поколения для инфраструктурных задач.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 74196.0,
+        "price_per_month_rub": 74196.0
+      },
+      "tech_stack": ["Intel Xeon Silver 4514Y", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "2× Intel Xeon Silver 4514Y",
+        "ram_gb": 128,
+        "disk_type": "SSD",
+        "disk_gb": 1920,
+        "network": "2× 10 Gbit NIC",
+        "price_per_hour_rub": 103.05,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-db-small-2cpu-4ram",
+      "name": "Облачная БД db-g2-standard-2-4-30 — 2 vCPU, 4 GB RAM, 30 GB",
+      "description": "Управляемая БД начального уровня (включено 30 ГБ дискового пространства).",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 4377.6,
+        "price_per_month_rub": 4377.6
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "flavor": "db-g2-standard-2-4-30",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_gb": 30,
+        "price_per_hour_rub": 6.08,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-db-standard-2cpu-8ram",
+      "name": "Облачная БД db-g2-standard-2-8-30 — 2 vCPU, 8 GB RAM, 30 GB",
+      "description": "Управляемая БД для типовых задач.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 5652.0,
+        "price_per_month_rub": 5652.0
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "flavor": "db-g2-standard-2-8-30",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_gb": 30,
+        "price_per_hour_rub": 7.85,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-cloud-db-production-4cpu-16ram",
+      "name": "Облачная БД db-g2-standard-4-16-30 — 4 vCPU, 16 GB RAM, 30 GB",
+      "description": "Управляемая БД для нагруженных задач.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 11152.8,
+        "price_per_month_rub": 11152.8
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "flavor": "db-g2-standard-4-16-30",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 30,
+        "price_per_hour_rub": 15.49,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-mks-base-configuration",
+      "name": "Managed Kubernetes — базовая конфигурация",
+      "description": "Готовая базовая конфигурация Managed Kubernetes от EdgeCenter (минимальный набор: мастер + диск + worker-пул).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 5920.8,
+        "price_per_month_rub": 5920.8
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "region": "Москва-2",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-mks-configured-total",
+      "name": "Managed Kubernetes — конфигурация Master + Worker Pool",
+      "description": "Готовая собранная конфигурация Managed Kubernetes на странице тарифов: мастер-нода (2 vCPU/4 ГБ RAM, диск 30 ГБ HIGH-IOPS) + worker-пул #1 (worker 1 vCPU/2 ГБ RAM, диск 20 ГБ STANDARD).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 7561.6,
+        "price_per_month_rub": 7561.6
+      },
+      "tech_stack": ["Kubernetes", "Intel Xeon Scalable"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 1,
+        "worker_nodes": 1,
+        "cpu_per_node": 2,
+        "ram_gb_per_node": 4,
+        "disk_gb_per_node": 30,
+        "disk_type": "HIGH-IOPS (master) / STANDARD (worker)",
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    },
+    {
+      "service_id": "edgecenter-mks-cluster-basic-3worker",
+      "name": "Managed Kubernetes Basic Cluster — 1 master + 3 worker",
+      "description": "Сборка базового кластера: базовая конфигурация Managed Kubernetes + 3 worker-ноды (1 vCPU/2 ГБ RAM каждая) + по 20 ГБ STANDARD-диску на worker.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 10843.20,
+        "price_per_month_rub": 10843.20
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 1,
+        "worker_nodes": 3,
+        "cpu_per_node": 1,
+        "ram_gb_per_node": 2,
+        "disk_gb_per_node": 20,
+        "calculation": "5920.8 (base) + 3 * (1360.8 worker + 280.0 disk) = 10843.20",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "https://edgecenter.ru/cloud/price"
+    }
+  ]
+}
