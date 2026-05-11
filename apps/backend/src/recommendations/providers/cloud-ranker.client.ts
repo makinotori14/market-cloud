@@ -33,6 +33,25 @@ type RankerResponse = {
   top_recommendations: RankerService[];
 };
 
+function providerIcon(providerName: string): string {
+  const normalized = providerName.toLowerCase().replace(/[\s_-]+/g, "");
+
+  if (normalized.includes("selectel")) {
+    return "/selectel.png";
+  }
+  if (normalized.includes("vkcloud") || normalized === "vk") {
+    return "/vkcloud.png";
+  }
+  if (normalized.includes("t1cloud") || normalized.includes("t1")) {
+    return "/t1cloud.png";
+  }
+  if (normalized.includes("edgecenter")) {
+    return "/edgecenter.png";
+  }
+
+  return "/cloud-service.svg";
+}
+
 @Injectable()
 export class CloudRankerClient {
   private readonly logger = new Logger(CloudRankerClient.name);
@@ -112,7 +131,7 @@ export class CloudRankerClient {
           : "Проверьте актуальный тариф и ограничения услуги у провайдера.",
       ],
       estimatedCostLevel: this.toCostLevel(service.price_rub),
-      icon: "/cloud-service.svg",
+      icon: providerIcon(service.provider_name),
     };
   }
 

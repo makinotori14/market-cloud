@@ -4,8 +4,12 @@ import "./globals.css";
 import { AppProviders } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Cloud Solution Recommender",
+  title: "Пирамида",
   description: "Prompt-based cloud solution recommendations with score ranking.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

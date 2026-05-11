@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Cloud, RefreshCw } from "lucide-react";
+import { Cloud, RefreshCw, SearchX } from "lucide-react";
 import type { RecommendationRequest } from "../types";
 import { RecommendationCard } from "./RecommendationCard";
 import { RequestStatus } from "./RequestStatus";
@@ -27,8 +27,7 @@ export function RecommendationResults({ isFetching, request, viewMode }: Recomme
             Результаты появятся после отправки промпта
           </h2>
           <p className="mt-3 max-w-2xl leading-7 text-muted dark:text-white/86">
-            Backend создаст задачу, отправит ее в очередь и вернет отсортированный список
-            решений после ответа заглушки Yandex Cloud.
+            Мы отправим ее в очередь и вернем отсортированный список решений под вашу задачу.
           </p>
         </div>
       </section>
@@ -41,7 +40,7 @@ export function RecommendationResults({ isFetching, request, viewMode }: Recomme
         <div>
           <p className="mb-2 text-xs font-extrabold uppercase text-accent">Рекомендации</p>
           <h2 className="text-2xl font-extrabold leading-tight">
-            {request.recommendations.length || 7} облачных решений
+            {request.recommendations.length} облачных решений
           </h2>
         </div>
         <div className="flex flex-col gap-3 md:items-end">
@@ -60,12 +59,18 @@ export function RecommendationResults({ isFetching, request, viewMode }: Recomme
           <Cloud className="mx-auto mb-3 h-8 w-8 text-accent" aria-hidden="true" />
           Запрос обрабатывается. Результат появится автоматически.
         </div>
+      ) : request.recommendations.length === 0 ? (
+        <div className="rounded-ui border border-dashed border-[#cfe4f4] bg-white/78 p-8 text-center text-muted dark:border-white/10 dark:bg-white/[0.04] dark:text-white/86">
+          <SearchX className="mx-auto mb-3 h-8 w-8 text-accent" aria-hidden="true" />
+          Не нашли конфигурации, которая одновременно проходит все жесткие требования.
+        </div>
       ) : (
         <div className={cn("grid gap-4", viewMode === "grid" ? "xl:grid-cols-2" : "grid-cols-1")}>
-          {request.recommendations.map((recommendation) => (
+          {request.recommendations.map((recommendation, index) => (
             <RecommendationCard
               recommendation={recommendation}
               key={recommendation.id}
+              rank={index + 1}
               viewMode={viewMode}
             />
           ))}

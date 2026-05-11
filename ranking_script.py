@@ -41,6 +41,7 @@ class UserIntent(BaseModel):
     budget_priority: Optional[str] = Field(None, description="Приоритет бюджета")
     region: Optional[str] = Field(None, description="Требуемый регион")
     country: Optional[str] = Field(None, description="Требуемая страна")
+    enabled_providers: Optional[list[str]] = Field(None, description="Разрешенные провайдеры для поиска")
     resource_requirements: ResourceRequirements = Field(default_factory=ResourceRequirements)
     workload: WorkloadRequirements = Field(default_factory=WorkloadRequirements)
     explicit_needs: list[str] = Field(default_factory=list)
@@ -114,6 +115,19 @@ ml_model: Optional[SentenceTransformer] = None
 indexed_services: list[IndexedService] = []
 service_vectors: Optional[np.ndarray] = None
 
+RESOURCE_FIELDS: tuple[tuple[str, str, str, str], ...] = (
+    ("cpu", "cpu_min", "CPU", "CPU"),
+    ("ram_gb", "ram_gb_min", "RAM", "GB"),
+    ("disk_gb", "disk_gb_min", "disk", "GB"),
+)
+
+PROVIDER_ALIASES: dict[str, list[str]] = {
+    "vkcloud": ["vkcloud", "vk cloud", "vk", "вк клауд"],
+    "selectel": ["selectel", "селектел"],
+    "t1cloud": ["t1cloud", "t1 cloud", "t1", "т1 облако", "т1"],
+    "edgecenter": ["edgecenter", "edge center", "эдж центр"],
+}
+
 
 SERVICE_TYPE_ALIASES: dict[str, list[str]] = {
     "virtual_server": [
@@ -121,8 +135,12 @@ SERVICE_TYPE_ALIASES: dict[str, list[str]] = {
         "cloud server",
         "cloud servers",
         "compute",
+        "vps",
+        "vds",
         "vm",
         "вм",
+        "впс",
+        "вдс",
         "виртуальный сервер",
         "облачный сервер",
         "сервер",
@@ -215,6 +233,49 @@ def canonical_service_type(value: Any) -> Optional[str]:
         if any(normalize_token(alias) in text for alias in aliases):
             return canonical
     return text.replace(" ", "_")
+
+
+def canonical_provider_id(value: Any) -> Optional[str]:
+    text = normalize_token(value)
+    if not text:
+        return None
+
+    compact = text.replace(" ", "")
+    for canonical, aliases in PROVIDER_ALIASES.items():
+        if compact == canonical or any(normalize_token(alias) in text for alias in aliases):
+            return canonical
+    return compact
+
+
+def enabled_provider_ids(intent: UserIntent) -> Optional[set[str]]:
+    if intent.enabled_providers is None:
+        return None
+
+    return {
+        provider_id
+        for provider in intent.enabled_providers
+        if (provider_id := canonical_provider_id(provider))
+    }
+
+
+def provider_is_enabled(service: IndexedService, enabled: Optional[set[str]]) -> bool:
+    if enabled is None:
+        return True
+
+    service_ids = {
+        provider_id
+        for value in [service.provider_id, service.provider_name]
+        if (provider_id := canonical_provider_id(value))
+    }
+    return bool(service_ids.intersection(enabled))
+
+
+def service_matches_primary_type(intent: UserIntent, service: IndexedService) -> bool:
+    expected_type = canonical_service_type(intent.primary_service_type)
+    if not expected_type:
+        return True
+
+    return service_type(service) == expected_type
 
 
 def service_search_text(service: dict[str, Any], provider_name: str) -> str:
@@ -384,6 +445,16 @@ def numeric_attribute(service: IndexedService, key: str) -> Optional[float]:
     return float(match.group(0).replace(",", ".")) if match else None
 
 
+def requested_numeric_resources(intent: UserIntent) -> dict[str, float]:
+    requirements = intent.resource_requirements
+    requested: dict[str, float] = {}
+    for key, requirement_key, _, _ in RESOURCE_FIELDS:
+        value = getattr(requirements, requirement_key)
+        if value is not None and value > 0:
+            requested[key] = float(value)
+    return requested
+
+
 def service_type(service: IndexedService) -> Optional[str]:
     return canonical_service_type(service.attributes.get("resource_type")) or canonical_service_type(
         service.category,
@@ -410,7 +481,6 @@ def has_resource_requirements(intent: UserIntent) -> bool:
     requirements = intent.resource_requirements
     return any(
         [
-            intent.primary_service_type,
             requirements.cpu_min,
             requirements.ram_gb_min,
             requirements.disk_gb_min,
@@ -420,7 +490,98 @@ def has_resource_requirements(intent: UserIntent) -> bool:
     )
 
 
-def calculate_resource_fit_score(intent: UserIntent, service: IndexedService) -> tuple[float, list[str]]:
+def service_text_for_resource_matching(service: IndexedService) -> str:
+    return normalize_token(
+        " ".join(
+            [
+                str(service.attributes.get("disk_type") or ""),
+                " ".join(service.tech_stack),
+                service.name,
+                service.description,
+            ],
+        ),
+    )
+
+
+def resource_requirement_violations(intent: UserIntent, service: IndexedService) -> list[str]:
+    requirements = intent.resource_requirements
+    violations: list[str] = []
+
+    for key, requirement_key, label, unit in RESOURCE_FIELDS:
+        required = getattr(requirements, requirement_key)
+        if required is None or required <= 0:
+            continue
+
+        actual = numeric_attribute(service, key)
+        if actual is None:
+            violations.append(f"{label}: не указано у сервиса, требуется >= {required:g} {unit}")
+        elif actual < required:
+            violations.append(f"{label}: {actual:g} {unit} < {required:g} {unit}")
+
+    if requirements.disk_type:
+        disk_type_required = normalize_token(requirements.disk_type)
+        if disk_type_required and disk_type_required not in service_text_for_resource_matching(service):
+            violations.append(f"тип диска: требуется {requirements.disk_type}")
+
+    return violations
+
+
+def build_minimal_resource_stats(
+    intent: UserIntent,
+    services: list[IndexedService],
+) -> dict[str, tuple[float, float, str, str]]:
+    requested_keys = set(requested_numeric_resources(intent))
+    stats: dict[str, tuple[float, float, str, str]] = {}
+
+    for key, _, label, unit in RESOURCE_FIELDS:
+        if key in requested_keys:
+            continue
+
+        values = [
+            value
+            for service in services
+            if (value := numeric_attribute(service, key)) is not None and value > 0
+        ]
+        if values:
+            stats[key] = (min(values), max(values), label, unit)
+
+    return stats
+
+
+def calculate_minimal_unspecified_score(
+    service: IndexedService,
+    stats: dict[str, tuple[float, float, str, str]],
+) -> tuple[float, list[str]]:
+    if not stats:
+        return 1.0, []
+
+    scores: list[float] = []
+    matched: list[str] = []
+    for key, (minimum, maximum, label, unit) in stats.items():
+        actual = numeric_attribute(service, key)
+        if actual is None or actual <= 0:
+            continue
+
+        if maximum <= minimum:
+            score = 1.0
+        else:
+            score = minimum / actual
+        scores.append(max(0.0, min(1.0, score)))
+
+        if actual == minimum:
+            matched.append(f"минимальный {label}: {actual:g} {unit}")
+
+    if not scores:
+        return 1.0, matched
+
+    return sum(scores) / len(scores), matched
+
+
+def calculate_resource_fit_score(
+    intent: UserIntent,
+    service: IndexedService,
+    minimal_resource_stats: dict[str, tuple[float, float, str, str]],
+) -> tuple[float, list[str]]:
     requirements = intent.resource_requirements
     scores: list[float] = []
     matched_requirements: list[str] = []
@@ -433,11 +594,8 @@ def calculate_resource_fit_score(intent: UserIntent, service: IndexedService) ->
         if type_score == 1.0:
             matched_requirements.append(f"тип услуги: {expected_type}")
 
-    for key, label, unit, required in [
-        ("cpu", "CPU", "CPU", requirements.cpu_min),
-        ("ram_gb", "RAM", "GB", requirements.ram_gb_min),
-        ("disk_gb", "disk", "GB", requirements.disk_gb_min),
-    ]:
+    for key, requirement_key, label, unit in RESOURCE_FIELDS:
+        required = getattr(requirements, requirement_key)
         score, matched = score_minimum_requirement(numeric_attribute(service, key), required, label, unit)
         if score is not None:
             scores.append(score)
@@ -445,16 +603,7 @@ def calculate_resource_fit_score(intent: UserIntent, service: IndexedService) ->
             matched_requirements.append(matched)
 
     disk_type_required = normalize_token(requirements.disk_type) if requirements.disk_type else ""
-    service_text = normalize_token(
-        " ".join(
-            [
-                str(service.attributes.get("disk_type") or ""),
-                " ".join(service.tech_stack),
-                service.name,
-                service.description,
-            ],
-        ),
-    )
+    service_text = service_text_for_resource_matching(service)
 
     if disk_type_required:
         disk_type_score = 1.0 if disk_type_required in service_text else 0.0
@@ -481,6 +630,10 @@ def calculate_resource_fit_score(intent: UserIntent, service: IndexedService) ->
     score = sum(scores) / len(scores)
     if expected_type and actual_type and actual_type != expected_type:
         score = min(score, 0.35)
+    if has_resource_requirements(intent):
+        minimal_score, minimal_matches = calculate_minimal_unspecified_score(service, minimal_resource_stats)
+        score = (score * 0.75) + (minimal_score * 0.25)
+        matched_requirements.extend(minimal_matches)
     return score, matched_requirements
 
 
@@ -590,6 +743,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
 
     user_tags = normalize_user_tags(intent)
     capabilities = requested_capabilities(intent)
+    enabled_providers = enabled_provider_ids(intent)
 
     user_vector = ml_model.encode([semantic_query], convert_to_numpy=True, normalize_embeddings=True)
     semantic_scores = cosine_similarity(user_vector, service_vectors)[0]
@@ -599,37 +753,57 @@ async def rank_services(request: RankRequest) -> RankResponse:
     has_capabilities = len(capabilities) > 0
 
     if has_resources:
-        weight_semantic = 0.25
-        weight_jaccard = 0.15
-        weight_resource = 0.45
-        weight_capability = 0.10 if has_capabilities else 0.0
+        weight_semantic = 0.30
+        weight_jaccard = 0.10
+        weight_resource = 0.55
+        weight_capability = 0.05 if has_capabilities else 0.0
         weight_economy = 0.05 if has_budget else 0.0
     else:
-        weight_semantic = 0.55
-        weight_jaccard = 0.30
+        weight_semantic = 0.70
+        weight_jaccard = 0.20
         weight_resource = 0.0
-        weight_capability = 0.15 if has_capabilities else 0.0
+        weight_capability = 0.10 if has_capabilities else 0.0
         weight_economy = 0.10 if has_budget else 0.0
 
     total_weight = weight_semantic + weight_jaccard + weight_resource + weight_capability + weight_economy
 
-    scored_services: list[RecommendedService] = []
+    eligible_services: list[tuple[int, IndexedService, float]] = []
     for index, service in enumerate(indexed_services):
+        if not provider_is_enabled(service, enabled_providers):
+            continue
+        if not service_matches_primary_type(intent, service):
+            continue
         if intent.requires_152fz and not service.is_152fz_compliant:
             continue
         if not region_matches(intent.region, service.regions):
+            continue
+        if has_resources and resource_requirement_violations(intent, service):
             continue
 
         economy_score = calculate_economy_score(intent.budget_max_rub, service.price_rub)
         if economy_score < 0:
             continue
 
+        eligible_services.append((index, service, economy_score))
+
+    minimal_resource_stats = (
+        build_minimal_resource_stats(intent, [service for _, service, _ in eligible_services])
+        if has_resources
+        else {}
+    )
+
+    scored_services: list[RecommendedService] = []
+    for index, service, economy_score in eligible_services:
         service_tags = get_strict_service_tags(service)
         matched_tags = sorted(user_tags.intersection(service_tags))
         union_len = len(user_tags.union(service_tags))
         jaccard_score = len(matched_tags) / union_len if union_len > 0 else 0.0
 
-        resource_fit_score, matched_requirements = calculate_resource_fit_score(intent, service)
+        resource_fit_score, matched_requirements = calculate_resource_fit_score(
+            intent,
+            service,
+            minimal_resource_stats,
+        )
         capability_score, matched_capabilities = calculate_capability_score(capabilities, service)
         matched_requirements.extend(f"capability: {capability}" for capability in matched_capabilities)
 
@@ -682,6 +856,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
             "budget_priority": intent.budget_priority,
             "region": intent.region,
             "country": intent.country,
+            "enabled_providers": sorted(enabled_providers) if enabled_providers is not None else None,
             "resource_requirements": intent.resource_requirements.model_dump(),
             "workload": intent.workload.model_dump(),
             "explicit_needs": intent.explicit_needs,
