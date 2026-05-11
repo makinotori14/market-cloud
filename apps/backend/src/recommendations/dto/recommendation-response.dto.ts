@@ -16,6 +16,9 @@ export class CloudRecommendationDto {
   @ApiProperty({ minimum: 0, maximum: 100 })
   finalScore!: number;
 
+  @ApiPropertyOptional({ nullable: true, minimum: 0 })
+  monthlyPriceRub!: number | null;
+
   @ApiProperty({ type: [String] })
   services!: string[];
 

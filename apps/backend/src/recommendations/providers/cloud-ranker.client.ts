@@ -97,6 +97,7 @@ export class CloudRankerClient {
       title: service.name,
       description: service.description,
       finalScore: Math.max(0, Math.min(100, service.final_score_100)),
+      monthlyPriceRub: Math.max(0, service.price_rub),
       services: uniqueServices.length > 0 ? uniqueServices : [service.provider_name],
       reasons: [
         reasoningSummary,

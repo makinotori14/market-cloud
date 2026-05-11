@@ -11,23 +11,25 @@ type RecommendationCardProps = {
   viewMode: ResultsViewMode;
 };
 
-const monthlyPriceByTitle: Record<string, string> = {
-  "Managed Kubernetes Platform": "186 000 руб / мес",
-  "Foundation Models Scoring": "92 000 руб / мес",
-  "Serverless Containers API": "38 000 руб / мес",
-  "Managed PostgreSQL Core": "74 000 руб / мес",
-  "Observability Pack": "29 000 руб / мес",
-  "DataSphere Evaluation Loop": "118 000 руб / мес",
-  "Object Storage + CDN": "16 000 руб / мес",
-};
-
 const fallbackPrice: Record<CloudRecommendation["estimatedCostLevel"], string> = {
   low: "25 000 руб / мес",
   medium: "85 000 руб / мес",
   high: "180 000 руб / мес",
 };
 
+function formatMonthlyPrice(priceRub: number | null): string | null {
+  if (priceRub === null) {
+    return null;
+  }
+
+  return `${new Intl.NumberFormat("ru-RU", {
+    maximumFractionDigits: priceRub >= 100 ? 0 : 2,
+  }).format(priceRub)} руб / мес`;
+}
+
 export function RecommendationCard({ recommendation, viewMode }: RecommendationCardProps) {
+  const monthlyPrice = formatMonthlyPrice(recommendation.monthlyPriceRub);
+
   return (
     <Card
       className={cn(
@@ -81,7 +83,7 @@ export function RecommendationCard({ recommendation, viewMode }: RecommendationC
         </div>
 
         <div className="mt-4 text-xs font-semibold text-muted dark:text-white/84">
-          {monthlyPriceByTitle[recommendation.title] ?? fallbackPrice[recommendation.estimatedCostLevel]}
+          {monthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
         </div>
       </div>
     </Card>

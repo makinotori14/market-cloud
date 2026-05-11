@@ -24,6 +24,7 @@ type RecommendationRow = {
   title: string;
   description: string;
   final_score: string;
+  monthly_price_rub: string | null;
   services: string[];
   reasons: string[];
   risks: string[];
@@ -83,6 +84,7 @@ export class RecommendationsRepository {
             title,
             description,
             final_score,
+            monthly_price_rub,
             services,
             reasons,
             risks,
@@ -90,13 +92,14 @@ export class RecommendationsRepository {
             icon,
             raw_payload
           )
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
           [
             requestId,
             recommendation.provider,
             recommendation.title,
             recommendation.description,
             recommendation.finalScore,
+            recommendation.monthlyPriceRub,
             recommendation.services,
             recommendation.reasons,
             recommendation.risks,
@@ -188,6 +191,7 @@ export class RecommendationsRepository {
       title: row.title,
       description: row.description,
       finalScore: Number(row.final_score),
+      monthlyPriceRub: row.monthly_price_rub === null ? null : Number(row.monthly_price_rub),
       services: row.services,
       reasons: row.reasons,
       risks: row.risks,

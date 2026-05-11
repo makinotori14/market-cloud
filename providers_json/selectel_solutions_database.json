@@ -1,0 +1,1245 @@
+{
+  "provider": {
+    "provider_id": "selectel",
+    "name": "Selectel",
+    "is_152fz_compliant": true
+  },
+  "services": [
+    {
+      "service_id": "selectel-cloud-server-small-2cpu-4ram-50ssd",
+      "name": "Cloud Server Small — 2 vCPU Intel Xeon Gold 6354, 4 GB RAM, 50 GB универсальный SSD",
+      "description": "Облачный сервер начального уровня для тестовых окружений, небольших API и сайтов. Расчет: 2 × vCPU + 4 ГБ RAM (3200 МГц) + 50 ГБ универсального SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 3413.24,
+        "price_per_month_rub": 3413.24
+      },
+      "tech_stack": ["Intel Xeon Gold 6354", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Xeon Gold 6354",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 50,
+        "region": "Москва, ru-6a",
+        "vat_included": true,
+        "calculation": "2 * 883.99 + 4 * 291.88 + 50 * 9.53 = 3413.24",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-server-standard-4cpu-16ram-200ssd",
+      "name": "Cloud Server Standard — 4 vCPU Intel Xeon Gold 6354, 16 GB RAM, 200 GB универсальный SSD",
+      "description": "Облачный сервер для backend-сервисов, веб-приложений и staging/prod окружений. Расчет: 4 × vCPU + 16 ГБ RAM + 200 ГБ универсального SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 10110.04,
+        "price_per_month_rub": 10110.04
+      },
+      "tech_stack": ["Intel Xeon Gold 6354", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 200,
+        "vat_included": true,
+        "calculation": "4 * 883.99 + 16 * 291.88 + 200 * 9.53 = 10110.04",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-server-production-8cpu-32ram-500fast",
+      "name": "Cloud Server Production — 8 vCPU Intel Xeon Gold 6354, 32 GB RAM, 500 GB Быстрый SSD",
+      "description": "Облачный сервер для нагруженного backend и корпоративных приложений. Расчет: 8 × vCPU + 32 ГБ RAM + 500 ГБ быстрого SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 28412.08,
+        "price_per_month_rub": 28412.08
+      },
+      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "Быстрый SSD v2",
+        "disk_gb": 500,
+        "vat_included": true,
+        "calculation": "8 * 883.99 + 32 * 291.88 + 500 * 22.00 = 28412.08",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-server-highperf-16cpu-64ram-500fast",
+      "name": "Cloud Server High Performance — 16 vCPU Intel Xeon Gold 6354, 64 GB RAM, 500 GB Быстрый SSD",
+      "description": "Высокопроизводительный сервер для latency-sensitive backend, индексов, очередей. Расчет: 16 × vCPU + 64 ГБ RAM + 500 ГБ быстрого SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 41824.16,
+        "price_per_month_rub": 41824.16
+      },
+      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 16,
+        "ram_gb": 64,
+        "disk_type": "Быстрый SSD v2",
+        "disk_gb": 500,
+        "vat_included": true,
+        "calculation": "16 * 883.99 + 64 * 291.88 + 500 * 22.00 = 41824.16",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-server-large-32cpu-128ram-1000fast",
+      "name": "Cloud Server Large — 32 vCPU Intel Xeon Gold 6354, 128 GB RAM, 1000 GB Быстрый SSD",
+      "description": "Крупный облачный сервер для высоконагруженных и аналитических задач. Расчет: 32 × vCPU + 128 ГБ RAM + 1000 ГБ быстрого SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 87420.32,
+        "price_per_month_rub": 87420.32
+      },
+      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 32,
+        "ram_gb": 128,
+        "disk_type": "Быстрый SSD v2",
+        "disk_gb": 1000,
+        "vat_included": true,
+        "calculation": "32 * 883.99 + 128 * 291.88 + 1000 * 22.00 = 87420.32",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-server-interruptible-4cpu-16ram-100ssd",
+      "name": "Cloud Server Прерываемый — 4 vCPU, 16 GB RAM, 100 GB универсальный SSD",
+      "description": "Облачный сервер на прерываемых ресурсах: дешевле, но может быть остановлен оператором. Подходит для batch-обработки и dev-окружений. Расчет: 4 × прерываемых vCPU + 16 ГБ прерываемой RAM + 100 ГБ универсального SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 2593.21,
+        "price_per_month_rub": 2593.21
+      },
+      "tech_stack": ["Intel Xeon Gold 6240R", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "interruptible_vm",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 100,
+        "vat_included": true,
+        "calculation": "4 * 167.09 + 16 * 60.97 + 100 * 9.53 = 2593.21",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-gpu-h200-141gb-package",
+      "name": "Cloud GPU — 1× NVIDIA H200 141 GB, 16 vCPU AMD EPYC 9474F, 128 GB RAM",
+      "description": "GPU-инстанс на NVIDIA H200 141 GB для крупного ML/LLM. Расчет: 1 × GPU H200 + 16 × vCPU AMD EPYC 9474F + 128 ГБ RAM (4 800 МГц).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 441504.48,
+        "price_per_month_rub": 441504.48
+      },
+      "tech_stack": ["NVIDIA H200", "AMD EPYC 9474F"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA H200",
+        "vram_gb": 141,
+        "cpu_model": "AMD EPYC 9474F 3.6 GHz",
+        "cpu": 16,
+        "ram_gb": 128,
+        "vat_included": true,
+        "calculation": "390000 + 16 * 883.99 + 128 * 291.88 = 441504.48",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-gpu-a100-80gb-package",
+      "name": "Cloud GPU — 1× NVIDIA A100 80 GB, 16 vCPU AMD EPYC 9474F, 128 GB RAM",
+      "description": "GPU-инстанс на NVIDIA A100 80 GB. Расчет: 1 × GPU A100 80 GB + 16 × vCPU EPYC 9474F + 128 ГБ RAM.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 245301.52,
+        "price_per_month_rub": 245301.52
+      },
+      "tech_stack": ["NVIDIA A100", "AMD EPYC 9474F"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA A100",
+        "vram_gb": 80,
+        "cpu": 16,
+        "ram_gb": 128,
+        "vat_included": true,
+        "calculation": "193797.04 + 16 * 883.99 + 128 * 291.88 = 245301.52",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-gpu-l4-24gb-package",
+      "name": "Cloud GPU — 1× NVIDIA L4 24 GB, 8 vCPU Intel Gold 6240R, 64 GB RAM",
+      "description": "GPU-инстанс начального уровня на NVIDIA L4 24 GB для инференса. Расчет: 1 × GPU L4 + 8 × vCPU Intel Gold 6240R + 64 ГБ RAM (2 133-2 933 МГц).",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 53901.36,
+        "price_per_month_rub": 53901.36
+      },
+      "tech_stack": ["NVIDIA L4", "Intel Xeon Gold 6240R"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA L4",
+        "vram_gb": 24,
+        "cpu": 8,
+        "ram_gb": 64,
+        "vat_included": true,
+        "calculation": "33011 + 8 * 668.35 + 64 * 243.04 = 53901.36",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-gpu-rtx-6000-pro-package",
+      "name": "Cloud GPU — 1× NVIDIA RTX 6000 Pro 96 GB, 16 vCPU AMD EPYC 9554, 128 GB RAM",
+      "description": "GPU-инстанс на NVIDIA RTX 6000 Pro 96 GB. Расчет: 1 × GPU RTX 6000 Pro + 16 × vCPU EPYC 9554 + 128 ГБ RAM.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 194650.48,
+        "price_per_month_rub": 194650.48
+      },
+      "tech_stack": ["NVIDIA RTX 6000 Pro", "AMD EPYC 9554"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA RTX 6000 Pro",
+        "vram_gb": 96,
+        "cpu": 16,
+        "ram_gb": 128,
+        "vat_included": true,
+        "calculation": "143146 + 16 * 883.99 + 128 * 291.88 = 194650.48",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-gpu-tesla-t4-package",
+      "name": "Cloud GPU — 1× NVIDIA Tesla T4 16 GB, 8 vCPU, 32 GB RAM",
+      "description": "Бюджетный GPU-инстанс на Tesla T4 для инференса и легкого ML. Расчет: 1 × GPU T4 + 8 × vCPU + 32 ГБ RAM.",
+      "category": "Cloud GPU",
+      "pricing": {
+        "price_from_rub": 41707.72,
+        "price_per_month_rub": 41707.72
+      },
+      "tech_stack": ["NVIDIA Tesla T4"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "gpu_server",
+        "gpu_model": "NVIDIA Tesla T4",
+        "vram_gb": 16,
+        "cpu": 8,
+        "ram_gb": 32,
+        "vat_included": true,
+        "calculation": "28592.64 + 8 * 883.99 + 32 * 243.04 = 41707.72",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dedicated-server-cl01-ssd",
+      "name": "Выделенный сервер CL01-SSD — Intel Celeron 2 GHz, 4 GB DDR4, 120 GB SSD",
+      "description": "Бюджетный выделенный сервер Celeron начального уровня.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 1290,
+        "price_per_month_rub": 1290
+      },
+      "tech_stack": ["Intel Celeron", "SSD SATA"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Celeron 2 GHz, 2 ядра",
+        "ram_gb": 4,
+        "disk_type": "SSD SATA",
+        "disk_gb": 120,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dedicated-server-cl13-nvme",
+      "name": "Выделенный сервер CL13-NVMe — Intel Core i3-12100, 16 GB DDR4, 500 GB NVMe SSD",
+      "description": "Компактный сервер с NVMe SSD для веб-сервисов и dev-сред.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 5290,
+        "price_per_month_rub": 5290
+      },
+      "tech_stack": ["Intel Core i3-12100", "NVMe SSD"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Core i3-12100 3.3 GHz",
+        "ram_gb": 16,
+        "disk_type": "NVMe SSD",
+        "disk_gb": 500,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dedicated-server-cl25-ssd",
+      "name": "Выделенный сервер CL25-SSD — Intel Core i3-14100, 32 GB DDR4, 2× 480 GB SSD SATA",
+      "description": "Сервер начального уровня с двумя SSD под отказоустойчивость.",
+      "category": "Bare Metal Servers",
+      "pricing": {
+        "price_from_rub": 5940,
+        "price_per_month_rub": 5940
+      },
+      "tech_stack": ["Intel Core i3-14100", "SSD SATA"],
+      "compliance_tags": [],
+      "attributes": {
+        "resource_type": "bare_metal",
+        "cpu_model": "Intel Core i3-14100 3.5 GHz",
+        "ram_gb": 32,
+        "disk_type": "SSD SATA",
+        "disk_gb": 960,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-s3-ice-storage",
+      "name": "S3 Хранилище — Ледяной класс (Icebox)",
+      "description": "Объектное хранилище класса «Ледяное» для бэкапов и архивов. Цена дана за 1 ГБ в месяц.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 0.81,
+        "price_per_month_rub": 0.81
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Cold/Icebox",
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "egress_per_gb_rub": 1.96,
+        "get_requests_per_10000_rub": 3.01,
+        "put_requests_per_1000_rub": 3.01,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-s3-vault",
+      "name": "S3 Vault — защищенное хранилище для бэкапов",
+      "description": "Облачное хранилище с повышенной защитой для резервного копирования S3-бакетов. Цена за 1 ГБ в месяц.",
+      "category": "Object Storage",
+      "pricing": {
+        "price_from_rub": 1.43,
+        "price_per_month_rub": 1.43
+      },
+      "tech_stack": ["S3"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Backup vault",
+        "unit": "ГБ/месяц",
+        "egress_per_gb_rub": 1.96,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-small-2cpu-8ram-100ssd",
+      "name": "Managed Database Small — 2 vCPU, 8 GB RAM, 100 GB Ultra SSD",
+      "description": "Управляемая БД начального уровня (PostgreSQL/MySQL/Redis/Kafka/OpenSearch). Расчет: 2 × DBaaS vCPU + 8 ГБ DBaaS RAM + 100 ГБ Ultra SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 9935.81,
+        "price_per_month_rub": 9935.81
+      },
+      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "Kafka", "OpenSearch"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_gb": 100,
+        "disk_type": "Ultra SSD",
+        "vat_included": true,
+        "calculation": "2 * 931.48 + 8 * 311.00 + 100 * 55.85 = 9935.81",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-standard-4cpu-16ram-200ssd",
+      "name": "Managed Database Standard — 4 vCPU, 16 GB RAM, 200 GB Ultra SSD",
+      "description": "Управляемая БД для типовых продакшен-нагрузок. Расчет: 4 × DBaaS vCPU + 16 ГБ DBaaS RAM + 200 ГБ Ultra SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 19871.92,
+        "price_per_month_rub": 19871.92
+      },
+      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "Kafka", "OpenSearch"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "disk_type": "Ultra SSD",
+        "vat_included": true,
+        "calculation": "4 * 931.48 + 16 * 311.00 + 200 * 55.85 = 19871.92",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-production-highfreq-8cpu-32ram-500ssd",
+      "name": "Managed Database Production HighFreq — 8 vCPU, 32 GB RAM, 500 GB Ultra SSD",
+      "description": "Производственная БД на HighFreq-тарифе для нагруженных задач. Расчет: 8 × HighFreq vCPU + 32 ГБ HighFreq RAM + 500 ГБ Ultra SSD.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 49721.00,
+        "price_per_month_rub": 49721.00
+      },
+      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "High-IOPS SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_gb": 500,
+        "disk_type": "Ultra SSD",
+        "tariff_class": "HighFreq",
+        "vat_included": true,
+        "calculation": "8 * 1310 + 32 * 353 + 500 * 55.85 = 49721",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-dedicated-small",
+      "name": "DBaaS Выделенный сервер Small",
+      "description": "Готовый пакет: выделенный физический сервер под управляемую БД, конфигурация Small.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 55699.00,
+        "price_per_month_rub": 55699.00
+      },
+      "tech_stack": ["PostgreSQL", "MySQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "dedicated_db_server",
+        "config": "Small",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-dedicated-medium",
+      "name": "DBaaS Выделенный сервер Medium",
+      "description": "Готовый пакет: выделенный физический сервер под БД, конфигурация Medium.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 83190.80,
+        "price_per_month_rub": 83190.80
+      },
+      "tech_stack": ["PostgreSQL", "MySQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "dedicated_db_server",
+        "config": "Medium",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-dedicated-large",
+      "name": "DBaaS Выделенный сервер Large",
+      "description": "Готовый пакет: выделенный физический сервер под БД, конфигурация Large.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 135721.60,
+        "price_per_month_rub": 135721.60
+      },
+      "tech_stack": ["PostgreSQL", "MySQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "dedicated_db_server",
+        "config": "Large",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-dbaas-dedicated-mega",
+      "name": "DBaaS Выделенный сервер Mega",
+      "description": "Готовый пакет: выделенный физический сервер под БД, максимальная конфигурация Mega.",
+      "category": "Cloud Databases",
+      "pricing": {
+        "price_from_rub": 254937.90,
+        "price_per_month_rub": 254937.90
+      },
+      "tech_stack": ["PostgreSQL", "MySQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "resource_type": "dedicated_db_server",
+        "config": "Mega",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-mks-base-1master",
+      "name": "Managed Kubernetes Базовый — 1 мастер-нода",
+      "description": "Базовый управляемый Kubernetes-кластер с одной мастер-нодой (без HA).",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 5413.24,
+        "price_per_month_rub": 5413.24
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 1,
+        "high_availability": false,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-mks-ha-3master",
+      "name": "Managed Kubernetes Отказоустойчивый — 3 мастер-ноды",
+      "description": "Отказоустойчивый управляемый Kubernetes-кластер с тремя мастер-нодами.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 15532.36,
+        "price_per_month_rub": 15532.36
+      },
+      "tech_stack": ["Kubernetes"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 3,
+        "high_availability": true,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-mks-cluster-production-3master-3worker",
+      "name": "Managed Kubernetes Production Cluster — 3 master HA + 3 worker (8 vCPU, 32 GB RAM, 200 GB SSD)",
+      "description": "Production-кластер: 3 мастер-ноды HA + 3 worker (8 × vCPU + 32 ГБ RAM + 200 ГБ универсального SSD v2 на узел) + балансировщик базовый с резервированием. Расчет суммирует мастер-кластер, ресурсы worker-нод и балансировщик.",
+      "category": "Cloud Containers",
+      "pricing": {
+        "price_from_rub": 60872.61,
+        "price_per_month_rub": 60872.61
+      },
+      "tech_stack": ["Kubernetes", "Intel Xeon Gold 6354", "SSD"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "master_nodes": 3,
+        "worker_nodes": 3,
+        "cpu_per_node": 8,
+        "ram_gb_per_node": 32,
+        "disk_gb_per_node": 200,
+        "high_availability": true,
+        "load_balancer": true,
+        "vat_included": true,
+        "calculation": "15532.36 + 3 * (8 * 883.99 + 32 * 291.88 + 200 * 9.53) + 2370.81 = 60872.61",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-container-registry",
+      "name": "Container Registry — хранение образов",
+      "description": "Реестр для хранения образов контейнеров. Цена за 1 ГБ в месяц.",
+      "category": "DevOps",
+      "pricing": {
+        "price_from_rub": 3.00,
+        "price_per_month_rub": 3.00
+      },
+      "tech_stack": ["Container Registry"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vmware-server-standard",
+      "name": "VMware Cloud Server Standard — 4 vCPU, 16 GB RAM, 200 GB Fast vHDD",
+      "description": "Виртуальный сервер на публичном облаке VMware Selectel (Silver VDC). Расчет: 4 × vCPU + 16 ГБ RAM + 200 ГБ Fast vHDD (2 500 IOPS).",
+      "category": "VMware Cloud",
+      "pricing": {
+        "price_from_rub": 13270.20,
+        "price_per_month_rub": 13270.20
+      },
+      "tech_stack": ["VMware"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "platform": "VMware Silver VDC",
+        "cpu": 4,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "disk_type": "Fast vHDD 2500 IOPS",
+        "vat_included": true,
+        "calculation": "4 * 800.01 + 16 * 450.01 + 200 * 14.35 = 13270.20",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vmware-edge-router-compact-ha",
+      "name": "VMware Edge-роутер Compact High Availability",
+      "description": "Отказоустойчивый Edge-роутер Compact для VMware-облака.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 1280.13,
+        "price_per_month_rub": 1280.13
+      },
+      "tech_stack": ["VMware"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "high_availability": true,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vmware-draas",
+      "name": "VMware DRaaS — аварийное восстановление",
+      "description": "Аварийное восстановление виртуальной машины в облако VMware. Цена за 1 ВМ в месяц.",
+      "category": "Disaster Recovery",
+      "pricing": {
+        "price_from_rub": 1000.03,
+        "price_per_month_rub": 1000.03
+      },
+      "tech_stack": ["VMware"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ВМ",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-network-loadbalancer-basic",
+      "name": "Балансировщик нагрузки Базовый (без резервирования)",
+      "description": "Сетевой балансировщик базового уровня без резервирования.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 1271.18,
+        "price_per_month_rub": 1271.18
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "high_availability": false,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-network-loadbalancer-advanced-ha",
+      "name": "Балансировщик нагрузки Продвинутый с резервированием",
+      "description": "Продвинутый отказоустойчивый сетевой балансировщик.",
+      "category": "Load Balancer",
+      "pricing": {
+        "price_from_rub": 3944.59,
+        "price_per_month_rub": 3944.59
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "high_availability": true,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-public-ipv4",
+      "name": "Публичный IPv4-адрес",
+      "description": "Публичный IPv4-адрес для облачных серверов.",
+      "category": "Public IP",
+      "pricing": {
+        "price_from_rub": 182.28,
+        "price_per_month_rub": 182.28
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "IP",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-veeam-cloud-connect-vm",
+      "name": "Veeam Cloud Connect — резервная копия виртуальной машины",
+      "description": "Облачный репозиторий Veeam Cloud Connect, тарификация за 1 ВМ.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 816.00,
+        "price_per_month_rub": 816.00
+      },
+      "tech_stack": ["Veeam"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ВМ",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-veeam-cloud-connect-repository",
+      "name": "Veeam Cloud Connect — место в репозитории",
+      "description": "Хранение резервных копий Veeam в облачном репозитории с тройной репликацией. Цена за 1 ГБ в месяц.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 2.00,
+        "price_per_month_rub": 2.00
+      },
+      "tech_stack": ["Veeam"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cyberbackup-vm",
+      "name": "Кибер Бэкап Облачный — виртуальная машина",
+      "description": "Резервное копирование виртуальной машины через Кибер Бэкап (за устройство).",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 1190.00,
+        "price_per_month_rub": 1190.00
+      },
+      "tech_stack": ["Кибер Бэкап"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "устройство",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cyberbackup-physical-server",
+      "name": "Кибер Бэкап Облачный — физический сервер",
+      "description": "Резервное копирование физического сервера через Кибер Бэкап.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 2100.00,
+        "price_per_month_rub": 2100.00
+      },
+      "tech_stack": ["Кибер Бэкап"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "устройство",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cyberbackup-postgresql",
+      "name": "Кибер Бэкап Облачный — СУБД PostgreSQL",
+      "description": "Резервное копирование экземпляра PostgreSQL через Кибер Бэкап.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 2100.00,
+        "price_per_month_rub": 2100.00
+      },
+      "tech_stack": ["Кибер Бэкап", "PostgreSQL"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "устройство",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-cloud-backup-disk-1gb",
+      "name": "Резервное копирование в облаке — 1 ГБ",
+      "description": "Бэкапы сетевых дисков облачных серверов. Цена за 1 ГБ в месяц.",
+      "category": "Cloud Backup",
+      "pricing": {
+        "price_from_rub": 4.10,
+        "price_per_month_rub": 4.10
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vdi-2cpu-4ram",
+      "name": "Виртуальный рабочий стол — 2 vCPU, 4 GB RAM, 200 GB SSD",
+      "description": "Готовый VDI на базе VMware Horizon. Базовая конфигурация без GPU.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 2730,
+        "price_per_month_rub": 2730
+      },
+      "tech_stack": ["VMware Horizon"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_gb": 200,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vdi-4cpu-8ram",
+      "name": "Виртуальный рабочий стол — 4 vCPU, 8 GB RAM, 200 GB SSD",
+      "description": "VDI на базе VMware Horizon, средняя конфигурация.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 3830,
+        "price_per_month_rub": 3830
+      },
+      "tech_stack": ["VMware Horizon"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 4,
+        "ram_gb": 8,
+        "disk_gb": 200,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-vdi-8cpu-16ram",
+      "name": "Виртуальный рабочий стол — 8 vCPU, 16 GB RAM, 200 GB SSD",
+      "description": "VDI на базе VMware Horizon, увеличенная конфигурация.",
+      "category": "Cloud Desktop",
+      "pricing": {
+        "price_from_rub": 6030,
+        "price_per_month_rub": 6030
+      },
+      "tech_stack": ["VMware Horizon"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 8,
+        "ram_gb": 16,
+        "disk_gb": 200,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-1c-ready-cloud-standard",
+      "name": "Готовое облако 1С — 4 vCPU SL, 8 GB RAM, 100 GB Быстрый SSD",
+      "description": "Готовая платформа 1С в облаке (тариф SL — Standard). Расчет: 4 × vCPU кластера 1С SL + 8 ГБ RAM SL + 100 ГБ быстрого SSD.",
+      "category": "1C Ready Workplace",
+      "pricing": {
+        "price_from_rub": 5830.84,
+        "price_per_month_rub": 5830.84
+      },
+      "tech_stack": ["1С:Предприятие"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "cpu": 4,
+        "ram_gb": 8,
+        "disk_gb": 100,
+        "tariff_class": "SL",
+        "vat_included": true,
+        "calculation": "4 * 677.64 + 8 * 246.41 + 100 * 11.49 = 5830.84",
+        "price_source": "calculated_from_tariff_grid"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-1c-license-prof-server",
+      "name": "1С:Предприятие 8 ПРОФ — лицензия на сервер приложения (x86-64)",
+      "description": "Лицензия 1С на сервер приложения, версия ПРОФ.",
+      "category": "1C Licenses",
+      "pricing": {
+        "price_from_rub": 4500,
+        "price_per_month_rub": 4500
+      },
+      "tech_stack": ["1С:Предприятие"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "ПРОФ",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-1c-license-prof-user",
+      "name": "1С:Предприятие 8 ПРОФ — пользовательская лицензия (1 пользователь)",
+      "description": "Пользовательская лицензия 1С ПРОФ.",
+      "category": "1C Licenses",
+      "pricing": {
+        "price_from_rub": 700,
+        "price_per_month_rub": 700
+      },
+      "tech_stack": ["1С:Предприятие"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "ПРОФ",
+        "unit": "пользователь",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-1c-license-corp-server",
+      "name": "1С:Предприятие 8 КОРП — лицензия на сервер приложения (x86-64)",
+      "description": "Лицензия 1С на сервер приложения, версия КОРП.",
+      "category": "1C Licenses",
+      "pricing": {
+        "price_from_rub": 9000,
+        "price_per_month_rub": 9000
+      },
+      "tech_stack": ["1С:Предприятие"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "КОРП",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-license-astra-linux-orel",
+      "name": "Доступ к установке Astra Linux 1.8 Орёл",
+      "description": "Лицензия на использование Astra Linux 1.8 Орёл в облаке Selectel.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1846.61,
+        "price_per_month_rub": 1846.61
+      },
+      "tech_stack": ["Astra Linux"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "edition": "Орёл 1.8",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-license-astra-linux-voronezh",
+      "name": "Доступ к установке Astra Linux 1.8 Воронеж",
+      "description": "Лицензия на использование Astra Linux 1.8 Воронеж в облаке Selectel.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 2263.58,
+        "price_per_month_rub": 2263.58
+      },
+      "tech_stack": ["Astra Linux"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "edition": "Воронеж 1.8",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-license-redos-standard",
+      "name": "Доступ к установке РЕД ОС 8 Стандартная",
+      "description": "Лицензия на использование РЕД ОС 8 Стандартная редакция.",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 1265.82,
+        "price_per_month_rub": 1265.82
+      },
+      "tech_stack": ["РЕД ОС"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "Стандартная",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-license-redos-certified",
+      "name": "Доступ к установке РЕД ОС 7.3 Сертифицированная",
+      "description": "Лицензия на использование сертифицированной редакции РЕД ОС 7.3 (ФСТЭК).",
+      "category": "OS Licenses",
+      "pricing": {
+        "price_from_rub": 3834.69,
+        "price_per_month_rub": 3834.69
+      },
+      "tech_stack": ["РЕД ОС"],
+      "compliance_tags": ["152-FZ", "FSTEC"],
+      "attributes": {
+        "edition": "Сертифицированная",
+        "certified": true,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-ddos-protection-ddosguard-l3l4-10mbit",
+      "name": "Защита DDoS Guard (L3-L4) — 10 Мбит/с",
+      "description": "Защита от DDoS-атак на уровне L3-L4 с лимитом легитимного трафика 10 Мбит/с.",
+      "category": "DDoS Protection",
+      "pricing": {
+        "price_from_rub": 2600,
+        "price_per_month_rub": 2600
+      },
+      "tech_stack": ["DDoS Guard"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "bandwidth": "10 Мбит/с",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-ddos-curator-professional",
+      "name": "Curator — тариф Professional (10 Мбит/с легитимного трафика)",
+      "description": "Защита от DDoS Curator Professional.",
+      "category": "DDoS Protection",
+      "pricing": {
+        "price_from_rub": 28100,
+        "price_per_month_rub": 28100
+      },
+      "tech_stack": ["Curator"],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "tariff": "Professional",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-firewall-usergate-c150",
+      "name": "Сертифицированный межсетевой экран UserGate C150",
+      "description": "Сертифицированный межсетевой экран UserGate C150.",
+      "category": "Network Security",
+      "pricing": {
+        "price_from_rub": 32000,
+        "price_per_month_rub": 32000
+      },
+      "tech_stack": ["UserGate"],
+      "compliance_tags": ["FSTEC"],
+      "attributes": {
+        "certified": true,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-gost-vpn-vipnet",
+      "name": "Сервис ГОСТ-VPN на базе ViPNet",
+      "description": "Сервис ГОСТ-VPN с поддержкой шифрования по российским стандартам.",
+      "category": "Network Security",
+      "pricing": {
+        "price_from_rub": 15000,
+        "price_per_month_rub": 15000
+      },
+      "tech_stack": ["ViPNet", "ГОСТ"],
+      "compliance_tags": ["FSB"],
+      "attributes": {
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-info-security-kaspersky-eps",
+      "name": "Kaspersky Endpoint Security для бизнеса стандартный",
+      "description": "Антивирусная защита Kaspersky Endpoint Security.",
+      "category": "Endpoint Security",
+      "pricing": {
+        "price_from_rub": 300,
+        "price_per_month_rub": 300
+      },
+      "tech_stack": ["Kaspersky"],
+      "compliance_tags": [],
+      "attributes": {
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-direct-connect-1g",
+      "name": "DirectConnect — логический порт 1 Гбит/с",
+      "description": "Прямое подключение DirectConnect, логический порт 1 Гбит/с.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 400,
+        "price_per_month_rub": 400
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "bandwidth": "1 Гбит/с",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-direct-connect-10g",
+      "name": "DirectConnect — логический порт 10 Гбит/с",
+      "description": "Прямое подключение DirectConnect, логический порт 10 Гбит/с.",
+      "category": "Network",
+      "pricing": {
+        "price_from_rub": 1630,
+        "price_per_month_rub": 1630
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "bandwidth": "10 Гбит/с",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-file-storage-universal",
+      "name": "Файловое хранилище — универсальное",
+      "description": "Универсальная масштабируемая файловая система для нескольких серверов. Цена за 1 ГБ в месяц.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": 10.80,
+        "price_per_month_rub": 10.80
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Universal",
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-file-storage-fast",
+      "name": "Файловое хранилище — быстрое",
+      "description": "Быстрая масштабируемая файловая система. Цена за 1 ГБ в месяц.",
+      "category": "File Storage",
+      "pricing": {
+        "price_from_rub": 18.02,
+        "price_per_month_rub": 18.02
+      },
+      "tech_stack": [],
+      "compliance_tags": ["152-FZ"],
+      "attributes": {
+        "storage_class": "Fast",
+        "unit": "ГБ/месяц",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-mobile-farm-month",
+      "name": "Мобильная ферма — 1 месяц",
+      "description": "Сервис тестирования мобильных приложений на реальных устройствах. Тариф за 1 месяц.",
+      "category": "Mobile Testing",
+      "pricing": {
+        "price_from_rub": 20000,
+        "price_per_month_rub": 20000
+      },
+      "tech_stack": [],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "месяц",
+        "price_per_minute_rub": 1,
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-domain-ru-registration",
+      "name": "Регистрация домена .RU/.РФ",
+      "description": "Регистрация домена в зонах .RU и .РФ. Цена за год.",
+      "category": "Domains",
+      "pricing": {
+        "price_from_rub": 120,
+        "price_per_month_rub": null
+      },
+      "tech_stack": ["DNS"],
+      "compliance_tags": [],
+      "attributes": {
+        "unit": "год",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    },
+    {
+      "service_id": "selectel-isp-manager-pro",
+      "name": "Панель управления ISPmanager 6 Pro",
+      "description": "Лицензия панели управления ISPmanager 6 Pro.",
+      "category": "Software Licenses",
+      "pricing": {
+        "price_from_rub": 600,
+        "price_per_month_rub": 600
+      },
+      "tech_stack": ["ISPmanager"],
+      "compliance_tags": [],
+      "attributes": {
+        "edition": "Pro",
+        "vat_included": true,
+        "price_source": "tariff_grid_package"
+      },
+      "source_url": "uploaded_file:Тарифы и цены на услуги Selectel.html"
+    }
+  ]
+}

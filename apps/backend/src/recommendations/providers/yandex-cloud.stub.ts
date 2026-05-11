@@ -9,6 +9,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Управляемый Kubernetes-контур для микросервисов, autoscaling и стандартизированного деплоя.",
     finalScore: 96,
+    monthlyPriceRub: 186_000,
     services: ["Managed Kubernetes", "Container Registry", "Network Load Balancer"],
     reasons: [
       "Подходит для масштабируемого приложения с несколькими сервисами.",
@@ -25,6 +26,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Контейнерный backend без управления серверами для API, webhook и фоновых сценариев с переменной нагрузкой.",
     finalScore: 91,
+    monthlyPriceRub: 38_000,
     services: ["Serverless Containers", "API Gateway", "Lockbox"],
     reasons: [
       "Хорош для быстрого запуска и нерегулярной нагрузки.",
@@ -41,6 +43,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Надежная транзакционная база для истории промптов, результатов ранжирования и аудита ответов модели.",
     finalScore: 89,
+    monthlyPriceRub: 74_000,
     services: ["Managed PostgreSQL", "Backup", "Monitoring"],
     reasons: [
       "Сохраняет историю и результаты в воспроизводимой форме.",
@@ -57,6 +60,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Среда для экспериментов с качеством рекомендаций, датасетами, ручной разметкой и сравнением prompt-версий.",
     finalScore: 84,
+    monthlyPriceRub: 118_000,
     services: ["DataSphere", "Object Storage", "DataLens"],
     reasons: [
       "Помогает улучшать scoring и промпты на реальных примерах.",
@@ -73,6 +77,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Хранилище статических ассетов и быстрая доставка файлов интерфейса, отчетов и вложений пользователям.",
     finalScore: 78,
+    monthlyPriceRub: 16_000,
     services: ["Object Storage", "CDN", "Cloud DNS"],
     reasons: [
       "Подходит для ассетов и выгрузок без нагрузки на backend.",
@@ -89,6 +94,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "Метрики, логи и алерты для контроля latency, ошибок очереди, качества ответов и деградаций модели.",
     finalScore: 86,
+    monthlyPriceRub: 29_000,
     services: ["Monitoring", "Cloud Logging", "Managed Service for Prometheus"],
     reasons: [
       "Позволяет видеть узкие места request flow.",
@@ -105,6 +111,7 @@ const demoRecommendations: CloudRecommendation[] = [
     description:
       "LLM-слой для преобразования пользовательского промпта в структурированные облачные рекомендации.",
     finalScore: 94,
+    monthlyPriceRub: 92_000,
     services: ["Foundation Models API", "IAM", "Lockbox"],
     reasons: [
       "Непосредственно решает задачу генерации и оценки вариантов.",

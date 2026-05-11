@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS cloud_recommendations (
   title TEXT NOT NULL,
   description TEXT NOT NULL,
   final_score NUMERIC(5, 2) NOT NULL CHECK (final_score >= 0 AND final_score <= 100),
+  monthly_price_rub NUMERIC(12, 2),
   services TEXT[] NOT NULL DEFAULT '{}',
   reasons TEXT[] NOT NULL DEFAULT '{}',
   risks TEXT[] NOT NULL DEFAULT '{}',
