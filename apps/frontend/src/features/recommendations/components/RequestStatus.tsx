@@ -15,7 +15,7 @@ const config: Record<RecommendationStatus, { label: string; className: string }>
     className: "border-[#ccecff] bg-[#e9f7ff] text-[#063b6f] dark:border-sky-300/30 dark:bg-sky-300/10 dark:text-sky-100",
   },
   processing: {
-    label: "Yandex Cloud stub считает score",
+    label: "Подождите...",
     className: "border-[#ccecff] bg-[#e9f7ff] text-[#063b6f] dark:border-sky-300/30 dark:bg-sky-300/10 dark:text-sky-100",
   },
   completed: {

@@ -20,6 +20,8 @@ export const cloudRecommendationSchema = z.object({
   provider: z.string().min(1),
   title: z.string().min(1),
   sourceUrl: z.string().min(1).nullable().optional(),
+  serviceType: z.string().min(1).nullable().optional(),
+  city: z.string().min(1).nullable().optional(),
   description: z.string().min(1),
   finalScore: z.number().min(0).max(100),
   monthlyPriceRub: z.number().nonnegative().nullable().default(null),
@@ -39,6 +41,7 @@ export const recommendationRequestSchema = z.object({
   updatedAt: z.string(),
   completedAt: z.string().nullable(),
   errorMessage: z.string().nullable(),
+  serviceTypes: z.array(z.string().min(1)).default([]),
   recommendations: z.array(cloudRecommendationSchema),
 });
 

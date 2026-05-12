@@ -111,6 +111,8 @@ export class RecommendationsRepository {
               explanation: recommendation.explanation,
               rankPosition: index,
               sourceUrl: recommendation.sourceUrl,
+              serviceType: recommendation.serviceType,
+              city: recommendation.city,
             },
           ],
         );
@@ -196,6 +198,8 @@ export class RecommendationsRepository {
       provider: row.provider,
       title: row.title,
       sourceUrl: this.extractSourceUrl(row.raw_payload, row.provider),
+      serviceType: this.extractServiceType(row.raw_payload),
+      city: this.extractCity(row.raw_payload),
       description: row.description,
       finalScore: Number(row.final_score),
       monthlyPriceRub: row.monthly_price_rub === null ? null : Number(row.monthly_price_rub),
@@ -219,6 +223,24 @@ export class RecommendationsRepository {
     }
 
     return this.providerSourceUrl(provider);
+  }
+
+  private extractServiceType(rawPayload: unknown): string | null {
+    if (!rawPayload || typeof rawPayload !== "object") {
+      return null;
+    }
+
+    const serviceType = (rawPayload as { serviceType?: unknown }).serviceType;
+    return typeof serviceType === "string" && serviceType.length > 0 ? serviceType : null;
+  }
+
+  private extractCity(rawPayload: unknown): string | null {
+    if (!rawPayload || typeof rawPayload !== "object") {
+      return null;
+    }
+
+    const city = (rawPayload as { city?: unknown }).city;
+    return typeof city === "string" && city.length > 0 ? city : null;
   }
 
   private providerSourceUrl(provider: string): string | null {
@@ -275,7 +297,18 @@ export class RecommendationsRepository {
       updatedAt: row.updated_at.toISOString(),
       completedAt: row.completed_at?.toISOString() ?? null,
       errorMessage: row.error_message,
+      serviceTypes: this.uniqueServiceTypes(recommendations),
       recommendations,
     };
+  }
+
+  private uniqueServiceTypes(recommendations: CloudRecommendation[]): string[] {
+    return recommendations.reduce<string[]>((serviceTypes, recommendation) => {
+      if (recommendation.serviceType && !serviceTypes.includes(recommendation.serviceType)) {
+        serviceTypes.push(recommendation.serviceType);
+      }
+
+      return serviceTypes;
+    }, []);
   }
 }

@@ -36,6 +36,16 @@ type ProviderMention = {
   end: number;
 };
 
+const cityAliases: Array<{ city: string; patterns: RegExp[] }> = [
+  { city: "Москва", patterns: [/москв/i, /\bmoscow\b/i] },
+  { city: "Санкт-Петербург", patterns: [/санкт[-\s]?петербург/i, /петербург/i, /(^|[^a-zа-я0-9])питер(?=$|[^a-zа-я0-9])/i, /\bspb\b/i, /\bsaint[-\s]?petersburg\b/i, /\bst[-\s]?petersburg\b/i] },
+  { city: "Новосибирск", patterns: [/новосибирск/i, /\bnovosibirsk\b/i] },
+  { city: "Екатеринбург", patterns: [/екатеринбург/i, /\byekaterinburg\b/i, /\bekaterinburg\b/i] },
+  { city: "Казань", patterns: [/казан/i, /\bkazan\b/i] },
+  { city: "Нижний Новгород", patterns: [/нижн[а-яёa-z0-9-]*\s+новгород/i, /\bnizhny\s+novgorod\b/i] },
+  { city: "Краснодар", patterns: [/краснодар/i, /\bkrasnodar\b/i] },
+];
+
 const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
   {
     type: "virtual_server",
@@ -43,19 +53,26 @@ const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
       /\bvps\b/i,
       /\bvds\b/i,
       /\bvm\b/i,
-      /\bвпс\b/i,
-      /\bвдс\b/i,
-      /\bвм\b/i,
-      /виртуальн\w*\s+машин/i,
-      /виртуальн\w*\s+сервер/i,
-      /облачн\w*\s+сервер/i,
+      /(^|[^a-zа-я0-9])впс(?=$|[^a-zа-я0-9])/i,
+      /(^|[^a-zа-я0-9])вдс(?=$|[^a-zа-я0-9])/i,
+      /(^|[^a-zа-я0-9])вм(?=$|[^a-zа-я0-9])/i,
+      /виртуальн[а-яёa-z0-9-]*\s+машин/i,
+      /виртуальн[а-яёa-z0-9-]*\s+сервер/i,
+      /облачн[а-яёa-z0-9-]*\s+сервер/i,
       /backend-?сервер/i,
       /сервер\s+для\s+backend/i,
     ],
   },
   {
     type: "managed_database",
-    patterns: [/\bpostgres(?:ql)?\b/i, /\bmysql\b/i, /\bclickhouse\b/i, /\bredis\b/i, /баз\w*\s+данн/i, /\bбд\b/i],
+    patterns: [
+      /\bpostgres(?:ql)?\b/i,
+      /\bmysql\b/i,
+      /\bclickhouse\b/i,
+      /\bredis\b/i,
+      /баз[а-яёa-z0-9-]*\s+данн/i,
+      /(^|[^a-zа-я0-9])бд(?=$|[^a-zа-я0-9])/i,
+    ],
   },
   {
     type: "managed_kubernetes",
@@ -63,7 +80,7 @@ const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
   },
   {
     type: "object_storage",
-    patterns: [/\bs3\b/i, /object\s+storage/i, /объектн\w*\s+хранилищ/i, /бакет/i],
+    patterns: [/\bs3\b/i, /object\s+storage/i, /объектн[а-яёa-z0-9-]*\s+хранилищ/i, /бакет/i],
   },
   {
     type: "gpu_server",
@@ -71,7 +88,7 @@ const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
   },
   {
     type: "bare_metal",
-    patterns: [/bare\s+metal/i, /выделенн\w*\s+сервер/i],
+    patterns: [/bare\s+metal/i, /выделенн[а-яёa-z0-9-]*\s+сервер/i],
   },
 ];
 
@@ -132,7 +149,10 @@ export class YandexAiStudioClient {
     const parsedIntent = aiStudioIntentSchema.parse(this.toAiStudioIntent(extraction));
     const intent = this.enrichEnabledProviders(
       input,
-      this.enrichResourceRequirements(input, this.enrichPrimaryServiceType(input, parsedIntent)),
+      this.enrichResourceRequirements(
+        input,
+        this.enrichPreferredCities(input, this.enrichPrimaryServiceType(input, parsedIntent)),
+      ),
     );
 
     return { intent, extraction, raw: { ...raw, extraction } };
@@ -143,15 +163,19 @@ export class YandexAiStudioClient {
     const country = extraction.regional_requirements.some((region) => this.isRussiaRegion(region)) || requires152Fz
       ? "RU"
       : null;
+    const serviceTypes = this.serviceTypesFromCategories(extraction.service_categories);
+    const preferredCities = this.citiesFromRegionalRequirements(extraction.regional_requirements);
 
     return {
       task_type: extraction.task_category || "web-hosting",
-      primary_service_type: this.primaryServiceTypeFromCategories(extraction.service_categories),
+      primary_service_type: serviceTypes[0] ?? null,
+      service_types: serviceTypes,
       requires_152fz: requires152Fz,
       budget_max_rub: extraction.budget_max_rub,
       budget_priority: this.budgetPriorityFromConstraints(extraction.budget_constraints),
       region: extraction.regional_requirements[0] ?? null,
       country,
+      preferred_cities: preferredCities,
       enabled_providers: this.enabledProvidersFromExcluded(extraction.excluded_providers),
       resource_requirements: {
         cpu_min: null,
@@ -169,7 +193,7 @@ export class YandexAiStudioClient {
         stable_network_required: extraction.availability_requirements.includes("high-availability"),
       },
       explicit_needs: this.unique([
-        ...extraction.service_categories.map((category) => this.primaryServiceTypeFromCategories([category]) ?? category),
+        ...extraction.service_categories.map((category) => this.serviceTypesFromCategories([category])[0] ?? category),
         ...extraction.compliance_tags.map((tag) => tag.toLowerCase()),
       ]),
       extracted_tech_stack: extraction.tech_stack,
@@ -189,36 +213,28 @@ export class YandexAiStudioClient {
     };
   }
 
-  private primaryServiceTypeFromCategories(categories: readonly string[]): string | null {
-    const text = categories.map((category) => this.normalizeToken(category)).join(" ");
+  private serviceTypesFromCategories(categories: readonly string[]): string[] {
+    return this.unique(
+      categories
+        .map((category) => this.serviceTypeFromCategory(category))
+        .filter((serviceType): serviceType is string => Boolean(serviceType)),
+    );
+  }
+
+  private serviceTypeFromCategory(category: string): string | null {
+    const text = this.normalizeToken(category);
 
     if (!text) {
       return null;
     }
-    if (/cloudcompute|compute|vps|vds|virtualserver/.test(text)) {
-      return "virtual_server";
-    }
-    if (/managedserviceforpostgresql|managedserviceformysql|database|postgres|mysql|clickhouse|redis/.test(text)) {
-      return "managed_database";
-    }
-    if (/objectstorage|s3|bucket/.test(text)) {
-      return "object_storage";
-    }
-    if (/kubernetes|containers/.test(text)) {
-      return "managed_kubernetes";
-    }
-    if (/backup/.test(text)) {
-      return "cloud_backup";
-    }
-    if (/cdn/.test(text)) {
-      return "cdn";
-    }
-    if (/waf/.test(text)) {
-      return "waf";
-    }
-    if (/loadbalancer/.test(text)) {
-      return "load_balancer";
-    }
+    if (/cloudcompute|compute|vps|vds|virtualserver/.test(text)) return "virtual_server";
+    if (/managedserviceforpostgresql|managedserviceformysql|database|postgres|mysql|clickhouse|redis/.test(text)) return "managed_database";
+    if (/objectstorage|s3|bucket/.test(text)) return "object_storage";
+    if (/kubernetes|containers/.test(text)) return "managed_kubernetes";
+    if (/backup/.test(text)) return "cloud_backup";
+    if (/cdn/.test(text)) return "cdn";
+    if (/waf/.test(text)) return "waf";
+    if (/loadbalancer/.test(text)) return "load_balancer";
 
     return null;
   }
@@ -262,7 +278,17 @@ export class YandexAiStudioClient {
 
   private isRussiaRegion(value: string): boolean {
     const normalized = this.normalizeToken(value);
-    return /росси|москва|рф|ru|russia/.test(normalized);
+    return /росси|москва|санкт|петербург|рф|ru|russia/.test(normalized);
+  }
+
+  private citiesFromRegionalRequirements(regions: readonly string[]): string[] {
+    return this.unique(
+      regions.flatMap((region) =>
+        cityAliases
+          .filter(({ patterns }) => patterns.some((pattern) => pattern.test(region)))
+          .map(({ city }) => city),
+      ),
+    );
   }
 
   private normalizeToken(value: string): string {
@@ -274,14 +300,17 @@ export class YandexAiStudioClient {
   }
 
   private enrichPrimaryServiceType(input: string, intent: AiStudioIntent): AiStudioIntent {
-    const primaryServiceType = this.extractPrimaryServiceType(input);
-    if (!primaryServiceType) {
-      return intent;
-    }
+    const extractedServiceTypes = this.extractPrimaryServiceTypes(input);
+    const serviceTypes = this.unique([
+      ...extractedServiceTypes,
+      ...(intent.service_types ?? []),
+    ]);
+    const primaryServiceType = serviceTypes[0] ?? intent.primary_service_type;
 
     return {
       ...intent,
-      primary_service_type: primaryServiceType,
+      primary_service_type: primaryServiceType ?? null,
+      service_types: serviceTypes,
     };
   }
 
@@ -295,6 +324,19 @@ export class YandexAiStudioClient {
     return {
       ...intent,
       enabled_providers: extracted,
+    };
+  }
+
+  private enrichPreferredCities(input: string, intent: AiStudioIntent): AiStudioIntent {
+    const extractedCities = this.extractPreferredCities(input);
+    const preferredCities = this.unique([
+      ...extractedCities,
+      ...(intent.preferred_cities ?? []),
+    ]);
+
+    return {
+      ...intent,
+      preferred_cities: preferredCities,
     };
   }
 
@@ -387,8 +429,32 @@ export class YandexAiStudioClient {
     return mentioned;
   }
 
-  private extractPrimaryServiceType(input: string): string | undefined {
-    return serviceTypeAliases.find(({ patterns }) => patterns.some((pattern) => pattern.test(input)))?.type;
+  private extractPrimaryServiceTypes(input: string): string[] {
+    return this.unique(
+      serviceTypeAliases
+        .flatMap(({ type, patterns }) =>
+          patterns.flatMap((pattern) => {
+            const match = input.match(pattern);
+            return match?.index === undefined ? [] : [{ type, index: match.index }];
+          }),
+        )
+        .sort((left, right) => left.index - right.index)
+        .map((match) => match.type),
+    );
+  }
+
+  private extractPreferredCities(input: string): string[] {
+    return this.unique(
+      cityAliases
+        .flatMap(({ city, patterns }) =>
+          patterns.flatMap((pattern) => {
+            const match = input.match(pattern);
+            return match?.index === undefined ? [] : [{ city, index: match.index }];
+          }),
+        )
+        .sort((left, right) => left.index - right.index)
+        .map((match) => match.city),
+    );
   }
 
   private findProviderMentions(value: string): ProviderMention[] {

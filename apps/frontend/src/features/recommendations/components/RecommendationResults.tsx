@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 import { Cloud, RefreshCw, SearchX } from "lucide-react";
-import type { RecommendationRequest } from "../types";
+import type { CloudRecommendation, RecommendationRequest } from "../types";
 import { RecommendationCard } from "./RecommendationCard";
 import { RequestStatus } from "./RequestStatus";
 import { cn } from "@/shared/lib/cn";
@@ -14,7 +15,70 @@ type RecommendationResultsProps = {
   viewMode: ResultsViewMode;
 };
 
+type RecommendationGroup = {
+  serviceType: string;
+  label: string;
+  recommendations: CloudRecommendation[];
+};
+
+const serviceTypeLabels: Record<string, string> = {
+  virtual_server: "VPS",
+  managed_database: "База данных",
+  object_storage: "Object Storage",
+  managed_kubernetes: "Kubernetes",
+  cloud_backup: "Backup",
+  cdn: "CDN",
+  waf: "WAF",
+  load_balancer: "Load Balancer",
+  gpu_server: "GPU",
+  bare_metal: "Bare Metal",
+};
+
+function serviceTypeLabel(serviceType: string): string {
+  return serviceTypeLabels[serviceType] ?? serviceType
+    .split(/[_-]+/)
+    .filter(Boolean)
+    .map((part) => part[0]?.toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function buildRecommendationGroups(request: RecommendationRequest): RecommendationGroup[] {
+  const serviceTypes = request.serviceTypes.length > 0
+    ? request.serviceTypes
+    : request.recommendations.reduce<string[]>((types, recommendation) => {
+      if (recommendation.serviceType && !types.includes(recommendation.serviceType)) {
+        types.push(recommendation.serviceType);
+      }
+
+      return types;
+    }, []);
+
+  if (serviceTypes.length === 0) {
+    return [
+      {
+        serviceType: "all",
+        label: "Решения",
+        recommendations: request.recommendations,
+      },
+    ];
+  }
+
+  return serviceTypes.map((serviceType) => ({
+    serviceType,
+    label: serviceTypeLabel(serviceType),
+    recommendations: request.recommendations.filter((recommendation) => recommendation.serviceType === serviceType),
+  }));
+}
+
 export function RecommendationResults({ isFetching, request, viewMode }: RecommendationResultsProps) {
+  const groups = useMemo(() => (request ? buildRecommendationGroups(request) : []), [request]);
+  const [activeServiceType, setActiveServiceType] = useState<string | null>(null);
+  const activeGroup = groups.find((group) => group.serviceType === activeServiceType) ?? groups[0];
+
+  useEffect(() => {
+    setActiveServiceType(groups[0]?.serviceType ?? null);
+  }, [request?.id, groups]);
+
   if (!request) {
     return (
       <section className="grid min-h-64 items-center gap-6 rounded-ui border border-border bg-white p-7 md:grid-cols-[150px_minmax(0,1fr)] dark:border-white/10 dark:bg-[#0c1726]">
@@ -65,15 +129,50 @@ export function RecommendationResults({ isFetching, request, viewMode }: Recomme
           Не нашли конфигурации, которая одновременно проходит все жесткие требования.
         </div>
       ) : (
-        <div className={cn("grid gap-4", viewMode === "grid" ? "xl:grid-cols-2" : "grid-cols-1")}>
-          {request.recommendations.map((recommendation, index) => (
-            <RecommendationCard
-              recommendation={recommendation}
-              key={recommendation.id}
-              rank={index + 1}
-              viewMode={viewMode}
-            />
-          ))}
+        <div className="grid gap-4">
+          <div
+            aria-label="Типы решений"
+            className="flex gap-2 overflow-x-auto rounded-ui border border-border bg-white p-2 dark:border-white/10 dark:bg-[#0c1726]"
+            role="tablist"
+          >
+            {groups.map((group) => (
+              <button
+                aria-label={`${group.label}: ${group.recommendations.length}`}
+                aria-selected={activeGroup?.serviceType === group.serviceType}
+                className={cn(
+                  "min-h-11 flex-none rounded-ui px-4 text-sm font-extrabold transition",
+                  activeGroup?.serviceType === group.serviceType
+                    ? "bg-accent text-white shadow-[0_10px_24px_rgba(0,167,232,0.24)]"
+                    : "text-muted hover:bg-[#eef8ff] hover:text-[#07111f] dark:text-white/76 dark:hover:bg-white/10 dark:hover:text-white",
+                )}
+                key={group.serviceType}
+                role="tab"
+                type="button"
+                onClick={() => setActiveServiceType(group.serviceType)}
+              >
+                {group.label}
+                <span className="ml-2 text-xs opacity-75">{group.recommendations.length}</span>
+              </button>
+            ))}
+          </div>
+
+          {activeGroup?.recommendations.length ? (
+            <div className={cn("grid gap-4", viewMode === "grid" ? "xl:grid-cols-2" : "grid-cols-1")}>
+              {activeGroup.recommendations.map((recommendation, index) => (
+                <RecommendationCard
+                  recommendation={recommendation}
+                  key={recommendation.id}
+                  rank={index + 1}
+                  viewMode={viewMode}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-ui border border-dashed border-[#cfe4f4] bg-white/78 p-8 text-center text-muted dark:border-white/10 dark:bg-white/[0.04] dark:text-white/86">
+              <SearchX className="mx-auto mb-3 h-8 w-8 text-accent" aria-hidden="true" />
+              Для этой части запроса подходящих конфигураций не нашлось.
+            </div>
+          )}
         </div>
       )}
     </section>

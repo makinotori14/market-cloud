@@ -9,7 +9,7 @@ export const createRecommendationInputSchema = createRecommendationSchema;
 export const yandexCloudStubResponseSchema = z.object({
   model: z.string(),
   generatedAt: z.string(),
-  recommendations: z.array(cloudRecommendationSchema).max(10),
+  recommendations: z.array(cloudRecommendationSchema).max(100),
 }).passthrough();
 
 export type YandexCloudStubResponse = z.infer<typeof yandexCloudStubResponseSchema>;
@@ -17,11 +17,13 @@ export type YandexCloudStubResponse = z.infer<typeof yandexCloudStubResponseSche
 export const aiStudioIntentSchema = z.object({
   task_type: z.string().min(1),
   primary_service_type: z.string().nullable().optional(),
+  service_types: z.array(z.string()).optional(),
   requires_152fz: z.boolean(),
   budget_max_rub: z.number().nullable(),
   budget_priority: z.enum(["min_price", "balanced", "performance_over_min_price"]).nullable().optional(),
   region: z.string().nullable(),
   country: z.string().nullable().optional(),
+  preferred_cities: z.array(z.string()).optional(),
   enabled_providers: z.array(z.string()).nullable().optional(),
   resource_requirements: z.object({
     cpu_min: z.number().nullable().optional(),

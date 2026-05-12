@@ -9,6 +9,7 @@ export type RankerMetricBreakdown = {
   jaccard_index: number;
   resource_fit?: number;
   capability_score?: number;
+  city_preference?: number;
   economy_score: number;
 };
 
@@ -18,6 +19,8 @@ export type RankerService = {
   description: string;
   provider_name: string;
   category?: string | null;
+  service_type?: string | null;
+  city?: string | null;
   price_rub: number;
   final_score_100: number;
   matched_tags: string[];
@@ -151,6 +154,8 @@ export class CloudRankerClient {
       provider: service.provider_name,
       title: service.name,
       sourceUrl,
+      serviceType: service.service_type ?? null,
+      city: service.city ?? null,
       description: service.description,
       finalScore: Math.max(0, Math.min(100, service.final_score_100)),
       monthlyPriceRub: Math.max(0, service.price_rub),

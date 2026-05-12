@@ -30,6 +30,12 @@ export class CloudRecommendationDto {
   @ApiPropertyOptional({ nullable: true })
   sourceUrl!: string | null;
 
+  @ApiPropertyOptional({ nullable: true })
+  serviceType!: string | null;
+
+  @ApiPropertyOptional({ nullable: true })
+  city!: string | null;
+
   @ApiProperty()
   description!: string;
 
@@ -79,6 +85,9 @@ export class RecommendationRequestDto {
 
   @ApiPropertyOptional({ nullable: true })
   errorMessage!: string | null;
+
+  @ApiProperty({ type: [String] })
+  serviceTypes!: string[];
 
   @ApiProperty({ type: [CloudRecommendationDto] })
   recommendations!: CloudRecommendationDto[];

@@ -14,8 +14,13 @@
         "price_from_rub": 3520.8,
         "price_per_month_rub": 3520.8
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
@@ -24,7 +29,8 @@
         "disk_type": "Сетевой SSD",
         "disk_gb": 50,
         "calculation": "2 * 892.8 + 4 * 237.6 + 50 * 15.696 = 3520.8",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -37,8 +43,13 @@
         "price_from_rub": 10518.0,
         "price_per_month_rub": 10518.0
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
@@ -47,7 +58,8 @@
         "disk_type": "Сетевой SSD",
         "disk_gb": 200,
         "calculation": "4 * 892.8 + 16 * 237.6 + 200 * 15.696 = 10518.00",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -60,8 +72,13 @@
         "price_from_rub": 22593.6,
         "price_per_month_rub": 22593.6
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
@@ -70,7 +87,8 @@
         "disk_type": "Сетевой SSD",
         "disk_gb": 500,
         "calculation": "8 * 892.8 + 32 * 237.6 + 500 * 15.696 = 22593.6",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -83,8 +101,13 @@
         "price_from_rub": 32500.49,
         "price_per_month_rub": 32500.49
       },
-      "tech_stack": ["AMD Zen 4", "Local SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "AMD Zen 4",
+        "Local SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "AMD Zen 4 (Compute Optimized)",
@@ -93,7 +116,8 @@
         "disk_type": "Локальный SSD",
         "disk_gb": 500,
         "calculation": "8 * 1843.2 + 32 * 338.184 + 500 * 14.256 = 32500.49",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -106,8 +130,13 @@
         "price_from_rub": 45187.2,
         "price_per_month_rub": 45187.2
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
@@ -116,7 +145,8 @@
         "disk_type": "Сетевой SSD",
         "disk_gb": 1000,
         "calculation": "16 * 892.8 + 64 * 237.6 + 1000 * 15.696 = 45187.2",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -129,8 +159,13 @@
         "price_from_rub": 3503.4,
         "price_per_month_rub": 3503.4
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "interruptible_vm",
         "cpu_model": "Intel Ice Lake (preemptible)",
@@ -139,30 +174,8 @@
         "disk_type": "Сетевой SSD",
         "disk_gb": 100,
         "calculation": "4 * 244.8 + 16 * 59.76 + 100 * 15.696 = 3503.4",
-        "price_source": "calculated_from_tariff_grid"
-      },
-      "source_url": "https://yandex.cloud/ru/price-list"
-    },
-    {
-      "service_id": "yandexcloud-cloud-gpu-a100-package",
-      "name": "Cloud GPU — 1× NVIDIA A100, 16 vCPU AMD EPYC, 128 GB RAM",
-      "description": "GPU-инстанс на NVIDIA A100 для ML/LLM-задач. Расчет: 1 × GPU A100 + 16 × vCPU AMD EPYC + 128 ГБ RAM AMD EPYC.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 313486.46,
-        "price_per_month_rub": 313486.46
-      },
-      "tech_stack": ["NVIDIA A100", "AMD EPYC"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "resource_type": "gpu_server",
-        "gpu_model": "NVIDIA A100",
-        "vram_gb": 80,
-        "cpu_model": "AMD EPYC",
-        "cpu": 16,
-        "ram_gb": 128,
-        "calculation": "293846.4 + 16 * 711.504 + 128 * приблизительно RAM EPYC (взято 64.06 ₽/ГБ) ≈ 313486.46",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -175,12 +188,17 @@
         "price_from_rub": 50277.6,
         "price_per_month_rub": 50277.6
       },
-      "tech_stack": ["NVIDIA GPU"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA GPU"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_cluster_vm",
         "unit": "ВМ × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -193,12 +211,18 @@
         "price_from_rub": 242265.6,
         "price_per_month_rub": 242265.6
       },
-      "tech_stack": ["NVIDIA GPU", "GPU Platform V4"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA GPU",
+        "GPU Platform V4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_cluster_vm",
         "unit": "ВМ × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -211,12 +235,17 @@
         "price_from_rub": 2.376,
         "price_per_month_rub": 2.376
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Standard/Hot",
         "unit": "ГБ/месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -229,12 +258,17 @@
         "price_from_rub": 1.2672,
         "price_per_month_rub": 1.2672
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Cold",
         "unit": "ГБ/месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -247,12 +281,17 @@
         "price_from_rub": 0.6336,
         "price_per_month_rub": 0.6336
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Ice/Archive",
         "unit": "ГБ/месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -265,12 +304,17 @@
         "price_from_rub": 6956.93,
         "price_per_month_rub": 6956.93
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 1,
         "high_availability": false,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -283,11 +327,16 @@
         "price_from_rub": 17582.05,
         "price_per_month_rub": 17582.05
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "high_availability": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -300,8 +349,14 @@
         "price_from_rub": 20094.53,
         "price_per_month_rub": 20094.53
       },
-      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 1,
         "worker_nodes": 2,
@@ -309,7 +364,8 @@
         "ram_gb_per_node": 8,
         "disk_gb_per_node": 100,
         "calculation": "6956.93 + 2 * (2 * 892.8 + 8 * 237.6 + 100 * 15.696) = 20094.53",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -322,8 +378,14 @@
         "price_from_rub": 63029.41,
         "price_per_month_rub": 63029.41
       },
-      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "worker_nodes": 3,
@@ -332,7 +394,8 @@
         "disk_gb_per_node": 200,
         "high_availability": true,
         "calculation": "17582.05 + 3 * (8 * 892.8 + 32 * 237.6 + 200 * 15.696) = 63029.41",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -345,15 +408,22 @@
         "price_from_rub": 7197.12,
         "price_per_month_rub": 7197.12
       },
-      "tech_stack": ["PostgreSQL", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 2,
         "ram_gb": 8,
         "disk_gb": 100,
         "calculation": "2 * 1353.024 + 8 * 365.184 + 100 * 15.696 = 7197.12",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -366,15 +436,22 @@
         "price_from_rub": 14394.24,
         "price_per_month_rub": 14394.24
       },
-      "tech_stack": ["PostgreSQL", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 4,
         "ram_gb": 16,
         "disk_gb": 200,
         "calculation": "4 * 1353.024 + 16 * 365.184 + 200 * 15.696 = 14394.24",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -387,8 +464,14 @@
         "price_from_rub": 45310.08,
         "price_per_month_rub": 45310.08
       },
-      "tech_stack": ["PostgreSQL", "AMD Zen 4 HighFreq", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "AMD Zen 4 HighFreq",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "tariff_class": "HighFreq",
@@ -396,7 +479,8 @@
         "ram_gb": 32,
         "disk_gb": 500,
         "calculation": "8 * 2628 + 32 * 514.44 + 500 * 15.696 = 45310.08",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -406,18 +490,25 @@
       "description": "Управляемая MySQL стандартной конфигурации. Расчет: 4 × vCPU AMD Zen 4 (стандартные хосты) + 16 ГБ RAM + 200 ГБ сетевого SSD.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 14803.20,
-        "price_per_month_rub": 14803.20
+        "price_from_rub": 14803.2,
+        "price_per_month_rub": 14803.2
       },
-      "tech_stack": ["MySQL", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "MySQL",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "MySQL",
         "cpu": 4,
         "ram_gb": 16,
         "disk_gb": 200,
         "calculation": "4 * 1389.6 + 16 * 381.6 + 200 * 15.696 = 14803.20",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -430,15 +521,22 @@
         "price_from_rub": 31662.0,
         "price_per_month_rub": 31662.0
       },
-      "tech_stack": ["ClickHouse", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "ClickHouse",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "ClickHouse",
         "cpu": 8,
         "ram_gb": 32,
         "disk_gb": 500,
         "calculation": "8 * 1425.6 + 32 * 388.8 + 500 * 15.696 = 31662.00",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -451,15 +549,22 @@
         "price_from_rub": 63324.0,
         "price_per_month_rub": 63324.0
       },
-      "tech_stack": ["ClickHouse", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "ClickHouse",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "ClickHouse",
         "cpu": 16,
         "ram_gb": 64,
         "disk_gb": 1000,
         "calculation": "16 * 1425.6 + 64 * 388.8 + 1000 * 15.696 = 63324.00",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -472,15 +577,22 @@
         "price_from_rub": 13469.4,
         "price_per_month_rub": 13469.4
       },
-      "tech_stack": ["Apache Kafka", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Apache Kafka",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "Apache Kafka",
         "cpu": 4,
         "ram_gb": 16,
         "disk_gb": 200,
         "calculation": "4 * 1252.8 + 16 * 331.2 + 200 * 15.696 = 13469.40",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -493,15 +605,22 @@
         "price_from_rub": 17999.04,
         "price_per_month_rub": 17999.04
       },
-      "tech_stack": ["OpenSearch", "AMD Zen 4", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "OpenSearch",
+        "AMD Zen 4",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "OpenSearch",
         "cpu": 4,
         "ram_gb": 16,
         "disk_gb": 200,
         "calculation": "4 * 1389.6 + 16 * 581.04 + 200 * 15.696 = 17999.04",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -515,10 +634,13 @@
         "price_per_month_rub": 662.4
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "price_per_hour_rub": 0.92,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -532,11 +654,14 @@
         "price_per_month_rub": 1893.6
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ресурсная единица × месяц",
         "price_per_hour_rub": 2.63,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -549,11 +674,16 @@
         "price_from_rub": 284.6,
         "price_per_month_rub": 284.6
       },
-      "tech_stack": ["VPC"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VPC"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "NAT-шлюз × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -567,10 +697,13 @@
         "price_per_month_rub": 245.07
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "IP × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -583,28 +716,16 @@
         "price_from_rub": 1.054,
         "price_per_month_rub": null
       },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ",
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://yandex.cloud/ru/price-list"
-    },
-    {
-      "service_id": "yandexcloud-cdn-dedicated-ip-all",
-      "name": "Cloud CDN — выделенная IP-адресация для всех ресурсов",
-      "description": "Выделенная IP-адресация для всех CDN-ресурсов платёжного аккаунта.",
-      "category": "CDN",
-      "pricing": {
-        "price_from_rub": 40000.0,
-        "price_per_month_rub": 40000.0
-      },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -618,10 +739,13 @@
         "price_per_month_rub": 280.8
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ВМ × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -635,10 +759,13 @@
         "price_per_month_rub": 1411.2
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "сервер × месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -652,10 +779,13 @@
         "price_per_month_rub": 4.97
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -665,18 +795,23 @@
       "description": "Виртуальный рабочий стол (VDI). Расчет: 2 × vCPU (100%) + 8 ГБ RAM + 100 ГБ быстрого SSD.",
       "category": "Cloud Desktop",
       "pricing": {
-        "price_from_rub": 6115.50,
-        "price_per_month_rub": 6115.50
+        "price_from_rub": 6115.5,
+        "price_per_month_rub": 6115.5
       },
-      "tech_stack": ["SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 2,
         "ram_gb": 8,
         "disk_gb": 100,
         "disk_type": "SSD",
         "calculation": "2 * 1000.8 + 8 * 314.712 + 100 * 16.056 = 6115.50",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -689,11 +824,16 @@
         "price_from_rub": 3.294,
         "price_per_month_rub": 3.294
       },
-      "tech_stack": ["Container Registry"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Container Registry"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -706,12 +846,17 @@
         "price_from_rub": 0.1626,
         "price_per_month_rub": null
       },
-      "tech_stack": ["SpeechKit"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "SpeechKit"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "15 секунд",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -724,12 +869,17 @@
         "price_from_rub": 0.0101,
         "price_per_month_rub": null
       },
-      "tech_stack": ["SpeechKit"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "SpeechKit"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "секунда",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -742,12 +892,17 @@
         "price_from_rub": 1342.0,
         "price_per_month_rub": null
       },
-      "tech_stack": ["SpeechKit"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "SpeechKit"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "1 млн символов",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -760,13 +915,19 @@
         "price_from_rub": 0.5,
         "price_per_month_rub": null
       },
-      "tech_stack": ["Yandex AI Studio", "Alice AI LLM"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Yandex AI Studio",
+        "Alice AI LLM"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "1 тыс. токенов",
         "mode": "sync_input",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -779,13 +940,19 @@
         "price_from_rub": 1.2,
         "price_per_month_rub": null
       },
-      "tech_stack": ["Yandex AI Studio", "Alice AI LLM"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Yandex AI Studio",
+        "Alice AI LLM"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "1 тыс. токенов",
         "mode": "sync_output",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -798,12 +965,17 @@
         "price_from_rub": 2.23,
         "price_per_month_rub": null
       },
-      "tech_stack": ["Yandex AI Studio"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Yandex AI Studio"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "запрос",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -816,48 +988,17 @@
         "price_from_rub": 6.48,
         "price_per_month_rub": null
       },
-      "tech_stack": ["Cloud Functions"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Cloud Functions"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ × час",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://yandex.cloud/ru/price-list"
-    },
-    {
-      "service_id": "yandexcloud-cloud-functions-invocations",
-      "name": "Cloud Functions — вызовы функции",
-      "description": "Бессерверные функции. Цена за 1 млн вызовов.",
-      "category": "Serverless",
-      "pricing": {
-        "price_from_rub": 18.97,
-        "price_per_month_rub": null
-      },
-      "tech_stack": ["Cloud Functions"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "1 млн вызовов",
-        "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://yandex.cloud/ru/price-list"
-    },
-    {
-      "service_id": "yandexcloud-smart-web-security-waf-10m",
-      "name": "Smart Web Security — WAF (от 10 до 100 ед.)",
-      "description": "Запросы, обработанные правилами WAF. Цена за 1 млн запросов на объёме 10–100 единиц тарификации в месяц.",
-      "category": "Web Security",
-      "pricing": {
-        "price_from_rub": 219.6,
-        "price_per_month_rub": null
-      },
-      "tech_stack": ["WAF"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "1 млн запросов",
-        "pricing_model": "tiered",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
@@ -870,48 +1011,162 @@
         "price_from_rub": 142.3,
         "price_per_month_rub": null
       },
-      "tech_stack": ["API Gateway"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "API Gateway"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "1 млн запросов",
         "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
     {
-      "service_id": "yandexcloud-key-management-service",
-      "name": "Key Management Service (KMS) — управление ключами",
-      "description": "Сервис управления криптографическими ключами Yandex Cloud (тариф по запросам/ключам — модель оплаты per_unit).",
-      "category": "Security",
+      "service_id": "yandexcloud-cloud-server-small-plus-ice-2cpu-8ram-100ssd",
+      "name": "Cloud Server Small+ — 2 vCPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Расширенная конфигурация для лёгкого backend. Расчет: 2 vCPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ Сетевой SSD.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 5256.0,
+        "price_per_month_rub": 5256.0
       },
-      "tech_stack": ["KMS"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "pricing_model": "price_on_request",
-        "price_source": "tariff_grid_package",
-        "note": "Подробности по тарификации операций см. в исходном прайс-листе"
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 100,
+        "calculation": "2 * 892.8 + 8 * 237.6 + 100 * 15.696 = 5256.0",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     },
     {
-      "service_id": "yandexcloud-cloud-dns-zone",
-      "name": "Cloud DNS — зона/запросы",
-      "description": "Управляемая DNS-зона Yandex Cloud (тарифицируется по числу зон и DNS-запросов).",
-      "category": "DNS",
+      "service_id": "yandexcloud-cloud-server-mid-ice-4cpu-8ram-100ssd",
+      "name": "Cloud Server Mid — 4 vCPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Промежуточная CPU-heavy конфигурация. Расчет: 4 vCPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ Сетевой SSD.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 7041.6,
+        "price_per_month_rub": 7041.6
       },
-      "tech_stack": ["DNS"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "pricing_model": "per_unit",
-        "price_source": "tariff_grid_package",
-        "note": "Тарификация по DNS-запросам и количеству зон, см. исходный прайс-лист"
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 8,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 100,
+        "calculation": "4 * 892.8 + 8 * 237.6 + 100 * 15.696 = 7041.6",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-memory-opt-ice-4cpu-32ram-200ssd",
+      "name": "Cloud Server Memory-Optimized — 4 vCPU Intel Ice Lake, 32 GB RAM, 200 GB SSD",
+      "description": "Memory-optimized для in-memory нагрузок. Расчет: 4 vCPU Intel Ice Lake + 32 ГБ RAM + 200 ГБ Сетевой SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 14313.6,
+        "price_per_month_rub": 14313.6
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 32,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 200,
+        "calculation": "4 * 892.8 + 32 * 237.6 + 200 * 15.696 = 14313.6",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-cpu-opt-ice-16cpu-16ram-200ssd",
+      "name": "Cloud Server CPU-Optimized — 16 vCPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "CPU-optimized для CPU-bound задач. Расчет: 16 vCPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ Сетевой SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 21225.6,
+        "price_per_month_rub": 21225.6
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
+        "ram_gb": 16,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 200,
+        "calculation": "16 * 892.8 + 16 * 237.6 + 200 * 15.696 = 21225.6",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
+      },
+      "source_url": "https://yandex.cloud/ru/price-list"
+    },
+    {
+      "service_id": "yandexcloud-cloud-server-production-ice-8cpu-64ram-500ssd",
+      "name": "Cloud Server Production+ — 8 vCPU Intel Ice Lake, 64 GB RAM, 500 GB SSD",
+      "description": "Продакшен-сервер с увеличенной RAM. Расчет: 8 vCPU Intel Ice Lake + 64 ГБ RAM + 500 ГБ Сетевой SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 30196.8,
+        "price_per_month_rub": 30196.8
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 8,
+        "ram_gb": 64,
+        "disk_type": "Сетевой SSD",
+        "disk_gb": 500,
+        "calculation": "8 * 892.8 + 64 * 237.6 + 500 * 15.696 = 30196.8",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://yandex.cloud/ru/price-list"
     }

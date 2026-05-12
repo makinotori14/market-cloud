@@ -14,8 +14,13 @@
         "price_from_rub": 2775.38,
         "price_per_month_rub": 2775.38
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -25,7 +30,8 @@
         "disk_gb": 100,
         "calculation": "2 * 346.95 + 8 * 178.31 + 100 * 6.55 = 2775.38",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -38,8 +44,13 @@
         "price_from_rub": 5550.76,
         "price_per_month_rub": 5550.76
       },
-      "tech_stack": ["Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -49,7 +60,8 @@
         "disk_gb": 200,
         "calculation": "4 * 346.95 + 16 * 178.31 + 200 * 6.55 = 5550.76",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -62,8 +74,13 @@
         "price_from_rub": 20734.36,
         "price_per_month_rub": 20734.36
       },
-      "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (a5 Advanced)",
@@ -73,7 +90,8 @@
         "disk_gb": 500,
         "calculation": "8 * 736.68 + 32 * 178.31 + 500 * 18.27 = 20734.36",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -86,8 +104,13 @@
         "price_from_rub": 26885.36,
         "price_per_month_rub": 26885.36
       },
-      "tech_stack": ["AMD EPYC 9004", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "AMD EPYC 9004",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "AMD EPYC 9004 series 4.05 GHz (b4)",
@@ -97,7 +120,8 @@
         "disk_gb": 500,
         "calculation": "16 * 400.63 + 64 * 178.31 + 500 * 18.27 = 26885.36",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -110,8 +134,13 @@
         "price_from_rub": 52092.08,
         "price_per_month_rub": 52092.08
       },
-      "tech_stack": ["Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
@@ -121,7 +150,8 @@
         "disk_gb": 1000,
         "calculation": "32 * 346.95 + 128 * 178.31 + 1000 * 18.27 = 52092.08",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -131,11 +161,16 @@
       "description": "GPU-инстанс на базе NVIDIA Hopper H100 80Gb PCIe для ML-обучения и инференса. Расчет: 1 × GPU g1 + 16 × vCPU g1 + 128 ГБ RAM g1.",
       "category": "Cloud GPU",
       "pricing": {
-        "price_from_rub": 284589.60,
-        "price_per_month_rub": 284589.60
+        "price_from_rub": 284589.6,
+        "price_per_month_rub": 284589.6
       },
-      "tech_stack": ["NVIDIA Hopper H100", "AMD EPYC 9004"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA Hopper H100",
+        "AMD EPYC 9004"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Hopper H100 80Gb PCIe",
@@ -145,7 +180,8 @@
         "ram_gb": 128,
         "calculation": "247459.84 + 16 * 894.13 + 128 * 178.31 = 284589.60",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -158,8 +194,13 @@
         "price_from_rub": 165457.41,
         "price_per_month_rub": 165457.41
       },
-      "tech_stack": ["NVIDIA Ampere A100", "Intel Cascade Lake"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA Ampere A100",
+        "Intel Cascade Lake"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Ampere A100 40Gb PCIe",
@@ -169,7 +210,8 @@
         "ram_gb": 128,
         "calculation": "133333.33 + 16 * 600.00 + 128 * 178.31 = 165457.41",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -182,8 +224,13 @@
         "price_from_rub": 127019.06,
         "price_per_month_rub": 127019.06
       },
-      "tech_stack": ["NVIDIA Ada Lovelace L40s", "AMD EPYC 9004"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA Ada Lovelace L40s",
+        "AMD EPYC 9004"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Ada Lovelace L40s 48Gb PCIe",
@@ -193,7 +240,8 @@
         "ram_gb": 128,
         "calculation": "89889.9 + 16 * 894.13 + 128 * 178.31 = 127019.06",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -206,8 +254,14 @@
         "price_from_rub": 387652.48,
         "price_per_month_rub": 387652.48
       },
-      "tech_stack": ["NVIDIA Hopper H200", "InfiniBand", "Intel Sapphire Rapids"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA Hopper H200",
+        "InfiniBand",
+        "Intel Sapphire Rapids"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Hopper H200 SXM 141Gb InfiniBand",
@@ -217,7 +271,8 @@
         "ram_gb": 128,
         "calculation": "350000 + 16 * 926.8 + 128 * 178.31 = 387652.48",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -230,8 +285,13 @@
         "price_from_rub": 300677.15,
         "price_per_month_rub": 300677.15
       },
-      "tech_stack": ["NVIDIA H100", "VMware Cloud Director"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA H100",
+        "VMware Cloud Director"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "platform": "Cloud Director",
@@ -239,7 +299,8 @@
         "cpu": 8,
         "ram_gb": 152,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -252,8 +313,14 @@
         "price_from_rub": 128333.33,
         "price_per_month_rub": 128333.33
       },
-      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SAS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6342",
+        "DDR4",
+        "SAS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -261,7 +328,8 @@
         "disk_type": "SAS SSD",
         "disk_gb": 1600,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -271,11 +339,17 @@
       "description": "Готовый bare-metal сервер H2.",
       "category": "Bare Metal Servers",
       "pricing": {
-        "price_from_rub": 125000.00,
-        "price_per_month_rub": 125000.00
+        "price_from_rub": 125000.0,
+        "price_per_month_rub": 125000.0
       },
-      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6342",
+        "DDR4",
+        "SATA SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -283,7 +357,8 @@
         "disk_type": "SATA SSD",
         "disk_gb": 960,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -293,11 +368,17 @@
       "description": "Готовый bare-metal сервер H3 с 2 ТБ оперативной памяти.",
       "category": "Bare Metal Servers",
       "pricing": {
-        "price_from_rub": 160711.00,
-        "price_per_month_rub": 160711.00
+        "price_from_rub": 160711.0,
+        "price_per_month_rub": 160711.0
       },
-      "tech_stack": ["Intel Xeon Gold 6342", "DDR4", "SATA SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6342",
+        "DDR4",
+        "SATA SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "2x Intel Xeon Gold 6342 24C 2.8GHz",
@@ -305,7 +386,8 @@
         "disk_type": "SATA SSD",
         "disk_gb": 960,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -315,18 +397,23 @@
       "description": "Объектное хранилище S3 (однозональное). Цена указана за 1 ГБ хранения за минуту; для месяца ~30 суток (43200 минут) ориентировочно 1.65 руб/ГБ/мес.",
       "category": "Object Storage",
       "pricing": {
-        "price_from_rub": 0.00003819,
+        "price_from_rub": 3.819e-05,
         "price_per_month_rub": 1.65
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Hot S3",
         "unit": "ГБ*мин",
-        "price_per_unit_rub": 0.00003819,
+        "price_per_unit_rub": 3.819e-05,
         "calculation": "0.00003819 * 43200 = 1.65 руб/ГБ/мес",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -336,19 +423,25 @@
       "description": "Мультизональное S3-хранилище. Цена за 1 ГБ хранения за минуту; ориентировочно 2.98 руб/ГБ/мес.",
       "category": "Object Storage",
       "pricing": {
-        "price_from_rub": 0.00006906,
+        "price_from_rub": 6.906e-05,
         "price_per_month_rub": 2.98
       },
-      "tech_stack": ["S3", "Multi-zone"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3",
+        "Multi-zone"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Multi-zone S3",
         "unit": "ГБ*мин",
-        "price_per_unit_rub": 0.00006906,
+        "price_per_unit_rub": 6.906e-05,
         "high_availability": true,
         "calculation": "0.00006906 * 43200 = 2.98 руб/ГБ/мес",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -361,12 +454,17 @@
         "price_from_rub": 1582.44,
         "price_per_month_rub": 1582.44
       },
-      "tech_stack": ["Veeam"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Veeam"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -376,15 +474,20 @@
       "description": "Хранение резервных копий Veeam. Цена за 1 ГБ в месяц.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 3.00,
-        "price_per_month_rub": 3.00
+        "price_from_rub": 3.0,
+        "price_per_month_rub": 3.0
       },
-      "tech_stack": ["Veeam"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Veeam"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -397,12 +500,17 @@
         "price_from_rub": 1823.5,
         "price_per_month_rub": 1823.5
       },
-      "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "устройство",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -415,12 +523,17 @@
         "price_from_rub": 1058.83,
         "price_per_month_rub": 1058.83
       },
-      "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "устройство",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -433,12 +546,18 @@
         "price_from_rub": 1823.5,
         "price_per_month_rub": 1823.5
       },
-      "tech_stack": ["Кибер Бэкап", "PostgreSQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап",
+        "PostgreSQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "экземпляр",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -448,16 +567,20 @@
       "description": "Трафик CDN на территории России. Цена за 1 ГБ в месяц.",
       "category": "CDN",
       "pricing": {
-        "price_from_rub": 1.00,
-        "price_per_month_rub": 1.00
+        "price_from_rub": 1.0,
+        "price_per_month_rub": 1.0
       },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ",
-        "region": "Россия/СНГ",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -470,13 +593,17 @@
         "price_from_rub": 1.42,
         "price_per_month_rub": 1.42
       },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ",
-        "region": "Европа",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -489,13 +616,17 @@
         "price_from_rub": 2.58,
         "price_per_month_rub": 2.58
       },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ",
-        "region": "Америка/Азия",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -508,12 +639,17 @@
         "price_from_rub": 2916.67,
         "price_per_month_rub": 2916.67
       },
-      "tech_stack": ["CDN"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "CDN"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "шт/мес",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -527,11 +663,14 @@
         "price_per_month_rub": 175.13
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "IP",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -545,11 +684,14 @@
         "price_per_month_rub": 16.67
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "Мбит/с",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -563,11 +705,14 @@
         "price_per_month_rub": 3705.02
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "high_availability": true,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -577,15 +722,20 @@
       "description": "Управляемая внешняя зона DNS.",
       "category": "DNS",
       "pricing": {
-        "price_from_rub": 180.00,
-        "price_per_month_rub": 180.00
+        "price_from_rub": 180.0,
+        "price_per_month_rub": 180.0
       },
-      "tech_stack": ["DNS"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "DNS"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "зона",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -595,17 +745,22 @@
       "description": "Готовый управляемый Kubernetes-кластер конфигурации Tiny с одной мастер-нодой.",
       "category": "Cloud Containers",
       "pricing": {
-        "price_from_rub": 2070.00,
-        "price_per_month_rub": 2070.00
+        "price_from_rub": 2070.0,
+        "price_per_month_rub": 2070.0
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 1,
         "high_availability": false,
         "config": "Tiny",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -615,17 +770,22 @@
       "description": "Управляемый Kubernetes-кластер конфигурации Small с тремя мастер-нодами для отказоустойчивости.",
       "category": "Cloud Containers",
       "pricing": {
-        "price_from_rub": 12420.00,
-        "price_per_month_rub": 12420.00
+        "price_from_rub": 12420.0,
+        "price_per_month_rub": 12420.0
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
         "config": "Small",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -635,17 +795,22 @@
       "description": "Управляемый Kubernetes-кластер конфигурации Medium с тремя мастер-нодами.",
       "category": "Cloud Containers",
       "pricing": {
-        "price_from_rub": 24840.00,
-        "price_per_month_rub": 24840.00
+        "price_from_rub": 24840.0,
+        "price_per_month_rub": 24840.0
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
         "config": "Medium",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -655,17 +820,22 @@
       "description": "Управляемый Kubernetes-кластер конфигурации Large с тремя мастер-нодами.",
       "category": "Cloud Containers",
       "pricing": {
-        "price_from_rub": 49680.00,
-        "price_per_month_rub": 49680.00
+        "price_from_rub": 49680.0,
+        "price_per_month_rub": 49680.0
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
         "config": "Large",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -678,8 +848,14 @@
         "price_from_rub": 10396.14,
         "price_per_month_rub": 10396.14
       },
-      "tech_stack": ["Kubernetes", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 1,
         "worker_nodes": 3,
@@ -688,7 +864,8 @@
         "disk_gb_per_node": 100,
         "calculation": "2070 + 3 * (2 * 346.95 + 8 * 178.31 + 100 * 6.55) = 10396.14",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -701,8 +878,14 @@
         "price_from_rub": 41115.36,
         "price_per_month_rub": 41115.36
       },
-      "tech_stack": ["Kubernetes", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "worker_nodes": 3,
@@ -712,7 +895,8 @@
         "high_availability": true,
         "calculation": "12420 + 3 * (8 * 346.95 + 32 * 178.31 + 200 * 18.27) = 41115.36",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -725,8 +909,14 @@
         "price_from_rub": 3812.04,
         "price_per_month_rub": 3812.04
       },
-      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 2,
@@ -734,7 +924,8 @@
         "disk_gb": 100,
         "calculation": "2 * 405.93 + 8 * 292.43 + 100 * 6.55 = 3812.04",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -744,11 +935,17 @@
       "description": "Управляемая PostgreSQL для типовой продакшен-нагрузки. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 7610.60,
-        "price_per_month_rub": 7610.60
+        "price_from_rub": 7610.6,
+        "price_per_month_rub": 7610.6
       },
-      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 4,
@@ -756,7 +953,8 @@
         "disk_gb": 200,
         "calculation": "4 * 405.93 + 16 * 292.43 + 200 * 6.55 = 7610.60",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -769,8 +967,14 @@
         "price_from_rub": 26252.08,
         "price_per_month_rub": 26252.08
       },
-      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 8,
@@ -778,7 +982,8 @@
         "disk_gb": 500,
         "calculation": "8 * 979.79 + 32 * 292.43 + 500 * 18.27 = 26252.08",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -788,11 +993,17 @@
       "description": "Отказоустойчивая PostgreSQL с балансировщиком нагрузки. Расчет: 8 × vCPU a5 + 32 ГБ RAM + 500 ГБ High + Network Load Balancer.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 29957.10,
-        "price_per_month_rub": 29957.10
+        "price_from_rub": 29957.1,
+        "price_per_month_rub": 29957.1
       },
-      "tech_stack": ["PostgreSQL", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "PostgreSQL",
         "cpu": 8,
@@ -802,7 +1013,8 @@
         "high_availability": true,
         "calculation": "8 * 979.79 + 32 * 292.43 + 500 * 18.27 + 3705.02 = 29957.10",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -815,8 +1027,14 @@
         "price_from_rub": 7165.04,
         "price_per_month_rub": 7165.04
       },
-      "tech_stack": ["MySQL", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "MySQL",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "MySQL",
         "cpu": 4,
@@ -824,7 +1042,8 @@
         "disk_gb": 200,
         "calculation": "4 * 447.57 + 16 * 292.43 + 200 * 6.55 = 7165.04",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -834,11 +1053,17 @@
       "description": "Управляемый ClickHouse для аналитических нагрузок. Расчет: 8 × vCPU b5 + 32 ГБ RAM + 500 ГБ High.",
       "category": "Cloud ClickHouse",
       "pricing": {
-        "price_from_rub": 21748.20,
-        "price_per_month_rub": 21748.20
+        "price_from_rub": 21748.2,
+        "price_per_month_rub": 21748.2
       },
-      "tech_stack": ["ClickHouse", "Intel Ice Lake", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "ClickHouse",
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "ClickHouse",
         "cpu": 8,
@@ -846,7 +1071,8 @@
         "disk_gb": 500,
         "calculation": "8 * 405.93 + 32 * 292.43 + 500 * 18.27 = 21748.20",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -859,8 +1085,14 @@
         "price_from_rub": 7651.65,
         "price_per_month_rub": 7651.65
       },
-      "tech_stack": ["InmemoryDB", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "InmemoryDB",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "InmemoryDB",
         "cpu": 4,
@@ -868,7 +1100,8 @@
         "disk_gb": 100,
         "calculation": "4 * 537.78 + 16 * 303.13 + 100 * 6.55 = 7651.65",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -881,8 +1114,14 @@
         "price_from_rub": 11206.16,
         "price_per_month_rub": 11206.16
       },
-      "tech_stack": ["DocumentDB", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "DocumentDB",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "DocumentDB",
         "cpu": 4,
@@ -890,7 +1129,8 @@
         "disk_gb": 200,
         "calculation": "4 * 447.57 + 16 * 540.28 + 200 * 6.55 = 11206.16",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -900,11 +1140,17 @@
       "description": "Управляемый OpenSearch для поиска и аналитики. Расчет: 4 × vCPU b5 + 16 ГБ RAM + 200 ГБ Basic.",
       "category": "Cloud Search",
       "pricing": {
-        "price_from_rub": 6614.80,
-        "price_per_month_rub": 6614.80
+        "price_from_rub": 6614.8,
+        "price_per_month_rub": 6614.8
       },
-      "tech_stack": ["OpenSearch", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "OpenSearch",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "OpenSearch",
         "cpu": 4,
@@ -912,7 +1158,8 @@
         "disk_gb": 200,
         "calculation": "4 * 447.57 + 16 * 213.97 + 200 * 6.55 = 6614.80",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -925,8 +1172,14 @@
         "price_from_rub": 7239.16,
         "price_per_month_rub": 7239.16
       },
-      "tech_stack": ["Apache Kafka", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Apache Kafka",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "Kafka",
         "cpu": 4,
@@ -934,7 +1187,8 @@
         "disk_gb": 200,
         "calculation": "4 * 405.93 + 16 * 269.24 + 200 * 6.55 = 7239.16",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -947,8 +1201,14 @@
         "price_from_rub": 6587.51,
         "price_per_month_rub": 6587.51
       },
-      "tech_stack": ["RabbitMQ", "Intel Ice Lake", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "RabbitMQ",
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "RabbitMQ",
         "cpu": 4,
@@ -956,7 +1216,8 @@
         "disk_gb": 100,
         "calculation": "4 * 405.93 + 16 * 269.24 + 100 * 6.55 = 6587.51",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -969,8 +1230,13 @@
         "price_from_rub": 7790.88,
         "price_per_month_rub": 7790.88
       },
-      "tech_stack": ["GitLab", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "GitLab",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "engine": "GitLab",
         "cpu": 4,
@@ -978,7 +1244,8 @@
         "disk_gb": 200,
         "calculation": "4 * 450.00 + 16 * 292.43 + 200 * 6.55 = 7790.88",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -991,12 +1258,17 @@
         "price_from_rub": 2.03,
         "price_per_month_rub": 2.03
       },
-      "tech_stack": ["Container Registry"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Container Registry"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1006,18 +1278,23 @@
       "description": "ML Hub: ядро для запуска ноутбуков и пайплайнов. Расчет: 8 × vCPU ядра + 32 ГБ RAM + 200 ГБ дискового пространства.",
       "category": "Cloud ML Platform",
       "pricing": {
-        "price_from_rub": 19227.40,
-        "price_per_month_rub": 19227.40
+        "price_from_rub": 19227.4,
+        "price_per_month_rub": 19227.4
       },
-      "tech_stack": ["ML Hub"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "ML Hub"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 8,
         "ram_gb": 32,
         "disk_gb": 200,
         "calculation": "8 * 760.00 + 32 * 369.60 + 200 * 12.00 = 19227.20 (рассчитано из тарифов ML Hub)",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1030,8 +1307,13 @@
         "price_from_rub": 58113.95,
         "price_per_month_rub": 58113.95
       },
-      "tech_stack": ["ML Hub", "NVIDIA H100"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "ML Hub",
+        "NVIDIA H100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "gpu_model": "NVIDIA H100 1g.10gb (MIG)",
         "cpu": 8,
@@ -1039,7 +1321,8 @@
         "disk_gb": 200,
         "calculation": "38886.55 + 8 * 760.00 + 32 * 369.60 + 200 * 12.00 = 58113.75",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1052,30 +1335,17 @@
         "price_from_rub": 2354.17,
         "price_per_month_rub": 2354.17
       },
-      "tech_stack": ["Glarus BI"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Glarus BI"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "users": 5,
         "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-glarus-bi-20users",
-      "name": "Платформа бизнес-аналитики T1 Cloud (Glarus BI) — 20 пользователей",
-      "description": "BI-платформа Glarus BI на 20 пользователей.",
-      "category": "Business Intelligence",
-      "pricing": {
-        "price_from_rub": 9416.67,
-        "price_per_month_rub": 9416.67
-      },
-      "tech_stack": ["Glarus BI"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "users": 20,
-        "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1088,12 +1358,17 @@
         "price_from_rub": 23541.67,
         "price_per_month_rub": 23541.67
       },
-      "tech_stack": ["Glarus BI"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Glarus BI"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "users": 50,
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1106,12 +1381,18 @@
         "price_from_rub": 390880.29,
         "price_per_month_rub": 390880.29
       },
-      "tech_stack": ["SCIBOX", "NVIDIA H100"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "SCIBOX",
+        "NVIDIA H100"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "gpu_model": "vGPU H100",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1121,17 +1402,20 @@
       "description": "Облачное файловое хранилище. 100 руб./пользователь + 200 руб./100 ГБ хранилища в месяц.",
       "category": "File Storage",
       "pricing": {
-        "price_from_rub": 100.00,
-        "price_per_month_rub": 100.00
+        "price_from_rub": 100.0,
+        "price_per_month_rub": 100.0
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "price_per_user_rub": 100.00,
-        "price_per_100gb_rub": 200.00,
+        "price_per_user_rub": 100.0,
+        "price_per_100gb_rub": 200.0,
         "tariff": "Бизнес",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1141,17 +1425,20 @@
       "description": "Облачное файловое хранилище. 100 руб./пользователь + 166.67 руб./100 ГБ хранилища в месяц.",
       "category": "File Storage",
       "pricing": {
-        "price_from_rub": 100.00,
-        "price_per_month_rub": 100.00
+        "price_from_rub": 100.0,
+        "price_per_month_rub": 100.0
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "price_per_user_rub": 100.00,
+        "price_per_user_rub": 100.0,
         "price_per_100gb_rub": 166.67,
         "tariff": "Корпоративный",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1161,16 +1448,21 @@
       "description": "Лицензия операционной системы Astra Linux Орел. Цена за 1 ВМ в месяц.",
       "category": "OS Licenses",
       "pricing": {
-        "price_from_rub": 1440.00,
-        "price_per_month_rub": 1440.00
+        "price_from_rub": 1440.0,
+        "price_per_month_rub": 1440.0
       },
-      "tech_stack": ["Astra Linux"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Орел",
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1180,16 +1472,21 @@
       "description": "Лицензия операционной системы Astra Linux Воронеж. Цена за 1 ВМ в месяц.",
       "category": "OS Licenses",
       "pricing": {
-        "price_from_rub": 1830.00,
-        "price_per_month_rub": 1830.00
+        "price_from_rub": 1830.0,
+        "price_per_month_rub": 1830.0
       },
-      "tech_stack": ["Astra Linux"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Воронеж",
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1199,52 +1496,20 @@
       "description": "Лицензия ОС Альт Сервер 10.",
       "category": "OS Licenses",
       "pricing": {
-        "price_from_rub": 440.00,
-        "price_per_month_rub": 440.00
+        "price_from_rub": 440.0,
+        "price_per_month_rub": 440.0
       },
-      "tech_stack": ["Альт Сервер"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Альт Сервер"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ВМ",
         "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-license-alt-workstation-10",
-      "name": "Лицензия Альт Рабочая станция 10",
-      "description": "Лицензия ОС Альт Рабочая станция 10.",
-      "category": "OS Licenses",
-      "pricing": {
-        "price_from_rub": 175.00,
-        "price_per_month_rub": 175.00
-      },
-      "tech_stack": ["Альт"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "ВМ",
-        "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-license-alt-sp-server-10",
-      "name": "Лицензия Альт СП Сервер 10",
-      "description": "Сертифицированная лицензия ОС Альт СП Сервер 10 (без права использования виртуализации).",
-      "category": "OS Licenses",
-      "pricing": {
-        "price_from_rub": 1533.00,
-        "price_per_month_rub": 1533.00
-      },
-      "tech_stack": ["Альт СП"],
-      "compliance_tags": ["152-FZ", "FSTEC"],
-      "attributes": {
-        "unit": "ВМ",
-        "certified": true,
-        "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1254,15 +1519,20 @@
       "description": "Простая (неисключительная) лицензия на использование ОС РЕД ОС Сервер. Стандартная редакция.",
       "category": "OS Licenses",
       "pricing": {
-        "price_from_rub": 1000.00,
-        "price_per_month_rub": 1000.00
+        "price_from_rub": 1000.0,
+        "price_per_month_rub": 1000.0
       },
-      "tech_stack": ["РЕД ОС"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "РЕД ОС"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Сервер. Стандартная",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1272,34 +1542,22 @@
       "description": "Простая (неисключительная) лицензия на использование ОС РЕД ОС Сервер. Сертифицированная редакция (ФСТЭК).",
       "category": "OS Licenses",
       "pricing": {
-        "price_from_rub": 3083.00,
-        "price_per_month_rub": 3083.00
+        "price_from_rub": 3083.0,
+        "price_per_month_rub": 3083.0
       },
-      "tech_stack": ["РЕД ОС"],
-      "compliance_tags": ["152-FZ", "FSTEC"],
+      "tech_stack": [
+        "РЕД ОС"
+      ],
+      "compliance_tags": [
+        "FSTEC",
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Сервер. Сертифицированная",
         "certified": true,
         "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-ms-office-standard",
-      "name": "Microsoft Office Standard ALng LSA SAL (на пользователя)",
-      "description": "Лицензия Microsoft Office Standard. Цена за 1 пользователя в месяц.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 2004.53,
-        "price_per_month_rub": 2004.53
-      },
-      "tech_stack": ["Microsoft Office"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "пользователь",
-        "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1312,30 +1570,17 @@
         "price_from_rub": 2737.03,
         "price_per_month_rub": 2737.03
       },
-      "tech_stack": ["Microsoft Office"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Microsoft Office"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-ms-sql-standard-sal",
-      "name": "Microsoft SQL Server Standard ALng LSA SAL (на пользователя)",
-      "description": "Лицензия SQL Server Standard в модели SAL. Цена за 1 пользователя в месяц.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 2523.57,
-        "price_per_month_rub": 2523.57
-      },
-      "tech_stack": ["Microsoft SQL Server"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "пользователь",
-        "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1348,12 +1593,17 @@
         "price_from_rub": 23351.02,
         "price_per_month_rub": 23351.02
       },
-      "tech_stack": ["Microsoft SQL Server"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Microsoft SQL Server"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1366,12 +1616,17 @@
         "price_from_rub": 716.43,
         "price_per_month_rub": 716.43
       },
-      "tech_stack": ["Windows Server"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Windows Server"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1384,12 +1639,17 @@
         "price_from_rub": 4963.8,
         "price_per_month_rub": 4963.8
       },
-      "tech_stack": ["Windows Server"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Windows Server"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "2 ядра",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1402,30 +1662,17 @@
         "price_from_rub": 1033.7,
         "price_per_month_rub": 1033.7
       },
-      "tech_stack": ["Windows RDS"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Windows RDS"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
-        "vat_included": false
-      },
-      "source_url": "https://t1-cloud.ru/documents/rates"
-    },
-    {
-      "service_id": "t1cloud-ms-exchange-standard-sal",
-      "name": "Microsoft Exchange Standard SAL ALng LSA SAL (на пользователя)",
-      "description": "Лицензия Exchange Standard SAL.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 309.97,
-        "price_per_month_rub": 309.97
-      },
-      "tech_stack": ["Microsoft Exchange"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "пользователь",
-        "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1438,12 +1685,17 @@
         "price_from_rub": 6191.95,
         "price_per_month_rub": 6191.95
       },
-      "tech_stack": ["Microsoft Visual Studio"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Microsoft Visual Studio"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "пользователь",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1457,11 +1709,14 @@
         "price_per_month_rub": 8928.43
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "bandwidth": "1 Гбит/с",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     },
@@ -1471,15 +1726,198 @@
       "description": "Прямое подключение Direct Connect, ширина полосы 10 Гбит/с.",
       "category": "Network",
       "pricing": {
-        "price_from_rub": 64023.40,
-        "price_per_month_rub": 64023.40
+        "price_from_rub": 64023.4,
+        "price_per_month_rub": 64023.4
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "bandwidth": "10 Гбит/с",
         "price_source": "tariff_grid_package",
-        "vat_included": false
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-small-b5-2cpu-4ram-50basic",
+      "name": "Cloud Server Small Lite — 2 vCPU Intel Ice Lake b5, 4 GB RAM, 50 GB SSD Basic",
+      "description": "Минимальная конфигурация для тестовых окружений. Расчет: 2 vCPU + 4 ГБ RAM + 50 ГБ SSD Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 1734.64,
+        "price_per_month_rub": 1734.64
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 2,
+        "ram_gb": 4,
+        "disk_type": "SSD Basic",
+        "disk_gb": 50,
+        "calculation": "2 * 346.95 + 4 * 178.31 + 50 * 6.55 = 1734.64",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-mid-b5-4cpu-8ram-100basic",
+      "name": "Cloud Server Mid — 4 vCPU Intel Ice Lake b5, 8 GB RAM, 100 GB SSD Basic",
+      "description": "Промежуточная конфигурация для API и микросервисов. Расчет: 4 vCPU + 8 ГБ RAM + 100 ГБ SSD Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 3469.28,
+        "price_per_month_rub": 3469.28
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 4,
+        "ram_gb": 8,
+        "disk_type": "SSD Basic",
+        "disk_gb": 100,
+        "calculation": "4 * 346.95 + 8 * 178.31 + 100 * 6.55 = 3469.28",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-memory-opt-b5-4cpu-32ram-200basic",
+      "name": "Cloud Server Memory-Optimized — 4 vCPU Intel Ice Lake b5, 32 GB RAM, 200 GB SSD Basic",
+      "description": "Memory-optimized сервер для in-memory кешей и БД. Расчет: 4 vCPU + 32 ГБ RAM + 200 ГБ SSD Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 8403.72,
+        "price_per_month_rub": 8403.72
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 4,
+        "ram_gb": 32,
+        "disk_type": "SSD Basic",
+        "disk_gb": 200,
+        "calculation": "4 * 346.95 + 32 * 178.31 + 200 * 6.55 = 8403.72",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-cpu-opt-b5-16cpu-16ram-200basic",
+      "name": "Cloud Server CPU-Optimized — 16 vCPU Intel Ice Lake b5, 16 GB RAM, 200 GB SSD Basic",
+      "description": "CPU-optimized сервер для CPU-bound нагрузок. Расчет: 16 vCPU + 16 ГБ RAM + 200 ГБ SSD Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 9714.16,
+        "price_per_month_rub": 9714.16
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 16,
+        "ram_gb": 16,
+        "disk_type": "SSD Basic",
+        "disk_gb": 200,
+        "calculation": "16 * 346.95 + 16 * 178.31 + 200 * 6.55 = 9714.16",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-production-b5-8cpu-32ram-300basic",
+      "name": "Cloud Server Production b5 — 8 vCPU Intel Ice Lake b5, 32 GB RAM, 300 GB SSD Basic",
+      "description": "Продакшен-сервер на стандартном CPU. Расчет: 8 vCPU + 32 ГБ RAM + 300 ГБ SSD Basic.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 10446.52,
+        "price_per_month_rub": 10446.52
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (b5)",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "SSD Basic",
+        "disk_gb": 300,
+        "calculation": "8 * 346.95 + 32 * 178.31 + 300 * 6.55 = 10446.52",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
+      },
+      "source_url": "https://t1-cloud.ru/documents/rates"
+    },
+    {
+      "service_id": "t1cloud-cloud-server-highperf-a5-8cpu-64ram-500high",
+      "name": "Cloud Server High Performance a5 — 8 vCPU Intel Ice Lake a5, 64 GB RAM, 500 GB High-IOPS SSD",
+      "description": "HPC-сервер на advanced-серии с High-IOPS-диском. Расчет: 8 vCPU + 64 ГБ RAM + 500 ГБ SSD High-IOPS.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 26440.28,
+        "price_per_month_rub": 26440.28
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake 2.8 GHz (a5 Advanced)",
+        "cpu": 8,
+        "ram_gb": 64,
+        "disk_type": "SSD High-IOPS",
+        "disk_gb": 500,
+        "calculation": "8 * 736.68 + 64 * 178.31 + 500 * 18.27 = 26440.28",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": false,
+        "city": "Москва"
       },
       "source_url": "https://t1-cloud.ru/documents/rates"
     }

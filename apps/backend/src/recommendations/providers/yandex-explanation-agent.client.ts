@@ -31,21 +31,36 @@ export class YandexExplanationAgentClient {
     recommendations: CloudRecommendation[],
   ): Promise<CloudRecommendation[]> {
     const byId = new Map(services.map((service) => [service.service_id, service]));
+    const explained = new Array<CloudRecommendation>(recommendations.length);
+    let nextIndex = 0;
 
-    return Promise.all(
-      recommendations.map(async (recommendation) => {
+    const explainNext = async () => {
+      while (nextIndex < recommendations.length) {
+        const index = nextIndex;
+        nextIndex += 1;
+        const recommendation = recommendations[index];
+        if (!recommendation) {
+          continue;
+        }
+
         const service = byId.get(recommendation.id);
         const explanation = service
           ? await this.explainOne(userProfile, service, recommendation)
           : this.fallbackExplanation(recommendation);
 
-        return {
+        explained[index] = {
           ...recommendation,
           explanation,
           reasons: explanation.keyMatches.length > 0 ? explanation.keyMatches : recommendation.reasons,
         };
-      }),
+      }
+    };
+
+    await Promise.all(
+      Array.from({ length: Math.min(4, recommendations.length) }, () => explainNext()),
     );
+
+    return explained;
   }
 
   private async explainOne(

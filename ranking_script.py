@@ -36,11 +36,13 @@ class WorkloadRequirements(BaseModel):
 class UserIntent(BaseModel):
     task_type: str = Field(..., description="Бизнес-задача пользователя")
     primary_service_type: Optional[str] = Field(None, description="Основной тип услуги")
+    service_types: list[str] = Field(default_factory=list, description="Упорядоченные типы услуг для связки")
     requires_152fz: bool = Field(False, description="Требуется ли соблюдение 152-ФЗ")
     budget_max_rub: Optional[float] = Field(None, description="Максимальный бюджет в рублях")
     budget_priority: Optional[str] = Field(None, description="Приоритет бюджета")
     region: Optional[str] = Field(None, description="Требуемый регион")
     country: Optional[str] = Field(None, description="Требуемая страна")
+    preferred_cities: list[str] = Field(default_factory=list, description="Предпочтительные города размещения")
     enabled_providers: Optional[list[str]] = Field(None, description="Разрешенные провайдеры для поиска")
     resource_requirements: ResourceRequirements = Field(default_factory=ResourceRequirements)
     workload: WorkloadRequirements = Field(default_factory=WorkloadRequirements)
@@ -63,6 +65,7 @@ class MetricBreakdown(BaseModel):
     jaccard_index: float
     resource_fit: float
     capability_score: float
+    city_preference: float = 0.0
     economy_score: float
 
 
@@ -72,6 +75,8 @@ class RecommendedService(BaseModel):
     description: str
     provider_name: str
     category: Optional[str]
+    service_type: Optional[str]
+    city: Optional[str]
     price_rub: float
     final_score_100: float
     matched_tags: list[str]
@@ -97,6 +102,7 @@ class IndexedService(BaseModel):
     provider_id: Optional[str]
     is_152fz_compliant: bool
     category: Optional[str]
+    city: Optional[str]
     price_rub: float
     regions: list[str]
     tech_stack: list[str]
@@ -237,6 +243,9 @@ def normalize_token(value: Any) -> str:
 
 
 def canonical_service_type(value: Any) -> Optional[str]:
+    if value is None:
+        return None
+
     text = normalize_token(value)
     if not text:
         return None
@@ -324,6 +333,7 @@ def service_search_text(service: dict[str, Any], provider_name: str) -> str:
     attributes = service.get("attributes") or {}
     attributes_text = " ".join(str(value) for value in attributes.values() if value is not None)
     canonical_type = canonical_service_type(attributes.get("resource_type") or service.get("category")) or ""
+    city = service_city(service)
 
     return " ".join(
         part
@@ -335,19 +345,30 @@ def service_search_text(service: dict[str, Any], provider_name: str) -> str:
             service.get("description"),
             tech_stack,
             compliance,
+            city,
             attributes_text,
         ]
         if part
     )
 
 
+def service_city(service: dict[str, Any]) -> Optional[str]:
+    attributes = service.get("attributes") or {}
+    for value in [service.get("city"), attributes.get("city"), attributes.get("location_city")]:
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
+
 def infer_service_regions(provider: dict[str, Any], service: dict[str, Any]) -> list[str]:
     attributes = service.get("attributes") or {}
+    city = service_city(service)
     raw_regions: list[Any] = [
         *as_list(provider.get("regions")),
         *as_list(service.get("regions")),
         attributes.get("region"),
         attributes.get("country"),
+        city,
     ]
 
     if provider.get("is_152fz_compliant"):
@@ -376,6 +397,7 @@ def load_provider_services() -> list[IndexedService]:
         for item in payload.get("services") or []:
             pricing = item.get("pricing") or {}
             attributes = item.get("attributes") or {}
+            city = service_city(item)
             tech_stack = normalize_tags(item.get("tech_stack") or [])
             compliance_tags = normalize_tags(item.get("compliance_tags") or [])
             provider_compliant = bool(provider.get("is_152fz_compliant", False))
@@ -390,6 +412,7 @@ def load_provider_services() -> list[IndexedService]:
                     provider_id=provider.get("provider_id"),
                     is_152fz_compliant=provider_compliant or service_compliant,
                     category=item.get("category"),
+                    city=city,
                     price_rub=parse_price(
                         item.get("price_from_rub")
                         or pricing.get("price_per_month_rub")
@@ -735,6 +758,37 @@ def normalize_region(value: str) -> str:
     return normalize_token(value).replace("ё", "е")
 
 
+def normalize_city(value: Any) -> str:
+    return normalize_region(str(value or "")).replace(".", "")
+
+
+def city_matches(candidate: Any, requested_city: Any) -> bool:
+    candidate_norm = normalize_city(candidate)
+    requested_norm = normalize_city(requested_city)
+    if not candidate_norm or not requested_norm:
+        return False
+
+    city_aliases: dict[str, list[str]] = {
+        "москва": ["москва", "moscow"],
+        "санкт петербург": ["санкт петербург", "санктпетербург", "петербург", "питер", "spb", "saint petersburg", "st petersburg"],
+        "новосибирск": ["новосибирск", "novosibirsk"],
+        "екатеринбург": ["екатеринбург", "yekaterinburg", "ekaterinburg"],
+        "казань": ["казань", "kazan"],
+        "нижний новгород": ["нижний новгород", "нижнийновгород", "nizhny novgorod"],
+        "краснодар": ["краснодар", "krasnodar"],
+    }
+
+    def aliases(value_norm: str) -> set[str]:
+        for canonical, values in city_aliases.items():
+            if value_norm == canonical or any(alias in value_norm for alias in values):
+                return set(values + [canonical])
+        return {value_norm}
+
+    candidate_aliases = aliases(candidate_norm)
+    requested_aliases = aliases(requested_norm)
+    return bool(candidate_aliases.intersection(requested_aliases))
+
+
 def is_russia_region(value: str) -> bool:
     region = normalize_region(value)
     return any(alias in region for alias in ["ru", "росси", "рф", "москва", "санкт петербург", "снг"])
@@ -755,19 +809,44 @@ def region_matches(requested_region: Optional[str], service_regions: list[str]) 
     return False
 
 
+def target_cities(intent: UserIntent) -> list[str]:
+    return intent.preferred_cities or ["Москва"]
+
+
+def calculate_city_preference_score(intent: UserIntent, service: IndexedService) -> tuple[float, Optional[str]]:
+    if not service.city:
+        return 0.0, None
+
+    for city in target_cities(intent):
+        if city_matches(service.city, city):
+            return 1.0, f"город: {service.city}"
+
+    return 0.0, None
+
+
 def top_with_distinct_providers(
     scored_services: list[RecommendedService],
     top_n: int,
 ) -> list[RecommendedService]:
+    if not scored_services:
+        return []
+
+    preferred_city_score = scored_services[0].metrics_breakdown.city_preference
+    provider_pool = [
+        service
+        for service in scored_services
+        if service.metrics_breakdown.city_preference == preferred_city_score
+    ]
+
     best_by_provider: dict[str, RecommendedService] = {}
-    for service in scored_services:
+    for service in provider_pool:
         provider_id = canonical_provider_id(service.provider_name) or normalize_token(service.provider_name)
         if provider_id not in best_by_provider:
             best_by_provider[provider_id] = service
 
     provider_leaders = sorted(
         best_by_provider.values(),
-        key=lambda service: service.final_score_100,
+        key=recommendation_sort_key,
         reverse=True,
     )[:3]
     selected_ids = {service.service_id for service in provider_leaders}
@@ -778,6 +857,79 @@ def top_with_distinct_providers(
     ]
 
     return [*provider_leaders, *remaining][:top_n]
+
+
+def recommendation_sort_key(service: RecommendedService) -> tuple[float, float]:
+    return (service.metrics_breakdown.city_preference, service.final_score_100)
+
+
+def recommendation_provider_id(service: RecommendedService) -> str:
+    return canonical_provider_id(service.provider_name) or normalize_token(service.provider_name)
+
+
+def ordered_service_types(intent: UserIntent) -> list[Optional[str]]:
+    service_types = [
+        service_type
+        for value in [*intent.service_types, intent.primary_service_type]
+        if (service_type := canonical_service_type(value))
+    ]
+
+    unique: list[Optional[str]] = []
+    for service_type in service_types:
+        if service_type not in unique:
+            unique.append(service_type)
+
+    return unique or [None]
+
+
+def top_bundle_recommendations(
+    scored_by_type: dict[Optional[str], list[RecommendedService]],
+    service_types: list[Optional[str]],
+    top_n: int,
+) -> list[RecommendedService]:
+    if not service_types:
+        return []
+
+    if len(service_types) == 1:
+        return top_with_distinct_providers(scored_by_type.get(service_types[0], []), top_n)
+
+    primary_services = scored_by_type.get(service_types[0], [])
+    primary_top = top_with_distinct_providers(primary_services, top_n)
+    provider_order = [recommendation_provider_id(service) for service in primary_top[:3]]
+
+    def top_for_dependent_type(candidates: list[RecommendedService]) -> list[RecommendedService]:
+        selected: list[RecommendedService] = []
+        selected_ids: set[str] = set()
+
+        def add_service(service: RecommendedService) -> None:
+            if service.service_id in selected_ids or len(selected) >= top_n:
+                return
+            selected.append(service)
+            selected_ids.add(service.service_id)
+
+        for provider_id in provider_order:
+            match = next(
+                (
+                    service
+                    for service in candidates
+                    if service.service_id not in selected_ids
+                    and recommendation_provider_id(service) == provider_id
+                ),
+                None,
+            )
+            if match:
+                add_service(match)
+
+        for service in candidates:
+            add_service(service)
+
+        return selected
+
+    selected_by_type: list[RecommendedService] = [*primary_top]
+    for service_type in service_types[1:]:
+        selected_by_type.extend(top_for_dependent_type(scored_by_type.get(service_type, [])))
+
+    return selected_by_type
 
 
 @app.get("/health")
@@ -795,7 +947,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
         raise HTTPException(status_code=503, detail="ML model is still loading")
 
     intent = request.user_intent
-    semantic_query = intent.semantic_query or " ".join(
+    base_semantic_query = intent.semantic_query or " ".join(
         [
             intent.task_type,
             intent.primary_service_type or "",
@@ -805,124 +957,150 @@ async def rank_services(request: RankRequest) -> RankResponse:
             *intent.optional_needs,
         ],
     )
-
-    user_tags = normalize_user_tags(intent)
-    capabilities = requested_capabilities(intent)
     enabled_providers = enabled_provider_ids(intent)
+    service_types = ordered_service_types(intent)
 
-    user_vector = ml_model.encode([semantic_query], convert_to_numpy=True, normalize_embeddings=True)
-    semantic_scores = cosine_similarity(user_vector, service_vectors)[0]
-
-    has_budget = intent.budget_max_rub is not None and intent.budget_max_rub > 0
-    has_resources = has_resource_requirements(intent)
-    has_capabilities = len(capabilities) > 0
-
-    if has_resources:
-        weight_semantic = 0.30
-        weight_jaccard = 0.10
-        weight_resource = 0.55
-        weight_capability = 0.05 if has_capabilities else 0.0
-        weight_economy = 0.05 if has_budget else 0.0
-    else:
-        weight_semantic = 0.70
-        weight_jaccard = 0.20
-        weight_resource = 0.0
-        weight_capability = 0.10 if has_capabilities else 0.0
-        weight_economy = 0.10 if has_budget else 0.0
-
-    total_weight = weight_semantic + weight_jaccard + weight_resource + weight_capability + weight_economy
-
-    eligible_services: list[tuple[int, IndexedService, float]] = []
-    for index, service in enumerate(indexed_services):
-        if not provider_is_enabled(service, enabled_providers):
-            continue
-        if service_is_excluded(intent, service):
-            continue
-        if not service_matches_primary_type(intent, service):
-            continue
-        if intent.requires_152fz and not service.is_152fz_compliant:
-            continue
-        if not region_matches(intent.region, service.regions):
-            continue
-        if has_resources and resource_requirement_violations(intent, service):
-            continue
-
-        economy_score = calculate_economy_score(intent.budget_max_rub, service.price_rub)
-        if economy_score < 0:
-            continue
-
-        eligible_services.append((index, service, economy_score))
-
-    minimal_resource_stats = (
-        build_minimal_resource_stats(intent, [service for _, service, _ in eligible_services])
-        if has_resources
-        else {}
-    )
-
-    scored_services: list[RecommendedService] = []
-    for index, service, economy_score in eligible_services:
-        service_tags = get_strict_service_tags(service)
-        matched_tags = sorted(user_tags.intersection(service_tags))
-        union_len = len(user_tags.union(service_tags))
-        jaccard_score = len(matched_tags) / union_len if union_len > 0 else 0.0
-
-        resource_fit_score, matched_requirements = calculate_resource_fit_score(
-            intent,
-            service,
-            minimal_resource_stats,
+    def score_services_for_type(service_type: Optional[str], is_primary: bool) -> list[RecommendedService]:
+        scoring_intent = intent.model_copy(
+            update={
+                "primary_service_type": service_type,
+                "resource_requirements": intent.resource_requirements if is_primary else ResourceRequirements(),
+            },
         )
-        capability_score, matched_capabilities = calculate_capability_score(capabilities, service)
-        matched_requirements.extend(f"capability: {capability}" for capability in matched_capabilities)
+        semantic_query = " ".join(part for part in [base_semantic_query, service_type or ""] if part)
+        user_tags = normalize_user_tags(scoring_intent)
+        capabilities = requested_capabilities(scoring_intent)
 
-        raw_semantic = float(semantic_scores[index])
-        norm_semantic = max(0.0, min(1.0, (raw_semantic - 0.3) / 0.5))
+        user_vector = ml_model.encode([semantic_query], convert_to_numpy=True, normalize_embeddings=True)
+        semantic_scores = cosine_similarity(user_vector, service_vectors)[0]
 
-        final_score_raw = (
-            norm_semantic * weight_semantic
-            + jaccard_score * weight_jaccard
-            + resource_fit_score * weight_resource
-            + capability_score * weight_capability
-            + economy_score * weight_economy
-        ) / total_weight
-        final_score_100 = round(min(final_score_raw * 100 * 1.1, 99.9), 1)
+        has_budget = scoring_intent.budget_max_rub is not None and scoring_intent.budget_max_rub > 0
+        has_resources = has_resource_requirements(scoring_intent)
+        has_capabilities = len(capabilities) > 0
 
-        scored_services.append(
-            RecommendedService(
-                service_id=service.service_id,
-                name=service.name,
-                description=service.description,
-                provider_name=service.provider_name,
-                category=service.category,
-                price_rub=round(service.price_rub, 2),
-                final_score_100=final_score_100,
-                matched_tags=matched_tags,
-                matched_requirements=matched_requirements,
-                tech_stack=service.tech_stack,
-                compliance_tags=service.compliance_tags,
-                regions=service.regions,
-                source_url=service.source_url,
-                metrics_breakdown=MetricBreakdown(
-                    semantic_similarity=round(norm_semantic, 3),
-                    jaccard_index=round(jaccard_score, 3),
-                    resource_fit=round(resource_fit_score, 3),
-                    capability_score=round(capability_score, 3),
-                    economy_score=round(max(0.0, economy_score), 3),
+        if has_resources:
+            weight_semantic = 0.30
+            weight_jaccard = 0.10
+            weight_resource = 0.55
+            weight_capability = 0.05 if has_capabilities else 0.0
+            weight_city = 0.08
+            weight_economy = 0.05 if has_budget else 0.0
+        else:
+            weight_semantic = 0.70
+            weight_jaccard = 0.20
+            weight_resource = 0.0
+            weight_capability = 0.10 if has_capabilities else 0.0
+            weight_city = 0.08
+            weight_economy = 0.10 if has_budget else 0.0
+
+        total_weight = weight_semantic + weight_jaccard + weight_resource + weight_capability + weight_city + weight_economy
+
+        eligible_services: list[tuple[int, IndexedService, float]] = []
+        for index, service in enumerate(indexed_services):
+            if not provider_is_enabled(service, enabled_providers):
+                continue
+            if service_is_excluded(scoring_intent, service):
+                continue
+            if not service_matches_primary_type(scoring_intent, service):
+                continue
+            if scoring_intent.requires_152fz and not service.is_152fz_compliant:
+                continue
+            if not region_matches(scoring_intent.region, service.regions):
+                continue
+            if has_resources and resource_requirement_violations(scoring_intent, service):
+                continue
+
+            economy_score = calculate_economy_score(scoring_intent.budget_max_rub, service.price_rub)
+            if economy_score < 0:
+                continue
+
+            eligible_services.append((index, service, economy_score))
+
+        minimal_resource_stats = (
+            build_minimal_resource_stats(scoring_intent, [service for _, service, _ in eligible_services])
+            if has_resources
+            else {}
+        )
+
+        scored_services: list[RecommendedService] = []
+        for index, service, economy_score in eligible_services:
+            service_tags = get_strict_service_tags(service)
+            matched_tags = sorted(user_tags.intersection(service_tags))
+            union_len = len(user_tags.union(service_tags))
+            jaccard_score = len(matched_tags) / union_len if union_len > 0 else 0.0
+
+            resource_fit_score, matched_requirements = calculate_resource_fit_score(
+                scoring_intent,
+                service,
+                minimal_resource_stats,
+            )
+            capability_score, matched_capabilities = calculate_capability_score(capabilities, service)
+            matched_requirements.extend(f"capability: {capability}" for capability in matched_capabilities)
+            city_score, matched_city = calculate_city_preference_score(scoring_intent, service)
+            if matched_city:
+                matched_requirements.append(matched_city)
+
+            raw_semantic = float(semantic_scores[index])
+            norm_semantic = max(0.0, min(1.0, (raw_semantic - 0.3) / 0.5))
+
+            final_score_raw = (
+                norm_semantic * weight_semantic
+                + jaccard_score * weight_jaccard
+                + resource_fit_score * weight_resource
+                + capability_score * weight_capability
+                + city_score * weight_city
+                + economy_score * weight_economy
+            ) / total_weight
+            final_score_100 = round(min(final_score_raw * 100 * 1.1, 99.9), 1)
+
+            scored_services.append(
+                RecommendedService(
+                    service_id=service.service_id,
+                    name=service.name,
+                    description=service.description,
+                    provider_name=service.provider_name,
+                    category=service.category,
+                    service_type=service_type,
+                    city=service.city,
+                    price_rub=round(service.price_rub, 2),
+                    final_score_100=final_score_100,
+                    matched_tags=matched_tags,
+                    matched_requirements=matched_requirements,
+                    tech_stack=service.tech_stack,
+                    compliance_tags=service.compliance_tags,
+                    regions=service.regions,
+                    source_url=service.source_url,
+                    metrics_breakdown=MetricBreakdown(
+                        semantic_similarity=round(norm_semantic, 3),
+                        jaccard_index=round(jaccard_score, 3),
+                        resource_fit=round(resource_fit_score, 3),
+                        capability_score=round(capability_score, 3),
+                        city_preference=round(city_score, 3),
+                        economy_score=round(max(0.0, economy_score), 3),
+                    ),
                 ),
-            ),
-        )
+            )
 
-    scored_services.sort(key=lambda x: x.final_score_100, reverse=True)
-    top = top_with_distinct_providers(scored_services, request.top_n)
+        scored_services.sort(key=recommendation_sort_key, reverse=True)
+        return scored_services
+
+    scored_by_type = {
+        service_type: score_services_for_type(service_type, index == 0)
+        for index, service_type in enumerate(service_types)
+    }
+    top = top_bundle_recommendations(scored_by_type, service_types, request.top_n)
 
     return RankResponse(
         user_context={
             "task_type": intent.task_type,
             "primary_service_type": intent.primary_service_type,
+            "service_types": service_types,
             "requires_152fz": intent.requires_152fz,
             "budget_max_rub": intent.budget_max_rub,
             "budget_priority": intent.budget_priority,
             "region": intent.region,
             "country": intent.country,
+            "preferred_cities": target_cities(intent),
             "enabled_providers": sorted(enabled_providers) if enabled_providers is not None else None,
             "resource_requirements": intent.resource_requirements.model_dump(),
             "workload": intent.workload.model_dump(),
@@ -933,7 +1111,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
             "excluded_service_categories": intent.excluded_service_categories,
             "semantic_query": intent.semantic_query,
             "reasoning_summary": intent.reasoning_summary,
-            "requested_capabilities": capabilities,
+            "requested_capabilities": requested_capabilities(intent),
         },
         top_recommendations=top,
         top_3_recommendations=top[:3],

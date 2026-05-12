@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { CheckCircle2, ShieldCheck, TrendingUp, WalletCards, X } from "lucide-react";
+import { CheckCircle2, MapPin, ShieldCheck, TrendingUp, WalletCards, X } from "lucide-react";
 import type { CloudRecommendation } from "../types";
 import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
@@ -136,6 +136,12 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
             <div>
               <div className="mb-1 flex flex-wrap items-center gap-2">
                 <p className="text-xs font-bold uppercase text-accent">{recommendation.provider}</p>
+                {recommendation.city ? (
+                  <span className="inline-flex items-center gap-1 rounded-ui border border-[#dceefa] bg-[#f3faff] px-2 py-0.5 text-xs font-bold text-[#17334f] dark:border-sky-300/35 dark:bg-[#10283f] dark:text-sky-50">
+                    <MapPin className="h-3 w-3" aria-hidden="true" />
+                    {recommendation.city}
+                  </span>
+                ) : null}
                 {rankStyle ? (
                   <span className={cn("rounded-ui border px-2 py-0.5 text-xs font-extrabold", rankStyle.badge)}>
                     {rankStyle.label}
@@ -193,7 +199,15 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
           <Card className="max-h-[92vh] w-full max-w-4xl overflow-y-auto p-5 shadow-[0_28px_80px_rgba(3,16,31,0.35)] sm:p-7">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <p className="mb-2 text-xs font-bold uppercase text-accent">{recommendation.provider}</p>
+                <div className="mb-2 flex flex-wrap items-center gap-2">
+                  <p className="text-xs font-bold uppercase text-accent">{recommendation.provider}</p>
+                  {recommendation.city ? (
+                    <span className="inline-flex items-center gap-1 rounded-ui border border-[#dceefa] bg-[#f3faff] px-2 py-0.5 text-xs font-bold text-[#17334f] dark:border-sky-300/35 dark:bg-[#10283f] dark:text-sky-50">
+                      <MapPin className="h-3 w-3" aria-hidden="true" />
+                      {recommendation.city}
+                    </span>
+                  ) : null}
+                </div>
                 <ServiceTitle
                   className="text-xl font-extrabold leading-tight sm:text-2xl"
                   recommendation={recommendation}

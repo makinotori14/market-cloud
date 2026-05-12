@@ -14,8 +14,13 @@
         "price_from_rub": 3413.24,
         "price_per_month_rub": 3413.24
       },
-      "tech_stack": ["Intel Xeon Gold 6354", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu_model": "Intel Xeon Gold 6354",
@@ -23,10 +28,10 @@
         "ram_gb": 4,
         "disk_type": "Универсальный SSD v2",
         "disk_gb": 50,
-        "region": "Москва, ru-6a",
         "vat_included": true,
         "calculation": "2 * 883.99 + 4 * 291.88 + 50 * 9.53 = 3413.24",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -39,8 +44,13 @@
         "price_from_rub": 10110.04,
         "price_per_month_rub": 10110.04
       },
-      "tech_stack": ["Intel Xeon Gold 6354", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu": 4,
@@ -49,7 +59,8 @@
         "disk_gb": 200,
         "vat_included": true,
         "calculation": "4 * 883.99 + 16 * 291.88 + 200 * 9.53 = 10110.04",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -62,8 +73,13 @@
         "price_from_rub": 28412.08,
         "price_per_month_rub": 28412.08
       },
-      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu": 8,
@@ -72,7 +88,8 @@
         "disk_gb": 500,
         "vat_included": true,
         "calculation": "8 * 883.99 + 32 * 291.88 + 500 * 22.00 = 28412.08",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -85,8 +102,13 @@
         "price_from_rub": 41824.16,
         "price_per_month_rub": 41824.16
       },
-      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu": 16,
@@ -95,7 +117,8 @@
         "disk_gb": 500,
         "vat_included": true,
         "calculation": "16 * 883.99 + 64 * 291.88 + 500 * 22.00 = 41824.16",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -108,8 +131,13 @@
         "price_from_rub": 87420.32,
         "price_per_month_rub": 87420.32
       },
-      "tech_stack": ["Intel Xeon Gold 6354", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "virtual_server",
         "cpu": 32,
@@ -118,7 +146,8 @@
         "disk_gb": 1000,
         "vat_included": true,
         "calculation": "32 * 883.99 + 128 * 291.88 + 1000 * 22.00 = 87420.32",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -131,8 +160,13 @@
         "price_from_rub": 2593.21,
         "price_per_month_rub": 2593.21
       },
-      "tech_stack": ["Intel Xeon Gold 6240R", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6240R",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "interruptible_vm",
         "cpu": 4,
@@ -141,7 +175,8 @@
         "disk_gb": 100,
         "vat_included": true,
         "calculation": "4 * 167.09 + 16 * 60.97 + 100 * 9.53 = 2593.21",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -154,8 +189,13 @@
         "price_from_rub": 441504.48,
         "price_per_month_rub": 441504.48
       },
-      "tech_stack": ["NVIDIA H200", "AMD EPYC 9474F"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA H200",
+        "AMD EPYC 9474F"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA H200",
@@ -165,7 +205,8 @@
         "ram_gb": 128,
         "vat_included": true,
         "calculation": "390000 + 16 * 883.99 + 128 * 291.88 = 441504.48",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -178,8 +219,13 @@
         "price_from_rub": 245301.52,
         "price_per_month_rub": 245301.52
       },
-      "tech_stack": ["NVIDIA A100", "AMD EPYC 9474F"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA A100",
+        "AMD EPYC 9474F"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA A100",
@@ -188,7 +234,8 @@
         "ram_gb": 128,
         "vat_included": true,
         "calculation": "193797.04 + 16 * 883.99 + 128 * 291.88 = 245301.52",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -201,8 +248,13 @@
         "price_from_rub": 53901.36,
         "price_per_month_rub": 53901.36
       },
-      "tech_stack": ["NVIDIA L4", "Intel Xeon Gold 6240R"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA L4",
+        "Intel Xeon Gold 6240R"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA L4",
@@ -211,7 +263,8 @@
         "ram_gb": 64,
         "vat_included": true,
         "calculation": "33011 + 8 * 668.35 + 64 * 243.04 = 53901.36",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -224,8 +277,13 @@
         "price_from_rub": 194650.48,
         "price_per_month_rub": 194650.48
       },
-      "tech_stack": ["NVIDIA RTX 6000 Pro", "AMD EPYC 9554"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA RTX 6000 Pro",
+        "AMD EPYC 9554"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA RTX 6000 Pro",
@@ -234,7 +292,8 @@
         "ram_gb": 128,
         "vat_included": true,
         "calculation": "143146 + 16 * 883.99 + 128 * 291.88 = 194650.48",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -247,8 +306,12 @@
         "price_from_rub": 41707.72,
         "price_per_month_rub": 41707.72
       },
-      "tech_stack": ["NVIDIA Tesla T4"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "NVIDIA Tesla T4"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "gpu_server",
         "gpu_model": "NVIDIA Tesla T4",
@@ -257,7 +320,8 @@
         "ram_gb": 32,
         "vat_included": true,
         "calculation": "28592.64 + 8 * 883.99 + 32 * 243.04 = 41707.72",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -270,8 +334,13 @@
         "price_from_rub": 1290,
         "price_per_month_rub": 1290
       },
-      "tech_stack": ["Intel Celeron", "SSD SATA"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Celeron",
+        "SSD SATA"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Celeron 2 GHz, 2 ядра",
@@ -279,7 +348,8 @@
         "disk_type": "SSD SATA",
         "disk_gb": 120,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -292,8 +362,13 @@
         "price_from_rub": 5290,
         "price_per_month_rub": 5290
       },
-      "tech_stack": ["Intel Core i3-12100", "NVMe SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Core i3-12100",
+        "NVMe SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Core i3-12100 3.3 GHz",
@@ -301,7 +376,8 @@
         "disk_type": "NVMe SSD",
         "disk_gb": 500,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -314,8 +390,13 @@
         "price_from_rub": 5940,
         "price_per_month_rub": 5940
       },
-      "tech_stack": ["Intel Core i3-14100", "SSD SATA"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Core i3-14100",
+        "SSD SATA"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "bare_metal",
         "cpu_model": "Intel Core i3-14100 3.5 GHz",
@@ -323,7 +404,8 @@
         "disk_type": "SSD SATA",
         "disk_gb": 960,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -336,8 +418,12 @@
         "price_from_rub": 0.81,
         "price_per_month_rub": 0.81
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Cold/Icebox",
         "unit": "ГБ/месяц",
@@ -345,7 +431,8 @@
         "egress_per_gb_rub": 1.96,
         "get_requests_per_10000_rub": 3.01,
         "put_requests_per_1000_rub": 3.01,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -358,14 +445,19 @@
         "price_from_rub": 1.43,
         "price_per_month_rub": 1.43
       },
-      "tech_stack": ["S3"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "S3"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Backup vault",
         "unit": "ГБ/месяц",
         "egress_per_gb_rub": 1.96,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -378,8 +470,16 @@
         "price_from_rub": 9935.81,
         "price_per_month_rub": 9935.81
       },
-      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "Kafka", "OpenSearch"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Kafka",
+        "OpenSearch"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 2,
         "ram_gb": 8,
@@ -387,7 +487,8 @@
         "disk_type": "Ultra SSD",
         "vat_included": true,
         "calculation": "2 * 931.48 + 8 * 311.00 + 100 * 55.85 = 9935.81",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -400,8 +501,16 @@
         "price_from_rub": 19871.92,
         "price_per_month_rub": 19871.92
       },
-      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "Kafka", "OpenSearch"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Kafka",
+        "OpenSearch"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 4,
         "ram_gb": 16,
@@ -409,7 +518,8 @@
         "disk_type": "Ultra SSD",
         "vat_included": true,
         "calculation": "4 * 931.48 + 16 * 311.00 + 200 * 55.85 = 19871.92",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -419,11 +529,18 @@
       "description": "Производственная БД на HighFreq-тарифе для нагруженных задач. Расчет: 8 × HighFreq vCPU + 32 ГБ HighFreq RAM + 500 ГБ Ultra SSD.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 49721.00,
-        "price_per_month_rub": 49721.00
+        "price_from_rub": 49721.0,
+        "price_per_month_rub": 49721.0
       },
-      "tech_stack": ["PostgreSQL", "MySQL", "Redis", "High-IOPS SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "High-IOPS SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 8,
         "ram_gb": 32,
@@ -432,7 +549,8 @@
         "tariff_class": "HighFreq",
         "vat_included": true,
         "calculation": "8 * 1310 + 32 * 353 + 500 * 55.85 = 49721",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -442,16 +560,22 @@
       "description": "Готовый пакет: выделенный физический сервер под управляемую БД, конфигурация Small.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 55699.00,
-        "price_per_month_rub": 55699.00
+        "price_from_rub": 55699.0,
+        "price_per_month_rub": 55699.0
       },
-      "tech_stack": ["PostgreSQL", "MySQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "dedicated_db_server",
         "config": "Small",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -461,16 +585,22 @@
       "description": "Готовый пакет: выделенный физический сервер под БД, конфигурация Medium.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 83190.80,
-        "price_per_month_rub": 83190.80
+        "price_from_rub": 83190.8,
+        "price_per_month_rub": 83190.8
       },
-      "tech_stack": ["PostgreSQL", "MySQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "dedicated_db_server",
         "config": "Medium",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -480,16 +610,22 @@
       "description": "Готовый пакет: выделенный физический сервер под БД, конфигурация Large.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 135721.60,
-        "price_per_month_rub": 135721.60
+        "price_from_rub": 135721.6,
+        "price_per_month_rub": 135721.6
       },
-      "tech_stack": ["PostgreSQL", "MySQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "dedicated_db_server",
         "config": "Large",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -499,16 +635,22 @@
       "description": "Готовый пакет: выделенный физический сервер под БД, максимальная конфигурация Mega.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": 254937.90,
-        "price_per_month_rub": 254937.90
+        "price_from_rub": 254937.9,
+        "price_per_month_rub": 254937.9
       },
-      "tech_stack": ["PostgreSQL", "MySQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "resource_type": "dedicated_db_server",
         "config": "Mega",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -521,13 +663,18 @@
         "price_from_rub": 5413.24,
         "price_per_month_rub": 5413.24
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 1,
         "high_availability": false,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -540,13 +687,18 @@
         "price_from_rub": 15532.36,
         "price_per_month_rub": 15532.36
       },
-      "tech_stack": ["Kubernetes"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "high_availability": true,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -559,8 +711,14 @@
         "price_from_rub": 60872.61,
         "price_per_month_rub": 60872.61
       },
-      "tech_stack": ["Kubernetes", "Intel Xeon Gold 6354", "SSD"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Kubernetes",
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "master_nodes": 3,
         "worker_nodes": 3,
@@ -571,7 +729,8 @@
         "load_balancer": true,
         "vat_included": true,
         "calculation": "15532.36 + 3 * (8 * 883.99 + 32 * 291.88 + 200 * 9.53) + 2370.81 = 60872.61",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -581,15 +740,20 @@
       "description": "Реестр для хранения образов контейнеров. Цена за 1 ГБ в месяц.",
       "category": "DevOps",
       "pricing": {
-        "price_from_rub": 3.00,
-        "price_per_month_rub": 3.00
+        "price_from_rub": 3.0,
+        "price_per_month_rub": 3.0
       },
-      "tech_stack": ["Container Registry"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Container Registry"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -599,11 +763,15 @@
       "description": "Виртуальный сервер на публичном облаке VMware Selectel (Silver VDC). Расчет: 4 × vCPU + 16 ГБ RAM + 200 ГБ Fast vHDD (2 500 IOPS).",
       "category": "VMware Cloud",
       "pricing": {
-        "price_from_rub": 13270.20,
-        "price_per_month_rub": 13270.20
+        "price_from_rub": 13270.2,
+        "price_per_month_rub": 13270.2
       },
-      "tech_stack": ["VMware"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VMware"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "platform": "VMware Silver VDC",
         "cpu": 4,
@@ -612,7 +780,8 @@
         "disk_type": "Fast vHDD 2500 IOPS",
         "vat_included": true,
         "calculation": "4 * 800.01 + 16 * 450.01 + 200 * 14.35 = 13270.20",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -625,30 +794,17 @@
         "price_from_rub": 1280.13,
         "price_per_month_rub": 1280.13
       },
-      "tech_stack": ["VMware"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VMware"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "high_availability": true,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-vmware-draas",
-      "name": "VMware DRaaS — аварийное восстановление",
-      "description": "Аварийное восстановление виртуальной машины в облако VMware. Цена за 1 ВМ в месяц.",
-      "category": "Disaster Recovery",
-      "pricing": {
-        "price_from_rub": 1000.03,
-        "price_per_month_rub": 1000.03
-      },
-      "tech_stack": ["VMware"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "unit": "ВМ",
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -662,11 +818,14 @@
         "price_per_month_rub": 1271.18
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "high_availability": false,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -680,11 +839,14 @@
         "price_per_month_rub": 3944.59
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "high_availability": true,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -698,11 +860,14 @@
         "price_per_month_rub": 182.28
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "IP",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -712,15 +877,20 @@
       "description": "Облачный репозиторий Veeam Cloud Connect, тарификация за 1 ВМ.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 816.00,
-        "price_per_month_rub": 816.00
+        "price_from_rub": 816.0,
+        "price_per_month_rub": 816.0
       },
-      "tech_stack": ["Veeam"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Veeam"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ВМ",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -730,15 +900,20 @@
       "description": "Хранение резервных копий Veeam в облачном репозитории с тройной репликацией. Цена за 1 ГБ в месяц.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 2.00,
-        "price_per_month_rub": 2.00
+        "price_from_rub": 2.0,
+        "price_per_month_rub": 2.0
       },
-      "tech_stack": ["Veeam"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Veeam"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -748,15 +923,20 @@
       "description": "Резервное копирование виртуальной машины через Кибер Бэкап (за устройство).",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 1190.00,
-        "price_per_month_rub": 1190.00
+        "price_from_rub": 1190.0,
+        "price_per_month_rub": 1190.0
       },
-      "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "устройство",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -766,15 +946,20 @@
       "description": "Резервное копирование физического сервера через Кибер Бэкап.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 2100.00,
-        "price_per_month_rub": 2100.00
+        "price_from_rub": 2100.0,
+        "price_per_month_rub": 2100.0
       },
-      "tech_stack": ["Кибер Бэкап"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "устройство",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -784,15 +969,21 @@
       "description": "Резервное копирование экземпляра PostgreSQL через Кибер Бэкап.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 2100.00,
-        "price_per_month_rub": 2100.00
+        "price_from_rub": 2100.0,
+        "price_per_month_rub": 2100.0
       },
-      "tech_stack": ["Кибер Бэкап", "PostgreSQL"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Кибер Бэкап",
+        "PostgreSQL"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "устройство",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -802,15 +993,18 @@
       "description": "Бэкапы сетевых дисков облачных серверов. Цена за 1 ГБ в месяц.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": 4.10,
-        "price_per_month_rub": 4.10
+        "price_from_rub": 4.1,
+        "price_per_month_rub": 4.1
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "unit": "ГБ/месяц",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -823,14 +1017,19 @@
         "price_from_rub": 2730,
         "price_per_month_rub": 2730
       },
-      "tech_stack": ["VMware Horizon"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VMware Horizon"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 2,
         "ram_gb": 4,
         "disk_gb": 200,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -843,14 +1042,19 @@
         "price_from_rub": 3830,
         "price_per_month_rub": 3830
       },
-      "tech_stack": ["VMware Horizon"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VMware Horizon"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 4,
         "ram_gb": 8,
         "disk_gb": 200,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -863,14 +1067,19 @@
         "price_from_rub": 6030,
         "price_per_month_rub": 6030
       },
-      "tech_stack": ["VMware Horizon"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "VMware Horizon"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 8,
         "ram_gb": 16,
         "disk_gb": 200,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -883,8 +1092,12 @@
         "price_from_rub": 5830.84,
         "price_per_month_rub": 5830.84
       },
-      "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "1С:Предприятие"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "cpu": 4,
         "ram_gb": 8,
@@ -892,7 +1105,8 @@
         "tariff_class": "SL",
         "vat_included": true,
         "calculation": "4 * 677.64 + 8 * 246.41 + 100 * 11.49 = 5830.84",
-        "price_source": "calculated_from_tariff_grid"
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -905,12 +1119,17 @@
         "price_from_rub": 4500,
         "price_per_month_rub": 4500
       },
-      "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "1С:Предприятие"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "ПРОФ",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -923,31 +1142,18 @@
         "price_from_rub": 700,
         "price_per_month_rub": 700
       },
-      "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "1С:Предприятие"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "ПРОФ",
         "unit": "пользователь",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-1c-license-corp-server",
-      "name": "1С:Предприятие 8 КОРП — лицензия на сервер приложения (x86-64)",
-      "description": "Лицензия 1С на сервер приложения, версия КОРП.",
-      "category": "1C Licenses",
-      "pricing": {
-        "price_from_rub": 9000,
-        "price_per_month_rub": 9000
-      },
-      "tech_stack": ["1С:Предприятие"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "edition": "КОРП",
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -960,12 +1166,17 @@
         "price_from_rub": 1846.61,
         "price_per_month_rub": 1846.61
       },
-      "tech_stack": ["Astra Linux"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Орёл 1.8",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -978,30 +1189,17 @@
         "price_from_rub": 2263.58,
         "price_per_month_rub": 2263.58
       },
-      "tech_stack": ["Astra Linux"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Astra Linux"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "edition": "Воронеж 1.8",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-license-redos-standard",
-      "name": "Доступ к установке РЕД ОС 8 Стандартная",
-      "description": "Лицензия на использование РЕД ОС 8 Стандартная редакция.",
-      "category": "OS Licenses",
-      "pricing": {
-        "price_from_rub": 1265.82,
-        "price_per_month_rub": 1265.82
-      },
-      "tech_stack": ["РЕД ОС"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "edition": "Стандартная",
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1014,13 +1212,19 @@
         "price_from_rub": 3834.69,
         "price_per_month_rub": 3834.69
       },
-      "tech_stack": ["РЕД ОС"],
-      "compliance_tags": ["152-FZ", "FSTEC"],
+      "tech_stack": [
+        "РЕД ОС"
+      ],
+      "compliance_tags": [
+        "152-FZ",
+        "FSTEC"
+      ],
       "attributes": {
         "edition": "Сертифицированная",
         "certified": true,
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1033,82 +1237,17 @@
         "price_from_rub": 2600,
         "price_per_month_rub": 2600
       },
-      "tech_stack": ["DDoS Guard"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "DDoS Guard"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "bandwidth": "10 Мбит/с",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-ddos-curator-professional",
-      "name": "Curator — тариф Professional (10 Мбит/с легитимного трафика)",
-      "description": "Защита от DDoS Curator Professional.",
-      "category": "DDoS Protection",
-      "pricing": {
-        "price_from_rub": 28100,
-        "price_per_month_rub": 28100
-      },
-      "tech_stack": ["Curator"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "tariff": "Professional",
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-firewall-usergate-c150",
-      "name": "Сертифицированный межсетевой экран UserGate C150",
-      "description": "Сертифицированный межсетевой экран UserGate C150.",
-      "category": "Network Security",
-      "pricing": {
-        "price_from_rub": 32000,
-        "price_per_month_rub": 32000
-      },
-      "tech_stack": ["UserGate"],
-      "compliance_tags": ["152-FZ", "FSTEC"],
-      "attributes": {
-        "certified": true,
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-gost-vpn-vipnet",
-      "name": "Сервис ГОСТ-VPN на базе ViPNet",
-      "description": "Сервис ГОСТ-VPN с поддержкой шифрования по российским стандартам.",
-      "category": "Network Security",
-      "pricing": {
-        "price_from_rub": 15000,
-        "price_per_month_rub": 15000
-      },
-      "tech_stack": ["ViPNet", "ГОСТ"],
-      "compliance_tags": ["152-FZ", "FSB"],
-      "attributes": {
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
-      },
-      "source_url": "https://selectel.ru/prices/"
-    },
-    {
-      "service_id": "selectel-info-security-kaspersky-eps",
-      "name": "Kaspersky Endpoint Security для бизнеса стандартный",
-      "description": "Антивирусная защита Kaspersky Endpoint Security.",
-      "category": "Endpoint Security",
-      "pricing": {
-        "price_from_rub": 300,
-        "price_per_month_rub": 300
-      },
-      "tech_stack": ["Kaspersky"],
-      "compliance_tags": ["152-FZ"],
-      "attributes": {
-        "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1122,11 +1261,14 @@
         "price_per_month_rub": 400
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "bandwidth": "1 Гбит/с",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1140,11 +1282,14 @@
         "price_per_month_rub": 1630
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "bandwidth": "10 Гбит/с",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1154,16 +1299,19 @@
       "description": "Универсальная масштабируемая файловая система для нескольких серверов. Цена за 1 ГБ в месяц.",
       "category": "File Storage",
       "pricing": {
-        "price_from_rub": 10.80,
-        "price_per_month_rub": 10.80
+        "price_from_rub": 10.8,
+        "price_per_month_rub": 10.8
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Universal",
         "unit": "ГБ/месяц",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
@@ -1177,67 +1325,160 @@
         "price_per_month_rub": 18.02
       },
       "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
         "storage_class": "Fast",
         "unit": "ГБ/месяц",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "price_source": "tariff_grid_package",
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
     {
-      "service_id": "selectel-mobile-farm-month",
-      "name": "Мобильная ферма — 1 месяц",
-      "description": "Сервис тестирования мобильных приложений на реальных устройствах. Тариф за 1 месяц.",
-      "category": "Mobile Testing",
+      "service_id": "selectel-cloud-server-small-plus-2cpu-8ram-100ssd",
+      "name": "Cloud Server Small+ — 2 vCPU, 8 GB RAM, 100 GB универсальный SSD",
+      "description": "Конфигурация для backend начального уровня. Расчет: 2 vCPU + 8 ГБ RAM + 100 ГБ Универсальный SSD v2.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": 20000,
-        "price_per_month_rub": 20000
+        "price_from_rub": 5056.02,
+        "price_per_month_rub": 5056.02
       },
-      "tech_stack": [],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "unit": "месяц",
-        "price_per_minute_rub": 1,
+        "resource_type": "virtual_server",
+        "cpu": 2,
+        "ram_gb": 8,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 100,
+        "calculation": "2 * 883.99 + 8 * 291.88 + 100 * 9.53 = 5056.02",
+        "price_source": "calculated_from_tariff_grid",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
     {
-      "service_id": "selectel-domain-ru-registration",
-      "name": "Регистрация домена .RU/.РФ",
-      "description": "Регистрация домена в зонах .RU и .РФ. Цена за год.",
-      "category": "Domains",
+      "service_id": "selectel-cloud-server-mid-4cpu-8ram-100ssd",
+      "name": "Cloud Server Mid — 4 vCPU, 8 GB RAM, 100 GB SSD",
+      "description": "Промежуточная конфигурация CPU>RAM. Расчет: 4 vCPU + 8 ГБ RAM + 100 ГБ Универсальный SSD v2.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": 120,
-        "price_per_month_rub": null
+        "price_from_rub": 6824.0,
+        "price_per_month_rub": 6824.0
       },
-      "tech_stack": ["DNS"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "unit": "год",
+        "resource_type": "virtual_server",
+        "cpu": 4,
+        "ram_gb": 8,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 100,
+        "calculation": "4 * 883.99 + 8 * 291.88 + 100 * 9.53 = 6824.0",
+        "price_source": "calculated_from_tariff_grid",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     },
     {
-      "service_id": "selectel-isp-manager-pro",
-      "name": "Панель управления ISPmanager 6 Pro",
-      "description": "Лицензия панели управления ISPmanager 6 Pro.",
-      "category": "Software Licenses",
+      "service_id": "selectel-cloud-server-memory-opt-4cpu-32ram-200ssd",
+      "name": "Cloud Server Memory-Optimized — 4 vCPU, 32 GB RAM, 200 GB SSD",
+      "description": "Memory-optimized для in-memory кешей и БД. Расчет: 4 vCPU + 32 ГБ RAM + 200 ГБ Универсальный SSD v2.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": 600,
-        "price_per_month_rub": 600
+        "price_from_rub": 14782.12,
+        "price_per_month_rub": 14782.12
       },
-      "tech_stack": ["ISPmanager"],
-      "compliance_tags": ["152-FZ"],
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
       "attributes": {
-        "edition": "Pro",
+        "resource_type": "virtual_server",
+        "cpu": 4,
+        "ram_gb": 32,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 200,
+        "calculation": "4 * 883.99 + 32 * 291.88 + 200 * 9.53 = 14782.12",
+        "price_source": "calculated_from_tariff_grid",
         "vat_included": true,
-        "price_source": "tariff_grid_package"
+        "city": "Санкт-Петербург"
+      },
+      "source_url": "https://selectel.ru/prices/"
+    },
+    {
+      "service_id": "selectel-cloud-server-cpu-opt-16cpu-16ram-200ssd",
+      "name": "Cloud Server CPU-Optimized — 16 vCPU, 16 GB RAM, 200 GB SSD",
+      "description": "CPU-optimized для CPU-bound нагрузок. Расчет: 16 vCPU + 16 ГБ RAM + 200 ГБ Универсальный SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 20719.92,
+        "price_per_month_rub": 20719.92
+      },
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 16,
+        "ram_gb": 16,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 200,
+        "calculation": "16 * 883.99 + 16 * 291.88 + 200 * 9.53 = 20719.92",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true,
+        "city": "Санкт-Петербург"
+      },
+      "source_url": "https://selectel.ru/prices/"
+    },
+    {
+      "service_id": "selectel-cloud-server-production-8cpu-32ram-300ssd",
+      "name": "Cloud Server Production Mid — 8 vCPU, 32 GB RAM, 300 GB универсальный SSD",
+      "description": "Продакшен-сервер со стандартным диском. Расчет: 8 vCPU + 32 ГБ RAM + 300 ГБ Универсальный SSD v2.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 19271.08,
+        "price_per_month_rub": 19271.08
+      },
+      "tech_stack": [
+        "Intel Xeon Gold 6354",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu": 8,
+        "ram_gb": 32,
+        "disk_type": "Универсальный SSD v2",
+        "disk_gb": 300,
+        "calculation": "8 * 883.99 + 32 * 291.88 + 300 * 9.53 = 19271.08",
+        "price_source": "calculated_from_tariff_grid",
+        "vat_included": true,
+        "city": "Санкт-Петербург"
       },
       "source_url": "https://selectel.ru/prices/"
     }

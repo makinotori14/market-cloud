@@ -30,9 +30,10 @@
         "disk_gb": 100,
         "calculation": "2 * 765 + 8 * 200 + 100 * 12",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-servers-standard-ice-4cpu-16ram-200ssd",
@@ -59,9 +60,10 @@
         "disk_gb": 200,
         "calculation": "4 * 765 + 16 * 200 + 200 * 12",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-servers-production-ice-8cpu-32ram-500highiops",
@@ -88,9 +90,10 @@
         "disk_gb": 500,
         "calculation": "8 * 765 + 32 * 200 + 500 * 14",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-servers-high-performance-highfreq-16cpu-64ram-500nvme",
@@ -117,9 +120,10 @@
         "disk_gb": 500,
         "calculation": "16 * 1176 + 64 * 200 + 500 * 10",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-servers-large-ice-32cpu-128ram-1000nvme",
@@ -146,9 +150,10 @@
         "disk_gb": 1000,
         "calculation": "32 * 765 + 128 * 200 + 1000 * 10",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu2-16-72-l4-1",
@@ -174,37 +179,10 @@
         "unit": "minute",
         "price_per_minute_rub": 1.5,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-12-112-a30-1",
-      "name": "GPU2-12-112-A30-1",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 12 CPU, 112 GB RAM, 24 GB VRAM, GPU A30.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 2.26,
-        "price_per_month_rub": 97730
-      },
-      "tech_stack": [
-        "A30"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 12,
-        "ram_gb": 112,
-        "gpu_model": "A30",
-        "vram_gb": 24,
-        "unit": "minute",
-        "price_per_minute_rub": 2.26,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu3-16-112-l40s-1",
@@ -230,65 +208,10 @@
         "unit": "minute",
         "price_per_minute_rub": 3.63,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu1-16-48-v100-1",
-      "name": "GPU1-16-48-V100-1",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 16 CPU, 48 GB RAM, 16 GB VRAM, GPU V100.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 3.98,
-        "price_per_month_rub": 86000
-      },
-      "tech_stack": [
-        "V100"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 16,
-        "ram_gb": 48,
-        "gpu_model": "V100",
-        "vram_gb": 16,
-        "unit": "minute",
-        "price_per_minute_rub": 3.98,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-24-72-v100s-1",
-      "name": "GPU2-24-72-V100S-1",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 24 CPU, 72 GB RAM, 32 GB VRAM, GPU V100S.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 4.44,
-        "price_per_month_rub": 96000
-      },
-      "tech_stack": [
-        "V100S"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 24,
-        "ram_gb": 72,
-        "gpu_model": "V100S",
-        "vram_gb": 32,
-        "unit": "minute",
-        "price_per_minute_rub": 4.44,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu1a-32-96-a100-1",
@@ -314,9 +237,10 @@
         "unit": "minute",
         "price_per_minute_rub": 5.19,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu3-32-192-a100x80-1",
@@ -342,9 +266,10 @@
         "unit": "minute",
         "price_per_minute_rub": 5.5,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu-44-256-h200-1",
@@ -370,9 +295,10 @@
         "unit": "minute",
         "price_per_minute_rub": 18.05,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu-240-2048-h200-8",
@@ -398,37 +324,10 @@
         "unit": "minute",
         "price_per_minute_rub": 144.44,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-64-384-a100x80-2",
-      "name": "GPU2-64-384-A100x80-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 384 GB RAM, 160 GB VRAM, GPU A100x80.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 11,
-        "price_per_month_rub": 475400
-      },
-      "tech_stack": [
-        "A100x80"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 64,
-        "ram_gb": 384,
-        "gpu_model": "A100x80",
-        "vram_gb": 160,
-        "unit": "minute",
-        "price_per_minute_rub": 11,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-gpu-gpu3-112-768-a100x80-4",
@@ -454,432 +353,10 @@
         "unit": "minute",
         "price_per_minute_rub": 22.01,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu3-32-224-l40s-2",
-      "name": "GPU3-32-224-L40S-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 224 GB RAM, 96 GB VRAM, GPU L40S.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 7.26,
-        "price_per_month_rub": 313668
-      },
-      "tech_stack": [
-        "L40S"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 32,
-        "ram_gb": 224,
-        "gpu_model": "L40S",
-        "vram_gb": 96,
-        "unit": "minute",
-        "price_per_minute_rub": 7.26,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu3-64-448-l40s-4",
-      "name": "GPU3-64-448-L40S-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 448 GB RAM, 192 GB VRAM, GPU L40S.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 14.52,
-        "price_per_month_rub": 627336
-      },
-      "tech_stack": [
-        "L40S"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 64,
-        "ram_gb": 448,
-        "gpu_model": "L40S",
-        "vram_gb": 192,
-        "unit": "minute",
-        "price_per_minute_rub": 14.52,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-24-224-a30-2",
-      "name": "GPU2-24-224-A30-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 24 CPU, 224 GB RAM, 48 GB VRAM, GPU A30.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 4.52,
-        "price_per_month_rub": 195460
-      },
-      "tech_stack": [
-        "A30"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 24,
-        "ram_gb": 224,
-        "gpu_model": "A30",
-        "vram_gb": 48,
-        "unit": "minute",
-        "price_per_minute_rub": 4.52,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-48-448-a30-4",
-      "name": "GPU2-48-448-A30-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 48 CPU, 448 GB RAM, 96 GB VRAM, GPU A30.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 9.05,
-        "price_per_month_rub": 390920
-      },
-      "tech_stack": [
-        "A30"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 48,
-        "ram_gb": 448,
-        "gpu_model": "A30",
-        "vram_gb": 96,
-        "unit": "minute",
-        "price_per_minute_rub": 9.05,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu1-32-96-v100-2",
-      "name": "GPU1-32-96-V100-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 96 GB RAM, 32 GB VRAM, GPU V100.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 7.96,
-        "price_per_month_rub": 172000
-      },
-      "tech_stack": [
-        "V100"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 32,
-        "ram_gb": 96,
-        "gpu_model": "V100",
-        "vram_gb": 32,
-        "unit": "minute",
-        "price_per_minute_rub": 7.96,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu1-64-192-v100-4",
-      "name": "GPU1-64-192-V100-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 192 GB RAM, 64 GB VRAM, GPU V100.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 15.93,
-        "price_per_month_rub": 344000
-      },
-      "tech_stack": [
-        "V100"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 64,
-        "ram_gb": 192,
-        "gpu_model": "V100",
-        "vram_gb": 64,
-        "unit": "minute",
-        "price_per_minute_rub": 15.93,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-48-144-v100s-2",
-      "name": "GPU2-48-144-V100S-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 48 CPU, 144 GB RAM, 64 GB VRAM, GPU V100S.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 8.89,
-        "price_per_month_rub": 192000
-      },
-      "tech_stack": [
-        "V100S"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 48,
-        "ram_gb": 144,
-        "gpu_model": "V100S",
-        "vram_gb": 64,
-        "unit": "minute",
-        "price_per_minute_rub": 8.89,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-96-288-v100s-4",
-      "name": "GPU2-96-288-V100S-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 96 CPU, 288 GB RAM, 128 GB VRAM, GPU V100S.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 17.78,
-        "price_per_month_rub": 384000
-      },
-      "tech_stack": [
-        "V100S"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 96,
-        "ram_gb": 288,
-        "gpu_model": "V100S",
-        "vram_gb": 128,
-        "unit": "minute",
-        "price_per_minute_rub": 17.78,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-32-144-l4-2",
-      "name": "GPU2-32-144-L4-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 32 CPU, 144 GB RAM, 48 GB VRAM, GPU L4.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 2.99,
-        "price_per_month_rub": 129200
-      },
-      "tech_stack": [
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 32,
-        "ram_gb": 144,
-        "gpu_model": "L4",
-        "vram_gb": 48,
-        "unit": "minute",
-        "price_per_minute_rub": 2.99,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu2-64-288-l4-4",
-      "name": "GPU2-64-288-L4-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 288 GB RAM, 96 GB VRAM, GPU L4.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 5.98,
-        "price_per_month_rub": 258400
-      },
-      "tech_stack": [
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 64,
-        "ram_gb": 288,
-        "gpu_model": "L4",
-        "vram_gb": 96,
-        "unit": "minute",
-        "price_per_minute_rub": 5.98,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu1a-64-192-a100-2",
-      "name": "GPU1A-64-192-A100-2",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 64 CPU, 192 GB RAM, 80 GB VRAM, GPU A100.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 10.39,
-        "price_per_month_rub": 448800
-      },
-      "tech_stack": [
-        "A100"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 64,
-        "ram_gb": 192,
-        "gpu_model": "A100",
-        "vram_gb": 80,
-        "unit": "minute",
-        "price_per_minute_rub": 10.39,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-gpu-gpu1a-128-384-a100-4",
-      "name": "GPU1A-128-384-A100-4",
-      "description": "Готовый GPU-инстанс из тарифной сетки: 128 CPU, 384 GB RAM, 160 GB VRAM, GPU A100.",
-      "category": "Cloud GPU",
-      "pricing": {
-        "price_from_rub": 20.78,
-        "price_per_month_rub": 897600
-      },
-      "tech_stack": [
-        "A100"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "gpu_instance",
-        "cpu": 128,
-        "ram_gb": 384,
-        "gpu_model": "A100",
-        "vram_gb": 160,
-        "unit": "minute",
-        "price_per_minute_rub": 20.78,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-vgpu-vgpu-2-8-l4-1q",
-      "name": "vGPU-2-8-L4-1Q",
-      "description": "Готовый vGPU-инстанс: 2 CPU, 8 GB RAM, 1 GB VRAM на L4.",
-      "category": "Cloud vGPU",
-      "pricing": {
-        "price_from_rub": 0.21,
-        "price_per_month_rub": 9129
-      },
-      "tech_stack": [
-        "L4",
-        "vGPU"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vgpu_instance",
-        "cpu": 2,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 1,
-        "unit": "minute",
-        "price_per_minute_rub": 0.21,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-vgpu-vgpu-2-8-l4-2q",
-      "name": "vGPU-2-8-L4-2Q",
-      "description": "Готовый vGPU-инстанс: 2 CPU, 8 GB RAM, 2 GB VRAM на L4.",
-      "category": "Cloud vGPU",
-      "pricing": {
-        "price_from_rub": 0.25,
-        "price_per_month_rub": 10896
-      },
-      "tech_stack": [
-        "L4",
-        "vGPU"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vgpu_instance",
-        "cpu": 2,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 2,
-        "unit": "minute",
-        "price_per_minute_rub": 0.25,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-vgpu-vgpu-4-8-l4-2q",
-      "name": "vGPU-4-8-L4-2Q",
-      "description": "Готовый vGPU-инстанс: 4 CPU, 8 GB RAM, 2 GB VRAM на L4.",
-      "category": "Cloud vGPU",
-      "pricing": {
-        "price_from_rub": 0.31,
-        "price_per_month_rub": 13358
-      },
-      "tech_stack": [
-        "L4",
-        "vGPU"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vgpu_instance",
-        "cpu": 4,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 2,
-        "unit": "minute",
-        "price_per_minute_rub": 0.31,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-vgpu-vgpu-4-16-l4-4q",
@@ -906,9 +383,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.41,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-vgpu-vgpu-8-16-l4-8q",
@@ -935,9 +413,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.64,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-vgpu-vgpu-16-32-l4-12q",
@@ -964,44 +443,16 @@
         "unit": "minute",
         "price_per_minute_rub": 1.02,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-vgpu-vgpu-32-64-l4-24q",
-      "name": "vGPU-32-64-L4-24Q",
-      "description": "Готовый vGPU-инстанс: 32 CPU, 64 GB RAM, 24 GB VRAM на L4.",
-      "category": "Cloud vGPU",
-      "pricing": {
-        "price_from_rub": 1.94,
-        "price_per_month_rub": 83912
-      },
-      "tech_stack": [
-        "L4",
-        "vGPU"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vgpu_instance",
-        "cpu": 32,
-        "ram_gb": 64,
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "unit": "minute",
-        "price_per_minute_rub": 1.94,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-alt-server",
       "name": "Альт Сервер",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 17.4,
         "price_per_month_rub": 528
@@ -1015,15 +466,16 @@
         "unit": "day",
         "price_per_day_rub": 17.4,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-alt-server-sp",
       "name": "Альт Сервер СП",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 60,
         "price_per_month_rub": 1800
@@ -1037,15 +489,16 @@
         "unit": "day",
         "price_per_day_rub": 60,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-astra-linux-se-orel",
       "name": "Astra Linux SE Орел",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 55.2,
         "price_per_month_rub": 1656
@@ -1061,15 +514,16 @@
         "unit": "day",
         "price_per_day_rub": 55.2,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-astra-linux-se-voronezh",
       "name": "Astra Linux SE Воронеж",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 70.8,
         "price_per_month_rub": 2124
@@ -1085,15 +539,16 @@
         "unit": "day",
         "price_per_day_rub": 70.8,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-red-os-standard",
       "name": "РЕД ОС Стандарт",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 40,
         "price_per_month_rub": 1200
@@ -1109,15 +564,16 @@
         "unit": "day",
         "price_per_day_rub": 40,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-os-red-os-fstec",
       "name": "РЕД ОС ФСТЭК",
       "description": "Лицензия российской операционной системы из тарифной сетки, период оплаты и минимальное использование — 1 день.",
-      "category": "Operating Systems",
+      "category": "OS Licenses",
       "pricing": {
         "price_from_rub": 123.32,
         "price_per_month_rub": 3700
@@ -1134,9 +590,10 @@
         "unit": "day",
         "price_per_day_rub": 123.32,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-object-storage-hotbox-1gb",
@@ -1158,11 +615,12 @@
         "storage_class": "Hotbox",
         "unit": "GB-month",
         "price_per_unit_rub": 2.1,
-        "price_per_minute_rub": 0.00005,
+        "price_per_minute_rub": 5e-05,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-object-storage-hotbox-outbound-traffic-1gb",
@@ -1185,9 +643,10 @@
         "unit": "GB",
         "price_per_unit_rub": 1.2,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-object-storage-icebox-1gb",
@@ -1209,11 +668,12 @@
         "storage_class": "Icebox",
         "unit": "GB-month",
         "price_per_unit_rub": 0.998,
-        "price_per_minute_rub": 0.00002,
+        "price_per_minute_rub": 2e-05,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-object-storage-icebox-outbound-traffic-1gb",
@@ -1236,9 +696,10 @@
         "unit": "GB",
         "price_per_unit_rub": 1.536,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-containers-basic-cluster-1m-2w-2cpu-8ram-100ssd",
@@ -1269,9 +730,10 @@
         "load_balancer": true,
         "calculation": "3 * (2 * 918 + 8 * 240 + 100 * 14.4) + 760",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-containers-standard-cluster-1m-3w-4cpu-16ram-200ssd",
@@ -1302,9 +764,10 @@
         "load_balancer": true,
         "calculation": "4 * (4 * 918 + 16 * 240 + 200 * 14.4) + 760",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-containers-production-cluster-3m-3w-highiops",
@@ -1333,9 +796,10 @@
         "high_availability": true,
         "calculation": "3 * (4 * 918 + 16 * 240 + 200 * 16.8) + 3 * (8 * 918 + 32 * 240 + 500 * 16.8) + 760",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-databases-small-2cpu-8ram-100ssd",
@@ -1365,9 +829,10 @@
         "high_availability": false,
         "calculation": "1 * (2 * 918 + 8 * 240 + 100 * 14.4)",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-databases-standard-4cpu-16ram-200ssd",
@@ -1397,9 +862,10 @@
         "high_availability": false,
         "calculation": "1 * (4 * 918 + 16 * 240 + 200 * 14.4)",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-databases-production-8cpu-32ram-500highiops",
@@ -1429,9 +895,10 @@
         "high_availability": false,
         "calculation": "1 * (8 * 918 + 32 * 240 + 500 * 16.8)",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-databases-ha-2node-8cpu-32ram-500ha-ssd",
@@ -1461,9 +928,10 @@
         "high_availability": true,
         "calculation": "2 * (8 * 918 + 32 * 240 + 500 * 19.2) + 760",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-ml-platform-basic-4cpu-16ram-200ssd",
@@ -1491,9 +959,10 @@
         "disk_gb": 200,
         "calculation": "4 * 918 + 16 * 240 + 200 * 14.4",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-ml-platform-standard-8cpu-32ram-500highiops",
@@ -1521,9 +990,10 @@
         "disk_gb": 500,
         "calculation": "8 * 918 + 32 * 240 + 500 * 16.8",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-ml-platform-production-16cpu-64ram-1000highiops",
@@ -1551,9 +1021,10 @@
         "disk_gb": 1000,
         "calculation": "16 * 918 + 64 * 240 + 1000 * 16.8",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-data-platform-basic-4cpu-16ram-500ssd",
@@ -1581,9 +1052,10 @@
         "disk_gb": 500,
         "calculation": "4 * 1101.6 + 16 * 288 + 500 * 17.3",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-data-platform-standard-8cpu-32ram-1000highiops",
@@ -1611,9 +1083,10 @@
         "disk_gb": 1000,
         "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-data-platform-production-16cpu-64ram-2000highiops",
@@ -1641,9 +1114,10 @@
         "disk_gb": 2000,
         "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-clickhouse-standard-8cpu-32ram-1000highiops",
@@ -1671,9 +1145,10 @@
         "disk_gb": 1000,
         "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-clickhouse-production-16cpu-64ram-2000highiops",
@@ -1701,9 +1176,10 @@
         "disk_gb": 2000,
         "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-spark-standard-8cpu-32ram-1000highiops",
@@ -1731,9 +1207,10 @@
         "disk_gb": 1000,
         "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-spark-production-16cpu-64ram-2000highiops",
@@ -1761,9 +1238,10 @@
         "disk_gb": 2000,
         "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-trino-standard-8cpu-32ram-1000highiops",
@@ -1791,9 +1269,10 @@
         "disk_gb": 1000,
         "calculation": "8 * 1101.6 + 32 * 288 + 1000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-trino-production-16cpu-64ram-2000highiops",
@@ -1821,9 +1300,10 @@
         "disk_gb": 2000,
         "calculation": "16 * 1101.6 + 64 * 288 + 2000 * 20.2",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-iceberg-metastore-standard-4cpu-16ram-500ssd",
@@ -1851,9 +1331,10 @@
         "disk_gb": 500,
         "calculation": "4 * 1101.6 + 16 * 288 + 500 * 17.3",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-arenadata-db-enterprise-full-basic-4cpu-16ram-500ssd-1tb",
@@ -1881,9 +1362,10 @@
         "disk_gb": 500,
         "calculation": "4 * 918 + 16 * 240 + 500 * 14.4 + 29952",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-arenadata-db-enterprise-full-production-16cpu-64ram-2000highiops-2tb",
@@ -1911,9 +1393,10 @@
         "disk_gb": 2000,
         "calculation": "16 * 918 + 64 * 240 + 2000 * 16.8 + 59904",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-voice-tts-1000-chars",
@@ -1933,9 +1416,10 @@
         "unit": "1000 symbols",
         "price_per_unit_rub": 1,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-voice-stt-minute",
@@ -1955,9 +1439,10 @@
         "unit": "minute",
         "price_per_unit_rub": 0.5,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-voice-streaming-audio-minute",
@@ -1977,9 +1462,10 @@
         "unit": "minute",
         "price_per_unit_rub": 0.5,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-backup-storage-1gb",
@@ -2000,9 +1486,10 @@
         "price_per_unit_rub": 4.5,
         "price_per_minute_rub": 0.0001,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-desktop-vdi-server-standard-4cpu-16ram-200ssd",
@@ -2033,9 +1520,10 @@
         "load_balancer": true,
         "calculation": "4 * 918 + 16 * 240 + 200 * 14.4 + 760 + 1656 + 966",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-desktop-windows-desktop-2cpu-8ram-100ssd",
@@ -2065,99 +1553,10 @@
         "disk_gb": 100,
         "calculation": "2 * 918 + 8 * 240 + 100 * 14.4 + 621 + 971",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-desktop-vgpu-2-8-l4-1q",
-      "name": "VDI с vGPU-2-8-L4-1Q",
-      "description": "Готовый пакет VDI с vGPU: 2 CPU, 8 GB RAM, 1 GB VRAM на L4.",
-      "category": "Cloud Desktop",
-      "pricing": {
-        "price_from_rub": 0.25,
-        "price_per_month_rub": 10955
-      },
-      "tech_stack": [
-        "VDI",
-        "vGPU",
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vdi_vgpu_desktop",
-        "cpu": 2,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 1,
-        "unit": "minute",
-        "price_per_minute_rub": 0.25,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-desktop-vgpu-2-8-l4-2q",
-      "name": "VDI с vGPU-2-8-L4-2Q",
-      "description": "Готовый пакет VDI с vGPU: 2 CPU, 8 GB RAM, 2 GB VRAM на L4.",
-      "category": "Cloud Desktop",
-      "pricing": {
-        "price_from_rub": 0.3,
-        "price_per_month_rub": 13075
-      },
-      "tech_stack": [
-        "VDI",
-        "vGPU",
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vdi_vgpu_desktop",
-        "cpu": 2,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 2,
-        "unit": "minute",
-        "price_per_minute_rub": 0.3,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-desktop-vgpu-4-8-l4-2q",
-      "name": "VDI с vGPU-4-8-L4-2Q",
-      "description": "Готовый пакет VDI с vGPU: 4 CPU, 8 GB RAM, 2 GB VRAM на L4.",
-      "category": "Cloud Desktop",
-      "pricing": {
-        "price_from_rub": 0.43,
-        "price_per_month_rub": 18367
-      },
-      "tech_stack": [
-        "VDI",
-        "vGPU",
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vdi_vgpu_desktop",
-        "cpu": 4,
-        "ram_gb": 8,
-        "gpu_model": "L4",
-        "vram_gb": 2,
-        "unit": "minute",
-        "price_per_minute_rub": 0.43,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-desktop-vgpu-4-16-l4-4q",
@@ -2185,9 +1584,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.49,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-desktop-vgpu-8-16-l4-8q",
@@ -2215,9 +1615,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.77,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cloud-desktop-vgpu-16-32-l4-12q",
@@ -2245,39 +1646,10 @@
         "unit": "minute",
         "price_per_minute_rub": 1.22,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-cloud-desktop-vgpu-32-64-l4-24q",
-      "name": "VDI с vGPU-32-64-L4-24Q",
-      "description": "Готовый пакет VDI с vGPU: 32 CPU, 64 GB RAM, 24 GB VRAM на L4.",
-      "category": "Cloud Desktop",
-      "pricing": {
-        "price_from_rub": 2.31,
-        "price_per_month_rub": 99695
-      },
-      "tech_stack": [
-        "VDI",
-        "vGPU",
-        "L4"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "vdi_vgpu_desktop",
-        "cpu": 32,
-        "ram_gb": 64,
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "unit": "minute",
-        "price_per_minute_rub": 2.31,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-professional-services",
@@ -2295,15 +1667,16 @@
       "attributes": {
         "pricing_model": "price_on_request",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-antiddos",
       "name": "Защита от DDoS-атак",
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
-      "category": "Anti-DDoS",
+      "category": "DDoS Protection",
       "pricing": {
         "price_from_rub": null,
         "price_per_month_rub": null
@@ -2315,15 +1688,16 @@
       "attributes": {
         "pricing_model": "price_on_request",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-waf",
       "name": "Web Application Firewall",
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
-      "category": "WAF",
+      "category": "Web Security",
       "pricing": {
         "price_from_rub": null,
         "price_per_month_rub": null
@@ -2335,15 +1709,16 @@
       "attributes": {
         "pricing_model": "price_on_request",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-connectivity-port-rental",
       "name": "Аренда порта на коммутаторе",
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
-      "category": "Connectivity",
+      "category": "Network",
       "pricing": {
         "price_from_rub": null,
         "price_per_month_rub": null
@@ -2355,15 +1730,16 @@
       "attributes": {
         "pricing_model": "price_on_request",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-connectivity-l2-l3-vpn",
       "name": "L2/L3 VPN",
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
-      "category": "Connectivity",
+      "category": "Network",
       "pricing": {
         "price_from_rub": null,
         "price_per_month_rub": null
@@ -2375,9 +1751,10 @@
       "attributes": {
         "pricing_model": "price_on_request",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-cdn-traffic-1gb",
@@ -2399,9 +1776,10 @@
         "unit": "GB",
         "price_per_unit_rub": 0.6,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-1c-ready-workplace-1c-accounting-8",
@@ -2424,34 +1802,10 @@
         "price_per_day_rub": 45,
         "calculation": "45 * 30",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-accounting-8-corp",
-      "name": "1С:Бухгалтерия 8 КОРП",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 59,
-        "price_per_month_rub": 1770
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 59,
-        "calculation": "59 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-1c-ready-workplace-1c-document-flow-8",
@@ -2474,59 +1828,10 @@
         "price_per_day_rub": 59,
         "calculation": "59 * 30",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-document-flow-8-corp",
-      "name": "1С:Документооборот 8 КОРП",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 75,
-        "price_per_month_rub": 2250
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 75,
-        "calculation": "75 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-payroll-8",
-      "name": "1С:Зарплата и управление персоналом 8",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 47,
-        "price_per_month_rub": 1410
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 47,
-        "calculation": "47 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-1c-ready-workplace-1c-payroll-8-corp",
@@ -2549,84 +1854,10 @@
         "price_per_day_rub": 111,
         "calculation": "111 * 30",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-complex-automation-8",
-      "name": "1С:Комплексная автоматизация 8",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 68,
-        "price_per_month_rub": 2040
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 68,
-        "calculation": "68 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-retail-8",
-      "name": "1С:Розница 8",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 45,
-        "price_per_month_rub": 1350
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 45,
-        "calculation": "45 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-manage-our-company-8",
-      "name": "1С:Управление нашей фирмой 8",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 46,
-        "price_per_month_rub": 1380
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 46,
-        "calculation": "46 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-1c-ready-workplace-1c-trade-management-8",
@@ -2649,59 +1880,10 @@
         "price_per_day_rub": 47,
         "calculation": "47 * 30",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-appeals-accounting",
-      "name": "1С:Учет обращений",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 45,
-        "price_per_month_rub": 1350
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 45,
-        "calculation": "45 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-contracts-8",
-      "name": "1С:Договоры 8",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 45,
-        "price_per_month_rub": 1350
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 45,
-        "calculation": "45 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-1c-ready-workplace-1c-crm-prof",
@@ -2724,107 +1906,10 @@
         "price_per_day_rub": 59,
         "calculation": "59 * 30",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-crm-corp",
-      "name": "1С:Предприятие 8. CRM КОРП",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 78,
-        "price_per_month_rub": 2340
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 78,
-        "calculation": "78 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-1c-ready-workplace-1c-trade-and-crm",
-      "name": "1С:Предприятие 8. Управление торговлей и взаимоотношениями с клиентами (CRM)",
-      "description": "Готовое рабочее место 1С; цена указана за одного пользователя в день, месячная цена рассчитана как 30 дней.",
-      "category": "1C Ready Workplace",
-      "pricing": {
-        "price_from_rub": 67,
-        "price_per_month_rub": 2010
-      },
-      "tech_stack": [
-        "1C"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "1c_license",
-        "unit": "user_day",
-        "price_per_day_rub": 67,
-        "calculation": "67 * 30",
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-exchange-standard-plus",
-      "name": "MS Exchange Server Standard Plus",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 720,
-        "price_per_month_rub": 720
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "unit",
-        "price_per_unit_rub": 720,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-exchange-enterprise-plus",
-      "name": "MS Exchange Server Enterprise Plus",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 973,
-        "price_per_month_rub": 973
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "unit",
-        "price_per_unit_rub": 973,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-exchange-standard",
@@ -2846,9 +1931,10 @@
         "unit": "unit",
         "price_per_unit_rub": 419,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-rds",
@@ -2870,33 +1956,10 @@
         "unit": "unit",
         "price_per_unit_rub": 1401,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-sql-enterprise",
-      "name": "MS SQL Enterprise",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 119252,
-        "price_per_month_rub": 119252
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "per_2_vcpu",
-        "price_per_unit_rub": 119252,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-sql",
@@ -2918,9 +1981,10 @@
         "unit": "per_2_vcpu",
         "price_per_unit_rub": 31674,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-sql-sal",
@@ -2942,33 +2006,10 @@
         "unit": "unit",
         "price_per_unit_rub": 3424,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-office-standard",
-      "name": "MS Office Standard",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 2719,
-        "price_per_month_rub": 2719
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "unit",
-        "price_per_unit_rub": 2719,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-office-professional",
@@ -2990,57 +2031,10 @@
         "unit": "unit",
         "price_per_unit_rub": 3712,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-sql-web",
-      "name": "MS SQL Web",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней на каждые 2 vCPU.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 1980,
-        "price_per_month_rub": 1980
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "per_2_vcpu",
-        "price_per_unit_rub": 1980,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
-    },
-    {
-      "service_id": "vkcloud-microsoft-licenses-ms-exchange-enterprise",
-      "name": "MS Exchange Server Enterprise",
-      "description": "Лицензия Microsoft для использования на виртуальных машинах VK Cloud; цена указана за 30 дней.",
-      "category": "Microsoft Licenses",
-      "pricing": {
-        "price_from_rub": 675,
-        "price_per_month_rub": 675
-      },
-      "tech_stack": [
-        "Microsoft"
-      ],
-      "compliance_tags": [
-        "152-FZ"
-      ],
-      "attributes": {
-        "resource_type": "software_license",
-        "unit": "unit",
-        "price_per_unit_rub": 675,
-        "price_source": "tariff_grid_package",
-        "vat_included": true
-      },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-microsoft-licenses-ms-windows-server",
@@ -3062,9 +2056,10 @@
         "unit": "per_2_vcpu",
         "price_per_unit_rub": 971,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-load-balancer-standard-ha",
@@ -3085,9 +2080,10 @@
         "price_per_minute_rub": 0.04398,
         "high_availability": true,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-public-ip-sprut-floating",
@@ -3109,9 +2105,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.00394,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-public-ip-sprut-port",
@@ -3133,9 +2130,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.00394,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-public-ip-neutron-floating",
@@ -3157,9 +2155,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.00394,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-public-ip-neutron-port",
@@ -3181,9 +2180,10 @@
         "unit": "minute",
         "price_per_minute_rub": 0.00394,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-file-storage-hdd-1gb",
@@ -3207,9 +2207,10 @@
         "price_per_unit_rub": 6,
         "price_per_minute_rub": 0.00014,
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
       "service_id": "vkcloud-marketplace-app-products",
@@ -3227,15 +2228,16 @@
       "attributes": {
         "pricing_model": "provider_catalog",
         "price_source": "tariff_grid_package",
-        "vat_included": true
+        "vat_included": true,
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
-      "service_id": "vkcloud-marketplace-infrastructure-small-2cpu-8ram-100ssd",
-      "name": "Инфраструктура маркетплейса Small — 2 CPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
-      "description": "Типовая конфигурация инфраструктуры маркетплейса для небольшого приложения из маркетплейса. Расчет: 2 × CPU Intel Ice Lake + 8 ГБ RAM + 100 ГБ SSD.",
-      "category": "Marketplace Infrastructure",
+      "service_id": "vkcloud-cloud-server-small-plus-ice-2cpu-8ram-100ssd",
+      "name": "Cloud Server Small+ — 2 vCPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "Расширенная Small конфигурация. Расчет: 2 vCPU + 8 ГБ RAM + 100 ГБ SSD.",
+      "category": "Cloud Servers",
       "pricing": {
         "price_from_rub": 4330,
         "price_per_month_rub": 4330
@@ -3248,26 +2250,27 @@
         "152-FZ"
       ],
       "attributes": {
-        "resource_type": "marketplace_infrastructure",
+        "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
         "cpu": 2,
         "ram_gb": 8,
         "disk_type": "SSD",
         "disk_gb": 100,
-        "calculation": "2 * 765 + 8 * 200 + 100 * 12",
+        "vat_included": true,
+        "calculation": "2 * 765 + 8 * 200 + 100 * 12 = 4330",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
-      "service_id": "vkcloud-marketplace-infrastructure-standard-4cpu-16ram-200ssd",
-      "name": "Инфраструктура маркетплейса Standard — 4 CPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
-      "description": "Типовая конфигурация инфраструктуры маркетплейса для рабочего приложения из маркетплейса. Расчет: 4 × CPU Intel Ice Lake + 16 ГБ RAM + 200 ГБ SSD.",
-      "category": "Marketplace Infrastructure",
+      "service_id": "vkcloud-cloud-server-mid-ice-4cpu-8ram-100ssd",
+      "name": "Cloud Server Mid — 4 vCPU Intel Ice Lake, 8 GB RAM, 100 GB SSD",
+      "description": "CPU>RAM промежуточная конфигурация. Расчет: 4 vCPU + 8 ГБ RAM + 100 ГБ SSD.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": 8660,
-        "price_per_month_rub": 8660
+        "price_from_rub": 5860,
+        "price_per_month_rub": 5860
       },
       "tech_stack": [
         "Intel Ice Lake",
@@ -3277,26 +2280,87 @@
         "152-FZ"
       ],
       "attributes": {
-        "resource_type": "marketplace_infrastructure",
+        "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
         "cpu": 4,
+        "ram_gb": 8,
+        "disk_type": "SSD",
+        "disk_gb": 100,
+        "vat_included": true,
+        "calculation": "4 * 765 + 8 * 200 + 100 * 12 = 5860",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
+      },
+      "source_url": "https://cloud.vk.com/cloud-platform/"
+    },
+    {
+      "service_id": "vkcloud-cloud-server-memory-opt-ice-4cpu-32ram-200ssd",
+      "name": "Cloud Server Memory-Optimized — 4 vCPU Intel Ice Lake, 32 GB RAM, 200 GB SSD",
+      "description": "Memory-optimized для in-memory нагрузок. Расчет: 4 vCPU + 32 ГБ RAM + 200 ГБ SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 11860,
+        "price_per_month_rub": 11860
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 4,
+        "ram_gb": 32,
+        "disk_type": "SSD",
+        "disk_gb": 200,
+        "vat_included": true,
+        "calculation": "4 * 765 + 32 * 200 + 200 * 12 = 11860",
+        "price_source": "calculated_from_tariff_grid",
+        "city": "Москва"
+      },
+      "source_url": "https://cloud.vk.com/cloud-platform/"
+    },
+    {
+      "service_id": "vkcloud-cloud-server-cpu-opt-ice-16cpu-16ram-200ssd",
+      "name": "Cloud Server CPU-Optimized — 16 vCPU Intel Ice Lake, 16 GB RAM, 200 GB SSD",
+      "description": "CPU-optimized для CPU-bound нагрузок. Расчет: 16 vCPU + 16 ГБ RAM + 200 ГБ SSD.",
+      "category": "Cloud Servers",
+      "pricing": {
+        "price_from_rub": 17840,
+        "price_per_month_rub": 17840
+      },
+      "tech_stack": [
+        "Intel Ice Lake",
+        "SSD"
+      ],
+      "compliance_tags": [
+        "152-FZ"
+      ],
+      "attributes": {
+        "resource_type": "virtual_server",
+        "cpu_model": "Intel Ice Lake",
+        "cpu": 16,
         "ram_gb": 16,
         "disk_type": "SSD",
         "disk_gb": 200,
-        "calculation": "4 * 765 + 16 * 200 + 200 * 12",
+        "vat_included": true,
+        "calculation": "16 * 765 + 16 * 200 + 200 * 12 = 17840",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     },
     {
-      "service_id": "vkcloud-marketplace-infrastructure-production-8cpu-32ram-500highiops",
-      "name": "Инфраструктура маркетплейса Production — 8 CPU Intel Ice Lake, 32 GB RAM, 500 GB High-IOPS SSD",
-      "description": "Типовая конфигурация инфраструктуры маркетплейса для нагруженного приложения из маркетплейса. Расчет: 8 × CPU Intel Ice Lake + 32 ГБ RAM + 500 ГБ High-IOPS SSD.",
-      "category": "Marketplace Infrastructure",
+      "service_id": "vkcloud-cloud-server-production-plus-ice-8cpu-64ram-500highiops",
+      "name": "Cloud Server Production+ — 8 vCPU Intel Ice Lake, 64 GB RAM, 500 GB High-IOPS SSD",
+      "description": "Production с увеличенной RAM и High-IOPS. Расчет: 8 vCPU + 64 ГБ RAM + 500 ГБ High-IOPS SSD.",
+      "category": "Cloud Servers",
       "pricing": {
-        "price_from_rub": 19520,
-        "price_per_month_rub": 19520
+        "price_from_rub": 25920,
+        "price_per_month_rub": 25920
       },
       "tech_stack": [
         "Intel Ice Lake",
@@ -3306,17 +2370,18 @@
         "152-FZ"
       ],
       "attributes": {
-        "resource_type": "marketplace_infrastructure",
+        "resource_type": "virtual_server",
         "cpu_model": "Intel Ice Lake",
         "cpu": 8,
-        "ram_gb": 32,
+        "ram_gb": 64,
         "disk_type": "High-IOPS SSD",
         "disk_gb": 500,
-        "calculation": "8 * 765 + 32 * 200 + 500 * 14",
+        "vat_included": true,
+        "calculation": "8 * 765 + 64 * 200 + 500 * 14 = 25920",
         "price_source": "calculated_from_tariff_grid",
-        "vat_included": true
+        "city": "Москва"
       },
-      "source_url": "https://cloud.vk.com/pricing/"
+      "source_url": "https://cloud.vk.com/cloud-platform/"
     }
   ]
 }
