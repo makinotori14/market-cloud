@@ -1,44 +1,220 @@
-# Cloud Solution Recommender
+# Пирамида
 
-Industrial-style local prototype for prompt-based cloud solution recommendations.
+Пирамида — прототип маркетплейса российских облачных сервисов для подбора инфраструктурных решений по свободному пользовательскому запросу.
 
-## Stack
+Пользователь описывает задачу обычным языком: например, `нужен VPS и база данных в Санкт-Петербурге, цена не важна`. Система извлекает структурированные требования, находит подходящие услуги в базе провайдеров, ранжирует их детерминированным Python-алгоритмом и объясняет, почему конкретное решение попало в выдачу.
 
-- Frontend: Next.js, React, TypeScript, TanStack Query, Tailwind CSS, shadcn-style local UI components
-- Backend: NestJS, Fastify, PostgreSQL, Redis/BullMQ, Zod, OpenAPI, OpenTelemetry
-- Cloud-shaped local infra: Docker Compose with PostgreSQL, Redis, backend, frontend
+## Авторы
 
-The production-like flow uses Yandex AI Studio for intent extraction and a Python Sentence-BERT ranker for provider-service matching. Stub mode is still available through `YANDEX_CLOUD_API_MODE=stub`.
+Проект подготовлен командой **FA x MAI Triad**.
 
-## Local Run
+## Что умеет решение
 
-```bash
-docker compose -f infra/docker-compose.yml up --build
+- Разбирает свободный запрос через Yandex AI Studio extraction-agent.
+- Выделяет несколько сервисных токенов: например, `VPS`, `База данных`, `Object Storage`, `Kubernetes`.
+- Показывает отдельную вкладку для каждого токена.
+- Возвращает до 10 решений на каждый токен.
+- Учитывает провайдеров, которых пользователь хочет или не хочет видеть.
+- Строго учитывает явно заданные характеристики машины: CPU, RAM, диск, тип диска.
+- Если характеристики не указаны, подбирает минимально достаточные конфигурации.
+- Учитывает города размещения: Москва и Санкт-Петербург.
+- По умолчанию дает приоритет Москве.
+- Если пользователь явно указал город, сначала показывает решения из этого города.
+- Проверяет требования 152-ФЗ по `compliance_tags`.
+- Добавляет краткое и подробное объяснение выбора через explanation-agent.
+- Ведет историю запросов и результатов.
+
+## Провайдеры в базе
+
+В `providers_json/` лежат JSON-базы услуг:
+
+- Cloud.ru
+- EdgeCenter
+- Selectel
+- T1 Cloud
+- VK Cloud
+- Yandex Cloud
+
+Каждая услуга содержит категорию, цену, характеристики, стек технологий, compliance-теги, URL источника и город размещения в `attributes.city`.
+
+## Архитектура
+
+- `apps/frontend` — Next.js UI на React и TypeScript.
+- `apps/backend` — NestJS backend, очередь BullMQ, PostgreSQL, Redis.
+- `packages/shared` — общие Zod-схемы и TypeScript-типы.
+- `ranking_script.py` — FastAPI ranker на Python с Sentence-BERT.
+- `providers_json` — локальная база услуг облачных провайдеров.
+- `infra/docker-compose.yml` — локальный запуск всех сервисов.
+
+## Поток обработки запроса
+
+1. Пользователь отправляет промпт во фронтенде.
+2. Backend создает запись запроса в PostgreSQL.
+3. Задача отправляется в очередь BullMQ/Redis.
+4. Extraction-agent в Yandex AI Studio превращает промпт в строгий JSON intent.
+5. Backend дополняет intent локальными правилами: порядок токенов, провайдеры, ресурсы, города.
+6. Python ranker фильтрует услуги по жестким требованиям.
+7. Ranker считает итоговый score по нескольким сигналам.
+8. Explanation-agent генерирует краткое и подробное объяснение для карточек.
+9. Backend сохраняет результат в PostgreSQL.
+10. Frontend получает статус и показывает вкладки с решениями.
+
+## Бизнес-логика ранжирования
+
+### Сервисные токены
+
+Если запрос содержит несколько типов услуг, система строит связку:
+
+```text
+Хочу VPS, базу данных, S3 и Kubernetes
 ```
 
-For live AI Studio mode, create `.env` from `.env.example` and set:
+Будут созданы вкладки:
+
+- `VPS`
+- `База данных`
+- `Object Storage`
+- `Kubernetes`
+
+Первый токен считается главным. Для него выбираются лучшие решения с учетом правила разных провайдеров в топе. Для следующих токенов система сначала старается подобрать решения у провайдеров из первого токена, чтобы связка инфраструктуры была согласованной.
+
+### Топ-3 разных провайдеров
+
+Первые три результата строятся не просто по общему score. Сначала у каждого провайдера берется его лучшее решение, затем эти лучшие решения сортируются между собой. В топ попадают до трех провайдеров с самым высоким рейтингом.
+
+Если в базе нашлось меньше трех подходящих провайдеров, система показывает столько, сколько есть. После топ-3 остальные решения идут обычным списком по убыванию score, уже без ограничения на уникальность провайдера.
+
+### Лимит выдачи
+
+Лимит применяется не ко всему ответу, а к каждому токену:
+
+```text
+4 токена × 10 решений = до 40 карточек
+```
+
+### Города
+
+В новой базе у услуг есть город размещения.
+
+Правила:
+
+- если пользователь не указал город, приоритет получает `Москва`;
+- если пользователь указал `Москва`, сначала идут решения из Москвы;
+- если пользователь указал `Санкт-Петербург`, сначала идут решения из Санкт-Петербурга;
+- город — это приоритет сортировки, а не жесткий фильтр: если подходящих решений мало, остальные города тоже могут попасть ниже.
+
+### Характеристики машины
+
+Если пользователь явно указал ресурсы, они учитываются строго:
+
+```text
+VPS на 16 ГБ RAM и 300 ГБ SSD
+```
+
+Сервис с меньшими характеристиками отсекается.
+
+Если ресурсов нет, ranker не раздувает конфигурацию и предпочитает минимально достаточные варианты.
+
+### Провайдеры
+
+Пользователь может указать положительные и отрицательные предпочтения:
+
+```text
+хочу VPS от Selectel
+```
+
+```text
+нужна база данных, только не VK Cloud
+```
+
+По умолчанию в поиск включены все провайдеры.
+
+### Итоговый score
+
+Ranker совмещает:
+
+- семантическую близость Sentence-BERT;
+- совпадение тегов и технологий;
+- соответствие типу услуги;
+- соответствие ресурсам;
+- capabilities: backup, Kubernetes, object storage, CDN и т.д.;
+- город размещения;
+- бюджет и цену;
+- compliance-теги, включая `152-FZ`.
+
+## Запуск через Docker
+
+1. Создать `.env`:
 
 ```bash
+cp .env.example .env
+```
+
+2. Заполнить ключ Yandex AI Studio:
+
+```env
 YANDEX_CLOUD_API_MODE=live
-YANDEX_AI_STUDIO_API_KEY=...
+YANDEX_AI_STUDIO_API_KEY=<API_key_value>
+YANDEX_AI_STUDIO_BASE_URL=https://ai.api.cloud.yandex.net/v1
 YANDEX_AI_STUDIO_PROJECT_ID=b1ge3ol7tsbh55ut2v4c
-YANDEX_AI_STUDIO_PROMPT_ID=fvtsn39lkfeold9h0rfv
+YANDEX_AI_STUDIO_PROMPT_ID=fvtuh083jtadurcne3if
+YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID=fvt1jccdtho0afu161fd
 ```
 
-Then open:
+Важно:
 
-- Frontend: http://localhost:3000
-- Backend health: http://localhost:3001/health
-- Swagger/OpenAPI: http://localhost:3001/docs
-- Ranker health: http://localhost:8000/health
+- `YANDEX_AI_STUDIO_PROMPT_ID` — extraction-agent;
+- `YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID` — explanation-agent.
 
-## Request Flow
+3. Запустить проект:
 
-1. User submits a prompt in the frontend.
-2. Backend creates a recommendation request in PostgreSQL.
-3. Backend enqueues processing in BullMQ/Redis.
-4. Worker sends the user prompt to Yandex AI Studio Responses API.
-5. AI Studio returns structured JSON intent.
-6. Backend sends the intent to the Python ranker.
-7. Ranker loads provider JSON files, builds Sentence-BERT vectors, applies hard filters, Jaccard matching, semantic scoring and budget scoring.
-8. Backend validates, sorts by `finalScore`, stores the result in PostgreSQL, and the frontend polls until `completed`.
+```bash
+docker compose -f infra/docker-compose.yml up -d
+```
+
+4. Открыть:
+
+- Frontend: `http://localhost/`
+- Backend health: `http://localhost:3001/health`
+- Swagger/OpenAPI: `http://localhost:3001/docs`
+- Ranker health: `http://localhost:8000/health`
+
+## Проверка на VM
+
+Посмотреть контейнеры:
+
+```bash
+sudo docker compose -f infra/docker-compose.yml ps -a
+```
+
+После изменения `.env` пересоздать backend:
+
+```bash
+sudo docker compose -f infra/docker-compose.yml up -d --force-recreate backend
+```
+
+## Полезные команды разработки
+
+TypeScript-проверка:
+
+```bash
+npm run typecheck
+```
+
+Проверка Python ranker:
+
+```bash
+python3 -m py_compile ranking_script.py
+```
+
+Полный перезапуск локального окружения:
+
+```bash
+docker compose -f infra/docker-compose.yml up -d --force-recreate
+```
+
+## Данные
+
+Дата сбора информации по текущей базе: **11.05.2026**.
+
+Цены и состав услуг берутся из локальных JSON-файлов в `providers_json/`. В карточках услуг название ведет на `source_url` провайдера.
