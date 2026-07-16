@@ -1,22 +1,12 @@
 import { Injectable } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-import type { EnvConfig } from "../../config/env.schema.js";
 import {
   aiStudioIntentSchema,
   extractionAgentOutputSchema,
   type AiStudioIntent,
   type ExtractionAgentOutput,
 } from "../schemas/recommendation.schema.js";
-
-type ResponsesApiPayload = {
-  output_text?: string;
-  output?: Array<{
-    content?: Array<{
-      text?: string;
-      type?: string;
-    }>;
-  }>;
-};
+import { OpenAiCompatibleClient } from "./openai-compatible.client.js";
+import { extractionJsonSchema, extractionSystemPrompt } from "./llm-prompts.js";
 
 const allProviderIds = ["vkcloud", "selectel", "t1cloud", "edgecenter", "yandexcloud", "cloudru"] as const;
 type ProviderId = (typeof allProviderIds)[number];
@@ -93,59 +83,19 @@ const serviceTypeAliases: Array<{ type: string; patterns: RegExp[] }> = [
 ];
 
 @Injectable()
-export class YandexAiStudioClient {
-  constructor(private readonly config: ConfigService<EnvConfig, true>) {}
+export class LlmExtractionClient {
+  constructor(private readonly llm: OpenAiCompatibleClient) {}
 
   async extractIntent(
     input: string,
   ): Promise<{ intent: AiStudioIntent; extraction: ExtractionAgentOutput; raw: unknown }> {
-    const apiKey = this.config.get("YANDEX_AI_STUDIO_API_KEY", { infer: true });
-    const promptId = this.config.get("YANDEX_AI_STUDIO_PROMPT_ID", { infer: true });
-    const projectId = this.config.get("YANDEX_AI_STUDIO_PROJECT_ID", { infer: true });
-    const baseUrl = this.config.get("YANDEX_AI_STUDIO_BASE_URL", { infer: true });
-
-    const missing = [
-      ["YANDEX_AI_STUDIO_API_KEY", apiKey],
-      ["YANDEX_AI_STUDIO_PROMPT_ID", promptId],
-      ["YANDEX_AI_STUDIO_PROJECT_ID", projectId],
-    ]
-      .filter(([, value]) => !value)
-      .map(([name]) => name);
-
-    if (missing.length > 0) {
-      throw new Error(`Missing AI Studio env vars in live mode: ${missing.join(", ")}`);
-    }
-
-    const resolvedApiKey = apiKey as string;
-    const resolvedPromptId = promptId as string;
-    const resolvedProjectId = projectId as string;
-
-    const response = await fetch(`${baseUrl}/responses`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resolvedApiKey}`,
-        "Content-Type": "application/json",
-        "OpenAI-Project": resolvedProjectId,
-      },
-      body: JSON.stringify({
-        prompt: {
-          id: resolvedPromptId,
-        },
-        input,
-      }),
+    const completion = await this.llm.completeJson<unknown>({
+      schemaName: "cloud_service_intent",
+      schema: extractionJsonSchema,
+      systemPrompt: extractionSystemPrompt,
+      input,
     });
-
-    const raw = (await response.json().catch(() => ({}))) as ResponsesApiPayload & {
-      error?: { message?: string };
-    };
-
-    if (!response.ok) {
-      throw new Error(raw.error?.message ?? `Yandex AI Studio request failed: ${response.status}`);
-    }
-
-    const outputText = this.extractOutputText(raw);
-    const parsedJson = JSON.parse(this.stripJsonFence(outputText)) as unknown;
-    const extraction = extractionAgentOutputSchema.parse(parsedJson);
+    const extraction = extractionAgentOutputSchema.parse(completion.value);
     const parsedIntent = aiStudioIntentSchema.parse(this.toAiStudioIntent(extraction));
     const intent = this.enrichEnabledProviders(
       input,
@@ -155,12 +105,13 @@ export class YandexAiStudioClient {
       ),
     );
 
-    return { intent, extraction, raw: { ...raw, extraction } };
+    return { intent, extraction, raw: { ...completion.raw, extraction } };
   }
 
   private toAiStudioIntent(extraction: ExtractionAgentOutput): AiStudioIntent {
     const requires152Fz = extraction.compliance_tags.some((tag) => this.normalizeToken(tag) === "152fz");
-    const country = extraction.regional_requirements.some((region) => this.isRussiaRegion(region)) || requires152Fz
+    const hasRussianRegion = extraction.regional_requirements.some((region) => this.isRussiaRegion(region));
+    const country = hasRussianRegion || requires152Fz
       ? "RU"
       : null;
     const serviceTypes = this.serviceTypesFromCategories(extraction.service_categories);
@@ -173,7 +124,7 @@ export class YandexAiStudioClient {
       requires_152fz: requires152Fz,
       budget_max_rub: extraction.budget_max_rub,
       budget_priority: this.budgetPriorityFromConstraints(extraction.budget_constraints),
-      region: extraction.regional_requirements[0] ?? null,
+      region: hasRussianRegion ? "RU" : extraction.regional_requirements[0] ?? null,
       country,
       preferred_cities: preferredCities,
       enabled_providers: this.enabledProvidersFromExcluded(extraction.excluded_providers),
@@ -278,7 +229,7 @@ export class YandexAiStudioClient {
 
   private isRussiaRegion(value: string): boolean {
     const normalized = this.normalizeToken(value);
-    return /росси|москва|санкт|петербург|рф|ru|russia/.test(normalized);
+    return /росси|москва|санкт|петербург|рф|ru|russia|moscow|petersburg|spb/.test(normalized);
   }
 
   private citiesFromRegionalRequirements(regions: readonly string[]): string[] {
@@ -585,29 +536,4 @@ export class YandexAiStudioClient {
     return undefined;
   }
 
-  private extractOutputText(payload: ResponsesApiPayload): string {
-    if (payload.output_text) {
-      return payload.output_text;
-    }
-
-    const chunks = (payload.output ?? [])
-      .flatMap((item) => item.content ?? [])
-      .map((content) => content.text)
-      .filter((text): text is string => Boolean(text));
-
-    const outputText = chunks.join("\n").trim();
-    if (!outputText) {
-      throw new Error("Yandex AI Studio response does not contain output_text");
-    }
-
-    return outputText;
-  }
-
-  private stripJsonFence(value: string): string {
-    return value
-      .trim()
-      .replace(/^```(?:json)?/i, "")
-      .replace(/```$/i, "")
-      .trim();
-  }
 }

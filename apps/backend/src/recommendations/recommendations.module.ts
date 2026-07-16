@@ -7,8 +7,9 @@ import { RecommendationsService } from "./recommendations.service.js";
 import { RecommendationProcessor } from "./workers/recommendation.processor.js";
 import { CloudRankerClient } from "./providers/cloud-ranker.client.js";
 import { LiveRecommendationEngine } from "./providers/live-recommendation.engine.js";
-import { YandexAiStudioClient } from "./providers/yandex-ai-studio.client.js";
-import { YandexExplanationAgentClient } from "./providers/yandex-explanation-agent.client.js";
+import { LlmExtractionClient } from "./providers/yandex-ai-studio.client.js";
+import { LlmExplanationClient } from "./providers/yandex-explanation-agent.client.js";
+import { OpenAiCompatibleClient } from "./providers/openai-compatible.client.js";
 
 @Module({
   imports: [
@@ -21,8 +22,9 @@ import { YandexExplanationAgentClient } from "./providers/yandex-explanation-age
     RecommendationsRepository,
     RecommendationsService,
     RecommendationProcessor,
-    YandexAiStudioClient,
-    YandexExplanationAgentClient,
+    OpenAiCompatibleClient,
+    LlmExtractionClient,
+    LlmExplanationClient,
     CloudRankerClient,
     LiveRecommendationEngine,
   ],

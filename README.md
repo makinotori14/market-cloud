@@ -10,7 +10,7 @@
 
 ## Что умеет решение
 
-- Разбирает свободный запрос через Yandex AI Studio agent-extractor.
+- Разбирает свободный запрос через OpenAI-совместимый LLM API.
 - Выделяет несколько сервисных токенов: например, `VPS`, `База данных`, `Object Storage`, `Kubernetes`.
 - Показывает отдельную вкладку для каждого токена.
 - Возвращает до 10 решений на каждый токен.
@@ -51,11 +51,11 @@
 1. Пользователь отправляет промпт во фронтенде.
 2. Backend создает запись запроса в PostgreSQL.
 3. Задача отправляется в очередь BullMQ/Redis.
-4. Extraction-agent в Yandex AI Studio превращает промпт в строгий JSON intent.
+4. Extraction-agent через OpenAI-совместимый API превращает промпт в строгий JSON intent.
 5. Backend дополняет intent локальными правилами: порядок токенов, провайдеры, ресурсы, города.
 6. Python ranker фильтрует услуги по жестким требованиям.
 7. Ranker считает итоговый score по нескольким сигналам.
-8. Explanation-agent генерирует краткое и подробное объяснение для карточек.
+8. Explanation-agent одним пакетным запросом генерирует объяснения для всех карточек.
 9. Backend сохраняет результат в PostgreSQL.
 10. Frontend получает статус и показывает вкладки с решениями.
 
@@ -150,21 +150,23 @@ Ranker совмещает:
 cp .env.example .env
 ```
 
-2. Заполнить ключ Yandex AI Studio:
+2. Заполнить параметры OpenAI-совместимого API. Например, для OpenRouter:
 
 ```env
-YANDEX_CLOUD_API_MODE=live
-YANDEX_AI_STUDIO_API_KEY=<API_key_value>
-YANDEX_AI_STUDIO_BASE_URL=https://ai.api.cloud.yandex.net/v1
-YANDEX_AI_STUDIO_PROJECT_ID=b1ge3ol7tsbh55ut2v4c
-YANDEX_AI_STUDIO_PROMPT_ID=fvtuh083jtadurcne3if
-YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID=fvt1jccdtho0afu161fd
+LLM_API_MODE=live
+LLM_API_KEY=<API_key_value>
+LLM_BASE_URL=https://openrouter.ai/api/v1
+LLM_MODEL=<provider/model>
+LLM_TIMEOUT_MS=60000
 ```
 
-Важно:
+Провайдер и модель должны поддерживать endpoint `/chat/completions` и
+`response_format.type=json_schema`. Промпты extraction и explanation хранятся в коде проекта.
+Обычно обработка одного пользовательского запроса выполняет два LLM-вызова: извлечение intent
+и одно пакетное объяснение всех найденных карточек.
 
-- `YANDEX_AI_STUDIO_PROMPT_ID` — extraction-agent;
-- `YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID` — explanation-agent.
+Для запуска без внешнего LLM установите `LLM_API_MODE=stub`. В этом режиме backend возвращает
+фиксированный демонстрационный набор рекомендаций.
 
 3. Запустить проект:
 

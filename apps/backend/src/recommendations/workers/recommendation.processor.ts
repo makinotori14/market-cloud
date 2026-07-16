@@ -30,7 +30,7 @@ export class RecommendationProcessor extends WorkerHost {
     try {
       await this.repository.markProcessing(requestId);
       const response =
-        this.config.get("YANDEX_CLOUD_API_MODE", { infer: true }) === "live"
+        this.config.get("LLM_API_MODE", { infer: true }) === "live"
           ? await this.liveRecommendationEngine.getRecommendations(prompt)
           : await this.yandexCloud.getRecommendations(prompt);
       const parsed = yandexCloudStubResponseSchema.parse(response);

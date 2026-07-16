@@ -15,14 +15,11 @@ const envSchema = z.object({
   DATABASE_URL: z.string().url(),
   REDIS_HOST: z.string().default("localhost"),
   REDIS_PORT: z.coerce.number().int().positive().default(6379),
-  YANDEX_CLOUD_API_MODE: z.enum(["stub", "live"]).default("stub"),
-  YANDEX_AI_STUDIO_API_KEY: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
-  YANDEX_AI_STUDIO_BASE_URL: z.string().url().default("https://ai.api.cloud.yandex.net/v1"),
-  YANDEX_AI_STUDIO_PROJECT_ID: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
-  YANDEX_AI_STUDIO_PROMPT_ID: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
-  YANDEX_AI_STUDIO_EXPLANATION_PROMPT_ID: z
-    .preprocess(emptyStringToUndefined, z.string().min(1).optional())
-    .default("fvt1jccdtho0afu161fd"),
+  LLM_API_MODE: z.enum(["stub", "live"]).default("stub"),
+  LLM_API_KEY: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
+  LLM_BASE_URL: z.string().url().default("https://openrouter.ai/api/v1"),
+  LLM_MODEL: z.preprocess(emptyStringToUndefined, z.string().min(1).optional()),
+  LLM_TIMEOUT_MS: z.coerce.number().int().positive().default(60_000),
   RANKER_API_URL: z.string().url().default("http://ranker:8000"),
   DEBUG_RANKER_INTENT: z.preprocess(stringToBoolean, z.boolean()).default(false),
 });

@@ -81,3 +81,13 @@ export const explanationAgentOutputSchema = z.object({
 });
 
 export type ExplanationAgentOutput = z.infer<typeof explanationAgentOutputSchema>;
+
+export const batchExplanationAgentOutputSchema = z.object({
+  explanations: z.array(
+    explanationAgentOutputSchema.extend({
+      service_id: z.string().min(1),
+    }),
+  ),
+});
+
+export type BatchExplanationAgentOutput = z.infer<typeof batchExplanationAgentOutputSchema>;
