@@ -2,6 +2,7 @@ import { Inject, Injectable, NotFoundException } from "@nestjs/common";
 import type { Pool } from "pg";
 import type {
   CloudRecommendation,
+  RecommendationExplanation,
   RecommendationHistoryItem,
   RecommendationRequest,
   RecommendationStatus,
@@ -31,6 +32,12 @@ type RecommendationRow = {
   estimated_cost_level: "low" | "medium" | "high";
   icon: string;
   raw_payload: unknown;
+};
+
+export type RecommendationExplanationContext = {
+  prompt: string;
+  recommendation: CloudRecommendation;
+  rawPayload: unknown;
 };
 
 @Injectable()
@@ -108,11 +115,13 @@ export class RecommendationsRepository {
             recommendation.icon,
             {
               response: rawPayload,
+              serviceId: recommendation.id,
               explanation: recommendation.explanation,
               rankPosition: index,
               sourceUrl: recommendation.sourceUrl,
               serviceType: recommendation.serviceType,
               city: recommendation.city,
+              priceEstimated: recommendation.priceEstimated ?? false,
             },
           ],
         );
@@ -175,6 +184,44 @@ export class RecommendationsRepository {
     }));
   }
 
+  async findExplanationContext(
+    requestId: string,
+    recommendationId: string,
+  ): Promise<RecommendationExplanationContext> {
+    const result = await this.pool.query<RecommendationRow & { prompt: string }>(
+      `SELECT cr.*, rr.prompt
+       FROM cloud_recommendations cr
+       JOIN recommendation_requests rr ON rr.id = cr.request_id
+       WHERE cr.request_id = $1 AND cr.id = $2`,
+      [requestId, recommendationId],
+    );
+    const row = result.rows[0];
+
+    if (!row) {
+      throw new NotFoundException(
+        `Recommendation ${recommendationId} was not found in request ${requestId}`,
+      );
+    }
+
+    return {
+      prompt: row.prompt,
+      recommendation: this.toCloudRecommendation(row),
+      rawPayload: row.raw_payload,
+    };
+  }
+
+  async saveExplanation(
+    recommendationId: string,
+    explanation: RecommendationExplanation,
+  ): Promise<void> {
+    await this.pool.query(
+      `UPDATE cloud_recommendations
+       SET raw_payload = jsonb_set(raw_payload, '{explanation}', $2::jsonb, true)
+       WHERE id = $1`,
+      [recommendationId, JSON.stringify(explanation)],
+    );
+  }
+
   async clearHistory(): Promise<number> {
     const result = await this.pool.query<{ id: string }>(
       `DELETE FROM recommendation_requests
@@ -193,7 +240,11 @@ export class RecommendationsRepository {
       [requestId],
     );
 
-    return result.rows.map((row) => ({
+    return result.rows.map((row) => this.toCloudRecommendation(row));
+  }
+
+  private toCloudRecommendation(row: RecommendationRow): CloudRecommendation {
+    return {
       id: row.id,
       provider: row.provider,
       title: row.title,
@@ -203,13 +254,14 @@ export class RecommendationsRepository {
       description: row.description,
       finalScore: Number(row.final_score),
       monthlyPriceRub: row.monthly_price_rub === null ? null : Number(row.monthly_price_rub),
+      priceEstimated: this.extractPriceEstimated(row.raw_payload),
       services: row.services,
       reasons: row.reasons,
       risks: row.risks,
       estimatedCostLevel: row.estimated_cost_level,
       icon: row.icon,
       explanation: this.extractExplanation(row.raw_payload),
-    }));
+    };
   }
 
   private extractSourceUrl(rawPayload: unknown, provider: string): string | null {
@@ -241,6 +293,14 @@ export class RecommendationsRepository {
 
     const city = (rawPayload as { city?: unknown }).city;
     return typeof city === "string" && city.length > 0 ? city : null;
+  }
+
+  private extractPriceEstimated(rawPayload: unknown): boolean {
+    if (!rawPayload || typeof rawPayload !== "object") {
+      return false;
+    }
+
+    return (rawPayload as { priceEstimated?: unknown }).priceEstimated === true;
   }
 
   private providerSourceUrl(provider: string): string | null {

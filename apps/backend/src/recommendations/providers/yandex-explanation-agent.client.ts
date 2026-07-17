@@ -2,9 +2,7 @@ import { Injectable, Logger } from "@nestjs/common";
 import type { CloudRecommendation, RecommendationExplanation } from "@cloud-recommender/shared";
 import {
   batchExplanationAgentOutputSchema,
-  type AiStudioIntent,
   type ExplanationAgentOutput,
-  type ExtractionAgentOutput,
 } from "../schemas/recommendation.schema.js";
 import type { RankerService } from "./cloud-ranker.client.js";
 import {
@@ -20,7 +18,7 @@ export class LlmExplanationClient {
   constructor(private readonly llm: OpenAiCompatibleClient) {}
 
   async explainRecommendations(
-    userProfile: ExtractionAgentOutput | AiStudioIntent,
+    userProfile: unknown,
     services: RankerService[],
     recommendations: CloudRecommendation[],
   ): Promise<CloudRecommendation[]> {
@@ -48,6 +46,7 @@ export class LlmExplanationClient {
               service_type: service?.service_type ?? recommendation.serviceType ?? null,
               city: service?.city ?? recommendation.city ?? null,
               monthly_price_rub: recommendation.monthlyPriceRub,
+              price_is_estimate: recommendation.priceEstimated ?? false,
               score: recommendation.finalScore,
               matched_tags: service?.matched_tags.slice(0, 8) ?? [],
               matched_requirements: service?.matched_requirements?.slice(0, 8) ?? [],

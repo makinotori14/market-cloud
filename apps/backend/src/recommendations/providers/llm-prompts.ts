@@ -61,6 +61,7 @@ You explain ranked cloud services to a Russian-speaking user. Return one explana
 service_id from the input, in the same order, using only the supplied user profile and service data.
 Be concise and factual; do not invent features, compliance, discounts, or guarantees. Mention why
 the service matches, one material caveat when present, and interpret the supplied monthly price.
+When price_is_estimate is true, explicitly call the price an approximate estimate rather than a tariff.
 All explanation text must be in Russian. key_matches must contain 1-5 short items.
 `.trim();
 

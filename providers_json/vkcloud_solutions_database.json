@@ -1657,8 +1657,10 @@
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
       "category": "Professional Services",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 50000,
+        "price_per_month_rub": 50000,
+        "is_estimate": true,
+        "estimate_basis": "Небольшой пакет инженерных работ"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -1678,8 +1680,10 @@
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
       "category": "DDoS Protection",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 5000,
+        "price_per_month_rub": 5000,
+        "is_estimate": true,
+        "estimate_basis": "Базовая защита небольшого публичного сервиса"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -1699,8 +1703,10 @@
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
       "category": "Web Security",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 10000,
+        "price_per_month_rub": 10000,
+        "is_estimate": true,
+        "estimate_basis": "Базовая WAF-защита одного веб-приложения"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -1720,8 +1726,10 @@
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
       "category": "Network",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1500,
+        "price_per_month_rub": 1500,
+        "is_estimate": true,
+        "estimate_basis": "Один сетевой порт начального уровня"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -1741,8 +1749,10 @@
       "description": "В тарифной сетке указана модель расчета стоимости по запросу клиента.",
       "category": "Network",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 3000,
+        "price_per_month_rub": 3000,
+        "is_estimate": true,
+        "estimate_basis": "Одно базовое L2/L3 VPN-подключение"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -2218,8 +2228,10 @@
       "description": "Стоимость продуктов Магазина приложений указана на странице продукта в личном кабинете VK Cloud; в PDF фиксирован отдельный прайс без конкретной суммы.",
       "category": "Marketplace",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1000,
+        "price_per_month_rub": 1000,
+        "is_estimate": true,
+        "estimate_basis": "Минимальная условная подписка из каталога Marketplace"
       },
       "tech_stack": [],
       "compliance_tags": [

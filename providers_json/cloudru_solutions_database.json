@@ -292,8 +292,10 @@
       "description": "Облачная инфраструктура для хранения и обработки персональных данных согласно ФЗ-152. Стоимость рассчитывается под проект.",
       "category": "Compliance Cloud",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 25000,
+        "price_per_month_rub": 25000,
+        "is_estimate": true,
+        "estimate_basis": "Минимальный защищённый контур 152-ФЗ для небольшого проекта"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -341,8 +343,10 @@
       "description": "Готовый виртуальный ЦОД с монопольным доступом к оборудованию. Стоимость рассчитывается под конфигурацию.",
       "category": "Private Cloud",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 150000,
+        "price_per_month_rub": 150000,
+        "is_estimate": true,
+        "estimate_basis": "Стартовая оценка выделенного виртуального ЦОД"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -361,8 +365,10 @@
       "description": "Готовая IaaS-инфраструктура с мгновенным масштабированием. Стоимость рассчитывается под потребности проекта (vCPU, RAM, диски, сеть).",
       "category": "IaaS",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 4708.8,
+        "price_per_month_rub": 4708.8,
+        "is_estimate": true,
+        "estimate_basis": "Типовая конфигурация 4 vCPU, 16 ГБ RAM без дополнительного трафика"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -381,8 +387,10 @@
       "description": "Многоуровневая защита от DDoS-атак с автоматическим обнаружением угроз. Стоимость рассчитывается под объём защищаемого трафика.",
       "category": "DDoS Protection",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 5000,
+        "price_per_month_rub": 5000,
+        "is_estimate": true,
+        "estimate_basis": "Базовая защита небольшого публичного сервиса"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -401,8 +409,10 @@
       "description": "Физический сервер для GameDev-проектов и игровых хостов с низкой задержкой. Стоимость рассчитывается под выбранную конфигурацию.",
       "category": "Bare Metal Servers",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 15580.62,
+        "price_per_month_rub": 15580.62,
+        "is_estimate": true,
+        "estimate_basis": "Младшая публичная конфигурация Cloud.ru Bare Metal"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -530,8 +540,10 @@
       "description": "Управляемая БД PostgreSQL. Тарифицируется pay-as-you-go по vCPU, RAM и дисковому пространству; готовых пакетных цен в публичных тарифах не приведено.",
       "category": "Cloud Databases",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 4582.14,
+        "price_per_month_rub": 4582.14,
+        "is_estimate": true,
+        "estimate_basis": "2 vCPU, 4 ГБ RAM, 100 ГБ SSD, 730 часов"
       },
       "tech_stack": [
         "PostgreSQL"
@@ -553,8 +565,10 @@
       "description": "Управляемый Apache Kafka для потоковой обработки сообщений. Тарифицируется pay-as-you-go.",
       "category": "Cloud Streaming",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 13746.41,
+        "price_per_month_rub": 13746.41,
+        "is_estimate": true,
+        "estimate_basis": "Три узла по 2 vCPU, 4 ГБ RAM и 100 ГБ SSD, 730 часов"
       },
       "tech_stack": [
         "Apache Kafka"
@@ -576,8 +590,10 @@
       "description": "Управляемый ClickHouse для аналитических нагрузок. Тарифицируется pay-as-you-go.",
       "category": "Cloud ClickHouse",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 15202.54,
+        "price_per_month_rub": 15202.54,
+        "is_estimate": true,
+        "estimate_basis": "4 vCPU, 16 ГБ RAM, 500 ГБ SSD, 730 часов"
       },
       "tech_stack": [
         "ClickHouse"
@@ -599,8 +615,10 @@
       "description": "Реестр контейнерных образов и артефактов. Тарификация по объёму хранения.",
       "category": "DevOps",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 335.69,
+        "price_per_month_rub": 335.69,
+        "is_estimate": true,
+        "estimate_basis": "100 ГБ хранения и 100 ГБ исходящего трафика в месяц"
       },
       "tech_stack": [
         "Container Registry"
@@ -647,8 +665,10 @@
       "description": "Блочные диски (SSD/NVMe) для виртуальных машин Evolution. Тарификация по объёму хранения; точные ставки см. в Evolution Compute price-list.",
       "category": "Block Storage",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1229.03,
+        "price_per_month_rub": 1229.03,
+        "is_estimate": true,
+        "estimate_basis": "100 ГБ сетевого SSD, 730 часов"
       },
       "tech_stack": [
         "SSD",
@@ -671,8 +691,10 @@
       "description": "Масштабируемое файловое хранилище для нескольких ВМ. Тарификация по объёму хранения.",
       "category": "File Storage",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1080,
+        "price_per_month_rub": 1080,
+        "is_estimate": true,
+        "estimate_basis": "100 ГБ файлового хранилища по медиане сопоставимых провайдеров"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -692,8 +714,10 @@
       "description": "Управляемый балансировщик нагрузки. Pay-as-you-go тарификация.",
       "category": "Load Balancer",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 737.71,
+        "price_per_month_rub": 737.71,
+        "is_estimate": true,
+        "estimate_basis": "Один L4 load balancer и один публичный IP, 730 часов, без трафика"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -712,8 +736,10 @@
       "description": "Управляемый DNS-сервис (зоны и записи). Тарификация по числу зон и запросов.",
       "category": "DNS",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 62.22,
+        "price_per_month_rub": 62.22,
+        "is_estimate": true,
+        "estimate_basis": "Одна публичная зона и 1 млн DNS-запросов в месяц"
       },
       "tech_stack": [
         "DNS"
@@ -734,8 +760,10 @@
       "description": "Сервис доставки контента Evolution CDN. Тарификация по объёму исходящего трафика.",
       "category": "CDN",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1000,
+        "price_per_month_rub": 1000,
+        "is_estimate": true,
+        "estimate_basis": "1 ТБ исходящего CDN-трафика по медиане российских провайдеров"
       },
       "tech_stack": [
         "CDN"
@@ -757,8 +785,10 @@
       "description": "Мониторинг облачной инфраструктуры (метрики, алерты). Тарификация pay-as-you-go.",
       "category": "Monitoring",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1500,
+        "price_per_month_rub": 1500,
+        "is_estimate": true,
+        "estimate_basis": "Небольшой production-контур метрик и алертов"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -777,8 +807,10 @@
       "description": "Управляемый сервис сбора и хранения логов. Тарификация по объёму логов.",
       "category": "Logging",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 2000,
+        "price_per_month_rub": 2000,
+        "is_estimate": true,
+        "estimate_basis": "Небольшой production-контур сбора и хранения логов"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -798,8 +830,10 @@
       "description": "Управляемая SD-WAN сеть для объединения филиальных площадок и облака. Стоимость рассчитывается под проект.",
       "category": "Network",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 15000,
+        "price_per_month_rub": 15000,
+        "is_estimate": true,
+        "estimate_basis": "Базовая SD-WAN-схема для двух площадок"
       },
       "tech_stack": [
         "SD-WAN"
@@ -820,8 +854,10 @@
       "description": "Виртуальные ЦОД на платформе VMware от Cloud.ru. Стоимость рассчитывается под конфигурацию (vCPU/RAM/диски/Edge-роутеры).",
       "category": "VMware Cloud",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 14550.33,
+        "price_per_month_rub": 14550.33,
+        "is_estimate": true,
+        "estimate_basis": "Один стандартный VMware-сервер и компактный Edge-роутер"
       },
       "tech_stack": [
         "VMware"
@@ -842,8 +878,10 @@
       "description": "Сервис резервного копирования ВМ и физических серверов в облако. Тарификация по числу защищаемых устройств и объёму резервных копий.",
       "category": "Cloud Backup",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 1500,
+        "price_per_month_rub": 1500,
+        "is_estimate": true,
+        "estimate_basis": "Одна защищаемая ВМ и небольшой объём резервных копий"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -862,8 +900,10 @@
       "description": "Аварийное восстановление инфраструктуры в облако Cloud.ru. Стоимость рассчитывается под проект.",
       "category": "Disaster Recovery",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 20000,
+        "price_per_month_rub": 20000,
+        "is_estimate": true,
+        "estimate_basis": "Минимальный DR-контур для небольшого production-проекта"
       },
       "tech_stack": [],
       "compliance_tags": [
@@ -882,8 +922,10 @@
       "description": "Аренда физического сервера. Тарифицируется индивидуально под конфигурацию.",
       "category": "Bare Metal Servers",
       "pricing": {
-        "price_from_rub": null,
-        "price_per_month_rub": null
+        "price_from_rub": 15580.62,
+        "price_per_month_rub": 15580.62,
+        "is_estimate": true,
+        "estimate_basis": "Младшая публичная конфигурация Cloud.ru Bare Metal"
       },
       "tech_stack": [],
       "compliance_tags": [

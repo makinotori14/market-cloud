@@ -1,9 +1,11 @@
 import {
   recommendationHistoryItemSchema,
+  recommendationExplanationSchema,
   recommendationQueueStatsSchema,
   recommendationRequestSchema,
   type CreateRecommendationInput,
   type RecommendationHistoryItem,
+  type RecommendationExplanation,
   type RecommendationQueueStats,
   type RecommendationRequest,
 } from "@cloud-recommender/shared";
@@ -55,6 +57,18 @@ export async function createRecommendation(
 export async function getRecommendation(id: string): Promise<RecommendationRequest> {
   const data = await request<unknown>(`/recommendations/${id}`);
   return recommendationRequestSchema.parse(data);
+}
+
+export async function getRecommendationExplanation(
+  requestId: string,
+  recommendationId: string,
+): Promise<RecommendationExplanation> {
+  const data = await request<unknown>(
+    `/recommendations/${requestId}/recommendations/${recommendationId}/explanation`,
+    { method: "POST" },
+  );
+
+  return recommendationExplanationSchema.parse(data);
 }
 
 export async function getRecommendationHistory(): Promise<RecommendationHistoryItem[]> {

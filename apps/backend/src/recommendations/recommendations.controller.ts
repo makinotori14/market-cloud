@@ -5,6 +5,7 @@ import {
   RecommendationHistoryItemDto,
   RecommendationQueueStatsDto,
   RecommendationRequestDto,
+  RecommendationExplanationDto,
   ClearHistoryResponseDto,
 } from "./dto/recommendation-response.dto.js";
 import { RecommendationsService } from "./recommendations.service.js";
@@ -30,6 +31,15 @@ export class RecommendationsController {
   @ApiOkResponse({ type: RecommendationQueueStatsDto })
   getStats() {
     return this.recommendationsService.getQueueStats();
+  }
+
+  @Post(":requestId/recommendations/:recommendationId/explanation")
+  @ApiOkResponse({ type: RecommendationExplanationDto })
+  explainRecommendation(
+    @Param("requestId") requestId: string,
+    @Param("recommendationId") recommendationId: string,
+  ) {
+    return this.recommendationsService.explainRecommendation(requestId, recommendationId);
   }
 
   @Delete()

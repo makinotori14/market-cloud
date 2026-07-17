@@ -78,6 +78,7 @@ class RecommendedService(BaseModel):
     service_type: Optional[str]
     city: Optional[str]
     price_rub: float
+    price_is_estimate: bool = False
     final_score_100: float
     matched_tags: list[str]
     matched_requirements: list[str]
@@ -104,6 +105,7 @@ class IndexedService(BaseModel):
     category: Optional[str]
     city: Optional[str]
     price_rub: float
+    price_is_estimate: bool = False
     regions: list[str]
     tech_stack: list[str]
     compliance_tags: list[str]
@@ -418,6 +420,7 @@ def load_provider_services() -> list[IndexedService]:
                         or pricing.get("price_per_month_rub")
                         or pricing.get("price_from_rub")
                     ),
+                    price_is_estimate=bool(pricing.get("is_estimate", False)),
                     regions=infer_service_regions(provider, item),
                     tech_stack=tech_stack,
                     compliance_tags=compliance_tags,
@@ -1063,6 +1066,7 @@ async def rank_services(request: RankRequest) -> RankResponse:
                     service_type=service_type,
                     city=service.city,
                     price_rub=round(service.price_rub, 2),
+                    price_is_estimate=service.price_is_estimate,
                     final_score_100=final_score_100,
                     matched_tags=matched_tags,
                     matched_requirements=matched_requirements,

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { CheckCircle2, MapPin, ShieldCheck, TrendingUp, WalletCards, X } from "lucide-react";
-import type { CloudRecommendation } from "../types";
+import { AlertCircle, CheckCircle2, LoaderCircle, MapPin, ShieldCheck, TrendingUp, WalletCards, X } from "lucide-react";
+import type { CloudRecommendation, RecommendationExplanation } from "../types";
+import { getRecommendationExplanation } from "../api";
 import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
 import { Card } from "@/shared/ui/card";
@@ -12,6 +13,7 @@ import type { ResultsViewMode } from "./ThemeSwitcher";
 
 type RecommendationCardProps = {
   recommendation: CloudRecommendation;
+  requestId: string;
   rank: number;
   viewMode: ResultsViewMode;
 };
@@ -102,13 +104,44 @@ function formatMonthlyPrice(priceRub: number | null): string | null {
   }).format(priceRub)} руб / мес`;
 }
 
-export function RecommendationCard({ recommendation, rank, viewMode }: RecommendationCardProps) {
+export function RecommendationCard({ recommendation, requestId, rank, viewMode }: RecommendationCardProps) {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const [explanation, setExplanation] = useState<RecommendationExplanation | undefined>(
+    recommendation.explanation,
+  );
+  const [isExplanationLoading, setIsExplanationLoading] = useState(false);
+  const [explanationError, setExplanationError] = useState<string | null>(null);
   const monthlyPrice = formatMonthlyPrice(recommendation.monthlyPriceRub);
+  const displayedMonthlyPrice = monthlyPrice && recommendation.priceEstimated
+    ? `≈ ${monthlyPrice}`
+    : monthlyPrice;
   const rankStyle = rankStyles[rank];
   const icon = providerIcon(recommendation.provider, recommendation.icon);
-  const explanation = recommendation.explanation;
   const visibleReasons = explanation?.keyMatches.length ? explanation.keyMatches : recommendation.reasons;
+
+  const loadExplanation = async () => {
+    if (explanation || isExplanationLoading) {
+      return;
+    }
+
+    setIsExplanationLoading(true);
+    setExplanationError(null);
+
+    try {
+      setExplanation(await getRecommendationExplanation(requestId, recommendation.id));
+    } catch (error) {
+      setExplanationError(
+        error instanceof Error ? error.message : "Не удалось загрузить подробное объяснение.",
+      );
+    } finally {
+      setIsExplanationLoading(false);
+    }
+  };
+
+  const openDetails = () => {
+    setIsDetailsOpen(true);
+    void loadExplanation();
+  };
 
   return (
     <>
@@ -185,10 +218,10 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
 
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-xs font-semibold text-muted dark:text-white/84">
-              {monthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
+              {displayedMonthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
             </div>
-            <Button size="sm" variant="secondary" type="button" onClick={() => setIsDetailsOpen(true)}>
-              Подробнее
+            <Button size="sm" variant="secondary" type="button" onClick={openDetails}>
+              {isExplanationLoading ? "Загрузка…" : "Подробнее"}
             </Button>
           </div>
         </div>
@@ -225,6 +258,26 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
               </Button>
             </div>
 
+            {isExplanationLoading ? (
+              <div className="mt-5 grid min-h-48 place-items-center rounded-ui border border-dashed border-[#cfe4f4] bg-[#f8fcff] p-8 text-center dark:border-white/10 dark:bg-white/[0.04]">
+                <div>
+                  <LoaderCircle className="mx-auto h-8 w-8 animate-spin text-accent" aria-hidden="true" />
+                  <p className="mt-3 text-sm font-semibold text-muted dark:text-white/86">
+                    Готовим подробное объяснение…
+                  </p>
+                </div>
+              </div>
+            ) : explanationError && !explanation ? (
+              <div className="mt-5 grid min-h-48 place-items-center rounded-ui border border-red-200 bg-red-50 p-8 text-center dark:border-red-400/25 dark:bg-red-950/20">
+                <div>
+                  <AlertCircle className="mx-auto h-8 w-8 text-red-600 dark:text-red-300" aria-hidden="true" />
+                  <p className="mt-3 text-sm text-red-800 dark:text-red-100">{explanationError}</p>
+                  <Button className="mt-4" size="sm" type="button" variant="secondary" onClick={() => void loadExplanation()}>
+                    Повторить
+                  </Button>
+                </div>
+              </div>
+            ) : (
             <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
               <div className="grid gap-4">
                 {(explanation?.detailedExplanation ?? recommendation.description)
@@ -255,7 +308,7 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
                     <WalletCards className="h-4 w-4 text-accent" aria-hidden="true" />
                     Бюджет
                   </div>
-                  {explanation?.budgetAnalysis ?? monthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
+                  {explanation?.budgetAnalysis ?? displayedMonthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
                 </div>
 
                 {explanation?.riskMitigation ? (
@@ -266,6 +319,7 @@ export function RecommendationCard({ recommendation, rank, viewMode }: Recommend
                 ) : null}
               </aside>
             </div>
+            )}
           </Card>
         </div>
       ) : null}

@@ -22,6 +22,7 @@ export type RankerService = {
   service_type?: string | null;
   city?: string | null;
   price_rub: number;
+  price_is_estimate?: boolean;
   final_score_100: number;
   matched_tags: string[];
   matched_requirements?: string[];
@@ -159,6 +160,7 @@ export class CloudRankerClient {
       description: service.description,
       finalScore: Math.max(0, Math.min(100, service.final_score_100)),
       monthlyPriceRub: Math.max(0, service.price_rub),
+      priceEstimated: service.price_is_estimate ?? false,
       services: uniqueServices.length > 0 ? uniqueServices : [service.provider_name],
       reasons: this.reasonsForService(service, intent),
       risks: [

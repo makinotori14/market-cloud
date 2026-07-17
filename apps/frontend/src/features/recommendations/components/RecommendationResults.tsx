@@ -161,6 +161,7 @@ export function RecommendationResults({ isFetching, request, viewMode }: Recomme
               {activeGroup.recommendations.map((recommendation, index) => (
                 <RecommendationCard
                   recommendation={recommendation}
+                  requestId={request.id}
                   key={recommendation.id}
                   rank={index + 1}
                   viewMode={viewMode}
