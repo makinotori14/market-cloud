@@ -12,6 +12,7 @@ import { cn } from "@/shared/lib/cn";
 import type { ResultsViewMode } from "./ThemeSwitcher";
 
 type RecommendationCardProps = {
+  compact?: boolean;
   recommendation: CloudRecommendation;
   requestId: string;
   rank: number;
@@ -104,7 +105,7 @@ function formatMonthlyPrice(priceRub: number | null): string | null {
   }).format(priceRub)} руб / мес`;
 }
 
-export function RecommendationCard({ recommendation, requestId, rank, viewMode }: RecommendationCardProps) {
+export function RecommendationCard({ compact = false, recommendation, requestId, rank, viewMode }: RecommendationCardProps) {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [explanation, setExplanation] = useState<RecommendationExplanation | undefined>(
     recommendation.explanation,
@@ -147,84 +148,116 @@ export function RecommendationCard({ recommendation, requestId, rank, viewMode }
     <>
       <Card
         className={cn(
-          "grid gap-4 p-4 transition hover:border-accent/60 hover:shadow-[0_18px_42px_rgba(6,59,111,0.12)] dark:border-white/10 dark:bg-[#0c1726] dark:hover:border-accent/60",
+          "grid transition hover:border-accent/60 hover:shadow-[0_18px_42px_rgba(6,59,111,0.12)] dark:border-white/10 dark:bg-[#0c1726] dark:hover:border-accent/60",
           rankStyle?.card,
-          viewMode === "grid"
+          compact
+            ? "grid-cols-[58px_minmax(0,1fr)] gap-3 p-3 sm:grid-cols-[58px_minmax(0,1fr)_auto] sm:items-center"
+            : viewMode === "grid"
             ? "xl:grid-cols-[86px_minmax(0,1fr)]"
             : "md:grid-cols-[96px_minmax(0,1fr)] xl:grid-cols-[108px_minmax(0,1fr)]",
+          !compact && "gap-4 p-4",
         )}
       >
-        <div className="grid h-[86px] w-[86px] place-items-center rounded-ui border border-[#d5edfb] bg-white">
+        <div className={cn(
+          "grid place-items-center rounded-ui border border-[#d5edfb] bg-white",
+          compact ? "h-[58px] w-[58px]" : "h-[86px] w-[86px]",
+        )}>
           <Image
             src={icon}
-            width={62}
-            height={62}
+            width={compact ? 40 : 62}
+            height={compact ? 40 : 62}
             alt={recommendation.provider}
             priority={recommendation.finalScore > 90}
-            className="max-h-[62px] w-auto object-contain"
+            className={cn("w-auto object-contain", compact ? "max-h-10" : "max-h-[62px]")}
           />
         </div>
         <div className="min-w-0">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className={cn(
+            "flex flex-col gap-3",
+            !compact && "sm:flex-row sm:items-start sm:justify-between",
+          )}>
             <div>
               <div className="mb-1 flex flex-wrap items-center gap-2">
                 <p className="text-xs font-bold uppercase text-accent">{recommendation.provider}</p>
-                {recommendation.city ? (
+                {recommendation.city && !compact ? (
                   <span className="inline-flex items-center gap-1 rounded-ui border border-[#dceefa] bg-[#f3faff] px-2 py-0.5 text-xs font-bold text-[#17334f] dark:border-sky-300/35 dark:bg-[#10283f] dark:text-sky-50">
                     <MapPin className="h-3 w-3" aria-hidden="true" />
                     {recommendation.city}
                   </span>
                 ) : null}
-                {rankStyle ? (
+                {rankStyle && !compact ? (
                   <span className={cn("rounded-ui border px-2 py-0.5 text-xs font-extrabold", rankStyle.badge)}>
                     {rankStyle.label}
                   </span>
                 ) : null}
               </div>
               <ServiceTitle
-                className="text-lg font-extrabold leading-tight"
+                className={cn("font-extrabold leading-tight", compact ? "text-base" : "text-lg")}
                 recommendation={recommendation}
               />
             </div>
+            {!compact ? (
+              <Badge className="w-fit gap-1.5">
+                <TrendingUp className="h-3.5 w-3.5" aria-hidden="true" />
+                {recommendation.finalScore}
+              </Badge>
+            ) : null}
+          </div>
+
+          {!compact ? (
+            <>
+              <p className="mt-3 text-sm leading-6 text-muted dark:text-white/94">
+                {explanation?.shortExplanation ?? recommendation.description}
+              </p>
+
+              <div className={cn("mt-4 flex flex-wrap gap-2", viewMode === "list" && "max-w-5xl")}>
+                {recommendation.services.map((service) => (
+                  <span
+                    className="rounded-ui border border-[#dceefa] bg-[#f3faff] px-2.5 py-1.5 text-xs font-semibold text-[#17334f] dark:border-sky-300/35 dark:bg-[#10283f] dark:text-sky-50"
+                    key={service}
+                  >
+                    {service}
+                  </span>
+                ))}
+              </div>
+
+              <div className={cn("mt-4 grid gap-2 text-sm text-[#17334f] dark:text-white/90", viewMode === "list" && "md:grid-cols-2")}>
+                {visibleReasons.slice(0, 3).map((reason) => (
+                  <div className="flex gap-2" key={reason}>
+                    <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-accent" aria-hidden="true" />
+                    <span>{reason}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : null}
+
+          {!compact ? (
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-xs font-semibold text-muted dark:text-white/84">
+                {displayedMonthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
+              </div>
+              <Button size="sm" variant="secondary" type="button" onClick={openDetails}>
+                {isExplanationLoading ? "Загрузка…" : "Подробнее"}
+              </Button>
+            </div>
+          ) : null}
+        </div>
+
+        {compact ? (
+          <div className="col-span-2 flex items-center justify-between gap-3 border-t border-current/10 pt-3 sm:col-span-1 sm:min-w-48 sm:flex-col sm:items-end sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
             <Badge className="w-fit gap-1.5">
               <TrendingUp className="h-3.5 w-3.5" aria-hidden="true" />
               {recommendation.finalScore}
             </Badge>
-          </div>
-
-          <p className="mt-3 text-sm leading-6 text-muted dark:text-white/94">
-            {explanation?.shortExplanation ?? recommendation.description}
-          </p>
-
-          <div className={cn("mt-4 flex flex-wrap gap-2", viewMode === "list" && "max-w-5xl")}>
-            {recommendation.services.map((service) => (
-              <span
-                className="rounded-ui border border-[#dceefa] bg-[#f3faff] px-2.5 py-1.5 text-xs font-semibold text-[#17334f] dark:border-sky-300/35 dark:bg-[#10283f] dark:text-sky-50"
-                key={service}
-              >
-                {service}
-              </span>
-            ))}
-          </div>
-
-          <div className={cn("mt-4 grid gap-2 text-sm text-[#17334f] dark:text-white/90", viewMode === "list" && "md:grid-cols-2")}>
-            {visibleReasons.slice(0, 3).map((reason) => (
-              <div className="flex gap-2" key={reason}>
-                <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-accent" aria-hidden="true" />
-                <span>{reason}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="text-xs font-semibold text-muted dark:text-white/84">
+            <div className="ml-auto text-right text-xs font-semibold text-muted dark:text-white/84 sm:ml-0">
               {displayedMonthlyPrice ?? fallbackPrice[recommendation.estimatedCostLevel]}
             </div>
             <Button size="sm" variant="secondary" type="button" onClick={openDetails}>
               {isExplanationLoading ? "Загрузка…" : "Подробнее"}
             </Button>
           </div>
-        </div>
+        ) : null}
       </Card>
 
       {isDetailsOpen ? (

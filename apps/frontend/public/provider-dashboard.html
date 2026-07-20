@@ -1,0 +1,2136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDM Partner Analytics</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211f;
+      --muted: #66716e;
+      --line: #dfe5e3;
+      --line-strong: #c8d1ce;
+      --surface: #ffffff;
+      --surface-soft: #f4f7f6;
+      --canvas: #edf2f0;
+      --sidebar: #17332f;
+      --sidebar-muted: #a9bbb7;
+      --primary: #0f6b64;
+      --primary-soft: #dcefeb;
+      --blue: #2b5ca8;
+      --blue-soft: #e7eef8;
+      --amber: #a96d00;
+      --amber-soft: #fff0ca;
+      --red: #b13d4b;
+      --red-soft: #fbe5e8;
+      --green: #2f7d4a;
+      --green-soft: #e2f1e7;
+      --radius: 7px;
+      --sidebar-width: 228px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--canvas);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 20;
+      width: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      padding: 22px 14px 18px;
+      color: #fff;
+      background: var(--sidebar);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 8px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 7px;
+      color: var(--sidebar);
+      background: #f2c84b;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .brand strong,
+    .brand span {
+      display: block;
+    }
+
+    .brand strong {
+      font-size: 15px;
+    }
+
+    .brand span {
+      color: var(--sidebar-muted);
+      font-size: 11px;
+    }
+
+    .provider-switcher {
+      margin: 18px 4px 12px;
+      padding: 11px 12px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .provider-switcher small,
+    .provider-switcher strong {
+      display: block;
+    }
+
+    .provider-switcher small {
+      color: var(--sidebar-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .provider-switcher strong {
+      margin-top: 3px;
+      font-size: 13px;
+    }
+
+    .nav-label {
+      padding: 12px 10px 6px;
+      color: #7f9993;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .sidebar nav {
+      display: grid;
+      gap: 3px;
+    }
+
+    .sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 38px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: #c8d6d3;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .sidebar nav a::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex: 0 0 auto;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .sidebar nav a.active::before {
+      border-color: #f2c84b;
+      background: #f2c84b;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 12px 8px 0;
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      color: var(--sidebar-muted);
+      font-size: 11px;
+    }
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 68px;
+      padding: 12px 28px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+    }
+
+    .page-title h1,
+    .page-title p {
+      margin: 0;
+    }
+
+    .page-title h1 {
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .page-title p {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .segmented {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      background: var(--surface-soft);
+    }
+
+    .segmented button {
+      min-width: 38px;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 0;
+      border-radius: 5px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .segmented button.active {
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(25, 43, 38, .14);
+    }
+
+    .action-button {
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .action-button:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .content {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 24px 28px 48px;
+    }
+
+    .demo-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 9px 12px;
+      border: 1px solid #d9c375;
+      border-radius: 6px;
+      color: #654d00;
+      background: #fff8d9;
+      font-size: 11px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .kpi {
+      min-width: 0;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .kpi-label {
+      min-height: 34px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    .kpi-value {
+      margin-top: 3px;
+      font-size: clamp(21px, 2vw, 28px);
+      font-weight: 760;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .kpi-meta {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .delta-up {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .delta-down {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .section {
+      scroll-margin-top: 86px;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header h2,
+    .section-header p {
+      margin: 0;
+    }
+
+    .section-header h2 {
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .section-body {
+      padding: 18px 20px 20px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .badge.high {
+      color: #8d2432;
+      background: var(--red-soft);
+    }
+
+    .badge.medium {
+      color: #715000;
+      background: var(--amber-soft);
+    }
+
+    .badge.good {
+      color: #24623a;
+      background: var(--green-soft);
+    }
+
+    .badge.info {
+      color: #234c8a;
+      background: var(--blue-soft);
+    }
+
+    .opportunity-strip {
+      display: grid;
+      grid-template-columns: 1.15fr repeat(3, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .opportunity-intro,
+    .opportunity-item {
+      min-height: 124px;
+      padding: 16px;
+    }
+
+    .opportunity-intro {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .opportunity-intro h2,
+    .opportunity-intro p {
+      margin: 0;
+    }
+
+    .opportunity-intro h2 {
+      margin-top: 6px;
+      font-size: 17px;
+    }
+
+    .opportunity-intro p {
+      margin-top: 7px;
+      color: #cde3df;
+      font-size: 11px;
+    }
+
+    .opportunity-item {
+      border-left: 1px solid var(--line);
+    }
+
+    .opportunity-item strong {
+      display: block;
+      margin: 8px 0 4px;
+      font-size: 13px;
+    }
+
+    .opportunity-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .opportunity-effect {
+      margin-top: 10px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .funnel-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(250px, .75fr);
+      gap: 28px;
+    }
+
+    .funnel {
+      display: grid;
+      gap: 10px;
+    }
+
+    .funnel-row {
+      display: grid;
+      grid-template-columns: minmax(150px, 210px) minmax(180px, 1fr) 110px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .funnel-name {
+      font-size: 12px;
+      font-weight: 620;
+    }
+
+    .bar-track {
+      position: relative;
+      height: 10px;
+      overflow: hidden;
+      border-radius: 2px;
+      background: #e8edeb;
+    }
+
+    .bar-fill {
+      height: 100%;
+      min-width: 2px;
+      border-radius: inherit;
+      background: var(--primary);
+    }
+
+    .bar-fill.blue {
+      background: var(--blue);
+    }
+
+    .bar-fill.amber {
+      background: var(--amber);
+    }
+
+    .bar-fill.red {
+      background: var(--red);
+    }
+
+    .bar-fill.green {
+      background: var(--green);
+    }
+
+    .funnel-value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .funnel-value span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .insight-box {
+      align-self: stretch;
+      padding: 16px;
+      border-left: 3px solid var(--amber);
+      background: #fffbef;
+    }
+
+    .insight-box h3,
+    .insight-box p {
+      margin: 0;
+    }
+
+    .insight-box h3 {
+      font-size: 13px;
+    }
+
+    .insight-box .big-number {
+      margin: 16px 0 4px;
+      color: var(--red);
+      font-size: 30px;
+      font-weight: 780;
+      line-height: 1;
+    }
+
+    .insight-box p {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .insight-box ul {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .insight-box li {
+      padding: 7px 0;
+      border-top: 1px solid #eadfb8;
+      font-size: 11px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(390px, 1fr) minmax(360px, 1.15fr);
+      gap: 0;
+    }
+
+    .split > * {
+      min-width: 0;
+    }
+
+    .split > * + * {
+      border-left: 1px solid var(--line);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--muted);
+      background: var(--surface-soft);
+      font-size: 10px;
+      font-weight: 750;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    td.numeric,
+    th.numeric {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .interactive-table tbody tr {
+      cursor: pointer;
+    }
+
+    .interactive-table tbody tr:hover,
+    .interactive-table tbody tr.selected {
+      background: #edf7f5;
+    }
+
+    .interactive-table tbody tr.selected td:first-child {
+      box-shadow: inset 3px 0 var(--primary);
+    }
+
+    .service-code {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 9px;
+    }
+
+    .detail-pane {
+      padding: 18px 20px;
+      background: #fbfcfc;
+    }
+
+    .detail-pane h3,
+    .detail-pane p {
+      margin: 0;
+    }
+
+    .detail-pane h3 {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .detail-pane > p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .detail-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 16px 0;
+      border-block: 1px solid var(--line);
+    }
+
+    .detail-stat {
+      padding: 12px;
+    }
+
+    .detail-stat + .detail-stat {
+      border-left: 1px solid var(--line);
+    }
+
+    .detail-stat strong,
+    .detail-stat span {
+      display: block;
+    }
+
+    .detail-stat strong {
+      font-size: 18px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .detail-stat span {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    .detail-columns {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+    }
+
+    .mini-heading {
+      margin: 0 0 9px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rank-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .rank-list li span:first-child {
+      overflow-wrap: anywhere;
+    }
+
+    .rank-list strong {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .requirement-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .requirement-row {
+      display: grid;
+      grid-template-columns: 1fr 42px;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .requirement-row span {
+      font-size: 10px;
+    }
+
+    .requirement-row strong {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
+      font-size: 10px;
+    }
+
+    .requirement-row .bar-track {
+      grid-column: 1 / -1;
+      height: 5px;
+    }
+
+    .recommendation {
+      margin-top: 16px;
+      padding: 11px 12px;
+      border-left: 3px solid var(--green);
+      background: var(--green-soft);
+      color: #245937;
+      font-size: 11px;
+    }
+
+    .service-selector {
+      display: grid;
+      gap: 4px;
+      min-width: min(310px, 100%);
+    }
+
+    .service-selector label {
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    .service-selector select {
+      width: 100%;
+      min-height: 36px;
+      padding: 6px 34px 6px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      color: var(--ink);
+      background: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .service-selector select:focus {
+      border-color: var(--primary);
+      outline: 2px solid var(--primary-soft);
+      outline-offset: 1px;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .analysis-block {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .analysis-block h3,
+    .analysis-block p {
+      margin: 0;
+    }
+
+    .analysis-block h3 {
+      font-size: 13px;
+    }
+
+    .analysis-block > p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .metric-bars {
+      display: grid;
+      gap: 11px;
+      margin-top: 15px;
+    }
+
+    .metric-bar-row {
+      display: grid;
+      grid-template-columns: minmax(105px, 1fr) minmax(90px, 1.4fr) 48px;
+      align-items: center;
+      gap: 9px;
+      font-size: 10px;
+    }
+
+    .metric-bar-row strong {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-layout {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .score-ring {
+      --score: 76;
+      width: 118px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) calc(var(--score) * 1%), #e6ecea 0);
+    }
+
+    .score-center {
+      width: 88px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      text-align: center;
+    }
+
+    .score-center strong,
+    .score-center span {
+      display: block;
+    }
+
+    .score-center strong {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .score-center span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    .score-breakdown {
+      display: grid;
+      gap: 8px;
+    }
+
+    .score-breakdown div {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .score-breakdown div:last-child {
+      border: 0;
+    }
+
+    .score-breakdown strong {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .soft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 15px;
+    }
+
+    .soft-column h4 {
+      margin: 0 0 10px;
+      font-size: 11px;
+    }
+
+    .semantic-summary {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 15px;
+    }
+
+    .benchmark {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .benchmark strong,
+    .benchmark span {
+      display: block;
+    }
+
+    .benchmark strong {
+      font-size: 27px;
+    }
+
+    .benchmark span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .benchmark .rank {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 20px;
+    }
+
+    .win-rate {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .donut {
+      --score: 36.4;
+      width: 118px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--blue) calc(var(--score) * 1%), #e8edeb 0);
+    }
+
+    .donut-inner {
+      width: 82px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .win-copy strong,
+    .win-copy span {
+      display: block;
+    }
+
+    .win-copy strong {
+      font-size: 20px;
+    }
+
+    .win-copy span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .compare-table td:nth-child(2),
+    .compare-table td:nth-child(3),
+    .compare-table th:nth-child(2),
+    .compare-table th:nth-child(3) {
+      text-align: center;
+    }
+
+    .compare-worse {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .compare-better {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .traffic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .mini-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .mini-kpi {
+      min-width: 0;
+      padding: 12px;
+    }
+
+    .mini-kpi + .mini-kpi {
+      border-left: 1px solid var(--line);
+    }
+
+    .mini-kpi strong,
+    .mini-kpi span {
+      display: block;
+    }
+
+    .mini-kpi strong {
+      font-size: 17px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .mini-kpi span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .dropoff-grid {
+      display: grid;
+      grid-template-columns: 155px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .dropoff-number strong,
+    .dropoff-number span {
+      display: block;
+    }
+
+    .dropoff-number strong {
+      color: var(--red);
+      font-size: 29px;
+    }
+
+    .dropoff-number span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .recommendations-table td:first-child {
+      width: 46px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .recommendations-table td:nth-child(2) {
+      min-width: 240px;
+    }
+
+    .rec-title {
+      display: block;
+      font-weight: 720;
+    }
+
+    .rec-note {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    @media (max-width: 1180px) {
+      .kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .opportunity-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .opportunity-item:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .opportunity-item:nth-child(4) {
+        border-top: 1px solid var(--line);
+      }
+
+      .split,
+      .analysis-grid,
+      .comparison-grid,
+      .traffic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split > * + * {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      :root {
+        --sidebar-width: 0px;
+      }
+
+      .sidebar {
+        width: 228px;
+        transform: translateX(-100%);
+        transition: transform .2s ease;
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0);
+      }
+
+      body.menu-open::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 19;
+        background: rgba(15, 25, 22, .45);
+      }
+
+      .sidebar {
+        z-index: 25;
+      }
+
+      .mobile-menu {
+        display: grid;
+        place-items: center;
+      }
+
+      .topbar {
+        padding: 10px 16px;
+      }
+
+      .page-title {
+        margin-right: auto;
+      }
+
+      .page-title p,
+      .action-button {
+        display: none;
+      }
+
+      .content {
+        padding: 16px 14px 36px;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .funnel-layout,
+      .detail-columns,
+      .soft-grid,
+      .semantic-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .funnel-row {
+        grid-template-columns: minmax(110px, 1fr) minmax(100px, 1fr) 72px;
+      }
+
+      .mini-kpis {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mini-kpi:nth-child(3) {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .mini-kpi:nth-child(4) {
+        border-top: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        flex-wrap: wrap;
+      }
+
+      .toolbar {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .demo-note {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .kpi-grid,
+      .opportunity-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .opportunity-item {
+        min-height: auto;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .section-header {
+        flex-direction: column;
+      }
+
+      .section-body {
+        padding: 15px 14px;
+      }
+
+      .funnel-row {
+        grid-template-columns: 1fr 64px;
+        gap: 5px 9px;
+      }
+
+      .funnel-row .bar-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .funnel-value {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .detail-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-stat + .detail-stat {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .score-layout,
+      .win-rate,
+      .dropoff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .score-ring,
+      .donut {
+        margin-inline: auto;
+      }
+
+      .metric-bar-row {
+        grid-template-columns: minmax(90px, 1fr) minmax(70px, 1fr) 42px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .sidebar {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Навигация по аналитике">
+      <div class="brand">
+        <div class="brand-mark">CDM</div>
+        <div>
+          <strong>Partner Analytics</strong>
+          <span>Кабинет провайдера</span>
+        </div>
+      </div>
+
+      <div class="provider-switcher">
+        <small>Провайдер</small>
+        <strong>Example Cloud</strong>
+      </div>
+
+      <div class="nav-label">Отчет</div>
+      <nav>
+        <a class="active" href="#overview">Обзор</a>
+        <a href="#funnel">Воронка</a>
+        <a href="#coverage">Потерянный спрос</a>
+        <a href="#quality">Качество подбора</a>
+        <a href="#comparison">Сравнения</a>
+        <a href="#traffic">Переходы</a>
+        <a href="#actions">Рекомендации</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        Данные формируются из обезличенных результатов поиска CDM.
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" type="button" aria-label="Открыть меню" aria-expanded="false">≡</button>
+        <div class="page-title">
+          <h1>Аналитика спроса и конкурентности</h1>
+          <p id="period-label">1-30 июня 2026</p>
+        </div>
+        <div class="toolbar">
+          <div class="segmented" aria-label="Период отчета">
+            <button type="button" data-period="7">7 дней</button>
+            <button class="active" type="button" data-period="30">30 дней</button>
+            <button type="button" data-period="90">90 дней</button>
+          </div>
+          <button class="action-button" id="export-button" type="button">Экспорт CSV</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="demo-note">
+          <span><span class="status-dot"></span><strong>Демонстрационные данные.</strong> Макет показывает будущую аналитику провайдера.</span>
+          <span>Обновлено 17 июля, 12:40</span>
+        </div>
+
+        <section id="overview" aria-labelledby="overview-title">
+          <div class="kpi-grid">
+            <article class="kpi">
+              <div class="kpi-label" id="overview-title">Потенциальные запросы</div>
+              <div class="kpi-value" data-count="12480">12 480</div>
+              <div class="kpi-meta"><span class="delta-up">+8,6%</span> к прошлому периоду</div>
+            </article>
+            <article class="kpi">
+              <div class="kpi-label">Покрытие цепочек</div>
+              <div class="kpi-value">73,8%</div>
+              <div class="kpi-meta"><span class="delta-down">-4,1 п.п.</span> к категории</div>
+            </article>
+            <article class="kpi">
+              <div class="kpi-label">Участие в сравнениях</div>
+              <div class="kpi-value" data-count="2140">2 140</div>
+              <div class="kpi-meta">17,1% потенциального спроса</div>
+            </article>
+            <article class="kpi">
+              <div class="kpi-label">Победы в сравнениях</div>
+              <div class="kpi-value">36,4%</div>
+              <div class="kpi-meta"><span class="delta-up">+2,3 п.п.</span> к прошлому периоду</div>
+            </article>
+            <article class="kpi">
+              <div class="kpi-label">CTR карточек</div>
+              <div class="kpi-value">7,5%</div>
+              <div class="kpi-meta"><span data-count="520">520</span> переходов на сайт</div>
+            </article>
+          </div>
+
+          <div class="opportunity-strip" aria-label="Главные возможности роста">
+            <div class="opportunity-intro">
+              <div class="eyebrow" style="color:#f2c84b">Фокус месяца</div>
+              <h2>Где теряется спрос</h2>
+              <p>Приоритеты рассчитаны по охвату запросов, потерянным цепочкам и причинам проигрыша.</p>
+            </div>
+            <div class="opportunity-item">
+              <span class="badge high">Высокий приоритет</span>
+              <strong>Добавить CDN в каталог</strong>
+              <p>Сервис отсутствует в 11,4% релевантных запросов.</p>
+              <div class="opportunity-effect">До +<span data-count="1180">1 180</span> полных цепочек</div>
+            </div>
+            <div class="opportunity-item">
+              <span class="badge high">Высокий приоритет</span>
+              <strong>Уточнить соответствие 152-ФЗ</strong>
+              <p>Часть PostgreSQL-пакетов отсеивается жестким фильтром.</p>
+              <div class="opportunity-effect">До +<span data-count="260">260</span> кандидатов</div>
+            </div>
+            <div class="opportunity-item">
+              <span class="badge medium">Средний приоритет</span>
+              <strong>Раскрыть read replicas</strong>
+              <p>Критерий часто влияет на выбор production-конфигураций.</p>
+              <div class="opportunity-effect">До +<span data-count="210">210</span> сравнений</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="funnel" aria-labelledby="funnel-title">
+          <div class="section-header">
+            <div>
+              <h2 id="funnel-title">Воронка присутствия провайдера</h2>
+              <p>От потенциального спроса до перехода на сайт. Проценты считаются от всех релевантных запросов.</p>
+            </div>
+            <span class="badge info">Все service_types</span>
+          </div>
+          <div class="section-body funnel-layout">
+            <div class="funnel">
+              <div class="funnel-row">
+                <div class="funnel-name">Потенциальные запросы</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+                <div class="funnel-value"><span data-count="12480">12 480</span><span>100%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Все типы услуг доступны</div>
+                <div class="bar-track"><div class="bar-fill" style="width:73.8%"></div></div>
+                <div class="funnel-value"><span data-count="9210">9 210</span><span>73,8%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Прошел hard-фильтры</div>
+                <div class="bar-track"><div class="bar-fill" style="width:62.8%"></div></div>
+                <div class="funnel-value"><span data-count="7840">7 840</span><span>62,8%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Выбран rerank в Top-1</div>
+                <div class="bar-track"><div class="bar-fill blue" style="width:62.8%"></div></div>
+                <div class="funnel-value"><span data-count="7840">7 840</span><span>62,8%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Показан пользователю</div>
+                <div class="bar-track"><div class="bar-fill blue" style="width:55.5%"></div></div>
+                <div class="funnel-value"><span data-count="6930">6 930</span><span>55,5%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Участвовал в сравнении</div>
+                <div class="bar-track"><div class="bar-fill amber" style="width:17.1%"></div></div>
+                <div class="funnel-value"><span data-count="2140">2 140</span><span>17,1%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Победил в сравнении</div>
+                <div class="bar-track"><div class="bar-fill green" style="width:6.3%"></div></div>
+                <div class="funnel-value"><span data-count="780">780</span><span>6,3%</span></div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-name">Переход на сайт</div>
+                <div class="bar-track"><div class="bar-fill green" style="width:4.2%"></div></div>
+                <div class="funnel-value"><span data-count="520">520</span><span>4,2%</span></div>
+              </div>
+            </div>
+
+            <aside class="insight-box">
+              <h3>Главная точка потери</h3>
+              <div class="big-number">-26,2%</div>
+              <p>запросов невозможно покрыть полной цепочкой из-за отсутствующих типов услуг.</p>
+              <ul>
+                <li><strong>CDN</strong> формирует 43% этой потери</li>
+                <li><strong>25,9%</strong> PostgreSQL-запросов не проходят hard-фильтры</li>
+                <li><strong>36,4%</strong> сравнений заканчиваются победой</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="coverage" aria-labelledby="coverage-title">
+          <div class="section-header">
+            <div>
+              <h2 id="coverage-title">Потерянный спрос по типам услуг</h2>
+              <p>Запросы, для которых Example Cloud не может собрать полную цепочку. Выберите строку для детализации.</p>
+            </div>
+            <span class="badge high">3 110 потерянных цепочек</span>
+          </div>
+          <div class="split">
+            <div class="table-wrap">
+              <table class="interactive-table" aria-label="Отсутствующие типы услуг">
+                <thead>
+                  <tr>
+                    <th>Тип услуги</th>
+                    <th class="numeric">Запросы</th>
+                    <th class="numeric">Доля</th>
+                    <th class="numeric">Цепочки</th>
+                  </tr>
+                </thead>
+                <tbody id="missing-services-body">
+                  <tr class="selected" data-service="cdn" tabindex="0">
+                    <td>CDN<span class="service-code">cdn</span></td>
+                    <td class="numeric" data-count="1420">1 420</td>
+                    <td class="numeric">11,4%</td>
+                    <td class="numeric" data-count="1180">1 180</td>
+                  </tr>
+                  <tr data-service="managed_streaming" tabindex="0">
+                    <td>Управляемый Kafka<span class="service-code">managed_streaming</span></td>
+                    <td class="numeric" data-count="860">860</td>
+                    <td class="numeric">6,9%</td>
+                    <td class="numeric" data-count="740">740</td>
+                  </tr>
+                  <tr data-service="container_registry" tabindex="0">
+                    <td>Container Registry<span class="service-code">container_registry</span></td>
+                    <td class="numeric" data-count="610">610</td>
+                    <td class="numeric">4,9%</td>
+                    <td class="numeric" data-count="490">490</td>
+                  </tr>
+                  <tr data-service="managed_in_memory_database" tabindex="0">
+                    <td>Управляемый Redis<span class="service-code">managed_in_memory_database</span></td>
+                    <td class="numeric" data-count="480">480</td>
+                    <td class="numeric">3,8%</td>
+                    <td class="numeric" data-count="410">410</td>
+                  </tr>
+                  <tr data-service="monitoring" tabindex="0">
+                    <td>Мониторинг<span class="service-code">monitoring</span></td>
+                    <td class="numeric" data-count="330">330</td>
+                    <td class="numeric">2,6%</td>
+                    <td class="numeric" data-count="290">290</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="detail-pane" aria-live="polite">
+              <div class="eyebrow">Детализация спроса</div>
+              <h3 id="detail-title">CDN</h3>
+              <p id="detail-description">Не хватает для веб-приложений, раздачи статики и защиты публичного трафика.</p>
+              <div class="detail-stats">
+                <div class="detail-stat">
+                  <strong id="detail-queries">1 420</strong>
+                  <span>запросов</span>
+                </div>
+                <div class="detail-stat">
+                  <strong id="detail-chains">1 180</strong>
+                  <span>полных цепочек</span>
+                </div>
+                <div class="detail-stat">
+                  <strong id="detail-share">11,4%</strong>
+                  <span>всего спроса</span>
+                </div>
+              </div>
+              <div class="detail-columns">
+                <div>
+                  <h4 class="mini-heading">Частые комбинации цепочек</h4>
+                  <ol class="rank-list" id="detail-chains-list"></ol>
+                </div>
+                <div>
+                  <h4 class="mini-heading">Что важно пользователям</h4>
+                  <div class="requirement-list" id="detail-requirements"></div>
+                </div>
+              </div>
+              <div class="recommendation" id="detail-recommendation">
+                Добавление CDN потенциально восстановит до 1 180 полных цепочек за 30 дней.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="quality" aria-labelledby="quality-title">
+          <div class="section-header">
+            <div>
+              <h2 id="quality-title">Качество подбора услуг</h2>
+              <p>Как каталог проходит hard-фильтры, попадает в Qdrant-кандидаты и оценивается deterministic rerank.</p>
+            </div>
+            <div class="service-selector">
+              <label for="quality-service-select">Тип услуги провайдера</label>
+              <select id="quality-service-select">
+                <option value="managed_relational_database">Управляемые реляционные БД</option>
+                <option value="virtual_machine">Виртуальные машины</option>
+                <option value="managed_kubernetes">Управляемый Kubernetes</option>
+                <option value="object_storage">Object Storage</option>
+              </select>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="analysis-grid">
+              <article class="analysis-block">
+                <h3>Отказы по hard-фильтрам</h3>
+                <p id="quality-hard-summary"></p>
+                <div class="metric-bars" id="quality-hard-bars"></div>
+                <div class="recommendation" id="quality-hard-recommendation"></div>
+              </article>
+
+              <article class="analysis-block">
+                <h3>Результат backend rerank</h3>
+                <p id="quality-rerank-summary"></p>
+                <div class="score-layout">
+                  <div class="score-ring" id="quality-score-ring" style="--score:76">
+                    <div class="score-center"><div><strong id="quality-final-score">0,76</strong><span>final score</span></div></div>
+                  </div>
+                  <div class="score-breakdown" id="quality-score-breakdown"></div>
+                </div>
+              </article>
+
+              <article class="analysis-block">
+                <h3>Соответствие soft-критериям</h3>
+                <p>Доля запросов, в которых выбранный пакет удовлетворяет пожеланию пользователя.</p>
+                <div class="soft-grid">
+                  <div class="soft-column">
+                    <h4 class="compare-better">Сильные стороны</h4>
+                    <div class="metric-bars" id="quality-soft-strengths"></div>
+                  </div>
+                  <div class="soft-column">
+                    <h4 class="compare-worse">Частые разрывы</h4>
+                    <div class="metric-bars" id="quality-soft-gaps"></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="analysis-block">
+                <h3>Семантическое соответствие</h3>
+                <p>Насколько embedding_text пакета совпадает с бизнес-контекстом пользовательских запросов.</p>
+                <div class="semantic-summary">
+                  <div class="benchmark">
+                    <strong id="quality-semantic-score">0,82</strong>
+                    <span>средний Top-1 score</span>
+                    <div class="rank" id="quality-semantic-rank">5 место из 8</div>
+                  </div>
+                  <div class="metric-bars" id="quality-semantic-bars" style="margin-top:0"></div>
+                </div>
+                <div class="recommendation" id="quality-semantic-recommendation"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="comparison" aria-labelledby="comparison-title">
+          <div class="section-header">
+            <div>
+              <h2 id="comparison-title">Результаты сравнений</h2>
+              <p>Почему пакет провайдера выигрывает или уступает лучшей альтернативе в готовой цепочке.</p>
+            </div>
+            <span class="badge info"><span data-count="2140">2 140</span>&nbsp;сравнений</span>
+          </div>
+          <div class="section-body comparison-grid">
+            <div>
+              <div class="win-rate">
+                <div class="donut" style="--score:36.4"><div class="donut-inner">36,4%</div></div>
+                <div class="win-copy">
+                  <strong><span data-count="780">780</span> побед</strong>
+                  <span><span data-count="1360">1 360</span> проигрышей</span>
+                </div>
+              </div>
+              <div class="metric-bars">
+                <div class="metric-bar-row"><span>Цена</span><div class="bar-track"><div class="bar-fill red" style="width:100%"></div></div><strong>30,1%</strong></div>
+                <div class="metric-bar-row"><span>Нет read replicas</span><div class="bar-track"><div class="bar-fill red" style="width:66%"></div></div><strong>19,9%</strong></div>
+                <div class="metric-bar-row"><span>Semantic score</span><div class="bar-track"><div class="bar-fill amber" style="width:54%"></div></div><strong>16,2%</strong></div>
+                <div class="metric-bar-row"><span>Нет Multi-AZ</span><div class="bar-track"><div class="bar-fill amber" style="width:42%"></div></div><strong>12,5%</strong></div>
+                <div class="metric-bar-row"><span>Неполная карточка</span><div class="bar-track"><div class="bar-fill amber" style="width:32%"></div></div><strong>9,6%</strong></div>
+                <div class="metric-bar-row"><span>Слабее вся цепочка</span><div class="bar-track"><div class="bar-fill amber" style="width:25%"></div></div><strong>7,4%</strong></div>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="compare-table" aria-label="Сравнение PostgreSQL-пакета">
+                <thead>
+                  <tr><th>Критерий</th><th>Example Cloud</th><th>Лучшая альтернатива</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Отклонение цены от медианы</td><td class="compare-worse">+14%</td><td class="compare-better">-3%</td></tr>
+                  <tr><td>Soft match</td><td class="compare-worse">74%</td><td class="compare-better">89%</td></tr>
+                  <tr><td>Semantic score</td><td>0,82</td><td class="compare-better">0,88</td></tr>
+                  <tr><td>Read replicas</td><td class="compare-worse">Не указано</td><td class="compare-better">Есть</td></tr>
+                  <tr><td>Multi-AZ</td><td class="compare-worse">Нет</td><td class="compare-better">Есть</td></tr>
+                  <tr><td>Полнота карточки</td><td class="compare-worse">81%</td><td class="compare-better">96%</td></tr>
+                </tbody>
+              </table>
+              <div class="recommendation">Основной резерв конкурентности: подтвердить read replicas и Multi-AZ, затем улучшить описание production-сценариев.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="traffic" aria-labelledby="traffic-title">
+          <div class="section-header">
+            <div>
+              <h2 id="traffic-title">Карточки и переходы на сайт</h2>
+              <p>Последнее достоверное событие в CDM - исходящий переход. Покупка или подключение остаются вне зоны наблюдения.</p>
+            </div>
+            <span class="badge good">CTR 7,5%</span>
+          </div>
+          <div class="section-body traffic-grid">
+            <article class="analysis-block">
+              <h3>Эффективность карточек</h3>
+              <p>От показа в выдаче до перехода на сайт провайдера.</p>
+              <div class="mini-kpis">
+                <div class="mini-kpi"><strong data-count="6930">6 930</strong><span>показов</span></div>
+                <div class="mini-kpi"><strong data-count="2870">2 870</strong><span>полных открытий</span></div>
+                <div class="mini-kpi"><strong data-count="520">520</strong><span>переходов</span></div>
+                <div class="mini-kpi"><strong>18,1%</strong><span>CTR после открытия</span></div>
+              </div>
+              <div class="metric-bars">
+                <div class="metric-bar-row"><span>Виртуальные машины</span><div class="bar-track"><div class="bar-fill green" style="width:94%"></div></div><strong>9,4%</strong></div>
+                <div class="metric-bar-row"><span>PostgreSQL</span><div class="bar-track"><div class="bar-fill blue" style="width:71%"></div></div><strong>7,1%</strong></div>
+                <div class="metric-bar-row"><span>Object Storage</span><div class="bar-track"><div class="bar-fill blue" style="width:68%"></div></div><strong>6,8%</strong></div>
+                <div class="metric-bar-row"><span>Kubernetes</span><div class="bar-track"><div class="bar-fill amber" style="width:52%"></div></div><strong>5,2%</strong></div>
+              </div>
+            </article>
+
+            <article class="analysis-block">
+              <h3>Где заканчивается просмотр</h3>
+              <p>Отсутствие клика не доказывает проблему, но помогает найти места для проверки карточки.</p>
+              <div class="dropoff-grid">
+                <div class="dropoff-number"><strong>81,9%</strong><span><span data-count="2350">2 350</span> открытий без перехода</span></div>
+                <div class="score-breakdown">
+                  <div><span>Среднее время просмотра</span><strong>24 сек.</strong></div>
+                  <div><span>Средняя глубина карточки</span><strong>72%</strong></div>
+                  <div><span>Карточки без SLA</span><strong class="compare-worse">42%</strong></div>
+                </div>
+              </div>
+              <div class="metric-bars">
+                <div class="metric-bar-row"><span>После цены</span><div class="bar-track"><div class="bar-fill red" style="width:100%"></div></div><strong>31%</strong></div>
+                <div class="metric-bar-row"><span>После параметров</span><div class="bar-track"><div class="bar-fill amber" style="width:77%"></div></div><strong>24%</strong></div>
+                <div class="metric-bar-row"><span>После SLA и compliance</span><div class="bar-track"><div class="bar-fill amber" style="width:58%"></div></div><strong>18%</strong></div>
+                <div class="metric-bar-row"><span>После описания</span><div class="bar-track"><div class="bar-fill amber" style="width:45%"></div></div><strong>14%</strong></div>
+                <div class="metric-bar-row"><span>До CTA</span><div class="bar-track"><div class="bar-fill amber" style="width:42%"></div></div><strong>13%</strong></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="actions" aria-labelledby="actions-title">
+          <div class="section-header">
+            <div>
+              <h2 id="actions-title">Рекомендованные действия</h2>
+              <p>Приоритет составлен по ожидаемому влиянию на покрытие цепочек, сравнения и переходы.</p>
+            </div>
+            <span class="badge high">3 действия требуют внимания</span>
+          </div>
+          <div class="table-wrap">
+            <table class="recommendations-table" aria-label="Рекомендации провайдеру">
+              <thead>
+                <tr><th>#</th><th>Действие</th><th>Основание</th><th>Ожидаемый эффект</th><th>Приоритет</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td><span class="rec-title">Добавить CDN в каталог</span><span class="rec-note">Новая услуга или интеграция партнерского предложения</span></td>
+                  <td>1 420 запросов без полного покрытия</td>
+                  <td class="compare-better">До +1 180 цепочек</td>
+                  <td><span class="badge high">Высокий</span></td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td><span class="rec-title">Подтвердить 152-ФЗ для PostgreSQL</span><span class="rec-note">Заполнить значение в каталоге, если соответствие фактически есть</span></td>
+                  <td>35,1% hard-отказов категории</td>
+                  <td class="compare-better">До +260 кандидатов</td>
+                  <td><span class="badge high">Высокий</span></td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td><span class="rec-title">Раскрыть read replicas и Multi-AZ</span><span class="rec-note">Уточнить params и описание production-пакетов</span></td>
+                  <td>440 проигранных сравнений</td>
+                  <td class="compare-better">До +350 сравнений</td>
+                  <td><span class="badge high">Высокий</span></td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td><span class="rec-title">Усилить semantic embedding-текст</span><span class="rec-note">Добавить сценарии высокой нагрузки, финансовых систем и HA</span></td>
+                  <td>0,82 против 0,87 по категории</td>
+                  <td>Рост релевантности Top-1</td>
+                  <td><span class="badge medium">Средний</span></td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td><span class="rec-title">Заполнить SLA и тарификацию трафика</span><span class="rec-note">Устранить пробелы в карточках Kubernetes и Storage</span></td>
+                  <td>42% карточек без SLA</td>
+                  <td>Проверить влияние на CTR</td>
+                  <td><span class="badge medium">Средний</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <p class="footer-note">CDM Partner Analytics. Данные обезличены и агрегированы; единичные пользовательские запросы провайдеру не раскрываются.</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const periodConfig = {
+      7: { multiplier: 0.24, label: "Последние 7 дней" },
+      30: { multiplier: 1, label: "1-30 июня 2026" },
+      90: { multiplier: 2.92, label: "Последние 90 дней" }
+    };
+
+    const formatCount = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(value));
+    let currentPeriod = 30;
+
+    function applyPeriod(period) {
+      currentPeriod = Number(period);
+      const config = periodConfig[currentPeriod];
+      document.querySelectorAll("[data-count]").forEach((element) => {
+        const base = Number(element.dataset.count);
+        element.textContent = formatCount(base * config.multiplier);
+      });
+      document.getElementById("period-label").textContent = config.label;
+      document.querySelectorAll("[data-period]").forEach((button) => {
+        button.classList.toggle("active", Number(button.dataset.period) === currentPeriod);
+      });
+      renderMissingService(activeService);
+      renderQuality(activeQualityService);
+    }
+
+    document.querySelectorAll("[data-period]").forEach((button) => {
+      button.addEventListener("click", () => applyPeriod(button.dataset.period));
+    });
+
+    const missingServices = {
+      cdn: {
+        title: "CDN",
+        description: "Не хватает для веб-приложений, раздачи статики и защиты публичного трафика.",
+        queries: 1420,
+        chains: 1180,
+        share: "11,4%",
+        combinations: [
+          ["VM + PostgreSQL + Object Storage + CDN", 460],
+          ["VM + Object Storage + CDN", 310],
+          ["Kubernetes + Object Storage + CDN", 230],
+          ["VM + PostgreSQL + CDN + Monitoring", 190],
+          ["Object Storage + CDN", 140]
+        ],
+        requirements: [["Регион Россия", 71], ["HTTPS", 64], ["DDoS-защита", 48], ["Кеш статики", 43], ["Трафик по потреблению", 35]],
+        recommendation: "Добавление CDN потенциально восстановит до {chains} полных цепочек за выбранный период."
+      },
+      managed_streaming: {
+        title: "Управляемый Kafka",
+        description: "Требуется в событийных архитектурах, потоковой обработке и интеграционных цепочках.",
+        queries: 860,
+        chains: 740,
+        share: "6,9%",
+        combinations: [["VM + PostgreSQL + Kafka", 280], ["Kubernetes + Kafka + Monitoring", 210], ["Object Storage + Kafka", 130], ["VM + Kafka", 120]],
+        requirements: [["Высокая доступность", 76], ["Мониторинг lag", 62], ["Private network", 54], ["Автомасштабирование", 41]],
+        recommendation: "Управляемый Kafka потенциально восстановит до {chains} цепочек за выбранный период."
+      },
+      container_registry: {
+        title: "Container Registry",
+        description: "Замыкает контейнерные цепочки с Kubernetes, CI/CD и безопасным хранением образов.",
+        queries: 610,
+        chains: 490,
+        share: "4,9%",
+        combinations: [["Kubernetes + Registry + Monitoring", 240], ["VM + Registry + Kubernetes", 150], ["Registry + Object Storage", 100]],
+        requirements: [["Сканирование уязвимостей", 68], ["Private endpoint", 57], ["Retention policy", 49], ["Robot accounts", 36]],
+        recommendation: "Container Registry потенциально восстановит до {chains} контейнерных цепочек."
+      },
+      managed_in_memory_database: {
+        title: "Управляемый Redis",
+        description: "Нужен для кеширования, сессий, очередей и снижения задержек веб-приложений.",
+        queries: 480,
+        chains: 410,
+        share: "3,8%",
+        combinations: [["VM + PostgreSQL + Redis", 190], ["Kubernetes + Redis", 130], ["Redis + Monitoring", 90]],
+        requirements: [["Репликация", 72], ["Persistence", 61], ["Private network", 52], ["Cluster mode", 44]],
+        recommendation: "Управляемый Redis потенциально восстановит до {chains} high-load цепочек."
+      },
+      monitoring: {
+        title: "Мониторинг",
+        description: "Дополняет production-цепочки метриками, алертами, логами и контролем доступности.",
+        queries: 330,
+        chains: 290,
+        share: "2,6%",
+        combinations: [["VM + PostgreSQL + Monitoring", 130], ["Kubernetes + Monitoring", 95], ["Kafka + Monitoring", 65]],
+        requirements: [["Алерты", 83], ["Готовые дашборды", 68], ["Логи", 57], ["SLA-мониторинг", 46]],
+        recommendation: "Мониторинг потенциально восстановит до {chains} production-цепочек."
+      }
+    };
+
+    const qualityServices = {
+      managed_relational_database: {
+        hard: {
+          relevant: 2860,
+          rejected: 740,
+          reasons: [
+            ["Нет данных о 152-ФЗ", 260, "red"],
+            ["Нет нужного региона", 170, "red"],
+            ["Цена выше бюджета", 140, "amber"],
+            ["Недостаточно RAM", 90, "amber"],
+            ["Нет HA", 50, "amber"],
+            ["Мало storage", 30, "amber"]
+          ],
+          recommendation: "Проверьте полноту каталога: отсутствие значения и отсутствие возможности должны анализироваться отдельно."
+        },
+        rerank: { package: "PostgreSQL Production M", top1: 1640, final: 0.76, semantic: 0.82, soft: 74, relaxation: -0.08 },
+        strengths: [["Резервные копии", 96], ["Масштабирование", 91], ["Мониторинг", 88], ["Простота работы", 83], ["Production fit", 81]],
+        gaps: [["Read replicas", 38], ["Backup retention", 31], ["Multi-AZ", 27], ["PITR", 19], ["Private network", 14]],
+        semantic: {
+          average: 0.82,
+          rank: "5 место из 8",
+          contexts: [["Маленькая команда", 0.90], ["Production", 0.88], ["Высокая нагрузка", 0.73], ["High availability", 0.71], ["Финансовый сервис", 0.69]],
+          recommendation: "Уточните embedding-описание: сценарии высокой нагрузки, финансовых систем и HA. Точные числа остаются в params и payload."
+        }
+      },
+      virtual_machine: {
+        hard: {
+          relevant: 3340,
+          rejected: 610,
+          reasons: [["Цена выше бюджета", 210, "red"], ["Нет нужного региона", 150, "red"], ["Нет требуемого GPU", 110, "amber"], ["Недостаточно RAM", 70, "amber"], ["Нет нужной ОС", 40, "amber"], ["Недостаточно vCPU", 30, "amber"]],
+          recommendation: "Расширьте бюджетные и GPU-конфигурации в регионах с наибольшим неудовлетворенным спросом."
+        },
+        rerank: { package: "Compute Optimized L", top1: 1880, final: 0.81, semantic: 0.86, soft: 82, relaxation: -0.04 },
+        strengths: [["Linux", 97], ["NVMe-профиль", 92], ["Масштабирование", 89], ["Private network", 86], ["Production fit", 84]],
+        gaps: [["GPU availability", 29], ["Windows licensing", 22], ["Выделенные CPU", 18], ["Local SSD", 15], ["Preemptible VM", 12]],
+        semantic: {
+          average: 0.86,
+          rank: "3 место из 8",
+          contexts: [["Backend API", 0.92], ["Linux production", 0.90], ["ML inference", 0.84], ["Высокая нагрузка", 0.82], ["Windows enterprise", 0.72]],
+          recommendation: "Добавьте отдельные embedding-профили для GPU inference и Windows enterprise, не смешивая их с универсальными VM."
+        }
+      },
+      managed_kubernetes: {
+        hard: {
+          relevant: 1980,
+          rejected: 430,
+          reasons: [["Нет нужного региона", 130, "red"], ["Цена выше бюджета", 100, "red"], ["Мало worker nodes", 80, "amber"], ["Нет требуемого SLA", 55, "amber"], ["Нет данных о 152-ФЗ", 40, "amber"], ["Нет autoscaling", 25, "amber"]],
+          recommendation: "Уточните SLA, compliance и пределы autoscaling для production-кластеров."
+        },
+        rerank: { package: "Kubernetes Production 3.0", top1: 940, final: 0.79, semantic: 0.84, soft: 78, relaxation: -0.05 },
+        strengths: [["Autoscaling", 94], ["Мониторинг", 89], ["Managed control plane", 87], ["Rolling updates", 84], ["Production fit", 80]],
+        gaps: [["Private cluster", 26], ["GPU node pools", 23], ["Multi-AZ", 21], ["Service mesh", 17], ["Policy engine", 13]],
+        semantic: {
+          average: 0.84,
+          rank: "4 место из 8",
+          contexts: [["Микросервисы", 0.91], ["Production cluster", 0.88], ["CI/CD platform", 0.84], ["ML inference", 0.77], ["Изолированный контур", 0.72]],
+          recommendation: "Усилите описание private cluster, GPU node pools и сценариев изолированного контура."
+        }
+      },
+      object_storage: {
+        hard: {
+          relevant: 2560,
+          rejected: 390,
+          reasons: [["Цена выше бюджета", 120, "red"], ["Нет нужного региона", 90, "red"], ["Нет данных о compliance", 70, "amber"], ["Не указано шифрование", 50, "amber"], ["Нет S3 compatibility", 40, "amber"], ["Нет versioning", 20, "amber"]],
+          recommendation: "Заполните compliance, шифрование и S3-совместимость для всех storage-классов."
+        },
+        rerank: { package: "S3 Hot Standard", top1: 1470, final: 0.84, semantic: 0.88, soft: 85, relaxation: -0.03 },
+        strengths: [["S3 compatibility", 98], ["Шифрование", 95], ["Versioning", 91], ["Lifecycle policy", 88], ["Публичные объекты", 86]],
+        gaps: [["Object Lock", 24], ["Cross-region replication", 21], ["Cold tier", 17], ["Private endpoint", 15], ["Event notifications", 11]],
+        semantic: {
+          average: 0.88,
+          rank: "2 место из 8",
+          contexts: [["Статические файлы", 0.94], ["Медиа-контент", 0.92], ["Backup", 0.88], ["Data lake", 0.82], ["Архивное хранение", 0.76]],
+          recommendation: "Разделите semantic-профили hot, cold и backup-хранилища, чтобы точнее попадать в разные сценарии."
+        }
+      }
+    };
+
+    const formatScore = (value) => value.toFixed(2).replace(".", ",");
+    let activeQualityService = "managed_relational_database";
+
+    function metricBar(label, width, value, color) {
+      return `<div class="metric-bar-row"><span>${label}</span><div class="bar-track"><div class="bar-fill ${color}" style="width:${width}%"></div></div><strong>${value}</strong></div>`;
+    }
+
+    function renderQuality(serviceKey) {
+      activeQualityService = serviceKey;
+      const data = qualityServices[serviceKey];
+      const multiplier = periodConfig[currentPeriod].multiplier;
+      const hardMax = Math.max(...data.hard.reasons.map((item) => item[1]));
+
+      document.getElementById("quality-hard-summary").textContent = `${formatCount(data.hard.rejected * multiplier)} из ${formatCount(data.hard.relevant * multiplier)} релевантных запросов получили ноль кандидатов.`;
+      document.getElementById("quality-hard-bars").innerHTML = data.hard.reasons.map(([label, value, color]) =>
+        metricBar(label, Math.round(value / hardMax * 100), formatCount(value * multiplier), color)
+      ).join("");
+      document.getElementById("quality-hard-recommendation").textContent = data.hard.recommendation;
+
+      document.getElementById("quality-rerank-summary").innerHTML = `Лучший пакет: <strong>${data.rerank.package}</strong>, Top-1 в ${formatCount(data.rerank.top1 * multiplier)} запросах.`;
+      document.getElementById("quality-score-ring").style.setProperty("--score", Math.round(data.rerank.final * 100));
+      document.getElementById("quality-final-score").textContent = formatScore(data.rerank.final);
+      document.getElementById("quality-score-breakdown").innerHTML = [
+        ["Semantic score Qdrant", formatScore(data.rerank.semantic), ""],
+        ["Соответствие soft-критериям", `${data.rerank.soft}%`, ""],
+        ["Штраф за relaxation branch", data.rerank.relaxation.toFixed(2).replace(".", ","), ""],
+        ["Hard safety check", "Пройден", "compare-better"]
+      ].map(([label, value, className]) => `<div><span>${label}</span><strong class="${className}">${value}</strong></div>`).join("");
+
+      document.getElementById("quality-soft-strengths").innerHTML = data.strengths.map(([label, value]) =>
+        metricBar(label, value, `${value}%`, "green")
+      ).join("");
+      const gapMax = Math.max(...data.gaps.map((item) => item[1]));
+      document.getElementById("quality-soft-gaps").innerHTML = data.gaps.map(([label, value]) =>
+        metricBar(label, Math.round(value / gapMax * 100), `${value}%`, value >= 25 ? "red" : "amber")
+      ).join("");
+
+      document.getElementById("quality-semantic-score").textContent = formatScore(data.semantic.average);
+      document.getElementById("quality-semantic-rank").textContent = data.semantic.rank;
+      document.getElementById("quality-semantic-bars").innerHTML = data.semantic.contexts.map(([label, value]) => {
+        const color = value >= 0.82 ? "blue" : value >= 0.72 ? "amber" : "red";
+        return metricBar(label, Math.round(value * 100), formatScore(value), color);
+      }).join("");
+      document.getElementById("quality-semantic-recommendation").textContent = data.semantic.recommendation;
+    }
+
+    let activeService = "cdn";
+
+    function renderMissingService(serviceKey) {
+      activeService = serviceKey;
+      const data = missingServices[serviceKey];
+      const multiplier = periodConfig[currentPeriod].multiplier;
+      const chains = formatCount(data.chains * multiplier);
+
+      document.getElementById("detail-title").textContent = data.title;
+      document.getElementById("detail-description").textContent = data.description;
+      document.getElementById("detail-queries").textContent = formatCount(data.queries * multiplier);
+      document.getElementById("detail-chains").textContent = chains;
+      document.getElementById("detail-share").textContent = data.share;
+
+      document.getElementById("detail-chains-list").innerHTML = data.combinations.map(([label, value]) =>
+        `<li><span>${label}</span><strong>${formatCount(value * multiplier)}</strong></li>`
+      ).join("");
+
+      document.getElementById("detail-requirements").innerHTML = data.requirements.map(([label, value]) =>
+        `<div class="requirement-row"><span>${label}</span><strong>${value}%</strong><div class="bar-track"><div class="bar-fill blue" style="width:${value}%"></div></div></div>`
+      ).join("");
+
+      document.getElementById("detail-recommendation").textContent = data.recommendation.replace("{chains}", chains);
+      document.querySelectorAll("[data-service]").forEach((row) => row.classList.toggle("selected", row.dataset.service === serviceKey));
+    }
+
+    document.querySelectorAll("[data-service]").forEach((row) => {
+      row.addEventListener("click", () => renderMissingService(row.dataset.service));
+      row.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          renderMissingService(row.dataset.service);
+        }
+      });
+    });
+
+    document.getElementById("quality-service-select").addEventListener("change", (event) => {
+      renderQuality(event.target.value);
+    });
+
+    const menuButton = document.querySelector(".mobile-menu");
+    menuButton.addEventListener("click", () => {
+      const isOpen = document.body.classList.toggle("menu-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll(".sidebar nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.body.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const observedSections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".sidebar nav a");
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`));
+    }, { rootMargin: "-20% 0px -68%", threshold: [0, .1, .4] });
+    observedSections.forEach((section) => sectionObserver.observe(section));
+
+    document.getElementById("export-button").addEventListener("click", () => {
+      const rows = [
+        ["metric", "value", "period"],
+        ["potential_queries", Math.round(12480 * periodConfig[currentPeriod].multiplier), currentPeriod],
+        ["chain_coverage", "73.8%", currentPeriod],
+        ["comparison_win_rate", "36.4%", currentPeriod],
+        ["outbound_ctr", "7.5%", currentPeriod]
+      ];
+      const csv = rows.map((row) => row.join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `cdm-provider-analytics-${currentPeriod}d.csv`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+
+    renderMissingService(activeService);
+    renderQuality(activeQualityService);
+  </script>
+</body>
+</html>
