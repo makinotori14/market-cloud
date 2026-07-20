@@ -4,11 +4,11 @@ import "./globals.css";
 import { AppProviders } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Пирамида | Подбор облачных решений",
+  title: "CDM | Маркетплейс облачных находок",
   description: "Prompt-based cloud solution recommendations with score ranking.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/cdm_logo.png",
+    apple: "/cdm_logo.png",
   },
 };
 

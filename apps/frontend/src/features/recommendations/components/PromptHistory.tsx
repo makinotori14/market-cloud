@@ -35,20 +35,19 @@ export function PromptHistory({
   return (
     <aside className="flex max-h-[48vh] min-h-0 flex-col overflow-hidden bg-[#07111f] p-5 text-white sm:max-h-[42vh] md:p-7 lg:h-[calc(100vh-56px)] lg:max-h-none">
       <div className="flex items-center gap-4">
-        <div className="grid h-11 w-11 place-items-center rounded-ui border border-white/[0.12] bg-white shadow-[0_14px_28px_rgba(0,119,255,0.24)]">
+        <div className="grid h-16 w-16 flex-none place-items-center overflow-hidden rounded-ui border border-white/[0.12] bg-white shadow-[0_14px_28px_rgba(0,119,255,0.24)]">
           <Image
-            src="/logo.png"
-            width={34}
-            height={34}
-            alt=""
+            src="/cdm_logo.png"
+            width={64}
+            height={64}
+            alt="CDM"
             priority
-            className="h-8 w-8 object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
-        <div>
-          <p className="mb-1 text-xs font-extrabold uppercase text-accent">FA x MAI Triad</p>
+        <div className="min-w-0">
           <h1 className="max-w-56 text-lg font-extrabold leading-tight">
-            Подбор облачных решений
+            Маркетплейс облачных находок
           </h1>
         </div>
       </div>
